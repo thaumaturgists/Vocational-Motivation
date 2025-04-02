@@ -1,0 +1,226 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f0f8ff; /* Light sky blue */
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #4a90e2; /* Soft blue */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: #ffffff; /* White */
+    border: 1px solid #e0e0e0; /* Light gray */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+h2 {
+    color: #6a5acd; /* Slate blue */
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #8a2be2; /* Blue violet */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: #4682b4; /* Steel blue */
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+.topic {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-left: 5px solid #4a90e2; /* Soft blue accent */
+    background-color: #f9f9f9; /* Light gray background */
+}
+
+.question {
+    margin-bottom: 15px;
+    font-weight: bold;
+    white-space: pre-line; /* This will render newline characters as line breaks */
+}
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2e8b57; /* Sea green */
+}
+
+ul {
+    list-style-type: none; /* Remove default list styling */
+    padding-left: 20px; /* Indent list items */
+}
+
+li {
+    margin-bottom: 5px; /* Space between list items */
+}
+
+.featherCap {
+    width: 100px;
+    height: 50px;
+    background-color: #8B4513; /* Brown color for the hat */
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.feather {
+    width: 30px; /* Adjust size as needed */
+    bottom: 100%; /* Start above the hat */
+    left: 0%; /* Center the feather */
+    transform: translateX(-0%);
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s ease, transform 1s ease; /* Add transform for animation */
+}
+
+.feather-button {
+    background-color: #f0e5ff; /* Soft lavender background */
+    color: #4a2c91; /* Deep lavender text color */
+    border: none; /* No border */
+    border-radius: 25px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for size */
+    font-size: 1em; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.feather-button:hover {
+    background-color: #e0d1ff; /* Lighter lavender on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.feather-button:active {
+    transform: translateY(0); /* Reset lift effect on click */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on click */
+}
+
+.feather-button:disabled {
+    background-color: #d0c4e0; /* Gray background for disabled state */
+    color: #a0a0a0; /* Gray text for disabled state */
+    cursor: not-allowed; /* Not-allowed cursor */
+}
+
+.answer-button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.answer-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.answer-button:disabled {
+    background-color: #ccc; /* Gray background for disabled buttons */
+    cursor: not-allowed; /* Not-allowed cursor */
+}
+
+/* CSS to make the counters float in the top right corner */
+#floatingCounters {
+    position: fixed; /* Fixed position to follow the screen */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 10px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+#refreshButton {
+    margin-left: 10px; /* Space between count and button */
+    padding: 10px; /* Match padding with other buttons */
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#refreshButton:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.toggle {
+    cursor: pointer;
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+.content {
+    display: none; /* Initially hidden */
+    padding-left: 20px;
+    border-left: 2px solid #007BFF;
+    margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    h4 {
+        font-size: 1.1em;
+    }
+}
