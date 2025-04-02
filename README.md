@@ -43,7 +43,7 @@ Contributions are welcome! If you have suggestions for improvements or new featu
 This project is licensed under the [MIT License](LICENSE).
 
 ### Acknowledgments
-- Special thanks to [any individuals or resources that helped you during the project].
+- A heartfelt thank you to Jason Doty for generously supplying a wealth of materials..
 - Inspired by the educational materials provided during school.
 
 ### Contact
