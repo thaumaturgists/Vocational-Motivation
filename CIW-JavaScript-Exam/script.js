@@ -1629,29 +1629,29 @@ function checkAnswer19(selected, correct) {
 // Quiz questions and answers for Function-Specific Methods: call(), apply(), and bind()
 const questions20 = [
     {
-        question: "What is a user event in JavaScript?",
-        answers: ["A function that runs automatically", "An action performed by the user", "A type of variable", "None of the above"],
-        correct: "An action performed by the user"
+        question: "What does the `call()` method do?",
+        answers: ["Invokes a function with a specified `this` context and arguments", "Creates a new function", "Returns the value of a function", "None of the above"],
+        correct: "Invokes a function with a specified `this` context and arguments"
     },
     {
-        question: "Which of the following is an example of a user event?",
-        answers: ["onclick", "onload", "keydown", "All of the above"],
-        correct: "All of the above"
+        question: "What is the difference between `call()` and `apply()`?",
+        answers: ["`call()` takes arguments as a list, while `apply()` takes arguments as an array", "`call()` is used for objects, while `apply()` is for functions", "There is no difference", "None of the above"],
+        correct: "`call()` takes arguments as a list, while `apply()` takes arguments as an array"
     },
     {
-        question: "What is an event handler?",
-        answers: ["A function that runs in response to an event", "A type of variable", "A method to create events", "None of the above"],
-        correct: "A function that runs in response to an event"
+        question: "What does the `bind()` method do?",
+        answers: ["Creates a new function with a bound `this` context", "Invokes a function immediately", "Returns the value of a function", "None of the above"],
+        correct: "Creates a new function with a bound `this` context"
     },
     {
-        question: "Which of the following is NOT a user event?",
-        answers: ["click", "submit", "load", "define"],
-        correct: "define"
+        question: "Given the following code, what will `greet.call(null, 'Hello', 'Alice');` output? \n `function greet(greeting, name) { console.log(greeting + ', ' + name); }`",
+        answers: ["Hello, Alice", "undefined", "Error", "None of the above"],
+        correct: "Hello, Alice"
     },
     {
-        question: "What does the `onclick` event do?",
-        answers: ["Triggers when the mouse is clicked", "Triggers when the page loads", "Triggers when a key is pressed", "None of the above"],
-        correct: "Triggers when the mouse is clicked"
+        question: "Why are `call()`, `apply()`, and `bind()` useful?",
+        answers: ["They allow you to control the `this` context explicitly", "They are faster than regular functions", "They can only be used in global scope", "None of the above"],
+        correct: "They allow you to control the `this` context explicitly"
     }
 ];
 
@@ -1706,29 +1706,29 @@ function checkAnswer20(selected, correct) {
 // Quiz questions and answers for Built-In Functions and Casting Variables
 const questions21 = [
     {
-        question: "What is a user event in JavaScript?",
-        answers: ["A function that runs automatically", "An action performed by the user", "A type of variable", "None of the above"],
-        correct: "An action performed by the user"
+        question: "What does `parseInt('42')` return?",
+        answers: ["42", "Error", "undefined", "None of the above"],
+        correct: "42"
     },
     {
-        question: "Which of the following is an example of a user event?",
-        answers: ["onclick", "onload", "keydown", "All of the above"],
-        correct: "All of the above"
+        question: "What does `parseFloat('3.14')` return?",
+        answers: ["3", "3.14", "Error", "None of the above"],
+        correct: "3.14"
     },
     {
-        question: "What is an event handler?",
-        answers: ["A function that runs in response to an event", "A type of variable", "A method to create events", "None of the above"],
-        correct: "A function that runs in response to an event"
+        question: "What does the `Number()` function do?",
+        answers: ["Converts a string to a number", "Converts a number to a string", "Parses integers", "None of the above"],
+        correct: "Converts a string to a number"
     },
     {
-        question: "Which of the following is NOT a user event?",
-        answers: ["click", "submit", "load", "define"],
-        correct: "define"
+        question: "What does the `String()` function do?",
+        answers: ["Converts a value to a string", "Converts a string to a number", "Parses floats", "None of the above"],
+        correct: "Converts a value to a string"
     },
     {
-        question: "What does the `onclick` event do?",
-        answers: ["Triggers when the mouse is clicked", "Triggers when the page loads", "Triggers when a key is pressed", "None of the above"],
-        correct: "Triggers when the mouse is clicked"
+        question: "Which of the following is a built-in function in JavaScript?",
+        answers: ["Math.random()", "Date()", "Both A and B", "None of the above"],
+        correct: "Both A and B"
     }
 ];
 
