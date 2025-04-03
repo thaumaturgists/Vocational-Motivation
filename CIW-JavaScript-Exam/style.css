@@ -224,3 +224,93 @@ footer a:hover {
         font-size: 1.1em;
     }
 }
+
+/* Bottom */
+
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Heading styles */
+h4 {
+    font-size: 1.5em;
+    color: #4a90e2; /* Soft blue color */
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Unordered list styles */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* List item styles */
+li {
+    margin-bottom: 10px;
+}
+
+/* Strong text styles */
+strong {
+    color: #e94e77; /* Soft pink color */
+}
+
+/* Preformatted text styles */
+pre {
+    background-color: #f4f4f4; /* Light gray background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px;
+    overflow: auto; /* Allow scrolling for long code */
+    margin: 20px 0;
+}
+
+/* Code styles */
+code {
+    font-family: 'Courier New', monospace;
+    background-color: #eaeaea; /* Slightly darker gray */
+    padding: 2px 4px;
+    border-radius: 3px; /* Rounded corners */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    h4 {
+        font-size: 1.3em; /* Smaller font size on small screens */
+    }
+    
+    ul {
+        margin-left: 15px; /* Adjust margin for smaller screens */
+    }
+    
+    pre {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+}
+
+.list-container {
+    max-width: 400px; /* Set a maximum width for the container */
+    margin: 20px auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.list-container-ul {
+    list-style-type: disc; /* Use disc style for list items */
+    padding-left: 20px; /* Indent the list items */
+}
+
+.list-container-il-li {
+    margin-bottom: 8px; /* Space between list items */
+}
