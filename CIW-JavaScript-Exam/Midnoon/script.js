@@ -104,7 +104,7 @@ function displayQuiz() {
     selectedQuestions.forEach((q, index) => {
         const questionDiv = document.createElement('div');
         questionDiv.className = 'question';
-        questionDiv.textContent = `${index + 1}. ${q.question}\n`; // Use innerHTML for HTML content
+        questionDiv.textContent = `${index + 1}. ${q.question}\n`; // Use textContent for HTML content
 
         q.answers.forEach(answer => {
             const button = document.createElement('button');
