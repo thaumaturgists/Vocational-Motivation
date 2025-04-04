@@ -5,12 +5,15 @@
     padding: 0;
 }
 
+/* General body styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f8ff;
+    color: #333;
     margin: 20px;
     padding: 20px;
-    background-color: #f0f8ff; /* Light sky blue */
-    color: #333;
+    scrollbar-track-color: #f9f9f9;;
 }
 
 h1 {
@@ -18,15 +21,6 @@ h1 {
     color: #4a90e2; /* Soft blue */
     font-size: 2.5em;
     margin-bottom: 20px;
-}
-
-.container {
-    background-color: #ffffff; /* White */
-    border: 1px solid #e0e0e0; /* Light gray */
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 h2 {
@@ -46,6 +40,106 @@ h4 {
     font-size: 1.2em;
     margin-top: 15px;
 }
+/* Heading styles */
+h4 {
+    font-size: 1.5em;
+    color: #4a90e2; /* Soft blue color */
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Unordered list styles */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.list-container {
+    max-width: 400px; /* Set a maximum width for the container */
+    margin: 20px auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.list-container-ul {
+    list-style-type: disc; /* Use disc style for list items */
+    padding-left: 20px; /* Indent the list items */
+}
+
+.list-container-ul-li {
+    margin-bottom: 8px; /* Space between list items */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* List item styles */
+li {
+    margin-bottom: 10px;
+}
+
+/* Strong text styles */
+strong {
+    color: #e94e77; /* Soft pink color */
+}
+
+/* Preformatted text styles */
+pre {
+    background-color: #f4f4f4; /* Light gray background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px;
+    overflow: auto; /* Allow scrolling for long code */
+    margin: 20px 0;
+}
+
+/* Code styles */
+code {
+    font-family: 'Courier New', monospace;
+    background-color: #eaeaea; /* Slightly darker gray */
+    padding: 2px 4px;
+    border-radius: 3px; /* Rounded corners */
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    h4 {
+        font-size: 1.1em;
+    }
+    ul {
+        margin-left: 15px; /* Adjust margin for smaller screens */
+    }
+    pre {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+}
+
+.container {
+    background-color: #ffffff; /* White */
+    border: 1px solid #e0e0e0; /* Light gray */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
 
 .topic {
     margin-bottom: 20px;
@@ -64,15 +158,6 @@ h4 {
     margin-top: 10px;
     font-weight: bold;
     color: #2e8b57; /* Sea green */
-}
-
-ul {
-    list-style-type: none; /* Remove default list styling */
-    padding-left: 20px; /* Indent list items */
-}
-
-li {
-    margin-bottom: 5px; /* Space between list items */
 }
 
 .featherCap {
@@ -190,11 +275,7 @@ footer a:hover {
     margin-bottom: 20px;
 }
 
-.toggle {
-    cursor: pointer;
-    color: #007BFF;
-    text-decoration: underline;
-}
+
 
 .content {
     display: none; /* Initially hidden */
@@ -202,115 +283,83 @@ footer a:hover {
     border-left: 2px solid #007BFF;
     margin-top: 10px;
 }
+#content1:target { display: block;}
+#content2:target { display: block;}
+#content3:target { display: block;}
 
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
+/*
+// Plans for future intergradation
+// Sidebar
+#a111:target{display: block;}
+#a112:target{display: block;}
+#a113:target{display: block;}
+#a114:target{display: block;}
+#a115:target{display: block;}
+#a116:target{display: block;}
+#quiz:target{display: block;}
+#a121:target{display: block;}
+#a122:target{display: block;}
+#a123:target{display: block;}
+#a124:target{display: block;}
+#a125:target{display: block;}
+#a126:target{display: block;}
+#a127:target{display: block;}
+#a128:target{display: block;}
+#quiz7:target{display: block;}
+#a131:target{display: block;}
+#a132:target{display: block;}
+#a133:target{display: block;}
+#a134:target{display: block;}
+#a135:target{display: block;}
+#a136:target{display: block;}
+#a137:target{display: block;}
+#quiz15:target{display: block;} 
 
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.5em;
-    }
-
-    h3 {
-        font-size: 1.3em;
-    }
-
-    h4 {
-        font-size: 1.1em;
-    }
+.sidebar {
+    width: 75px; 
+    background-color: #333;
+    color: #fff;
+    padding: 0px;
+    border-radius: 5px; 
+    position: fixed; 
+    top: 180px; 
+    right: 0px; 
+    height: 90%; 
+    overflow-y: auto; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
-/* Bottom */
-
-/* General body styles */
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
-    margin: 0;
-    padding: 20px;
+.sidebar h2 {
+    font-size: small;
+    margin-bottom: 15px;
 }
 
-/* Heading styles */
-h4 {
-    font-size: 1.5em;
-    color: #4a90e2; /* Soft blue color */
-    border-bottom: 2px solid #e1e1e1;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+.sidebar ul {
+    font-size: smaller;
+    list-style-type: none;
 }
 
-/* Unordered list styles */
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    margin-bottom: 20px;
+.sidebar ul li {
+    margin: 10px 0;
 }
 
-/* List item styles */
-li {
-    margin-bottom: 10px;
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
 }
 
-/* Strong text styles */
-strong {
-    color: #e94e77; /* Soft pink color */
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+*/
+
+.toggle {
+    cursor: pointer;
+    color: #007BFF;
+    text-decoration: underline;
 }
 
-/* Preformatted text styles */
-pre {
-    background-color: #f4f4f4; /* Light gray background */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 15px;
-    overflow: auto; /* Allow scrolling for long code */
-    margin: 20px 0;
-}
-
-/* Code styles */
-code {
-    font-family: 'Courier New', monospace;
-    background-color: #eaeaea; /* Slightly darker gray */
-    padding: 2px 4px;
-    border-radius: 3px; /* Rounded corners */
-}
-
-/* Responsive styles */
-@media (max-width: 600px) {
-    h4 {
-        font-size: 1.3em; /* Smaller font size on small screens */
-    }
-    
-    ul {
-        margin-left: 15px; /* Adjust margin for smaller screens */
-    }
-    
-    pre {
-        padding: 10px; /* Less padding on smaller screens */
-    }
-}
-
-.list-container {
-    max-width: 400px; /* Set a maximum width for the container */
-    margin: 20px auto; /* Center the container horizontally */
-    padding: 20px; /* Add padding inside the container */
-    background-color: #f9f9f9; /* Light background color */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-.list-container-ul {
-    list-style-type: disc; /* Use disc style for list items */
-    padding-left: 20px; /* Indent the list items */
-}
-
-.list-container-il-li {
-    margin-bottom: 8px; /* Space between list items */
+.toggle:hover {
+    color: #0056b3;
 }

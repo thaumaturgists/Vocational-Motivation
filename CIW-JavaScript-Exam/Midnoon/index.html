@@ -7,7 +7,7 @@
     <meta name="referrer" content="no-referrer">
     <meta http-equiv="Permissions-Policy" content=" geolocation=(), microphone=(), camera=(), fullscreen=(), payment=(), notifications=(), push=(), midi=(), sync-xhr=(), screen-wake-lock=(), ambient-light-sensor=(), accelerometer=(), gyroscope=(), magnetometer=(), clipboard=(), document-domain=(), web-share=(), screen-orientation=(), xr-spatial-tracking=()">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
-    <meta http-equiv="Content-Security-Policy" content="img-src 'self' 'sha256-TV/TmOnV6kDWn8Xwys1IXn8CUWopVuMK2Wh0AKEkByw='; font-src 'self'; connect-src 'self'; media-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; img-src 'self' 'sha256-TV/TmOnV6kDWn8Xwys1IXn8CUWopVuMK2Wh0AKEkByw='; font-src 'self'; connect-src 'self'; media-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
     <title>CIW JavaScript’s Specialist Midnoon</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
@@ -30,34 +30,70 @@
             <h1>Essential JavaScript Principles and Practices</h1>
         </button>
     </div>
-    
+
     <div id="floatingCounters">
         <h2><span id="clickCount">0</span>/105<button id="refreshButton">Restart</button></h2>
         <h2><span id="correctCountDisplay">0</span>:Correct</h2>
     </div>
+
+    <!-- Plans For future intergradation -->
+    <!-- <div class="container">
+        <div class="sidebar">
+            <h2>Sidebar</h2>
+            <ul>
+                <li><a href="#a111">1.1.1</a></li>
+                <li><a href="#a112">1.1.2</a></li>
+                <li><a href="#a113">1.1.3</a></li>
+                <li><a href="#a114">1.1.4</a></li>
+                <li><a href="#a115">1.1.5</a></li>
+                <li><a href="#a116">1.1.6</a></li>
+                <li><a href="#quiz">Quiz.1.1</a></li>
+                <li><a href="#a121">1.2.1</a></li>
+                <li><a href="#a122">1.2.2</a></li>
+                <li><a href="#a123">1.2.3</a></li>
+                <li><a href="#a124">1.2.4</a></li>
+                <li><a href="#a125">1.2.5</a></li>
+                <li><a href="#a126">1.2.6</a></li>
+                <li><a href="#a127">1.2.7</a></li>
+                <li><a href="#a128">1.2.8</a></li>
+                <li><a href="#quiz7">Quiz.1.2</a></li>
+                <li><a href="#a131">1.3.1</a></li>
+                <li><a href="#a132">1.3.2</a></li>
+                <li><a href="#a133">1.3.3</a></li>
+                <li><a href="#a134">1.3.4</a></li>
+                <li><a href="#a135">1.3.5</a></li>
+                <li><a href="#a136">1.3.6</a></li>
+                <li><a href="#a137">1.3.7</a></li>
+                <li><a href="#quiz15">Quiz.1.3</a></li>
+            </ul>
+        </div>
+    </div> -->
+
     <div class="container">
         <h2>1.1 Identify Characteristics of JavaScript and Common Programming Practices</h2>
         <div class="section">
-            <h3 class="toggle" onclick="toggleContent('content1')">1.1 Summary & Quick Review</h3>
+            <h3 class="toggle" onclick="toggleContent('content1')"><a href="#content1">1.1 Summary & Quick Review</a></h3>
             <div class="content" id="content1">
-                <h4>1.1.1 Key Characteristics of JavaScript</h4>
-                <ul>
-                    <li>JavaScript is a high-level, dynamic, and interpreted programming language.</li>
-                    <li>It is object-oriented and supports first-class functions.</li>
-                    <li>JavaScript uses objects but isn't fully object-oriented; it supports inheritance through prototypes.</li>
-                    <li>Most JavaScript code runs in response to user events like clicks, form submissions, or page loads, making it event-driven.</li>
-                    <li>JavaScript code can run on any device and any modern browser, regardless of the operating system, showcasing its platform independence.</li>
-                    <li>Scripting languages like JavaScript are typically interpreted at runtime, making them flexible and easier for rapid development, though they may run slower than compiled languages.</li>
-                </ul>
+                <div id="a111">
+                    <h4>1.1.1 Key Characteristics of JavaScript</h4>
+                    <ul>
+                        <li>JavaScript is a high-level, dynamic, and interpreted programming language.</li>
+                        <li>It is object-oriented and supports first-class functions.</li>
+                        <li>JavaScript uses objects but isn't fully object-oriented; it supports inheritance through prototypes.</li>
+                        <li>Most JavaScript code runs in response to user events like clicks, form submissions, or page loads, making it event-driven.</li>
+                        <li>JavaScript code can run on any device and any modern browser, regardless of the operating system, showcasing its platform independence.</li>
+                        <li>Scripting languages like JavaScript are typically interpreted at runtime, making them flexible and easier for rapid development, though they may run slower than compiled languages.</li>
+                    </ul>
+                </div>
                 
-                <h4>1.1.2 Common Programming Concepts: Objects, Properties, and Methods</h4>
+                <h4 id="a112">1.1.2 Common Programming Concepts: Objects, Properties, and Methods</h4>
                 <ul>
                     <li>Objects are collections of properties and methods that represent a "thing" from the real world, such as a user or a car.</li>
                     <li>Properties are values associated with an object, which can be fundamental data types (like numbers or strings) or other objects, allowing for complex data structures.</li>
                     <li>Methods are functions that are properties of an object, defining actions that can be performed on or by the object (e.g., a car object might have methods like start() or stop()).</li>
                 </ul>
                 
-                <h4>1.1.3 JavaScript Versions and Flavors (ECMA, JScript, etc.)</h4>
+                <h4 id="a113">1.1.3 JavaScript Versions and Flavors (ECMA, JScript, etc.)</h4>
                 <ul>
                     <li>JavaScript has multiple versions, with ECMAScript being the standardized version that governs its core features.</li>
                     <li>ECMAScript was first standardized by the Ecma International organization in ECMA-262, with revisions like ES5 (ECMAScript 5), ES6 (ECMAScript 2015), and recent annual updates (like ES2020) introducing new features and syntax improvements.</li>
@@ -65,7 +101,7 @@
                     <li>JavaScript shares similarities with other proprietary scripting languages in terms of dynamic typing, interpreted nature, and DOM manipulation, but it is unique in its universal support across all modern web browsers.</li>
                 </ul>
                 
-                <h4>1.1.4 Server-Side vs. Client-Side JavaScript</h4>
+                <h4 id="a114">1.1.4 Server-Side vs. Client-Side JavaScript</h4>
                 <ul>
                     <li>Server-side JavaScript runs on the server, typically using environments like Node.js, and is used to interact with databases, file systems, and network requests.</li>
                     <li>Client-side JavaScript runs in the user's browser, handling the user interface and behavior of web pages (e.g., form validations, animations, and interactive elements).</li>
@@ -75,14 +111,14 @@
                     <li>A rendering engine interprets HTML and CSS to display formatted content on the screen, with examples including Blink (Chrome), Gecko (Firefox), and WebKit (Safari).</li>
                 </ul>
                 
-                <h4>1.1.5 Acceptable Coding Practices and the &lt;noscript&gt; Tag</h4>
+                <h4 id="a115">1.1.5 Acceptable Coding Practices and the &lt;noscript&gt; Tag</h4>
                 <ul>
                     <li>Use consistent naming conventions and indentation for readability, which helps in maintaining clear and efficient code.</li>
                     <li>Comments in JavaScript are crucial for describing what the code is doing, aiding in maintenance, especially in team environments or when revisiting old code. Comments can be single-line (started with //) or multi-line (enclosed between /* and */).</li>
                     <li>The &lt;noscript&gt; tag provides alternative content for users whose browsers do not support JavaScript or have JavaScript disabled, ensuring that the website remains usable without JavaScript. The content inside &lt;noscript&gt; tags will only be displayed if JavaScript is disabled.</li>
                 </ul>
                 
-                <h4>1.1.6 Evolution of JavaScript’s Role</h4>
+                <h4 id="a116">1.1.6 Evolution of JavaScript’s Role</h4>
                 <ul>
                     <li>JavaScript has evolved from a simple scripting language to a powerful tool for building complex web applications.</li>
                     <li>It plays a critical role in gaming, with libraries like Phaser and frameworks supporting WebGL for 2D and 3D graphics.</li>
@@ -133,13 +169,14 @@
         </div>
         
     </div>
+    </div>
 
     <div class="container">
         <h2>1.2 Work with Variables and Data in JavaScript</h2>
         <div class="section">
-            <h3 class="toggle" onclick="toggleContent('content2')">1.2 Summary & Quick Review</h3>
+            <h3 class="toggle" onclick="toggleContent('content2')"><a href="#content2">1.2 Summary & Quick Review</a></h3>
             <div class="content" id="content2">
-                <h4>1.2.1 Attributes and Methods to Communicate with Users</h4>
+                <h4 id="a121">1.2.1 Attributes and Methods to Communicate with Users</h4>
                 <ul>
                     <li>Use alert(), prompt(), and confirm() to communicate with users through dialog boxes.</li>
                     <li>console.log() can be used for debugging and logging information to the console.</li>
@@ -147,7 +184,7 @@
                     <li>The type attribute in HTML &lt;input&gt; elements specifies the kind of input the field should accept (e.g., text, email, password), and JavaScript can dynamically change these types or use them to validate or process user input.</li>
                 </ul>
                 
-                <h4>1.2.2 Defining Variables, Data Types, and Scope</h4>
+                <h4 id="a122">1.2.2 Defining Variables, Data Types, and Scope</h4>
                 <ul>
                     <li>Variables can be defined using var, let, or const.</li>
                     <li>var declares a variable globally or locally to an entire function, regardless of block scope.</li>
@@ -166,7 +203,7 @@
                     </ul>
                 </ul>
                 
-                <h4>1.2.3 Keywords and Reserved Words</h4>
+                <h4 id="a123">1.2.3 Keywords and Reserved Words</h4>
                 <ul>
                     <li>Keywords like if, else, for, and function are reserved and cannot be used as variable names.</li>
                     <li>Keywords are predefined, reserved words that have special meanings and are used to perform specific actions in the language. Examples include if, else, while, let, const, and return.</li>
@@ -211,7 +248,7 @@
                     </div> 
                 </ul>
                 
-                <h4>1.2.4 Storing User Input and Responding Appropriately in JavaScript</h4>
+                <h4 id="a124">1.2.4 Storing User Input and Responding Appropriately in JavaScript</h4>
                 <ul>
                     <li>User input is a fundamental part of interactive web applications, and JavaScript provides several methods to capture and handle this input.</li>
                     <li>The prompt() function can be used to display a dialog box that prompts the user to input text, and the response can be stored in a variable for further processing.</li>
@@ -230,7 +267,7 @@
                 </code>
                 </pre>
                 
-                <h4>1.2.5 Concatenation vs. Addition</h4>
+                <h4 id="a125">1.2.5 Concatenation vs. Addition</h4>
                 <ul>
                     <li>The + operator can be used for both string concatenation and numeric addition, depending on the context.</li>
                     <li>When both operands of the + operator are numbers, or can be converted to numbers, JavaScript performs arithmetic addition.</li>
@@ -250,7 +287,7 @@
                 </code>
                 </pre>
                 
-                <h4>1.2.6 Operators (String Concatenation, Strict Comparison, etc.)</h4>
+                <h4 id="a126">1.2.6 Operators (String Concatenation, Strict Comparison, etc.)</h4>
                 <ul>
                     <li>Use === for strict comparison, which checks both value and type.</li>
                     <li>The += operator appends the expression on the right side to the variable on the left side, often used for adding strings together or incrementing numeric values.</li>
@@ -280,7 +317,7 @@
                 </code>
                 </pre>
                 
-                <h4>1.2.7 Expressions</h4>
+                <h4 id="a127">1.2.7 Expressions</h4>
                 <ul>
                     <li>An expression is a combination of values and operators that evaluates to a single value.</li>
                     <li>Expressions are combinations of values, variables, operators, and functions that JavaScript can interpret and compute to produce another value.</li>
@@ -309,7 +346,7 @@
                 </code>
                 </pre>
                 
-                <h4>1.2.8 Implement Simple Event Handlers (Keyboard, Mouse, Mobile)</h4>
+                <h4 id="a128">1.2.8 Implement Simple Event Handlers (Keyboard, Mouse, Mobile)</h4>
                 <ul>
                     <li>Use event listeners to handle user interactions, such as clicks and key presses.</li>
                     <li>Event handlers are crucial for creating interactive web applications, allowing you to execute JavaScript code in response to user actions like clicks, key presses, and touch gestures.</li>
@@ -398,9 +435,9 @@
     <div class="container">
         <h2>1.3 Use JavaScript Functions, Methods, and Events</h2>
         <div class="section">
-            <h3 class="toggle" onclick="toggleContent('content3')">1.3 Summary & Quick Review</h3>
+            <h3 class="toggle" onclick="toggleContent('content3')"><a href="#content3"></a></h3>
             <div class="content" id="content3">
-                <h4>1.3.1 Defining and Using Methods as Functions</h4>
+                <h4 id="a131">1.3.1 Defining and Using Methods as Functions</h4>
                 <ul>
                     <li>A method is a function associated with an object.</li>
                     <li>In JavaScript, functions are reusable blocks of code that perform a specific task. When a function is associated with an object, it's referred to as a method.</li>
@@ -439,7 +476,7 @@
                 </code>
                 </pre>
                 
-                <h4>1.3.2 Various Types of Functions</h4>
+                <h4 id="a132">1.3.2 Various Types of Functions</h4>
                 <ul>
                     <li>Functions can be named, anonymous, or arrow functions.</li>
                     <li>JavaScript supports multiple types of functions and function elements, each with unique characteristics and uses.</li>
@@ -499,7 +536,7 @@
                 </code>
                 </pre>
                 
-                <h4>1.3.3 Global vs. Local Variables</h4>
+                <h4 id="a133">1.3.3 Global vs. Local Variables</h4>
                 <ul>
                     <li>Global variables are accessible anywhere, while local variables are confined to the function/block they are declared in.</li>
                     <li>The scope of a variable determines where it can be accessed within the code.</li>
@@ -530,7 +567,7 @@
                 </code>
                 </pre>
                 
-                <h4>1.3.4 Using the Conditional (Ternary) Operator</h4>
+                <h4 id="a134">1.3.4 Using the Conditional (Ternary) Operator</h4>
                 <ul>
                     <li>The ternary operator is a shorthand for if-else statements: <code>condition ? expressionIfTrue : expressionIfFalse</code>.</li>
                 </ul>
@@ -563,7 +600,7 @@
                 console.log(grade); // Output: B
                 </code></pre>
                 
-                <h4>1.3.5 User Events and Event Handlers</h4>
+                <h4 id="a135">1.3.5 User Events and Event Handlers</h4>
                 <ul>
                     <li>User events (e.g., <code>onclick</code>, <code>onsubmit</code>) trigger event handlers, which are functions that respond to these events.</li>
                 </ul>
@@ -608,7 +645,7 @@
                 });
                 </code></pre>
                 
-                <h4>1.3.6 Function-Specific Methods: call(), apply(), and bind()</h4>
+                <h4 id="a136">1.3.6 Function-Specific Methods: call(), apply(), and bind()</h4>
                 <ul>
                     <li><code>call()</code> and <code>apply()</code> invoke functions with a specified <code>this</code> context, while <code>bind()</code> creates a new function with a bound context.</li>
                 </ul>
@@ -658,7 +695,7 @@
                 boundLogName(); // Output: Name: Bob
                 </code></pre>
                 
-                <h4>1.3.7 Built-In Functions and Casting Variables</h4>
+                <h4 id="a137">1.3.7 Built-In Functions and Casting Variables</h4>
                 <ul>
                     <li>Use built-in functions like <code>parseInt()</code>, <code>parseFloat()</code>, <code>Number()</code>, and <code>String()</code> for type conversion and data manipulation.</li>
                 </ul>
