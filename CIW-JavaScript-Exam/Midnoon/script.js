@@ -1,16 +1,10 @@
 // This function shows or hides content when called
-function toggleContent(contentID) {
+function toggleContent(contentId) {
     // Get the content element by its ID
-    const content = document.getElementById(contentID);
-    
+    const content = document.getElementById(contentId);
     // Check if the content is currently hidden or not displayed
-    if (content.style.display === 'none' || content.style.display === '') {
-        content.style.display = 'block'; // If hidden, show the content
-    } else {
-        content.style.display = 'none'; // If shown, hide the content
-    }
+    content.style.display = (content.style.display === 'block') ? 'none' : 'block';
 }
-
 // This is an immediately invoked function expression (IIFE)
 // It runs the code inside it right away
 (function() {

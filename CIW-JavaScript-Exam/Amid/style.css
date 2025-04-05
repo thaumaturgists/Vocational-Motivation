@@ -8,21 +8,33 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Light background for contrast */
+    background-color: #f0f8ff; /* Light sky blue background */
     color: #333;
     margin: 20px;
     padding: 20px;
+}
+
+#content1{
+    display: none;
+}
+
+/* Content styles */
+.content {
+    display: none; /* Initially hidden */
+    padding-left: 20px; /* Indent for nested content */
+    border-left: 2px solid #ff69b4; /* Hot pink accent for the border */
+    margin-top: 10px; /* Space above content */
 }
 
 /* Feather Cap */
 .featherCap {
     width: 100px;
     height: 50px;
-    background-color: #8B4513; /* Brown color for the hat */
+    background-color: #f5deb3; /* Wheat color for the hat */
     border-radius: 50% 50% 0 0;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); /* Soft white shadow */
 }
 
 /* Feather */
@@ -36,89 +48,146 @@ body {
 }
 
 /* Button styles */
-.feather-button {
-    background: linear-gradient(135deg, #f0e5ff, #d1c4e0); /* Angular gradient */
-    color: #4a2c91; /* Deep lavender text color */
+.feather-button,
+.answer-button,
+#refreshButton {
+    background: linear-gradient(135deg, #fffacd, #ffe4e1); /* Light gradient */
+    color: #8b4513; /* Saddle brown text color */
     border: none; /* No border */
     border-radius: 25px; /* Rounded corners */
     padding: 10px 20px; /* Padding for size */
     font-size: 1em; /* Font size */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* Soft shadow */
 }
 
-.feather-button:hover {
-    background: linear-gradient(135deg, #e0d1ff, #c4b5d0); /* Lighter gradient on hover */
+.feather-button:hover,
+.answer-button:hover,
+#refreshButton:hover {
+    background: linear-gradient(135deg, #ffe4b5, #ffcccb); /* Lighter gradient on hover */
     transform: translateY(-2px); /* Slight lift effect on hover */
 }
 
-.feather-button:active {
+.feather-button:active,
+.answer-button:active,
+#refreshButton:active {
     transform: translateY(0); /* Reset lift effect on click */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on click */
 }
 
-.feather-button:disabled {
-    background-color: #d0c4e0; /* Gray background for disabled state */
+.feather-button:disabled,
+.answer-button:disabled,
+#refreshButton:disabled {
+    background-color: #d3d3d3; /* Light gray background for disabled state */
     color: #a0a0a0; /* Gray text for disabled state */
     cursor: not-allowed; /* Not-allowed cursor */
 }
 
 /* Floating Counters */
 #floatingCounters {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    background-color: #ffffff; /* White background for contrast */
-    padding: 10px;
+    position: fixed; /* Fixed position to follow the screen */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    padding: 15px; /* Padding around the text */
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    font-family: 'Arial', sans-serif; /* Consistent font */
+    color: #333; /* Dark text color for readability */
+}
+
+/* Counter Header */
+.counter-header {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Center items vertically */
+    margin: 5px 0; /* Space between headings */
+    font-size: 1.2em; /* Slightly larger font size */
+    color: #4a90e2; /* Soft blue color for headings */
+}
+
+/* Correct Count Display */
+.correct-display {
+    text-align: center; /* Center the text */
+    margin-top: 10px; /* Space above the correct display */
+}
+
+#correctCountDisplay {
+    font-weight: bold; /* Make the count bold for emphasis */
+    color: #ff69b4; /* Hot pink color for the count */
+    font-size: 1.5em; /* Slightly larger font size for visibility */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 5px 10px; /* Padding for a better look */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    display: block; /* Make it a block element for full width */
+}
+
+/* Style for the correct label */
+.correct-label {
+    display: block; /* Make it a block element to position below */
+    font-size: 1em; /* Normal font size */
+    color: #4a90e2; /* Soft blue color for the label */
+    margin-top: 5px; /* Space above the label */
+}
+
+/* Style for the entire h2 containing the correct count */
+#floatingCounters h2 {
+    margin: 5px 0; /* Space between headings */
+    font-size: 1.2em; /* Slightly larger font size */
+    color: #4a90e2; /* Soft blue color for headings */
+}
+
+/* Section styles */
+.section {
+    margin-bottom: 20px;
 }
 
 /* Topic and Section Styles */
 .topic {
     margin-top: 20px;
-    background-color: #ffffff; /* White background for contrast */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
     padding: 15px;
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Soft shadow */
 }
 
 .toggle {
     cursor: pointer;
-    color: #4a2c91; /* Deep lavender text color */
+    color: #8b4513; /* Saddle brown text color */
     text-decoration: underline; /* Underline for clickable text */
 }
 
-.content {
-    display: none; /* Hidden by default */
-    margin-top: 10px;
+.toggle:hover {
+    color: #0056b3; /* Darker blue on hover */
 }
 
 /* Heading styles */
 h1 {
     text-align: center;
-    color: #4a90e2; /* Soft blue */
+    color: #ff69b4; /* Hot pink */
     font-size: 2.5em;
     margin-bottom: 20px;
 }
 
 h2 {
-    color: #6a5acd; /* Slate blue */
+    color: #ff1493; /* Deep pink */
     font-size: 1.8em;
     margin-bottom: 15px;
 }
 
 h3 {
-    color: #8a2be2; /* Blue violet */
+    color: #db7093; /* Pale violet red */
     font-size: 1.5em;
     margin-bottom: 10px;
 }
 
 h4 {
-    color: #4682b4; /* Steel blue */
+    color: #ff7f50; /* Coral */
     font-size: 1.5em; /* Consistent font size */
-    border-bottom: 2px solid #e1e1e1;
+    border-bottom: 2px solid #ffe4e1; /* Light pink border */
     padding-bottom: 10px;
     margin: 20px 0; /* Combined margin for consistency */
 }
@@ -136,12 +205,12 @@ ul li {
 
 /* Strong text styles */
 strong {
-    color: #e94e77; /* Soft pink color */
+    color: #ff4500; /* Orange red */
 }
 
 /* Preformatted text styles */
 pre {
-    background-color: #f4f4f4; /* Light gray background */
+    background-color: #f0f8ff; /* Light sky blue background */
     border: 1px solid #ddd; /* Light border */
     border-radius: 5px; /* Rounded corners */
     padding: 15px;
@@ -152,8 +221,8 @@ pre {
 /* Code styles */
 code {
     font-family: 'Courier New', monospace;
-    background-color: #eaeaea; /* Slightly darker gray */
-    padding: 2px 4px;
+    background-color: #ffe4e1; /* Light pink */
+        padding: 2px 4px;
     border-radius: 3px; /* Rounded corners */
 }
 
@@ -233,113 +302,41 @@ footer a:hover {
 
 /* Container styles */
 .container {
-    background-color: #ffffff; /* White */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
     border: 1px solid #e0e0e0; /* Light gray */
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Soft shadow */
 }
 
-/* Floating counters styles */
-#floatingCounters {
-    position: fixed; /* Fixed position to follow the screen */
-    top: 10px; /* Distance from the top */
-    right: 10px; /* Distance from the right */
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-    padding: 10px; /* Padding around the text */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for better visibility */
-    z-index: 1000; /* Ensure it stays on top of other elements */
+/* Additional styles for the recommended readings section */
+.containerOT {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Soft shadow */
 }
 
-#refreshButton {
-    margin-left: 10px; /* Space between count and button */
-    padding: 10px; /* Match padding with other buttons */
-    background-color: #28a745; /* Green background */
-    color: white; /* White text */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
+.containerOT h3 {
+    color: #ff69b4; /* Hot pink for headings */
+    margin-bottom: 15px;
 }
 
-#refreshButton:hover {
-    background-color: #218838; /* Darker green on hover */
+.containerOT ul {
+    list-style-type: none; /* Remove default list styling */
 }
 
-/* Footer styles */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+.containerOT li {
+    margin: 10px 0; /* Space between list items */
 }
 
-footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
+.containerOT a {
+    color: #ff4500; /* Orange red for links */
+    text-decoration: underline; /* Underline for links */
 }
 
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Section styles */
-.section {
-    margin-bottom: 20px;
-}
-
-/* Content styles */
-.content {
-    display: none; /* Initially hidden */
-    padding-left: 20px; /* Indent for nested content */
-    border-left: 2px solid #007BFF; /* Blue accent for the border */
-    margin-top: 10px; /* Space above content */
-}
-
-/* Show content when toggled */
-#content0 {
-    display: block; /* Show content when the sidebar is toggled */
-}
-
-#content1:target, #content2:target, #content3:target {
-    display: block; /* Show content when targeted */
-}
-
-/* Answer button styles */
-.answer-button {
-    margin: 5px;
-    padding: 10px;
-    background-color: #007BFF; /* Blue background */
-    color: white; /* White text */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor */
-    transition: background-color 0.3s;
-}
-
-.answer-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-.answer-button:disabled {
-    background-color: #ccc; /* Gray background for disabled buttons */
-    cursor: not-allowed; /* Not-allowed cursor */
-}
-
-/* Focus styles for buttons */
-.answer-button:focus,
-#refreshButton:focus {
-    outline: none; /* Remove default outline */
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add a blue glow effect */
-    border: 2px solid #0056b3; /* Optional: Add a border for better visibility */
-}
-
-/* Hover styles */
-.answer-button:hover {
-    background-color: #0056b3;
+.containerOT a:hover {
+    color: #ff6347; /* Darker coral on hover */
 }

@@ -8,14 +8,9 @@
     <meta name="referrer" content="no-referrer">
     <meta http-equiv="Permissions-Policy" content=" geolocation=(), microphone=(), camera=(), fullscreen=(), payment=(), notifications=(), push=(), midi=(), sync-xhr=(), screen-wake-lock=(), ambient-light-sensor=(), accelerometer=(), gyroscope=(), magnetometer=(), clipboard=(), document-domain=(), web-share=(), screen-orientation=(), xr-spatial-tracking=()">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
-    <meta http-equiv="Content-Security-Policy" content="
-    default-src 'self';
-    script-src 'self';
-    style-src 'self';">
     <title>CIW JavaScript’s Specialist Amid</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
-
 </head>
 <body>
 
@@ -28,36 +23,131 @@
     </div>  
 
     <aside id="floatingCounters">
-        <h2><span id="clickCount">0</span>/105 <button id="refreshButton">Restart</button></h2>
-        <h2><span id="correctCountDisplay">0</span>: Correct</h2>
+        <h2 class="counter-header">
+            <span id="clickCount">0</span>/105
+            <button id="refreshButton">Restart</button>
+        </h2>
+        <div class="correct-display">
+            <span id="correctCountDisplay">0</span>
+            <span class="correct-label">Correct</span>
+        </div>
     </aside>
-
-    <section class="container">
+    
+    
+        <section class="container">
         <h2>3.1 Modify HTML with JavaScript</h2>
-        <article class="section">
-            <h3 class="toggle" onclick="toggleContent('content1')"><a href="#content1">3.1 Summary & Quick Review</a></h3>
-            <div class="content" id="content1">
-                <h4>3.1.1 Steps and Methods for Changing HTML “On The Fly”</h4>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+        
+        <h3 class="toggle" onclick="toggleContent('content1')"><a href="#content1">3.1 Summary & Quick Review</a></h3>
+        <section class="content" id="content1" style="display: none;">
+                <article class="section">
+                        <h4>3.1.1 Steps and Methods for Changing HTML “On The Fly”</h4>
+                        <p>JavaScript can dynamically alter your webpage’s structure or content by manipulating the DOM once the HTML is loaded.</p>
+                        <ul>
+                            <li><code>document.getElementById("id")</code>: Selects a single element by its unique id.</li>
+                            <li><code>document.getElementsByName("name")</code>: Selects elements by their name attribute (often used for forms).</li>
+                            <li><code>document.getElementsByTagName("tag")</code>: Returns a live collection of elements that match a specified tag (e.g., div, p).</li>
+                            <li><code>document.getElementsByClassName("class")</code>: Returns a live collection of elements that match a specific CSS class.</li>
+                            <li>Modern Approach:
+                                <ul>
+                                    <li><code>document.querySelector("cssSelector")</code>: Returns the first match.</li>
+                                    <li><code>document.querySelectorAll("cssSelector")</code>: Returns all matches as a static NodeList.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>Once selected, you can modify properties like <code>innerHTML</code>, <code>textContent</code>, and <code>style</code>.</p>
+                        <h5>Example:</h5>
+                        <pre><code>&lt;div class="message"&gt;Hello&lt;/div&gt;
+                &lt;script&gt;
+                let msgDiv = document.querySelector(".message");
+                msgDiv.textContent = "Hello, new content!";
+                msgDiv.style.color = "blue";
+                &lt;/script&gt;</code></pre>
+                        <p><strong>Why It Matters:</strong> Real-time updates to text, styles, or structure allow for dynamic and interactive user experiences.</p>
+
+                </article>
+            
+                <article class="section">
+                    <h3>3.1.2 Modify Attributes in HTML Using DOM Elements</h3>
+                    <div>
+                        <ul>
+                            <li><code>element.setAttribute("attributeName", "value")</code>: Dynamically change or add attributes.</li>
+                            <li><code>element.removeAttribute("attributeName")</code>: Remove an existing attribute.</li>
+                            <li>Direct Property Access: For some attributes, you can directly manipulate them (e.g., <code>img.src = "newImage.png";</code>).</li>
+                        </ul>
+                        <h5>Example:</h5>
+                        <pre><code>&lt;img id="myImg" src="oldImage.png" alt="Old Image"&gt;
+                &lt;script&gt;
+                let myImg = document.getElementById("myImg");
+                myImg.setAttribute("src", "newImage.png");
+                myImg.alt = "New Image"; // direct property
+                &lt;/script&gt;</code></pre>
+                        <p><strong>Pitfalls:</strong> Confusing the difference between <code>element.attribute</code> (property access) and <code>element.setAttribute()</code> (DOM attribute-level manipulation). In many cases, they behave the same, but with certain properties (like <code>value</code> vs. <code>defaultValue</code> on form inputs), behavior can differ.</p>
+                    </div>
+                </article>
+            
+                <article class="section">
+                    <h3>3.1.3 Modify Form Object Values</h3>
+                    <div>
+                        <p>You can grab input fields (text fields, checkboxes, radio buttons, etc.) and change or read their values in real time.</p>
+                        <h5>Example:</h5>
+                        <pre><code>&lt;input type="text" id="username" value="Alice"&gt;
+                    &lt;button onclick="changeUser()"&gt;Change Username&lt;/button&gt;
+                &lt;script&gt;
+                function changeUser() {
+                    let userInput = document.getElementById("username");
+                    userInput.value = "Bob"; // change the text field to "Bob"
+                }
+                &lt;/script&gt;</code></pre>
+                <p><strong>Why It Matters:</strong> Real-time updates to text, styles, or structure allow for dynamic and interactive user experiences.</p>
             </div>
-        </article>
-    </section>
+        
+            <article class="section">
+                <h3>3.1.2 Modify Attributes in HTML Using DOM Elements</h3>
+                <div>
+                    <ul>
+                        <li><code>element.setAttribute("attributeName", "value")</code>: Dynamically change or add attributes.</li>
+                        <li><code>element.removeAttribute("attributeName")</code>: Remove an existing attribute.</li>
+                        <li>Direct Property Access: For some attributes, you can directly manipulate them (e.g., <code>img.src = "newImage.png";</code>).</li>
+                    </ul>
+                    <h5>Example:</h5>
+                    <pre><code>&lt;img id="myImg" src="oldImage.png" alt="Old Image"&gt;
+                    &lt;script&gt;
+                    let myImg = document.getElementById("myImg");
+                    myImg.setAttribute("src", "newImage.png");
+                    myImg.alt = "New Image"; // direct property
+                    &lt;/script&gt;</code></pre>
+                    <p><strong>Pitfalls:</strong> Confusing the difference between <code>element.attribute</code> (property access) and <code>element.setAttribute()</code> (DOM attribute-level manipulation). In many cases, they behave the same, but with certain properties (like <code>value</code> vs. <code>defaultValue</code> on form inputs), behavior can differ.</p>
+                </div>
+            </article>
+            
+            <article class="section">
+                <h3>3.1.3 Modify Form Object Values</h3>
+                <div>
+                    <p>You can grab input fields (text fields, checkboxes, radio buttons, etc.) and change or read their values in real time.</p>
+                    <h5>Example:</h5>
+                    <pre><code>&lt;input type="text" id="username" value="Alice"&gt;
+                    &lt;button onclick="changeUser()"&gt;Change Username&lt;/button&gt;
+                    &lt;script&gt;
+                    function changeUser() {
+                        let userInput = document.getElementById("username");
+                        userInput.value = "Bob"; // change the text field to "Bob"
+                    }
+                    &lt;/script&gt;</code></pre>
+                    <p><strong>Why It Matters:</strong> Dynamically updating form values helps create more interactive user experiences (e.g., autofill suggestions, clearing forms, etc.).</p>
+                </div>
+            </article>
+        </section>
+        </section>
+    
 
     <section class="topic">
-        <h3>Topic 1</h3>
+        <h3>3.1.1 Steps and Methods for Changing HTML “On The Fly”</h3>
         <div id="quiz"></div>
         <div class="result" id="result1" aria-live="polite"></div>
     </section>
     
     <section class="topic">
-        <h3>Topic 2</h3>
+        <h3>3.1.2 Modify Attributes in HTML Using DOM Elements</h3>
         <div id="quiz2"></div>
         <div class="result" id="result2" aria-live="polite"></div>
     </section>        
@@ -79,17 +169,41 @@
     </section>
 
     <section class="topic">
-        <h3>Topic 3</h3>
+        <h3>3.2.1 Identify and Use Form Controls (Including HTML5)</h3>
         <div id="quiz3"></div>
         <div class="result" id="result3" aria-live="polite"></div>
     </section>        
     
     <section class="topic">
-        <h3>Topic 4</h3>
+        <h3>3.2.2 Define the Form Object</h3>
         <div id="quiz4"></div>
         <div class="result" id="result4" aria-live="polite"></div>
     </section>
+
+    <section class="topic">
+        <h3>3.2.3 Refer to Form Objects</h3>
+        <div id="quiz5"></div>
+        <div class="result" id="result5" aria-live="polite"></div>
+    </section>
     
+    <section class="topic">
+        <h3>3.2.4 Use Form Objects</h3>
+        <div id="quiz6"></div>
+        <div class="result" id="result6" aria-live="polite"></div>
+    </section>
+
+    <section class="topic">
+        <h3>3.2.5 Conduct Form Validation</h3>
+        <div id="quiz7"></div>
+        <div class="result" id="result7" aria-live="polite"></div>
+    </section>
+
+    <section class="topic">
+        <h3>3.2.6 Identify Common Form Security Issues</h3>
+        <div id="quiz8"></div>
+        <div class="result" id="result8" aria-live="polite"></div>
+    </section>
+
     <section class="container">
         <h2>3.3 Address JavaScript Security Issues Involving Browsers and Cookies</h2>
         <article class="section">
@@ -117,14 +231,14 @@
     
     <section class="topic">
         <h3>Topic 5</h3>
-        <div id="quiz5"></div>
-        <div class="result" id="result5" aria-live="polite"></div>
+        <div id="quiz9"></div>
+        <div class="result" id="result9" aria-live="polite"></div>
     </section>
     
     <section class="topic">
         <h3>Topic 6</h3>
-        <div id="quiz6"></div>
-        <div class="result" id="result6" aria-live="polite"></div>
+        <div id="quiz10"></div>
+        <div class="result" id="result10" aria-live="polite"></div>
     </section>
 
     <div class="containerOT" id="OtherTreats">
