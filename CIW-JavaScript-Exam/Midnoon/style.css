@@ -13,9 +13,51 @@ body {
     color: #333;
     margin: 20px;
     padding: 20px;
-    scrollbar-track-color: #f9f9f9;;
+    scrollbar-color: #f9f9f9; /* Updated for better compatibility */
 }
 
+/* Container styles */
+.containerOT {
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding inside the container */
+    margin: 20px 0; /* Margin above and below the container */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Heading styles */
+.containerOT h3 {
+    color: #4a90e2; /* Soft blue color for the heading */
+    font-size: 1.8em; /* Font size for the heading */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+/* List styles */
+.containerOT ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+.containerOT ul li {
+    margin: 10px 0; /* Space between list items */
+}
+
+.containerOT ul li a {
+    color: #007BFF; /* Blue color for links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 8px; /* Padding for clickable area */
+    border-radius: 4px; /* Rounded corners for links */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.containerOT ul li a:hover {
+    background-color: #e0e0e0; /* Light gray background on hover */
+    color: #0056b3; /* Darker blue text on hover */
+}
+
+
+/* Heading styles */
 h1 {
     text-align: center;
     color: #4a90e2; /* Soft blue */
@@ -37,16 +79,10 @@ h3 {
 
 h4 {
     color: #4682b4; /* Steel blue */
-    font-size: 1.2em;
-    margin-top: 15px;
-}
-/* Heading styles */
-h4 {
-    font-size: 1.5em;
-    color: #4a90e2; /* Soft blue color */
+    font-size: 1.5em; /* Consistent font size */
     border-bottom: 2px solid #e1e1e1;
     padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin: 20px 0; /* Combined margin for consistency */
 }
 
 /* Unordered list styles */
@@ -67,18 +103,11 @@ ul {
 }
 
 .list-container-ul {
-    list-style-type: disc; /* Use disc style for list items */
     padding-left: 20px; /* Indent the list items */
 }
 
 .list-container-ul-li {
     margin-bottom: 8px; /* Space between list items */
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-/* List item styles */
-li {
-    margin-bottom: 10px;
 }
 
 /* Strong text styles */
@@ -104,6 +133,7 @@ code {
     border-radius: 3px; /* Rounded corners */
 }
 
+/* Responsive styles */
 @media (max-width: 600px) {
     body {
         padding: 10px;
@@ -124,14 +154,17 @@ code {
     h4 {
         font-size: 1.1em;
     }
+
     ul {
         margin-left: 15px; /* Adjust margin for smaller screens */
     }
+
     pre {
         padding: 10px; /* Less padding on smaller screens */
     }
 }
 
+/* Container styles */
 .container {
     background-color: #ffffff; /* White */
     border: 1px solid #e0e0e0; /* Light gray */
@@ -141,6 +174,7 @@ code {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
+/* Topic styles */
 .topic {
     margin-bottom: 20px;
     padding: 10px;
@@ -148,11 +182,13 @@ code {
     background-color: #f9f9f9; /* Light gray background */
 }
 
+/* Question and result styles */
 .question {
     margin-bottom: 15px;
     font-weight: bold;
     white-space: pre-line; /* This will render newline characters as line breaks */
 }
+/* ? */
 
 .result {
     margin-top: 10px;
@@ -160,6 +196,7 @@ code {
     color: #2e8b57; /* Sea green */
 }
 
+/* Feather cap styles */
 .featherCap {
     width: 100px;
     height: 50px;
@@ -173,11 +210,12 @@ code {
     width: 30px; /* Adjust size as needed */
     bottom: 100%; /* Start above the hat */
     left: 0%; /* Center the feather */
-    transform: translateX(-0%);
+    transform: translateX(-50%); /* Center the feather */
     opacity: 0; /* Start invisible */
     transition: opacity 0.5s ease, transform 1s ease; /* Add transform for animation */
 }
 
+/* Button styles */
 .feather-button {
     background-color: #f0e5ff; /* Soft lavender background */
     color: #4a2c91; /* Deep lavender text color */
@@ -206,6 +244,7 @@ code {
     cursor: not-allowed; /* Not-allowed cursor */
 }
 
+/* Answer button styles */
 .answer-button {
     margin: 5px;
     padding: 10px;
@@ -214,6 +253,7 @@ code {
     border: none; /* No border */
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s;
 }
 
 .answer-button:hover {
@@ -225,7 +265,27 @@ code {
     cursor: not-allowed; /* Not-allowed cursor */
 }
 
-/* CSS to make the counters float in the top right corner */
+/*  */
+/*  */
+
+
+
+        /* Focus styles for buttons */
+        .answer-button:focus,
+        #refreshButton:focus {
+            outline: none; /* Remove default outline */
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add a blue glow effect */
+            border: 2px solid #0056b3; /* Optional: Add a border for better visibility */
+        }
+
+        /* Hover styles */
+        .answer-button:hover {
+            background-color: #0056b3;
+        }
+/*  */
+/*  */
+
+/* Floating counters styles */
 #floatingCounters {
     position: fixed; /* Fixed position to follow the screen */
     top: 10px; /* Distance from the top */
@@ -251,6 +311,7 @@ code {
     background-color: #218838; /* Darker green on hover */
 }
 
+/* Footer styles */
 footer {
     background-color: #333;
     color: white;
@@ -271,89 +332,108 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Section styles */
 .section {
     margin-bottom: 20px;
 }
 
-
-
+/* Content styles */
 .content {
     display: none; /* Initially hidden */
-    padding-left: 20px;
-    border-left: 2px solid #007BFF;
-    margin-top: 10px;
+    padding-left: 20px; /* Indent for nested content */
+    border-left: 2px solid #007BFF; /* Blue accent for the border */
+    margin-top: 10px; /* Space above content */
 }
-#content1:target { display: block;}
-#content2:target { display: block;}
-#content3:target { display: block;}
 
-/*
-// Plans for future intergradation
-// Sidebar
-#a111:target{display: block;}
-#a112:target{display: block;}
-#a113:target{display: block;}
-#a114:target{display: block;}
-#a115:target{display: block;}
-#a116:target{display: block;}
-#quiz:target{display: block;}
-#a121:target{display: block;}
-#a122:target{display: block;}
-#a123:target{display: block;}
-#a124:target{display: block;}
-#a125:target{display: block;}
-#a126:target{display: block;}
-#a127:target{display: block;}
-#a128:target{display: block;}
-#quiz7:target{display: block;}
-#a131:target{display: block;}
-#a132:target{display: block;}
-#a133:target{display: block;}
-#a134:target{display: block;}
-#a135:target{display: block;}
-#a136:target{display: block;}
-#a137:target{display: block;}
-#quiz15:target{display: block;} 
+/* Show content when toggled */
+#content0 {
+    display: block; /* Show content when the sidebar is toggled */
+}
 
+#content1:target, #content2:target, #content3:target {
+    display: block; /* Show content when targeted */
+}
+
+/* Future integration plans for sidebar */
+#a111:target, #a112:target, #a113:target, #a114:target, #a115:target,
+#a116:target, #quiz:target, #a121:target, #a122:target, #a123:target,
+#a124:target, #a125:target, #a126:target, #a127:target, #a128:target,
+#quiz7:target, #a131:target, #a132:target, #a133:target, #a134:target,
+#a135:target, #a136:target, #a137:target, #quiz15:target {
+    display: block; /* Show sidebar items when targeted */
+}
+
+/* Sidebar styles */
 .sidebar {
-    width: 75px; 
-    background-color: #333;
-    color: #fff;
-    padding: 0px;
+    width: 250px; /* Set a fixed width for the sidebar */
+    background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent dark background */
+    color: #fff; /* White text */
+    padding: 15px; /* Padding for spacing */
     border-radius: 5px; 
-    position: fixed; 
-    top: 180px; 
-    right: 0px; 
-    height: 90%; 
-    overflow-y: auto; 
+    position: fixed; /* Fixed position */
+    top: 20px; /* Distance from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to center */
+    max-height: 80%; /* Limit height for overflow */
+    overflow-y: auto; /* Scroll if content exceeds max height */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    z-index: 1000; /* Ensure it stays on top */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Change background color on hover */
+.sidebar:hover {
+    background-color: rgba(51, 51, 51, 0.9); /* Darker background on hover */
 }
 
 .sidebar h2 {
-    font-size: small;
+    font-size: 1.5em; /* Larger font size for the title */
     margin-bottom: 15px;
+    cursor: pointer; /* Pointer cursor for toggle */
 }
 
 .sidebar ul {
-    font-size: smaller;
-    list-style-type: none;
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
 }
 
 .sidebar ul li {
-    margin: 10px 0;
+    margin: 10px 0; /* Space between list items */
 }
 
 .sidebar ul li a {
-    color: #fff;
-    text-decoration: none;
+    color: #fff; /* White text for links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 8px; /* Add padding for clickable area */
+    border-radius: 4px; /* Rounded corners for links */
+    transition: background-color 0.3s ease; /* Smooth background transition */
 }
 
 .sidebar ul li a:hover {
-    text-decoration: underline;
+    background-color: #4a90e2; /* Change background on hover */
+    color: #fff; /* Ensure text remains white on hover */
 }
-*/
 
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 100%; /* Full width on small screens */
+        position: relative; /* Change position to relative */
+        max-height: none; /* Remove max height */
+        left: 0; /* Align to the left */
+        transform: none; /* Remove centering transform */
+    }
+
+    .sidebar h2 {
+        font-size: 1.2em; /* Smaller font size for the title */
+    }
+
+    .sidebar ul li {
+        margin: 5px 0; /* Reduce margin for smaller screens */
+    }
+}
+
+/* Toggle styles */
 .toggle {
     cursor: pointer;
     color: #007BFF;
@@ -361,5 +441,5 @@ footer a:hover {
 }
 
 .toggle:hover {
-    color: #0056b3;
+    color: #0056b3; /* Darker blue on hover */
 }

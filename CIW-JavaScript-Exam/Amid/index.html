@@ -10,32 +10,146 @@
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
     <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
-    script-src 'self' 'sha256-encoded-hash';
-    style-src 'self' 'sha256-encoded-hash';
-    img-src 'self' https:/example/image.example.com;
-    font-src 'self' https:/example/fonts.googleapis.com;
-    connect-src 'self' https:/example/api.example.com;
-    media-src 'self' https:/example/media.example.com;
-    frame-src 'self' https:/example/www.youtube.com;
-    object-src 'none';
-    base-uri 'self';
-    form-action 'self' https:/example/form.example.com;
-    frame-ancestors 'self';
-    upgrade-insecure-requests;
-    block-all-mixed-content;
-    report-uri /csp-violation-report-endpoint;">
+    script-src 'self';
+    style-src 'self';">
     <title>CIW JavaScript’s Specialist Amid</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 
-    <link rel="stylesheet" href="example-style.txt"
-        integrity="sha384-<base64-encoded-hash>"
-        crossorigin="anonymous">
-
-    <script defer src="https:/example/example.com/external-script.txt"
-        integrity="sha384-<base64-encoded-hash>"
-        crossorigin="anonymous">
-    </script>
 </head>
 <body>
-    This is a placeholder for Applied JavaScript
+
+    <div class="container">
+        <div class="featherCap"></div>
+        <img src="/CIW-JavaScript-Exam\feather.png" alt="Feather" class="feather" id="feather">
+        <button id="featherButton" class="feather-button">
+            <h1>Applied JavaScript</h1>
+        </button>
+    </div>  
+
+    <aside id="floatingCounters">
+        <h2><span id="clickCount">0</span>/105 <button id="refreshButton">Restart</button></h2>
+        <h2><span id="correctCountDisplay">0</span>: Correct</h2>
+    </aside>
+
+    <section class="container">
+        <h2>3.1 Modify HTML with JavaScript</h2>
+        <article class="section">
+            <h3 class="toggle" onclick="toggleContent('content1')"><a href="#content1">3.1 Summary & Quick Review</a></h3>
+            <div class="content" id="content1">
+                <h4>3.1.1 Steps and Methods for Changing HTML “On The Fly”</h4>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </article>
+    </section>
+
+    <section class="topic">
+        <h3>Topic 1</h3>
+        <div id="quiz"></div>
+        <div class="result" id="result1" aria-live="polite"></div>
+    </section>
+    
+    <section class="topic">
+        <h3>Topic 2</h3>
+        <div id="quiz2"></div>
+        <div class="result" id="result2" aria-live="polite"></div>
+    </section>        
+
+    <section class="container">
+        <h2>3.2 Use JavaScript to Develop Interactive Forms</h2>
+        <article class="section">
+            <h3 class="toggle" onclick="toggleContent('content2')"><a href="#content2">3.2 Summary & Quick Review</a></h3>
+            <div class="content" id="content2">
+                <h4 id="a121">3.2.1 Identify and Use Form Controls (Including HTML5)</h4>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </article>
+    </section>
+
+    <section class="topic">
+        <h3>Topic 3</h3>
+        <div id="quiz3"></div>
+        <div class="result" id="result3" aria-live="polite"></div>
+    </section>        
+    
+    <section class="topic">
+        <h3>Topic 4</h3>
+        <div id="quiz4"></div>
+        <div class="result" id="result4" aria-live="polite"></div>
+    </section>
+    
+    <section class="container">
+        <h2>3.3 Address JavaScript Security Issues Involving Browsers and Cookies</h2>
+        <article class="section">
+            <h3 class="toggle" onclick="toggleContent('content3')"><a href="#content3">3.3 Summary & Quick Review</a></h3>
+            <div class="content" id="content3">
+                <h4 id="a331">3.3.1 Distinguish Between Browser and OS Security</h4>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <ul>
+                        <li><strong></strong></li>
+                        <li><strong></strong></li>
+                    </ul>
+                    <li>Example of the topic here:</li>
+                </ul>
+                <pre>
+                <code>
+                    // topic's example code here
+                </code>
+                </pre>
+            </div>
+        </article>
+    </section>
+    
+    <section class="topic">
+        <h3>Topic 5</h3>
+        <div id="quiz5"></div>
+        <div class="result" id="result5" aria-live="polite"></div>
+    </section>
+    
+    <section class="topic">
+        <h3>Topic 6</h3>
+        <div id="quiz6"></div>
+        <div class="result" id="result6" aria-live="polite"></div>
+    </section>
+
+    <div class="containerOT" id="OtherTreats">
+        <h3>Recommended Readings</h3>
+        <ul>
+            <li><a href="/CIW-JavaScript-Exam/Midnoon/index.html">Essential JavaScript Principles and Practices</a></li>
+            <li><a href="/CIW-JavaScript-Exam/Midtown/index.html">Intermediate JavaScript Programming Techniques</a></li>
+            <li><a href="/CIW-JavaScript-Exam/Doorman/index.html">JavaScript Technology Extensions</a></li>
+        </ul>
+    </div>
+
 </body>
+
+<footer>
+    <p>&copy; 2025 Vocational Motivation CIW-JavaScript-Exam. All rights reserved.</p>
+    <p>
+        <a href="#about">About</a> |
+        <a href="#services">Services</a> |
+        <a href="#contact">Contact</a>
+    </p>
+    <p>
+        Follow us on:
+        <a href="https://facebook.com" target="_blank">Facebook</a> |
+        <a href="https://twitter.com" target="_blank">Twitter</a> |
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+    </p>
+</footer>
 </html>
