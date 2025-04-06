@@ -199,7 +199,7 @@ function toggleContent(contentId) {
         document.getElementById('clickCount').innerText = count;
         document.getElementById('correctCountDisplay').innerText = correctCount;
         document.querySelectorAll('.result').forEach(resultDiv => resultDiv.innerText = '');
-        document.querySelectorAll('.topic > div').forEach(quizDiv => quizDiv.innerHTML = '');
+        document.querySelectorAll('.topic > div').forEach(quizDiv => quizDiv.textContent = '');
         startQuiz(questions, 'quiz', 'result1');
         startQuiz(questions2, 'quiz2', 'result2');
         startQuiz(questions3, 'quiz3', 'result3');

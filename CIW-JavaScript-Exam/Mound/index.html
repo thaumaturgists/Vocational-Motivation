@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Permissions-Policy" content=" geolocation=(), microphone=(), camera=(), fullscreen=(), payment=(), notifications=(), push=(), midi=(), sync-xhr=(), screen-wake-lock=(), ambient-light-sensor=(), accelerometer=(), gyroscope=(), magnetometer=(), clipboard=(), document-domain=(), web-share=(), screen-orientation=(), xr-spatial-tracking=()">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
     <title>Document Mound</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="scripts.js"></script>
@@ -29,10 +33,10 @@
     </aside>
 
     <section class="container">
-        <h2>0.1_your_Topic_here</h2>
-        <article class="section">
-            <h3 class="toggle" onclick="toggleContent('content1')"><a href="#content1">Summery & Quick Review</a></h3>
-            <div class="content" id="content1">
+        <h2>0.1_your_topic_here</h2> 
+        <h3 class="toggle" onclick="toggleContent('content1')"><a href="#content1">Summary & Quick Review</a></h3>
+        <div class="content" id="content1">
+            <article class="section">
                 <h4 id="a_Topic_ID">0.1.1_sub_topic</h4>
                 <ul>
                     <li></li>
@@ -42,9 +46,28 @@
                     <li></li>
                     <li></li>
                 </ul>
-            </div>
-        </article>
+            </article>
+        </div>
     </section>
+    <!--Reminder for changing content id.
+
+        <section class="container">
+        <h2>0.1_your_topic_here</h2> 
+        <h3 class="toggle" onclick="toggleContent('change_content_id_here')"><a href="#change_content_id_here">Summary & Quick Review</a></h3>
+        <div class="content" id="change_content_id_here_to_this">
+            <article class="section">
+                <h4 id="a_Topic_ID">0.1.1_sub_topic</h4>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </article>
+        </div>
+    </section>-->
 
     <section class="topic">
         <h3>0.1.1_sub_topic</h3>
@@ -59,10 +82,10 @@
     </section>         
     
     <section class="container">
-        <h2>0.2_your_topic_here</h2>
-        <article class="section">
-            <h3 class="toggle" onclick="toggleContent('content2')"><a href="#content2">Summery & Quick Review</a></h3>
-            <div class="content" id="content2">
+        <h2>0.2_your_topic_here</h2> 
+        <h3 class="toggle" onclick="toggleContent('content2')"><a href="#content2">Summary & Quick Review</a></h3>
+        <div class="content" id="content2">
+            <article class="section">
                 <h4 id="a_Topic_ID">0.2.1_sub_topic</h4>
                 <ul>
                     <li></li>
@@ -70,8 +93,8 @@
                     <li></li>
                     <li></li>
                 </ul>
-            </div>
-        </article>
+            </article>
+        </div>
     </section>
 
     <section class="topic">
@@ -87,10 +110,10 @@
     </section>
     
     <section class="container">
-        <h2>0.3_your_topic_here</h2>
-        <article class="section">
-            <h3 class="toggle" onclick="toggleContent('content3')"><a href="#content3">Summery & Quick Review</a></h3>
-            <div class="content" id="content3">
+        <h2>0.3_your_topic_here</h2> 
+        <h3 class="toggle" onclick="toggleContent('content3')"><a href="#content3">Summary & Quick Review</a></h3>
+        <div class="content" id="content3">
+            <article class="section">
                 <h4 id="a_Topic_ID">0.3.1_sub_topic</h4>
                 <ul>
                     <li></li>
@@ -107,8 +130,8 @@
                     // topic's example code here
                 </code>
                 </pre>
-            </div>
-        </article>
+            </article>
+        </div>
     </section>
 
     <section class="topic">

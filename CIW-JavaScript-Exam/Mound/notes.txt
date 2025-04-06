@@ -81,3 +81,27 @@ This will ensure that the << and >> operators are displayed correctly in your HT
                 // Check if the content is currently hidden or not displayed
                 content.style.display = (content.style.display === 'block') ? 'none' : 'block';
         }
+
+# Event listiner to hide contents of document
+    // Initialize all content sections to be hidden
+    document.addEventListener("DOMContentLoaded", function() {
+        const contents = document.querySelectorAll('.content');
+        contents.forEach(content => {
+            content.style.display = "none";
+        });
+    });
+
+# JavaScript Questions and Answers format:
+    const questions = [
+        {
+            question: "your_question_here", 
+            answers: [
+                "pick_your_answer_here_1",
+                "pick_your_answer_here_2",
+                "pick_your_answer_here_3",
+                "pick_your_answer_here_4",
+                "and_so_on_..."
+            ],
+            correct: "pick_your_answer_3"
+        },
+    ]

@@ -24,7 +24,7 @@
 
     <aside id="floatingCounters">
         <h2 class="counter-header">
-            <span id="clickCount">0</span>/105
+            <span id="clickCount">0</span>/90
             <button id="refreshButton">Restart</button>
         </h2>
         <div class="correct-display">
@@ -34,72 +34,38 @@
     </aside>
     
     
-        <section class="container">
-        <h2>3.1 Modify HTML with JavaScript</h2>
-        
-        <h3 class="toggle" onclick="toggleContent('content1')"><a href="#content1">3.1 Summary & Quick Review</a></h3>
-        <section class="content" id="content1" style="display: none;">
-                <article class="section">
-                        <h4>3.1.1 Steps and Methods for Changing HTML “On The Fly”</h4>
-                        <p>JavaScript can dynamically alter your webpage’s structure or content by manipulating the DOM once the HTML is loaded.</p>
-                        <ul>
-                            <li><code>document.getElementById("id")</code>: Selects a single element by its unique id.</li>
-                            <li><code>document.getElementsByName("name")</code>: Selects elements by their name attribute (often used for forms).</li>
-                            <li><code>document.getElementsByTagName("tag")</code>: Returns a live collection of elements that match a specified tag (e.g., div, p).</li>
-                            <li><code>document.getElementsByClassName("class")</code>: Returns a live collection of elements that match a specific CSS class.</li>
-                            <li>Modern Approach:
-                                <ul>
-                                    <li><code>document.querySelector("cssSelector")</code>: Returns the first match.</li>
-                                    <li><code>document.querySelectorAll("cssSelector")</code>: Returns all matches as a static NodeList.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <p>Once selected, you can modify properties like <code>innerHTML</code>, <code>textContent</code>, and <code>style</code>.</p>
-                        <h5>Example:</h5>
-                        <pre><code>&lt;div class="message"&gt;Hello&lt;/div&gt;
-                &lt;script&gt;
-                let msgDiv = document.querySelector(".message");
-                msgDiv.textContent = "Hello, new content!";
-                msgDiv.style.color = "blue";
-                &lt;/script&gt;</code></pre>
-                        <p><strong>Why It Matters:</strong> Real-time updates to text, styles, or structure allow for dynamic and interactive user experiences.</p>
+<main class="container">
 
-                </article>
-            
-                <article class="section">
-                    <h3>3.1.2 Modify Attributes in HTML Using DOM Elements</h3>
-                    <div>
-                        <ul>
-                            <li><code>element.setAttribute("attributeName", "value")</code>: Dynamically change or add attributes.</li>
-                            <li><code>element.removeAttribute("attributeName")</code>: Remove an existing attribute.</li>
-                            <li>Direct Property Access: For some attributes, you can directly manipulate them (e.g., <code>img.src = "newImage.png";</code>).</li>
-                        </ul>
-                        <h5>Example:</h5>
-                        <pre><code>&lt;img id="myImg" src="oldImage.png" alt="Old Image"&gt;
-                &lt;script&gt;
-                let myImg = document.getElementById("myImg");
-                myImg.setAttribute("src", "newImage.png");
-                myImg.alt = "New Image"; // direct property
-                &lt;/script&gt;</code></pre>
-                        <p><strong>Pitfalls:</strong> Confusing the difference between <code>element.attribute</code> (property access) and <code>element.setAttribute()</code> (DOM attribute-level manipulation). In many cases, they behave the same, but with certain properties (like <code>value</code> vs. <code>defaultValue</code> on form inputs), behavior can differ.</p>
-                    </div>
-                </article>
-            
-                <article class="section">
-                    <h3>3.1.3 Modify Form Object Values</h3>
-                    <div>
-                        <p>You can grab input fields (text fields, checkboxes, radio buttons, etc.) and change or read their values in real time.</p>
-                        <h5>Example:</h5>
-                        <pre><code>&lt;input type="text" id="username" value="Alice"&gt;
-                    &lt;button onclick="changeUser()"&gt;Change Username&lt;/button&gt;
-                &lt;script&gt;
-                function changeUser() {
-                    let userInput = document.getElementById("username");
-                    userInput.value = "Bob"; // change the text field to "Bob"
-                }
-                &lt;/script&gt;</code></pre>
-                <p><strong>Why It Matters:</strong> Real-time updates to text, styles, or structure allow for dynamic and interactive user experiences.</p>
-            </div>
+    <section class="container">
+        <h2>3.1 Modify HTML with JavaScript</h2>
+        <h3 class="toggle" onclick="toggleContent('content1')"><a href="#content1">Summary & Quick Review</a></h3>
+        <div class="content" id="content1" style="display: none;">
+            <article class="section">
+                    <h4 id="a311">3.1.1 Steps and Methods for Changing HTML “On The Fly”</h4>
+                    <p>JavaScript can dynamically alter your webpage’s structure or content by manipulating the DOM once the HTML is loaded.</p>
+                    <ul>
+                        <li><code>document.getElementById("id")</code>: Selects a single element by its unique id.</li>
+                        <li><code>document.getElementsByName("name")</code>: Selects elements by their name attribute (often used for forms).</li>
+                        <li><code>document.getElementsByTagName("tag")</code>: Returns a live collection of elements that match a specified tag (e.g., div, p).</li>
+                        <li><code>document.getElementsByClassName("class")</code>: Returns a live collection of elements that match a specific CSS class.</li>
+                        <li>Modern Approach:
+                            <ul>
+                                <li><code>document.querySelector("cssSelector")</code>: Returns the first match.</li>
+                                <li><code>document.querySelectorAll("cssSelector")</code>: Returns all matches as a static NodeList.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>Once selected, you can modify properties like <code>innerHTML</code>, <code>textContent</code>, and <code>style</code>.</p>
+                    <h5>Example:</h5>
+                    <pre><code>&lt;div class="message"&gt;Hello&lt;/div&gt;
+            &lt;script&gt;
+            let msgDiv = document.querySelector(".message");
+            msgDiv.textContent = "Hello, new content!";
+            msgDiv.style.color = "blue";
+            &lt;/script&gt;</code></pre>
+                    <p><strong>Why It Matters:</strong> Real-time updates to text, styles, or structure allow for dynamic and interactive user experiences.</p>
+
+            </article>
         
             <article class="section">
                 <h3>3.1.2 Modify Attributes in HTML Using DOM Elements</h3>
@@ -111,34 +77,33 @@
                     </ul>
                     <h5>Example:</h5>
                     <pre><code>&lt;img id="myImg" src="oldImage.png" alt="Old Image"&gt;
-                    &lt;script&gt;
-                    let myImg = document.getElementById("myImg");
-                    myImg.setAttribute("src", "newImage.png");
-                    myImg.alt = "New Image"; // direct property
-                    &lt;/script&gt;</code></pre>
+            &lt;script&gt;
+            let myImg = document.getElementById("myImg");
+            myImg.setAttribute("src", "newImage.png");
+            myImg.alt = "New Image"; // direct property
+            &lt;/script&gt;</code></pre>
                     <p><strong>Pitfalls:</strong> Confusing the difference between <code>element.attribute</code> (property access) and <code>element.setAttribute()</code> (DOM attribute-level manipulation). In many cases, they behave the same, but with certain properties (like <code>value</code> vs. <code>defaultValue</code> on form inputs), behavior can differ.</p>
                 </div>
             </article>
-            
+        
             <article class="section">
                 <h3>3.1.3 Modify Form Object Values</h3>
                 <div>
                     <p>You can grab input fields (text fields, checkboxes, radio buttons, etc.) and change or read their values in real time.</p>
                     <h5>Example:</h5>
                     <pre><code>&lt;input type="text" id="username" value="Alice"&gt;
-                    &lt;button onclick="changeUser()"&gt;Change Username&lt;/button&gt;
-                    &lt;script&gt;
-                    function changeUser() {
-                        let userInput = document.getElementById("username");
-                        userInput.value = "Bob"; // change the text field to "Bob"
-                    }
-                    &lt;/script&gt;</code></pre>
-                    <p><strong>Why It Matters:</strong> Dynamically updating form values helps create more interactive user experiences (e.g., autofill suggestions, clearing forms, etc.).</p>
+                &lt;button onclick="changeUser()"&gt;Change Username&lt;/button&gt;
+            &lt;script&gt;
+            function changeUser() {
+                let userInput = document.getElementById("username");
+                userInput.value = "Bob"; // change the text field to "Bob"
+            }
+            &lt;/script&gt;</code></pre>
+            <p><strong>Why It Matters:</strong> Real-time updates to text, styles, or structure allow for dynamic and interactive user experiences.</p>
                 </div>
             </article>
-        </section>
-        </section>
-    
+        </div>
+    </section>
 
     <section class="topic">
         <h3>3.1.1 Steps and Methods for Changing HTML “On The Fly”</h3>
@@ -150,96 +115,256 @@
         <h3>3.1.2 Modify Attributes in HTML Using DOM Elements</h3>
         <div id="quiz2"></div>
         <div class="result" id="result2" aria-live="polite"></div>
-    </section>        
-
-    <section class="container">
-        <h2>3.2 Use JavaScript to Develop Interactive Forms</h2>
-        <article class="section">
-            <h3 class="toggle" onclick="toggleContent('content2')"><a href="#content2">3.2 Summary & Quick Review</a></h3>
-            <div class="content" id="content2">
-                <h4 id="a121">3.2.1 Identify and Use Form Controls (Including HTML5)</h4>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-        </article>
     </section>
-
+    
     <section class="topic">
         <h3>3.2.1 Identify and Use Form Controls (Including HTML5)</h3>
         <div id="quiz3"></div>
         <div class="result" id="result3" aria-live="polite"></div>
-    </section>        
-    
-    <section class="topic">
-        <h3>3.2.2 Define the Form Object</h3>
-        <div id="quiz4"></div>
-        <div class="result" id="result4" aria-live="polite"></div>
-    </section>
-
-    <section class="topic">
-        <h3>3.2.3 Refer to Form Objects</h3>
-        <div id="quiz5"></div>
-        <div class="result" id="result5" aria-live="polite"></div>
-    </section>
-    
-    <section class="topic">
-        <h3>3.2.4 Use Form Objects</h3>
-        <div id="quiz6"></div>
-        <div class="result" id="result6" aria-live="polite"></div>
-    </section>
-
-    <section class="topic">
-        <h3>3.2.5 Conduct Form Validation</h3>
-        <div id="quiz7"></div>
-        <div class="result" id="result7" aria-live="polite"></div>
-    </section>
-
-    <section class="topic">
-        <h3>3.2.6 Identify Common Form Security Issues</h3>
-        <div id="quiz8"></div>
-        <div class="result" id="result8" aria-live="polite"></div>
-    </section>
+    </section>   
 
     <section class="container">
-        <h2>3.3 Address JavaScript Security Issues Involving Browsers and Cookies</h2>
-        <article class="section">
-            <h3 class="toggle" onclick="toggleContent('content3')"><a href="#content3">3.3 Summary & Quick Review</a></h3>
-            <div class="content" id="content3">
-                <h4 id="a331">3.3.1 Distinguish Between Browser and OS Security</h4>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+        <h2>3.2 Use JavaScript to Develop Interactive Forms</h2>
+        <h3 class="toggle" onclick="toggleContent('content2')"><a href="#content2">Summary & Quick Review</a></h3>
+        <div class="content" id="content2" style="display: none;">
+            <article class="section">
+                    <h4 id="a321">3.2.1 Identify and Use Form Controls</h4>
                     <ul>
-                        <li><strong></strong></li>
-                        <li><strong></strong></li>
+                        <li>Common form elements:
+                            <ul>
+                                <li>Text Fields: <code>&lt;input type="text"&gt;</code></li>
+                                <li>Radio Buttons: <code>&lt;input type="radio"&gt;</code></li>
+                                <li>Checkboxes: <code>&lt;input type="checkbox"&gt;</code></li>
+                                <li>Select Dropdowns: <code>&lt;select&gt;&lt;option&gt;...&lt;/option&gt;&lt;/select&gt;</code></li>
+                                <li>HTML5 additions: <code>&lt;input type="email"&gt;</code>, <code>&lt;input type="date"&gt;</code>, <code>&lt;input type="range"&gt;</code></li>
+                            </ul>
+                        </li>
+                        <li>Why It Matters: HTML5 provides built-in validation (e.g., <code>type="email"</code> ensures valid email format).</li>
                     </ul>
-                    <li>Example of the topic here:</li>
+            </article>
+        
+            <article class="section">
+                <h4>3.2.2 Define the Form Object</h4>
+                <ul>
+                    <li>Access forms via <code>document.forms</code> or <code>document.getElementById("formId")</code>.</li>
                 </ul>
-                <pre>
-                <code>
-                    // topic's example code here
-                </code>
-                </pre>
+            </article>
+        
+            <article class="section">
+                <h4>3.2.3 Refer to Form Objects</h4>
+                <ul>
+                    <li>Access form controls by their name attribute:</li>
+                    <pre><code>&lt;form id="myForm"&gt;
+            &lt;input type="text" name="username"&gt;
+        &lt;/form&gt;
+        
+        let theForm = document.getElementById("myForm");
+        console.log(theForm.username.value); // Access input via name</code></pre>
+                    <li>Avoid relying on <code>form.elements[0]</code> for robustness.</li>
+                </ul>
+            </article>
+        
+            <article class="section">
+                <h4>3.2.4 Use Form Objects</h4>
+                <ul>
+                    <li>Read values: <code>myForm.username.value</code></li>
+                    <li>Set values: <code>myForm.username.value = "Alice"</code></li>
+                    <li>Check status: <code>myForm.termsCheckbox.checked</code></li>
+                </ul>
+            </article>
+        
+            <article class="section">
+                <h4>3.2.5 Conduct Form Validation</h4>
+                <ul>
+                    <li>Client-Side Validation with JavaScript:
+                        <ul>
+                            <li>Check required fields, email format, password complexity, etc.</li>
+                        </ul>
+                    </li>
+                    <li>HTML5 Validation attributes: <code>required</code>, <code>pattern</code>, <code>minlength</code>, <code>maxlength</code></li>
+                    <li>Custom Validation Example:
+                        <pre><code>function validateForm() {
+            let emailField = document.getElementById("email");
+            if (!emailField.value.includes("@")) {
+                alert("Please enter a valid email.");
+                return false; // stops form submission
+            }
+            return true;
+        }</code></pre>
+                    </li>
+                    <li>Why Validate on Client-Side?
+                        <ul>
+                            <li>Quick feedback for users, minimal server load.</li>
+                            <li>Always combine with server-side validation for security.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+        
+            <article class="section">
+                <h4>3.2.6 Identify Common Form Security Issues</h4>
+                <ul>
+                    <li>Input Injection (XSS, SQL injection if not handled server-side).</li>
+                    <li>CSRF (Cross-Site Request Forgery) risks.</li>
+                    <li>Over-reliance on Client-Side Validation: Malicious users can bypass it.</li>
+                </ul>
+            </article>
+        </div>
+    </section>     
+        
+        <section class="topic">
+            <h3>3.2.2 Define the Form Object</h3>
+            <div id="quiz4"></div>
+            <div class="result" id="result4" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>3.2.3 Refer to Form Objects</h3>
+            <div id="quiz5"></div>
+            <div class="result" id="result5" aria-live="polite"></div>
+        </section>
+        
+        <section class="topic">
+            <h3>3.2.4 Use Form Objects</h3>
+            <div id="quiz6"></div>
+            <div class="result" id="result6" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>3.2.5 Conduct Form Validation</h3>
+            <div id="quiz7"></div>
+            <div class="result" id="result7" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>3.2.6 Identify Common Form Security Issues</h3>
+            <div id="quiz8"></div>
+            <div class="result" id="result8" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>3.2.6 Identify Common Form Security Issues</h3>
+            <div id="quiz9"></div>
+            <div class="result" id="result9" aria-live="polite"></div>
+        </section>
+
+        <section class="container">
+            <h2>3.3 Address JavaScript Security Issues Involving Browsers and Cookies</h2>
+            
+            <h3 class="toggle" onclick="toggleContent('content3')"><a href="#content3">Summary & Quick Review</a></h3>
+            <div class="content" id="content3" style="display: none;">
+                <article class="section">
+                    <h4 id="a331">3.3.1 Distinguish Between Browser and OS Security</h4>
+                    <ul>
+                        <li><strong>Browser Security:</strong> Sandboxes JavaScript from accessing OS resources directly.</li>
+                        <li><strong>Operating System Security:</strong> Manages deeper system-level operations, but JavaScript has no direct access in web scenarios.</li>
+                    </ul>
+        
+                    <h4>3.3.2 Browser Security Issues Relevant to JavaScript</h4>
+                    <ul>
+                        <li>Script Blocking: Users or extensions can block scripts.</li>
+                        <li>Frame-to-Frame URL Changing: Malicious behavior if scripts manipulate iframes outside their domain.</li>
+                        <li>document.write(): Can overwrite the entire page if used after the initial load; rarely recommended.</li>
+                    </ul>
+                    <p><strong>Pitfall:</strong> Overusing document.write() can lead to unexpected results.</p>
+        
+                    <h4>3.3.3 Signed Scripts</h4>
+                    <p>JavaScript can be digitally signed to indicate authenticity, relevant in secure environments.</p>
+        
+                    <h4>3.3.4 Client-Side Browser Detection & Compatibility</h4>
+                    <p>Use feature detection instead of navigator.userAgent due to potential spoofing.</p>
+        
+                    <h4>3.3.5 Common Issues for Creating Secure JavaScript Code</h4>
+                    <ul>
+                        <li>Never store sensitive information in plain text.</li>
+                        <li>Sanitize user input to prevent injection attacks.</li>
+                        <li>Use HTTPS to protect data in transit.</li>
+                        <li>Be cautious of third-party scripts.</li>
+                    </ul>
+        
+                    <h4>3.3.6 Define Cross-Site Scripting (XSS)</h4>
+                    <p>A vulnerability where attackers inject malicious scripts into trusted content, often from unsanitized user input.</p>
+        
+                    <h4>3.3.7 Functions and Common Uses of Cookies</h4>
+                    <ul>
+                        <li>Cookies store small data pieces (up to ~4KB) in the browser.</li>
+                        <li>Uses include session tracking, remembering preferences, and analytics.</li>
+                    </ul>
+        
+                    <h4>3.3.8 Manipulate Cookies Effectively</h4>
+                    <ul>
+                        <li><strong>Creating/Updating a Cookie:</strong> <code>document.cookie = "username=Alice; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";</code></li>
+                        <li><strong>Retrieving Cookies:</strong> <code>document.cookie</code> returns all cookies in key=value pairs.</li>
+                        <li><strong>Clearing Cookies:</strong> Set the cookie’s expires date to a past date.</li>
+                        <li><strong>Enable/Disable Cookies:</strong> This is a browser-level setting.</li>
+                    </ul>
+        
+                    <h4>3.3.9 Ethics in Collecting, Storing, Using, and Protecting User Data</h4>
+                    <ul>
+                        <li><strong>Consent:</strong> Inform users about data collection.</li>
+                        <li><strong>Minimize Data:</strong> Store only what’s necessary.</li>
+                        <li><strong>Security:</strong> Use encryption and secure transport (HTTPS).</li>
+                        <li><strong>Legal Considerations:</strong> Comply with GDPR, CCPA, etc.</li>
+                    </ul>
+                </article>
             </div>
-        </article>
-    </section>
+        </section>
     
     <section class="topic">
-        <h3>Topic 5</h3>
-        <div id="quiz9"></div>
-        <div class="result" id="result9" aria-live="polite"></div>
-    </section>
-    
-    <section class="topic">
-        <h3>Topic 6</h3>
+        <h3>3.3.1 Distinguish Between Browser and OS Security</h3>
         <div id="quiz10"></div>
         <div class="result" id="result10" aria-live="polite"></div>
     </section>
+
+    <section class="topic">
+        <h3>3.3.2 Browser Security Issues Relevant to JavaScript</h3>
+        <div id="quiz11"></div>
+        <div class="result" id="result11" aria-live="polite"></div>
+    </section>
+
+    <section class="topic">
+        <h3>3.3.3 Signed Scripts</h3>
+        <div id="quiz12"></div>
+        <div class="result" id="result12" aria-live="polite"></div>
+    </section>
+
+    <section class="topic">
+        <h3>3.3.4 Client-Side Browser Detection & Compatibility</h3>
+        <div id="quiz13"></div>
+        <div class="result" id="result13" aria-live="polite"></div>
+    </section>
+
+    <section class="topic">
+        <h3>3.3.5 Common Issues for Creating Secure JavaScript Code</h3>
+        <div id="quiz14"></div>
+        <div class="result" id="result14" aria-live="polite"></div>
+    </section>
+
+    <section class="topic">
+        <h3>3.3.6 Define Cross-Site Scripting (XSS)</h3>
+        <div id="quiz15"></div>
+        <div class="result" id="result15" aria-live="polite"></div>
+    </section>
+
+    <section class="topic">
+        <h3>3.3.7 Functions and Common Uses of Cookies</h3>
+        <div id="quiz16"></div>
+        <div class="result" id="result16" aria-live="polite"></div>
+    </section>
+
+    <section class="topic">
+        <h3>3.3.8 Manipulate Cookies Effectively</h3>
+        <div id="quiz17"></div>
+        <div class="result" id="result17" aria-live="polite"></div>
+    </section>
+
+    <section class="topic">
+        <h3>3.3.9 Ethics in Collecting, Storing, Using, and Protecting User Data</h3>
+        <div id="quiz18"></div>
+        <div class="result" id="result18" aria-live="polite"></div>
+    </section>
+
+</main>
 
     <div class="containerOT" id="OtherTreats">
         <h3>Recommended Readings</h3>
