@@ -47,7 +47,7 @@ This project is licensed under the [MIT License](LICENSE).
 - Inspired by the educational materials provided during school.
 
 ### Contact
-For any inquiries or feedback, please reach out to parting-saga-thigh@duck.com.
+For any inquiries or feedback, please reach out to [Connor](mailto:parting-saga-thigh@duck.com).
 
 ---
 # Website
