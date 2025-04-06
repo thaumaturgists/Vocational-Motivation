@@ -43,6 +43,23 @@ In this code:
 &gt; is the HTML entity for >
 This will ensure that the << and >> operators are displayed correctly in your HTML without causing any rendering issues.
 
+The yellow highlighting around the apostrophe (`'`) in your HTML could be due to a few reasons. Here are some common causes and how to address them:
+
+1. **Syntax Highlighting in Code Editors**: If you're using a code editor or an IDE, it might highlight certain characters or syntax for readability. This is usually not an issue when viewed in a web browser.
+
+2. **HTML Entities**: If you're using an apostrophe in HTML, it’s a good practice to use HTML entities to avoid any parsing issues. For an apostrophe, you can use `&apos;` or `&#39;`. For example:
+   ```html
+   <p>This is Alice&apos;s book.</p>
+   ```
+
+3. **CSS Styles**: If you have any CSS styles applied to your text, it might be causing the highlighting. Check your CSS for any styles that might be affecting the appearance of text, such as `background-color` or `border`.
+
+4. **Browser Extensions**: Sometimes, browser extensions can modify the appearance of text on web pages. Try disabling extensions to see if the issue persists.
+
+5. **Inspect Element**: Right-click on the highlighted apostrophe in your browser and select "Inspect" or "Inspect Element." This will open the developer tools and show you the HTML and CSS applied to that element. You can check if there are any styles causing the yellow highlight.
+
+If you provide more context or code snippets, I can help you troubleshoot further!
+
 # JavaScript Function toggleContent
         ## First one
             // This function shows or hides content when called
