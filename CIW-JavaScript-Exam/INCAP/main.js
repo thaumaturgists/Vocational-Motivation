@@ -1,120 +1,175 @@
 // main.js
+
+// We are importing two things from other files: 
+// 1. Quiz - which helps us create quizzes
+// 2. displayQuiz - which shows the quiz on the screen
 import { Quiz } from '/CIW-JavaScript-Exam/INCAP/quiz.js';
 import { displayQuiz } from '/CIW-JavaScript-Exam/INCAP/ui.js';
-// export const sharedCounts = {
-//     totalCount: 0,
-//     totalCorrectCount: 0
-// };
+
+// This is a special object that keeps track of how many questions we've answered
+// and how many of those were correct.
 window.sharedCounts = {
-    totalCount: 0,
-    totalCorrectCount: 0
+    totalCount: 0, // Total number of questions answered
+    totalCorrectCount: 0 // Total number of questions answered correctly
 };
+
+// We print the sharedCounts object to the console so we can see its values
 console.log('Shared Counts:', sharedCounts);
+
+// This is an async function that allows us to wait for things to finish before moving on
 (async function() {
-    // document.addEventListener('contextmenu', event => event.preventDefault());
-    // Define an object to hold all question sets
-    let questionSets = {};
+    let questionSets = {}; // This will hold all the sets of questions we get from a file
 
-    // Load questions from JSON file
     try {
+        // We are trying to fetch (get) questions from a JSON file
         console.log('Fetching questions from JSON file...');
-        const response = await fetch('data/questions.json');
-        const data = await response.json();
-        console.log('Questions loaded successfully:', data);
+        const response = await fetch('data/questions.json'); // Get the questions
+        const data = await response.json(); // Convert the response to JSON format
+        console.log('Questions loaded successfully:', data); // Show that we got the questions
 
-        // Dynamically create questionSets based on the keys in the JSON
+        // Check if we have question sets in the data we received
         if (data.questionSets) {
+            // For each question set we found, we add it to our questionSets object
             Object.keys(data.questionSets).forEach(key => {
                 questionSets[key] = data.questionSets[key];
                 console.log(`Loaded question set: ${key} with ${data.questionSets[key].length} questions.`);
             });
         } else {
+            // If we didn't find any question sets, we warn the user
             console.warn('No question sets found in the JSON data.');
         }
     } catch (error) {
+        // If there was an error while fetching the questions, we log it
         console.error('Error loading questions:', error);
-        return; // Exit if there's an error loading questions
+        return; // Stop the function if there was an error
     }
 
-    // Function to initialize quizzes
+    // This function creates quizzes from the question sets we loaded
     function initializeQuizzes() {
-        const quizzes = {};
+        const quizzes = {}; // This will hold our quizzes
         Object.keys(questionSets).forEach(key => {
-            quizzes[key] = new Quiz(questionSets[key]);
+            quizzes[key] = new Quiz(questionSets[key]); // Create a new quiz for each question set
             console.log(`Initialized quiz for question set: ${key}`);
         });
-        return quizzes;
+        return quizzes; // Return the quizzes we created
     }
 
-    // Initialize quizzes
-    let quizzes = initializeQuizzes();
+    let quizzes = initializeQuizzes(); // Call the function to create quizzes
 
+    // This function sets up the quiz when we start it
     function initializeQuiz() {
-        console.log('Initializing quiz...');
-        resetQuiz(); // Start the quiz
+        console.log('Initializing quiz...'); // Log that we are starting the quiz
+        resetQuiz(); // Reset any previous quiz data
         window.scrollTo(0, 0); // Scroll to the top of the page
     }
 
+    // This event listener waits for the webpage to load before starting the quiz
     document.addEventListener('DOMContentLoaded', () => {
-        console.log('Document loaded. Starting quiz...');
-        initializeQuiz(); // Start the quiz when the document is loaded
+        console.log('Document loaded. Starting quiz...'); // Log that the document is ready
+        initializeQuiz(); // Start the quiz
     });
 
+    // This code runs when the refresh button is clicked
     document.getElementById('refreshButton').onclick = () => {
-        console.log('Refresh button clicked. Resetting quiz...');
-        initializeQuiz(); // Reset the quiz when the refresh button is clicked
+        console.log('Refresh button clicked. Resetting quiz...'); // Log that the button was clicked
+        initializeQuiz(); // Start the quiz again
     };
 
+    // This function resets the quiz to its initial state
     function resetQuiz() {
-        console.log('Resetting quizzes...');
-        Object.values(quizzes).forEach(quiz => quiz.reset()); // This resets the quiz state but not the counts
-        document.getElementById('clickCount').innerText = 0; // Reset the displayed count to 0
-        document.getElementById('correctCountDisplay').innerText = 0; // Reset the displayed correct count to 0
-        document.querySelectorAll('.result').forEach(resultDiv => resultDiv.innerText = '');
-        document.querySelectorAll('.topic > div').forEach(quizDiv => quizDiv.textContent = '');
+        console.log('Resetting quizzes...'); // Log that we are resetting the quizzes
+        Object.values(quizzes).forEach(quiz => quiz.reset()); // Reset each quiz
+        document.getElementById('clickCount').innerText = 0; // Reset the click count display
+        document.getElementById('correctCountDisplay').innerText = 0; // Reset the correct answers display
+        document.querySelectorAll('.result').forEach(resultDiv => resultDiv.innerText = ''); // Clear results
+        document.querySelectorAll('.topic > div').forEach(quizDiv => quizDiv.textContent = ''); // Clear quiz topics
 
-        // Reset shared counts
-        window.sharedCounts.totalCount = 0; // Reset total count
-        window.sharedCounts.totalCorrectCount = 0; // Reset correct count
-    
-        // Start each quiz
+        // Reset the shared counts to zero
+        window.sharedCounts.totalCount = 0;
+        window.sharedCounts.totalCorrectCount = 0;
+
+        // For each quiz, we display it on the screen
         Object.keys(quizzes).forEach((key, index) => {
-            console.log(`Displaying quiz: ${key}`);
-            displayQuiz(quizzes[key], `quiz${index + 1}`, `result${index + 1}`);
+            console.log(`Displaying quiz: ${key}`); // Log which quiz we are displaying
+            displayQuiz(quizzes[key], `quiz${index + 1}`, `result${index + 1}`); // Show the quiz on the screen
         });
     }
     
+    // // This function checks if the question set we got is valid
+    // function isValidQuestionSet(questionsArray) {
+    //     // We check if questionsArray is an array and if every question has a question text, answers, and a correct answer
+    //     return Array.isArray(questionsArray) && questionsArray.every(question => {
+    //         return question.question && Array.isArray(question.answers) && question.correct;
+    //     });
+    // }
+    
+    // // This function adds a new set of questions to our questionSets
+    // function addQuestionSet(setName, questionsArray) {
+    //     // First, we check if the questionsArray is valid
+    //     if (isValidQuestionSet(questionsArray)) {
+    //         questionSets[setName] = questionsArray; // Add the new question set
+    //         console.log(`Added question set: ${setName} with ${questionsArray.length} questions.`); // Log that we added it
+    //         quizzes = initializeQuizzes(); // Re-initialize quizzes to include the new set
+    //     } else {
+    //         console.error('Invalid question set structure.'); // Log an error if the structure is not valid
+    //     }
+    // }
 
-    // Function to add a new question set
-    function addQuestionSet(setName, questionsArray) {
-        questionSets[setName] = questionsArray;
-        console.log(`Added question set: ${setName} with ${questionsArray.length} questions.`);
-        quizzes = initializeQuizzes(); // Reinitialize quizzes to reflect the new question set
-    }
+    // // Here we define some new questions to add to our quiz
+    // const newQuestions = [
+    //     {
+    //         question: "your_question_7here", // This is the question text
+    //         answers: [ // These are the possible answers
+    //             "pick_your_answer_here_17",
+    //             "pick_your_answer_here_18",
+    //             "pick_your_answer_here_19",
+    //             "pick_your_answer_here_20",
+    //             "and_so_on_...5"
+    //         ],
+    //         correct: "pick_your_answer_here_17" // This is the correct answer
+    //     },
+    //     {
+    //         question: "your_question_8here", 
+    //         answers: [
+    //             "pick_your_answer_here_21",
+    //             "pick_your_answer_here_22",
+    //             "pick_your_answer_here_23",
+    //             "pick_your_answer_here_24",
+    //             "and_so_on_...6"
+    //         ],
+    //         correct: "pick_your_answer_here_24"
+    //     },
+    //     {
+    //         question: "your_question_9here", 
+    //         answers: [
+    //             "pick_your_answer_here_25",
+    //             "pick_your_answer_here_26",
+    //             "pick_your_answer_here_27",
+    //             "pick_your_answer_here_28",
+    //             "and_so_on_...7"
+    //         ],
+    //         correct: "pick_your_answer_here_27"
+    //     },
+    //     {
+    //         question: "your_question_10here", 
+    //         answers: [
+    //             "pick_your_answer_here_29",
+    //             "pick_your_answer_here_30",
+    //             "pick_your_answer_here_31",
+    //             "pick_your_answer_here_32",
+    //             "and_so_on_...8"
+    //         ],
+    //         correct: "pick_your_answer_here_29"
+    //     },
+    // ];
 
-    // Example usage of adding a new question set
-    const newQuestions = [
-        {
-            question: "What is the largest planet in our solar system?",
-            answers: ["Earth", "Jupiter", "Mars", "Saturn"],
-            correct: "Jupiter"
-        },
-        {
-            question: "What is the chemical symbol for water?",
-            answers: ["H2O", "O2", "CO2", "NaCl"],
-            correct: "H2O"
-        },
-        {
-            question: "Who wrote 'Romeo and Juliet'?",
-            answers: ["Charles Dickens", "William Shakespeare", "Mark Twain", "Jane Austen"],
-            correct: "William Shakespeare"
-        },
-        {
-            question: "What is the powerhouse of the cell?",
-            answers: ["Nucleus", "Mitochondria", "Ribosome", "Endoplasmic Reticulum"],
-            correct: "Mitochondria"
-        }
-    ];
-
-    addQuestionSet('questions5', newQuestions); // Call this function to add a new question set
+    // // We call the function to add the new questions to our question sets
+    // addQuestionSet('question7', newQuestions);
 })();
+
+// This function helps to make sure that any input we get is safe to use
+function sanitizeInput(input) {
+    const div = document.createElement('div'); // Create a new div element
+    div.appendChild(document.createTextNode(input)); // Add the input as text to the div
+    return div.innerHTML; // Return the safe HTML version of the input
+}

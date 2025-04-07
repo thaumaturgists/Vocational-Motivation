@@ -1,34 +1,46 @@
 // main.js
-import { Quiz } from '/CIW-JavaScript-Exam/INCAP/quiz.js';
-import { displayQuiz } from '/CIW-JavaScript-Exam/INCAP/ui.js';
-// import { toggleContent } from './toggleContent.js';
-
-// document.getElementById('toggleButton').addEventListener('click', () => {
-//     toggleContent(contentID); // Replace 'contentId' with the actual ID of the content to toggle
-// });
+import { Quiz } from './quiz.js';
+import { displayQuiz } from './ui.js';
 
 (async function() {
     document.addEventListener('contextmenu', event => event.preventDefault());
 
-    // Define an object to hold all question sets
-    const questionSetting = {
-        questions: [],
-        questions2: [],
-        questions3: [],
-        questions4: [],
-        questions5: [],
-        questions6: [],
-        // Add more question sets as needed
-    };
+    // Function to initialize question sets and quizzes
+    function initializeQuizzes(questionSetNames) {
+        const questionSetting = {};
+        const quizzes = {};
+
+        // Create questionSetting and quizzes dynamically
+        questionSetNames.forEach((name, index) => {
+            questionSetting[name] = []; // Initialize empty array for each question set
+            quizzes[`quiz${index + 1}`] = new Quiz(questionSetting[name]); // Create a new Quiz instance
+        });
+
+        console.log('Initialized questionSetting:', questionSetting);
+        console.log('Initialized quizzes:', quizzes);
+
+        return { questionSetting, quizzes };
+    }
 
     // Load questions from JSON file
+    let questionSetting, quizzes; // Declare variables here
     try {
         const response = await fetch('data/questions.json');
         const data = await response.json();
+        console.log('Loaded data from JSON:', data);
+
+        // Define question set names
+        const questionSetNames = Object.keys(data.questionSets);
+        console.log('Question set names:', questionSetNames);
+
+        // Initialize quizzes
+        ({ questionSetting, quizzes } = initializeQuizzes(questionSetNames));
+
         // Assign each question set to the corresponding property in questionSetting
-        Object.keys(questionSetting).forEach(key => {
-            if (data.questionSets[key]) {
-                questionSetting[key] = data.questionSets[key];
+        questionSetNames.forEach(name => {
+            if (data.questionSets[name]) {
+                questionSetting[name] = data.questionSets[name];
+                console.log(`Assigned ${name} to questionSetting:`, questionSetting[name]);
             }
         });
     } catch (error) {
@@ -36,16 +48,8 @@ import { displayQuiz } from '/CIW-JavaScript-Exam/INCAP/ui.js';
         return; // Exit if there's an error loading questions
     }
 
-    // Initialize quizzes
-    const quizzes = {
-        quiz1: new Quiz(questionSetting.questions),
-        quiz2: new Quiz(questionSetting.questions2),
-        quiz3: new Quiz(questionSetting.questions3),
-        quiz4: new Quiz(questionSetting.questions4),
-        quiz5: new Quiz(questionSetting.questions5),
-        quiz6: new Quiz(questionSetting.questions6),
-        // Add more quizzes as needed
-    };
+    console.log('Final questionSetting:', questionSetting);
+    console.log('Final quizzes:', quizzes);
 
     function initializeQuiz() {
         resetQuiz(); // Start the quiz
@@ -53,27 +57,28 @@ import { displayQuiz } from '/CIW-JavaScript-Exam/INCAP/ui.js';
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+        console.log('Document loaded, initializing quiz...');
         initializeQuiz(); // Start the quiz when the document is loaded
     });
 
     document.getElementById('refreshButton').onclick = () => {
+        console.log('Refresh button clicked, resetting quiz...');
         initializeQuiz(); // Reset the quiz when the refresh button is clicked
     };
 
     function resetQuiz() {
+        console.log('Resetting quizzes...');
         Object.values(quizzes).forEach(quiz => quiz.reset());
         document.getElementById('clickCount').innerText = 0;
         document.getElementById('correctCountDisplay').innerText = 0;
         document.querySelectorAll('.result').forEach(resultDiv => resultDiv.innerText = '');
         document.querySelectorAll('.topic > div').forEach(quizDiv => quizDiv.textContent = '');
-
-        // Start each quiz
-        displayQuiz(quizzes.quiz1, 'quiz', 'result1');
-        displayQuiz(quizzes.quiz2, 'quiz2', 'result2');
-        displayQuiz(quizzes.quiz3, 'quiz3', 'result3');
-        displayQuiz(quizzes.quiz4, 'quiz4', 'result4');
-        displayQuiz(quizzes.quiz5, 'quiz5', 'result5');
-        displayQuiz(quizzes.quiz6, 'quiz6', 'result6');
-        // Add more displayQuiz calls for additional quizzes
+    
+        // Start each quiz dynamically
+        Object.keys(quizzes).forEach((quizKey, index) => {
+            console.log(`Displaying ${quizKey}...`);
+            displayQuiz(quizzes[quizKey], `quiz${index + 1}`, `result${index + 1}`);
+        });
     }
+    
 })();

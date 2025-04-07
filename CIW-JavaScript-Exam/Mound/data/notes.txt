@@ -289,7 +289,7 @@ The difference between `(async function() { ... })` and `(function() { ... })` l
         ```
 
 
-        # If you prefer not to use modules, you can define sharedCounts as a global variable in main.js and ensure it is accessible in quiz.js.
+        ## If you prefer not to use modules, you can define sharedCounts as a global variable in main.js and ensure it is accessible in quiz.js.
         ```javascript
         // main.js
         window.sharedCounts = {
@@ -300,3 +300,96 @@ The difference between `(async function() { ... })` and `(function() { ... })` l
 
         // Other code...
         ```
+
+# Security
+    ## main.js
+        ### Input Validation and Sanitization
+        Sanitize User Input: If you allow users to input data (e.g., adding new question sets), ensure that you sanitize this input to prevent XSS (Cross-Site Scripting) attacks. Use functions to escape HTML characters in user inputs.
+        ```javascript
+        function sanitizeInput(input) {
+            const div = document.createElement('div');
+            div.appendChild(document.createTextNode(input));
+            return div.innerHTML;
+        }
+        ```
+
+        ### Example of Input Validation
+        Here’s an example of how you might validate the structure of a new question set before adding it:
+        ```javascript
+        function isValidQuestionSet(questionsArray) {
+            return Array.isArray(questionsArray) && questionsArray.every(question => {
+                return question.question && Array.isArray(question.answers) && question.correct;
+            });
+        }
+
+        function addQuestionSet(setName, questionsArray) {
+            if (isValidQuestionSet(questionsArray)) {
+                questionSets[setName] = questionsArray;
+                console.log(`Added question set: ${setName} with ${questionsArray.length} questions.`);
+                quizzes = initializeQuizzes(); // Reinitialize quizzes to reflect the new question set
+            } else {
+                console.error('Invalid question set structure.');
+            }
+        }
+        ```
+    ## quiz.js
+        ### Input Validation
+        Validate Questions: Ensure that the questions passed to the constructor are valid. You can add a validation method to check that each question has the required properties.
+        ```javascript
+        constructor(questions) {
+            if (!Array.isArray(questions) || questions.length === 0 || !this.validateQuestions(questions)) {
+                throw new Error('Invalid questions array');
+            }
+            this.questions = questions;
+            this.count = 0;
+            this.correctCount = 0;
+        }
+
+        validateQuestions(questions) {
+            return questions.every(question => 
+                question.question && 
+                Array.isArray(question.answers) && 
+                question.answers.length > 0 && 
+                question.correct
+            );
+        }
+        ```
+    ## ui.js
+        ### Input Validation
+        Validate Quiz Object: Before using the quiz object, ensure that it has the necessary methods (like getRandomQuestions and checkAnswer) to avoid runtime errors.
+        ```javascript
+        if (typeof quiz.getRandomQuestions !== 'function' || typeof quiz.checkAnswer !== 'function') {
+            console.error('Invalid quiz object provided.');
+            return;
+        }
+        ```
+        ### Security Considerations
+        Sanitize Output: When displaying questions and answers, ensure that the text is sanitized to prevent XSS attacks. You can use a function to escape HTML characters.
+        ```javascript
+        function sanitizeOutput(text) {
+            const div = document.createElement('div');
+            div.appendChild(document.createTextNode(text));
+            return div.innerHTML;
+        }
+        ```
+        Use this function when setting textContent or innerHTML:
+        ```javascript
+        questionDiv.innerHTML = `${index + 1}. ${sanitizeOutput(q.question)}<br>`;
+        ```
+        ```javascript
+         questionDiv.textContent = `${index + 1}. ${sanitizeOutput(q.question)}<br>`;
+        ```
+        Always use textContent if you can!
+        ### Event Handling
+        Use addEventListener for Button Clicks: Instead of assigning onclick directly, use addEventListener for better separation of concerns and to allow multiple event listeners if needed.
+        ```javascript
+        button.addEventListener('click', () => {
+            const result = quiz.checkAnswer(answer, q.correct);
+            updateResult(result.message, resultContainerId);
+            // Other logic...
+        });
+        ```
+
+
+
+
