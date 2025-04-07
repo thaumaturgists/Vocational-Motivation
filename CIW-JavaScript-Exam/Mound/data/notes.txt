@@ -4,12 +4,15 @@
 
 
 # Midnoon html toggleContent for 1.1
+```html
             <h3 class="toggle" onclick="toggleContent('content1')"><a href="#content1">1.1 Summary & Quick Review</a></h3>
             <div class="content" id="content1">
                 <div>
                     <h4>1.1.1 Key Characteristics of JavaScript</h4>
+```
 
 # Midnoon hmtl toggleContent for 1.2
+```html
     <div class="container">
         <h2>1.2 Work with Variables and Data in JavaScript</h2>
         <div class="section">
@@ -17,8 +20,10 @@
             <div class="content" id="content2">
                 <h4 id="a121">1.2.1 Attributes and Methods to Communicate with Users</h4>
                 <ul>
+```
 
 # Midnoon html toggleContentfor 1.3
+```html
     <div class="container">
         <h2>1.3 Use JavaScript Functions, Methods, and Events</h2>
         <div class="section">
@@ -26,21 +31,21 @@
             <div class="content" id="content3">
                 <h4 id="a131">1.3.1 Defining and Using Methods as Functions</h4>
                 <ul>
+```
 
 # Midnoon html << operators
 The issue you're encountering with the red text in your HTML is likely due to the use of the << operator, which is interpreted as the start of an HTML tag. To fix this, you need to escape the less-than sign (<) so that it is displayed correctly in the browser.
 
 You can replace << with &lt;&lt;. Here’s how your HTML should look:
 
-html
-
-Copy Code
+```html
 <li>Bitwise operators manipulate data at the bit level (e.g., & (AND), | (OR), ^ (XOR), ~ (NOT), &lt;&lt; (left shift), &gt;&gt; (right shift)) and are mostly used in low-level programming, such as graphics or device control.</li>
 <li>Example of applying operators:</li>
 In this code:
 
 &lt; is the HTML entity for <
 &gt; is the HTML entity for >
+```
 This will ensure that the << and >> operators are displayed correctly in your HTML without causing any rendering issues.
 
 The yellow highlighting around the apostrophe (`'`) in your HTML could be due to a few reasons. Here are some common causes and how to address them:
@@ -62,6 +67,7 @@ If you provide more context or code snippets, I can help you troubleshoot furthe
 
 # JavaScript Function toggleContent
         ## First one
+        ```javascript
             // This function shows or hides content when called
             function toggleContent(contentID) {
                 // Get the content element by its ID
@@ -74,13 +80,16 @@ If you provide more context or code snippets, I can help you troubleshoot furthe
                     content.style.display = 'none'; // If shown, hide the content
                 }
             }
+        ```
         ## Second one, but causes the user to have to click twice?
+        ```javascript
             function toggleContent(contentId) {
                 const content = document.getElementById(contentId);
                 content.style.display = content.style.display === 'none' ? 'block' : 'none';
             }
-
+        ```
         ## Combined, OK
+        ```javascript
             // This function shows or hides content when called
             function toggleContent(contentId) {
                 // Get the content element by its ID
@@ -89,17 +98,50 @@ If you provide more context or code snippets, I can help you troubleshoot furthe
                 // Check if the content is currently hidden or not displayed
                 content.style.display = (content.style.display === 'none' || content.style.display === '') ? 'block' : 'none';
             }
-
+        ```
         ## Simplified
-            // This function shows or hides content when called
-            function toggleContent(contentId) {
-                // Get the content element by its ID
-                const content = document.getElementById(contentId);
-                // Check if the content is currently hidden or not displayed
-                content.style.display = (content.style.display === 'block') ? 'none' : 'block';
-        }
+        ```javascript
+    // This function shows or hides content when called
+    function toggleContent(contentId) {
+        // Get the content element by its ID
+        const content = document.getElementById(contentId);
+        // Check if the content is currently hidden or not displayed
+        content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+}
+        ```
+        ## New
+        ```javascript
+        // This function shows or hides content when called
+        function toggleContent1(contentId) {
+            // Get the content element by its ID
+            const content = document.getElementById(contentId);
+
+            // Check if the content element exists
+            if (!content) {
+                console.warn(`Element with ID "${contentId}" not found.`);
+                return; // Exit if the element does not exist
+            }
+
+            // Toggle the display property
+            if (content.style.display === 'block') {
+                content.style.display = 'none'; // Hide the content
+                content.setAttribute('aria-hidden', 'true'); // Update ARIA attribute for accessibility
+            } else {
+                content.style.display = 'block'; // Show the content
+                content.setAttribute('aria-hidden', 'false'); // Update ARIA attribute for accessibility
+            };
+        };
+        ```
+        // Example usage in your main.js or ui.js
+        ```javascript
+        document.getElementById('toggleButton').onclick = () => {
+            toggleContent('quizContainer'); // Replace 'quizContainer' with the actual ID of the content you want to toggle
+        };
+        ```
+
 
 # Event listiner to hide contents of document
+```javascript
     // Initialize all content sections to be hidden
     document.addEventListener("DOMContentLoaded", function() {
         const contents = document.querySelectorAll('.content');
@@ -107,8 +149,10 @@ If you provide more context or code snippets, I can help you troubleshoot furthe
             content.style.display = "none";
         });
     });
+```
 
 # JavaScript Questions and Answers format:
+```javascript
     const questions = [
         {
             question: "your_question_here", 
@@ -122,3 +166,54 @@ If you provide more context or code snippets, I can help you troubleshoot furthe
             correct: "pick_your_answer_3"
         },
     ]
+```
+
+# Load questions from JSON file
+```javascript
+(async function() {
+    // Load questions from JSON file
+    let questions = [];
+    try {
+        const response = await fetch('data/questions.json');
+        const data = await response.json();
+        questions = data.questions; // Access the questions array
+    } catch (error) {
+        console.error('Error loading questions:', error);
+    }
+
+    // The rest of your existing code...
+})();
+```
+
+# (async function() { ... })` and `(function() { ... })
+The difference between `(async function() { ... })` and `(function() { ... })` lies in the use of the `async` keyword, which affects how the function behaves, particularly in relation to asynchronous operations.
+
+1. **Async Function**:
+   - When you declare a function with the `async` keyword, it allows you to use the `await` keyword inside that function. This means you can pause the execution of the function until a Promise is resolved or rejected.
+   - An `async` function always returns a Promise. If the function returns a value, that value is wrapped in a resolved Promise. If an error is thrown, it returns a rejected Promise.
+
+   Example:
+   ```javascript
+   const asyncFunction = async function() {
+       const result = await someAsyncOperation();
+       return result; // This will be wrapped in a Promise
+   };
+   ```
+
+2. **Regular Function**:
+   - A regular function (without the `async` keyword) does not support the `await` keyword. It executes synchronously unless you explicitly handle asynchronous operations using callbacks, Promises, or other methods.
+   - A regular function returns the value directly, and if you want to return a Promise, you need to create and return it explicitly.
+
+   Example:
+   ```javascript
+   const regularFunction = function() {
+       const result = someSyncOperation();
+       return result; // This returns the value directly
+   };
+   ```
+
+### Summary:
+- Use `async function` when you want to work with asynchronous code more easily using `await`.
+- Use a regular function when you don't need to handle asynchronous operations or when you want to manage them manually.
+
+# Issue with page not loading questions off the rip

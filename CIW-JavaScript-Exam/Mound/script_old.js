@@ -2,52 +2,21 @@
 function toggleContent(contentId) {
     // Get the content element by its ID
     const content = document.getElementById(contentId);
-
-    // Check if the content element exists
-    if (!content) {
-        console.warn(`Element with ID "${contentId}" not found.`);
-        return; // Exit if the element does not exist
-    }
-
-    // Toggle the display property
-    if (content.style.display === 'block') {
-        content.style.display = 'none'; // Hide the content
-        content.setAttribute('aria-hidden', 'true'); // Update ARIA attribute for accessibility
-    } else {
-        content.style.display = 'block'; // Show the content
-        content.setAttribute('aria-hidden', 'false'); // Update ARIA attribute for accessibility
-    }
+    // Check if the content is currently hidden or not displayed
+    content.style.display = (content.style.display === 'block') ? 'none' : 'block';
 }
 
-// Example usage in your main.js or ui.js
-document.getElementById('toggleButton').onclick = () => {
-    toggleContent(contentId); // Replace 'quizContainer' with the actual ID of the content you want to toggle
-};
-
-
 (async function() {
-    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('contextmenu', event => event.preventDefault()); // Not a foolproof Source-No-Snoop
     let count = 0;
     let correctCount = 0;
-
-    // Define an object to hold all question sets
-    const questionSetting = {
-        questions: [],
-        questions2: [],
-        questions3: [],
-        // Add more question sets as needed
-    };
+    let questions = []; // Initialize an empty array for questions
 
     // Load questions from JSON file
     try {
         const response = await fetch('data/questions.json');
         const data = await response.json();
-        // Assign each question set to the corresponding property in questionSetting
-        Object.keys(questionSetting).forEach(key => {
-            if (data.questionSets[key]) {
-                questionSetting[key] = data.questionSets[key];
-            }
-        });
+        questions = data.questions; // Access the questions array
     } catch (error) {
         console.error('Error loading questions:', error);
     }
@@ -55,7 +24,7 @@ document.getElementById('toggleButton').onclick = () => {
     function initializeQuiz() {
         resetQuiz(); // Start the quiz
         window.scrollTo(0, 0); // Scroll to the top of the page
-
+    
         // Set focus on the first answer button of the first quiz after a slight delay
         setTimeout(() => {
             const firstButton = document.querySelector('#quiz .answer-button');
@@ -64,35 +33,35 @@ document.getElementById('toggleButton').onclick = () => {
             }
         }, 100); // Adjust the delay as needed
     }
-
+    
     document.addEventListener('DOMContentLoaded', () => {
         initializeQuiz(); // Start the quiz when the document is loaded
     });
-
+    
     document.getElementById('refreshButton').onclick = () => {
         initializeQuiz(); // Reset the quiz when the refresh button is clicked
     };
-
-    // This function runs when the feather button is clicked
-    document.getElementById('featherButton').addEventListener('click', function() {
-        const feather = document.getElementById('feather');
-
-        // Make the feather invisible and move it above the cap
-        feather.style.opacity = '0';
-        feather.style.transform = 'translateX(-50%) translateY(-100%)'; // Start above the cap
-
-        // This line makes the browser re-check the feather's position
-        void feather.offsetWidth; // Forces a reflow
-
-        // Now make the feather visible and start the animation
-        feather.style.opacity = '1';
-        feather.classList.add('animate');
-
-        // When the animation is done, remove the animation class
-        feather.addEventListener('transitionend', function() {
-            feather.classList.remove('animate');
-        }, { once: true }); // Only do this once
-    });
+    
+        // This function runs when the feather button is clicked
+        document.getElementById('featherButton').addEventListener('click', function() {
+            const feather = document.getElementById('feather');
+    
+            // Make the feather invisible and move it above the cap
+            feather.style.opacity = '0';
+            feather.style.transform = 'translateX(-50%) translateY(-100%)'; // Start above the cap
+    
+            // This line makes the browser re-check the feather's position
+            void feather.offsetWidth; // Forces a reflow
+    
+            // Now make the feather visible and start the animation
+            feather.style.opacity = '1';
+            feather.classList.add('animate');
+    
+            // When the animation is done, remove the animation class
+            feather.addEventListener('transitionend', function() {
+                feather.classList.remove('animate');
+            }, { once: true }); // Only do this once
+        });
 
     function countClick() {
         count++;
@@ -217,11 +186,11 @@ document.getElementById('toggleButton').onclick = () => {
         document.getElementById('correctCountDisplay').innerText = correctCount;
         document.querySelectorAll('.result').forEach(resultDiv => resultDiv.innerText = '');
         document.querySelectorAll('.topic > div').forEach(quizDiv => quizDiv.textContent = '');
-        startQuiz(questionSetting.questions, 'quiz', 'result1'); // For the first set of questions
-        startQuiz(questionSetting.questions2, 'quiz2', 'result2'); // For the second set of questions
-        startQuiz(questionSetting.questions3, 'quiz3', 'result3'); // For the third set of questions
-        startQuiz(questionSetting.questions4, 'quiz4', 'result4');
-        startQuiz(questionSetting.questions5, 'quiz5', 'result5');
-        startQuiz(questionSetting.questions6, 'quiz6', 'result6');
+        startQuiz(questions, 'quiz', 'result1');
+        startQuiz(questions2, 'quiz2', 'result2');
+        startQuiz(questions3, 'quiz3', 'result3');
+        startQuiz(questions4, 'quiz4', 'result4');
+        startQuiz(questions5, 'quiz5', 'result5');
+        startQuiz(questions6, 'quiz6', 'result6');
     }
 })();
