@@ -1,7 +1,8 @@
 // ui.js
 
 // This function displays a quiz in a specific part of the webpage
-export function displayQuiz(quiz, quizContainerId, resultContainerId) {
+// export 
+function displayQuiz(quiz, quizContainerId, resultContainerId) {
     // Get the containers where we will show the quiz and the results
     const quizContainer = document.getElementById(quizContainerId);
     const resultContainer = document.getElementById(resultContainerId);

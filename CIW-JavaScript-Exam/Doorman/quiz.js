@@ -1,7 +1,8 @@
 // quiz.js
 
 // This is a class called Quiz that helps us create and manage quizzes
-export class Quiz {
+// export
+class Quiz {
     // The constructor function runs when we create a new Quiz
     constructor(questions) {
         // We check if the questions are valid: 
