@@ -7,16 +7,26 @@
     <meta name="referrer" content="no-referrer">
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), fullscreen=(), payment=(), notifications=(), push=(), midi=(), sync-xhr=(), screen-wake-lock=(), ambient-light-sensor=(), accelerometer=(), gyroscope=(), magnetometer=(), clipboard=(), document-domain=(), web-share=(), screen-orientation=(), xr-spatial-tracking=()">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <meta http-equiv="Content-Security-Policy" content="
+    img-src 'self' https://thaumaturgists.github.io/CIW-JavaScript-Exam/INCAP/feather.png;
+    font-src 'self';
+    media-src 'self';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+
+    upgrade-insecure-requests;
+    block-all-mixed-content;">
     <title>CIW JavaScript&apos;s Specialist Midtown</title>
     <link rel="stylesheet" href="style.css">
-    <script type="module" defer src="/CIW-JavaScript-Exam/INCAP/main.js"></script>
-    <script defer src="/CIW-JavaScript-Exam/INCAP/toggleContent.js"></script>
-    <script defer src="/CIW-JavaScript-Exam/INCAP/pinfeather.js"></script>
+    <script type="module" defer src="https://thaumaturgists.github.io/CIW-JavaScript-Exam/INCAP/main.js"></script>
+    <script defer src="https://thaumaturgists.github.io/CIW-JavaScript-Exam/INCAP/toggleContent.js"></script>
+    <script defer src="https://thaumaturgists.github.io/CIW-JavaScript-Exam/INCAP/pinfeather.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="featherCap"></div>
-        <img src="/CIW-JavaScript-Exam/INCAP/feather.png" alt="Feather" class="feather" id="feather">
+        <img src="https://thaumaturgists.github.io/CIW-JavaScript-Exam/INCAP/feather.png" alt="Feather" class="feather" id="feather">
         <button id="featherButton" class="feather-button">
             <h1>Intermediate JavaScript Programming Techniques</h1>
         </button>
