@@ -7,18 +7,18 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #87CEEB, #B0E0E6); /* Sky gradient */
+    background-color: #f0f8ff; /* Light sky blue */
     color: #333;
     line-height: 1.6;
 }
 
 /* Content styles */
 .content {
-    background-color: rgba(255, 255, 255, 0.8); /* Light gray with transparency */
+    background-color: ; /* Light gray */
     display: none; /* Initially hidden */
     padding: 15px;
     padding-left: 20px; /* Indent for nested content */
-    border-left: 2px solid #4b0082; /* Indigo border */
+    border-left: 2px solid
     border-radius: 10px;
     margin-top: 10px; /* Space above content */
 }
@@ -27,11 +27,11 @@ body {
 .Doorman-featherCap {
     width: 100px;
     height: 50px;
-    background-color: #FFD700; /* Gold color for the hat */
+    background-color: ; /* color for the hat */
     border-radius: 50% 50% 0 0;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    box-shadow: 0 4px 8px rgba(); /* Soft color shadow */
 }
 
 /* Feather */
@@ -49,40 +49,41 @@ body {
     width: 30px; /* Adjust size as needed */
     bottom: 100%; /* Start above the hat */
     left: 50%; /* Center the feather */
-    transform: translateX(-15%), ; /* Center the feather */
+    transform: translateX(-15%), ; /* Center the feather */ /* Should come from Title when feather-button is pressed */
     opacity: 0; /* Start invisible */
     transition: opacity 0.5s ease, transform 1s ease; /* Add transform for animation */
-    animation: featherAnimation 1s ease-in-out;
+    animation: featherAnimation 1s ease-in-out; /* Feather goes to Title on page load */
 }
-
-
 
 /* Button styles */
 .feather-button,
 .answer-button,
 #refreshButton {
     background-color: #fff;
-    background: linear-gradient(to right, #4b0082, #8a2be2); /* Indigo to blue violet gradient */
-    margin: 0px;
-    margin-top: 0px;
+    background: linear-gradient();
+    margin: 5px;
+    margin-top: 20px;
     padding: 10px 20px;
     font-size: 1.15em;
+    background-color: 
     color: white;
-    border: 2px solid #4b0082;
+    border: 2px solid 
     border-radius: 25.7px; 
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s color;
+    box-shadow: 0 4px 10px rgba();
 }
 
 .answer-button:hover,
 #refreshButton:hover {
-    background: linear-gradient(to right, #8a2be2, #4b0082); /* Lighter gradient on hover */
+    background: linear-gradient(); /* Lighter gradient on hover */
+    background-color: #0056b3;
     transform: translateY(-2px); /* Slight lift effect on hover */
 }
 
 .feather-button:hover {
-    background: linear-gradient(to right, #4b0082, #8a2be2); /* Lighter gradient on hover */
+    background: linear-gradient(); /* Lighter gradient on hover */
+    background-color: #4b0082;
     transform: translateY(-2px); /* Slight lift effect on hover */
     color: #fff;
 }
@@ -91,7 +92,7 @@ body {
 .answer-button:active,
 #refreshButton:active {
     transform: translateY(0); /* Reset lift effect on click */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow on click */
+    box-shadow: 0 2px 5px rgba(); /* Slightly stronger shadow on click */
 }
 
 .feather-button:disabled,
@@ -107,10 +108,10 @@ body {
     position: fixed; /* Fixed position to follow the screen */
     top: 20px; /* Distance from the top */
     right: 20px; /* Distance from the right */
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent */
+    background-color: rgba(); /* Semi-transparent */
     padding: 15px; /* Padding around the text */
     border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    box-shadow: 0 4px 15px rgba(); /* Soft shadow for depth */
     z-index: 1000; /* Ensure it stays on top of other elements */
     font-family: 'Arial', sans-serif; /* Consistent font */
     color: #333; /* Dark text color for readability */
@@ -119,7 +120,7 @@ body {
 /* Correct Count Display */
 .correct-display {
     font-size: 1.2em;
-    color: #32cd32; /* Lime green */
+    color: 
     text-align: center; /* Center the text */
     margin-top: 10px; /* Space above the correct display */
 }
@@ -133,12 +134,12 @@ body {
 
 #correctCountDisplay {
     font-weight: bold; /* Make the count bold for emphasis */
-    color: #4b0082; /* Indigo */
+    color: 
     font-size: 1.5em; /* Slightly larger font size for visibility */
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    background-color: rgba(); /* Semi-transparent white background */
     padding: 5px 10px; /* Padding for a better look */
     border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    box-shadow: 0 2px 5px rgba(); /* Soft shadow for depth */
     display: block; /* Make it a block element for full width */
 }
 
@@ -146,7 +147,7 @@ body {
 .correct-label {
     display: block; /* Make it a block element to position below */
     font-size: 1em; /* Normal font size */
-    color: #6a5acd; /* Slate blue */
+    color: ; /* Soft color for the label */
     margin-top: 5px; /* Space above the label */
 }
 
@@ -154,11 +155,11 @@ body {
 #floatingCounters h2 {
     margin: 5px 0; /* Space between headings */
     font-size: 1.2em; /* Slightly larger font size */
-    color: #4b0082; /* Indigo */
+    color: ; /* Soft color for headings */
 }
 
 aside {
-    background-color: #e6e6fa; /* Lavender */
+    background-color: 
     padding: 15px;
     border-radius: 10px;
     margin-top: 20px;
@@ -168,11 +169,11 @@ aside {
 .topic {
     margin-top: 20px;
     margin: 15px 0;
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    background-color: #fff;
     padding: 15px;
     border: 1px solid #dcdcdc;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    box-shadow: 0 4px 10px rgba(); /* Soft shadow */
 }
 
 /* Section styles */
@@ -182,51 +183,51 @@ aside {
 
 .toggle {
     cursor: pointer;
-    color: #4b0082; /* Indigo */
+    color: 
     text-decoration: underline; /* Underline for clickable text */
 }
 
 .toggle:hover {
-    color: #6a5acd; /* Slate blue on hover */
+    color: ; /* Darker color on hover */
 }
 
 /* Heading styles */
 h1, h2, h3, h4 {
     font-family: 'Georgia', serif;
-    color: #4b0082; /* Indigo */
+    color: 
     margin-bottom: 10px;
 }
 
 h1 {
     text-align: center;
-    color: #fff; /* White for main heading */
+    color:
     font-size: 2.5em;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
 }
 
 h2 {
-    color: #fff; /* White for subheadings */
+    color:
     font-size: 1.9em;
     margin-top: 30px;
     margin-bottom: 15px;
 }
 
 h3 {
-    color: #fff; /* White for h3 */
+    color:
     font-size: 1.65em;
     margin-bottom: 14px;
     cursor: pointer;
 }
 
 h4 {
-    color: #fff; /* White for h4 */
+    color:
     font-size: 1.5em;
-    border-bottom: 2px solid #4b0082; /* Indigo border */
+    border-bottom: 2px 
     padding-bottom: 10px;
     margin: 20px 0;
     margin-top: 20px;
 }
+
 
 /* List styles */
 ul {
@@ -234,6 +235,7 @@ ul {
     margin-left: 20px;
     margin-bottom: 20px;
 }
+
 
 ul li {
     margin: 10px 0; /* Space between list items */
@@ -246,20 +248,20 @@ strong {
 
 /* Preformatted text styles */
 pre {
-    background-color: #f0f8ff; /* Light sky blue */
-    border: 1px solid #dcdcdc; /* Light gray border */
+    background-color: ;
+    border: 1px solid ;
     border-radius: 5px;
     padding: 12.5px;
     overflow: auto;
+    overflow-x: auto;
     margin: 20px 0;
 }
 
 /* Code styles */
 code {
-    font-family: 'Courier New',
-    monospace;
-    background-color: rgba(240, 248, 255, 0.5); /* Light sky blue with transparency */
-    padding: 2px 4px;
+    font-family: 
+    background-color: ; /* Light color */
+        padding: 2px 4px;
     border-radius: 3px; /* Rounded corners */
 }
 
@@ -293,7 +295,7 @@ code {
         padding: 10px; /* Less padding on smaller screens */
     }
 
-    .Doorman-featherCap {
+    .featherCap {
         width: 80px;
         height: 40px;
     }
@@ -303,25 +305,25 @@ code {
     }
 }
 
+
 /* Question and result styles */
 .question {
     margin: 10px 0;
     margin-bottom: 15px;
     font-weight: bold;
     white-space: pre-line;
-    color: #4b0082; /* Indigo */
 }
 
 .result {
     margin-top: 10px;
     font-weight: bold;
-    color: #2e8b57; /* Sea green */
+    color: 
 }
 
 /* Footer styles */
 footer {
-    background-color: #4b0082; /* Indigo */
-    color: #fff;
+    background-color: ; /* color */
+    color: #ffff;
     text-align: center;
     padding: 20px 0;
     position: relative;
@@ -342,14 +344,14 @@ footer a:hover {
 
 /* Container styles */
 .container {
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-    border: 1px solid #dcdcdc; /* Light gray border */
+    background-color:
+    border: 1px
     border-radius: 10px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    box-shadow: 0 4px 10px
 }
 
 /* Additional styles for the recommended readings section */
@@ -358,11 +360,11 @@ footer a:hover {
     border-radius: 10px; /* Rounded corners */
     padding: 20px;
     margin-top: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Soft shadow */
 }
 
 .containerOT h3 {
-    color: #4b0082; /* Indigo */
+    color: 
     margin-bottom: 15px;
 }
 
@@ -375,12 +377,10 @@ footer a:hover {
 }
 
 .containerOT a {
-    color: #4b0082; /* Indigo */
+    color: 
     text-decoration: underline; /* Underline for links */
 }
 
 .containerOT a:hover {
-    color: #6a5acd; /* Slate blue on hover */
+    color: 
 }
-
-
