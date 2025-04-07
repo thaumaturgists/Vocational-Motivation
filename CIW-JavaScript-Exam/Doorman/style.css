@@ -1,16 +1,48 @@
-body {
-    font-family: Arial, sans-serif;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Light sky blue */
+    color: #333;
+    line-height: 1.6;
 }
 
 .container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
 h1, h2, h3, h4 {
-    color: #333;
+    font-family: 'Georgia', serif;
+    color: #4b0082; /* Indigo */
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 1.75em;
+    cursor: pointer;
+}
+
+h4 {
+    font-size: 1.5em;
+    margin-top: 20px;
 }
 
 .question {
@@ -35,10 +67,83 @@ h1, h2, h3, h4 {
     margin-top: 20px;
 }
 
+.feather-button {
+    background-color: #fff;
+    border: 2px solid #4b0082;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #4b0082;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.feather-button:hover {
+    background-color: #4b0082;
+    color: #fff;
+}
+
+aside {
+    background-color: #e6e6fa; /* Lavender */
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.counter-header {
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.correct-display {
+    font-size: 1.2em;
+    color: #32cd32; /* Lime green */
+}
+
+.topic {
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.content {
+    background-color: #f5f5f5; /* Light gray */
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+pre {
+    background-color: #f0f8ff; /* Light sky blue */
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+}
+
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
-    color: white;
+    background-color: #4b0082; /* Indigo */
+    color: #fff;
+    margin-top: 20px;
 }
 
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
