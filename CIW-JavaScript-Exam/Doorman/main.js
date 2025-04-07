@@ -3,8 +3,8 @@
 // We are importing two things from other files: 
 // 1. Quiz - which helps us create quizzes
 // 2. displayQuiz - which shows the quiz on the screen
-// import { Quiz } from '/CIW-JavaScript-Exam/INCAP/quiz.js';
-// import { displayQuiz } from '/CIW-JavaScript-Exam/INCAP/ui.js';
+import { Quiz } from '/CIW-JavaScript-Exam/INCAP/quiz.js';
+import { displayQuiz } from '/CIW-JavaScript-Exam/INCAP/ui.js';
 
 // This is a special object that keeps track of how many questions we've answered
 // and how many of those were correct.
