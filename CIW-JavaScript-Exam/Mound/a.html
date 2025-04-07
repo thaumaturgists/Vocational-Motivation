@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Permissions-Policy" content=" geolocation=(), microphone=(), camera=(), fullscreen=(), payment=(), notifications=(), push=(), midi=(), sync-xhr=(), screen-wake-lock=(), ambient-light-sensor=(), accelerometer=(), gyroscope=(), magnetometer=(), clipboard=(), document-domain=(), web-share=(), screen-orientation=(), xr-spatial-tracking=()">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <title>Document Mound</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script defer src="scripts.js"></script> -->
+    <!-- <script defer src="script_old.js"></script> -->
+    <script type="module" defer src="main.js"></script>
+    <script defer src="toggleContent.js"></script>
+    <script defer src="/CIW-JavaScript-Exam/INCAP/pinfeather.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="featherCap"></div>
+        <img src="/CIW-JavaScript-Exam/INCAP/feather.png" alt="Feather" class="feather" id="feather">
+        <button id="featherButton" class="feather-button">
+            <h1>the_title_here</h1>
+        </button>
+    </div>  
+
+    <aside id="floatingCounters">
+        <h2 class="counter-header">
+            <span id="clickCount">0</span>/the_total_amout_of_questions
+            <button id="refreshButton">Restart</button>
+        </h2>
+        <div class="correct-display">
+            <span id="correctCountDisplay">0</span>
+            <span class="correct-label">Correct</span>
+        </div>
+    </aside>
+    <div id="errorDisplay" style="color: red;"></div>
+
+    <section class="container">
+        <h2>0.1_your_topic_here</h2> 
+        <h3 class="toggle" onclick="toggleContent('content1')"><a href="#content1">Summary & Quick Review</a></h3>
+        <div class="content" id="content1">
+            <article class="section">
+                <h4 id="a_Topic_ID">0.1.1_sub_topic</h4>
+                <ul>
+                    <li>Point 1</li>
+                    <li>Point 2</li>
+                    <li>Point 3</li>
+                    <li>Point 4</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </article>
+        </div>
+    </section>
+    <!--Reminder for changing content id.
+
+        <section class="container">
+        <h2>0.1_your_topic_here</h2> 
+        <h3 class="toggle" onclick="toggleContent('change_content_id_here')"><a href="#change_content_id_here">Summary & Quick Review</a></h3>
+        <div class="content" id="change_content_id_here_to_this">
+            <article class="section">
+                <h4 id="a_Topic_ID">0.1.1_sub_topic</h4>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </article>
+        </div>
+    </section>-->
+
+    <section class="topic">
+        <h3>0.1.1_sub_topic</h3>
+        <div id="quiz"></div>
+        <div class="result" id="result1" aria-live="polite"></div>
+    </section>
+    
+    <section class="topic">
+        <h3>quiz_sub_topic</h3>
+        <div id="quiz2"></div>
+        <div class="result" id="result2" aria-live="polite"></div>
+    </section>         
+    
+    <section class="container">
+        <h2>0.2_your_topic_here</h2> 
+        <h3 class="toggle" onclick="toggleContent('content2')"><a href="#content2">Summary & Quick Review</a></h3>
+        <div class="content" id="content2">
+            <article class="section">
+                <h4 id="a_Topic_ID">0.2.1_sub_topic</h4>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <section class="topic">
+        <h3>0.2.1_sub_topic</h3>
+        <div id="quiz3"></div>
+        <div class="result" id="result3" aria-live="polite"></div>
+    </section>        
+    
+    <section class="topic">
+        <h3>quiz_sub_topic</h3>
+        <div id="quiz4"></div>
+        <div class="result" id="result4" aria-live="polite"></div>
+    </section>
+    
+    <section class="container">
+        <h2>0.3_your_topic_here</h2> 
+        <h3 class="toggle" onclick="toggleContent('content3')"><a href="#content3">Summary & Quick Review</a></h3>
+        <div class="content" id="content3">
+            <article class="section">
+                <h4 id="a_Topic_ID">0.3.1_sub_topic</h4>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <ul>
+                        <li><strong></strong></li>
+                        <li><strong></strong></li>
+                    </ul>
+                    <li>Example of the topic here:</li>
+                </ul>
+                <pre>
+                <code>
+                    // topic's example code here
+                </code>
+                </pre>
+            </article>
+        </div>
+    </section>
+
+    <section class="topic">
+        <h3>0.3.1_sub_topic</h3>
+        <div id="quiz5"></div>
+        <div class="result" id="result5" aria-live="polite"></div>
+    </section>
+    
+    <section class="topic">
+        <h3>quiz_sub_topic</h3>
+        <div id="quiz6"></div>
+        <div class="result" id="result6" aria-live="polite"></div>
+    </section>
+
+    <div class="containerOT" id="OtherTreats">
+        <h3>Recommended Readings</h3>
+        <ul>
+            <li><a href="/path_to_previous_folder/index_current_folder/index.html">other_treats_1</a></li>
+            <li><a href="/path_to_previous_folder/index_current_folder/index.html">other_treats_2</a></li>
+            <li><a href="/CIW-JavaScript-Exam\INCAP\pinfeather.js">other_treats_3</a></li>
+        </ul>
+    </div>
+
+</body>
+
+<footer>
+    <p>&copy; 2025 Vocational Motivation. All rights reserved.</p>
+    <p>
+        <a href="#about">About</a> |
+        <a href="#services">Services</a> |
+        <a href="#contact">Contact</a>
+    </p>
+    <p>
+        Follow us on:
+        <a href="https://facebook.com" target="_blank">Facebook</a> |
+        <a href="https://twitter.com" target="_blank">Twitter</a> |
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+    </p>
+</footer>
+</html>

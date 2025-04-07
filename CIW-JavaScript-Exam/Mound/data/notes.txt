@@ -216,4 +216,87 @@ The difference between `(async function() { ... })` and `(function() { ... })` l
 - Use `async function` when you want to work with asynchronous code more easily using `await`.
 - Use a regular function when you don't need to handle asynchronous operations or when you want to manage them manually.
 
-# Issue with page not loading questions off the rip
+# ISSUES
+ questions and answers not loading off the rip. May use this as a timer 'start quiz' for rest
+
+ # Current. tring to make use of JSON in a way dynamiclly load new questions to files.
+ Left off at Dynamically_loading_test
+
+ # Checking if quiz continer exists
+    ## debuggin using IDs
+    ```javascript
+        // Check if the containers exist
+        if (!quizContainer) {
+            console.error(`Quiz container with ID "${quizContainerId}" not found.`);
+            return; // Exit the function if the quiz container is not found
+        }
+        if (!resultContainer) {
+            console.error(`Result container with ID "${resultContainerId}" not found.`);
+            return; // Exit the function if the result container is not found
+        }
+    ```
+    ## shorthand
+    // // Check if the containers exist
+    // if (!quizContainer || !resultContainer) return;
+
+# Shared Counts
+        ## exporting
+        ```javascript// main.js
+        export const sharedCounts = {
+            totalCount: 0,
+            totalCorrectCount: 0
+        };
+
+        // Other code...
+
+        ```
+        ## Importing
+        // quiz.js
+        ```javascript
+        // quiz.js
+        import { sharedCounts } from './path/to/main.js'; // Adjust the path as necessary
+
+        export class Quiz {
+            constructor(questions) {
+                this.questions = questions;
+                this.count = 0; // Count for this specific quiz
+                this.correctCount = 0; // Correct count for this specific quiz
+            }
+
+            reset() {
+                this.count = 0;
+                this.correctCount = 0;
+            }
+
+            incrementCount() {
+                this.count++;
+            }
+
+            checkAnswer(selected, correct) {
+                this.incrementCount(); // Increment this quiz's count
+                sharedCounts.totalCount++; // Increment the shared total count
+                if (selected === correct) {
+                    this.correctCount++;
+                    sharedCounts.totalCorrectCount++; // Increment the shared correct count
+                    return { correct: true, message: `Correct! The answer is: ${correct}` };
+                } else {
+                    return { correct: false, message: `Incorrect. The correct answer is: ${correct}` };
+                }
+            }
+
+            // Other methods remain unchanged...
+        }
+        ```
+
+
+        # If you prefer not to use modules, you can define sharedCounts as a global variable in main.js and ensure it is accessible in quiz.js.
+        ```javascript
+        // main.js
+        window.sharedCounts = {
+            totalCount: 0,
+            totalCorrectCount: 0
+        };
+
+
+        // Other code...
+        ```

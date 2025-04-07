@@ -14,10 +14,6 @@ body {
     padding: 20px;
 }
 
-#content1{
-    display: none;
-}
-
 /* Content styles */
 .content {
     display: none; /* Initially hidden */
@@ -27,7 +23,7 @@ body {
 }
 
 /* Feather Cap */
-.featherCap {
+.Amid-featherCap {
     width: 100px;
     height: 50px;
     background-color: #f5deb3; /* Wheat color for the hat */

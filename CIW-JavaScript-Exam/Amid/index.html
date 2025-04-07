@@ -11,12 +11,13 @@
     <title>CIW JavaScript&apos;s Specialist Amid</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="scripts.js"></script>
+    <script defer src="/CIW-JavaScript-Exam/INCAP/pinfeather.js"></script>
 </head>
 <body>
 
     <div class="container">
-        <div class="featherCap"></div>
-        <img src="/CIW-JavaScript-Exam\feather.png" alt="Feather" class="feather" id="feather">
+        <div class="Amid-featherCap"></div>
+        <img src="/CIW-JavaScript-Exam/INCAP/feather.png" alt="Feather" class="feather" id="feather">
         <button id="featherButton" class="feather-button">
             <h1>Applied JavaScript</h1>
         </button>
@@ -34,888 +35,888 @@
     </aside>
     
     
-<main class="container">
+    <main class="container">
 
-    <section class="container">
-        <h2>3.1 Modify HTML with JavaScript</h2>
-        <h3 class="toggle" onclick="toggleContent('content1')"><a href="#content1">Study Guide</a></h3>
-        <div class="content" id="content1" style="display: none;">
-            <article class="section">
-                <h4 id="a311">3.1.1 Steps and Methods for Changing HTML “On The Fly”</h4>
-                <p>JavaScript can be used to dynamically change the content and structure of HTML elements on a web page without reloading the entire page. This is commonly referred to as "changing HTML on the fly." It allows for real-time updates to text, styles, or structure, enabling dynamic and interactive user experiences.</p>
-                
-                <h5>Methods for Accessing Elements in the DOM:</h5>
-                <ul>
-                    <li><code>document.getElementById("id")</code>: Returns the element with the specified ID.</li>
-                    <li><code>document.getElementsByName("name")</code>: Returns a collection of elements with the specified name attribute.</li>
-                    <li><code>document.getElementsByTagName("tag")</code>: Returns a collection of elements with the specified tag name.</li>
-                    <li><code>document.getElementsByClassName("class")</code>: Returns a collection of elements with the specified class name.</li>
-                    <li>Modern Approach:
-                        <ul>
-                            <li><code>document.querySelector("cssSelector")</code>: Returns the first match of the specified CSS selector.</li>
-                            <li><code>document.querySelectorAll("cssSelector")</code>: Returns all matches as a static NodeList.</li>
-                        </ul>
-                    </li>
-                </ul>
-                
-                <h5>Example of Modifying HTML "On the Fly":</h5>
-                <pre><code>&lt;!DOCTYPE html&gt;
-            &lt;html&gt;
-            &lt;head&gt;
-             &lt;title&gt;Modify HTML on the Fly&lt;/title&gt;
-             &lt;script&gt;
-             function changeText() {
-                 var element = document.getElementById("myElement");
-                 element.innerHTML = "New Text";
-             }
-             &lt;/script&gt;
-            &lt;/head&gt;
-            &lt;body&gt;
-             &lt;h1 id="myElement"&gt;Original Text&lt;/h1&gt;
-             &lt;button onclick="changeText()"&gt;Change Text&lt;/button&gt;
-            &lt;/body&gt;
-            &lt;/html&gt;</code></pre>
-                
-                <h5>Example of Using querySelector:</h5>
-                <pre><code>&lt;div class="message"&gt;Hello&lt;/div&gt;
-            &lt;script&gt;
-            let msgDiv = document.querySelector(".message");
-            msgDiv.textContent = "Hello, new content!";
-            msgDiv.style.color = "blue";
-            &lt;/script&gt;</code></pre>
-                
-                <p><strong>Why It Matters:</strong> Changing HTML on the fly enhances user experience by allowing for real-time updates without the need for page reloads.</p>
-            </article>
-            
-        
-            <article class="section">
-                <h4 id="a312">3.1.2 Modifying HTML Attributes Using DOM Elements</h4>
-                <p>JavaScript can be used to modify HTML attributes of elements on a web page. This allows you to change the appearance or behavior of elements dynamically, enhancing interactivity and user experience.</p>
-
-                <h5>Example of Modifying HTML Attributes:</h5>
-                <pre><code>&lt;!DOCTYPE html&gt;
-            &lt;html&gt;
-            &lt;head&gt;
-             &lt;title&gt;Modify HTML Attributes&lt;/title&gt;
-             &lt;script&gt;
-             function changeAttribute() {
-                 var element = document.getElementById("myImage");
-                 element.src = "new-image.jpg"; // Change the image source
-                 element.alt = "New Image Alt Text"; // Change the alt text
-             }
-             &lt;/script&gt;
-            &lt;/head&gt;
-            &lt;body&gt;
-             &lt;img id="myImage" src="old-image.jpg" alt="Old Image Alt Text"&gt;
-             &lt;button onclick="changeAttribute()"&gt;Change Attribute&lt;/button&gt;
-            &lt;/body&gt;
-            &lt;/html&gt;</code></pre>
-                
-                <p><strong>Why It Matters:</strong> Modifying HTML attributes dynamically allows for responsive design and improved user interaction, making web applications more engaging and functional.</p>
-                <div>
+        <section class="container">
+            <h2>3.1 Modify HTML with JavaScript</h2>
+            <h3 class="toggle" onclick="toggleContent('content1')"><a href="#content1">Study Guide</a></h3>
+            <div class="content" id="content1" style="display: none;">
+                <article class="section">
+                    <h4 id="a311">3.1.1 Steps and Methods for Changing HTML “On The Fly”</h4>
+                    <p>JavaScript can be used to dynamically change the content and structure of HTML elements on a web page without reloading the entire page. This is commonly referred to as "changing HTML on the fly." It allows for real-time updates to text, styles, or structure, enabling dynamic and interactive user experiences.</p>
+                    
+                    <h5>Methods for Accessing Elements in the DOM:</h5>
                     <ul>
-                        <li><code>element.setAttribute("attributeName", "value")</code>: Dynamically change or add attributes.</li>
-                        <li><code>element.removeAttribute("attributeName")</code>: Remove an existing attribute.</li>
-                        <li>Direct Property Access: For some attributes, you can directly manipulate them (e.g., <code>img.src = "newImage.png";</code>).</li>
+                        <li><code>document.getElementById("id")</code>: Returns the element with the specified ID.</li>
+                        <li><code>document.getElementsByName("name")</code>: Returns a collection of elements with the specified name attribute.</li>
+                        <li><code>document.getElementsByTagName("tag")</code>: Returns a collection of elements with the specified tag name.</li>
+                        <li><code>document.getElementsByClassName("class")</code>: Returns a collection of elements with the specified class name.</li>
+                        <li>Modern Approach:
+                            <ul>
+                                <li><code>document.querySelector("cssSelector")</code>: Returns the first match of the specified CSS selector.</li>
+                                <li><code>document.querySelectorAll("cssSelector")</code>: Returns all matches as a static NodeList.</li>
+                            </ul>
+                        </li>
                     </ul>
-                    <h5>Example:</h5>
-                    <pre><code>&lt;img id="myImg" src="oldImage.png" alt="Old Image"&gt;
-            &lt;script&gt;
-            let myImg = document.getElementById("myImg");
-            myImg.setAttribute("src", "newImage.png");
-            myImg.alt = "New Image"; // direct property
-            &lt;/script&gt;</code></pre>
-                    <p><strong>Pitfalls:</strong> Confusing the difference between <code>element.attribute</code> (property access) and <code>element.setAttribute()</code> (DOM attribute-level manipulation). In many cases, they behave the same, but with certain properties (like <code>value</code> vs. <code>defaultValue</code> on form inputs), behavior can differ.</p>
-                </div>
-            </article>
-        
-            <article class="section">
-                <h4 id="a313">3.1.3 Modifying Form Object Values</h4>
-                <p>JavaScript can be used to modify the values of form elements, such as text inputs, checkboxes, radio buttons, and select dropdowns. This allows you to manipulate form data before submission or update form fields based on user interactions, enhancing the user experience.</p>
+                    
+                    <h5>Example of Modifying HTML "On the Fly":</h5>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                &lt;title&gt;Modify HTML on the Fly&lt;/title&gt;
+                &lt;script&gt;
+                function changeText() {
+                    var element = document.getElementById("myElement");
+                    element.innerHTML = "New Text";
+                }
+                &lt;/script&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                &lt;h1 id="myElement"&gt;Original Text&lt;/h1&gt;
+                &lt;button onclick="changeText()"&gt;Change Text&lt;/button&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;</code></pre>
+                    
+                    <h5>Example of Using querySelector:</h5>
+                    <pre><code>&lt;div class="message"&gt;Hello&lt;/div&gt;
+                &lt;script&gt;
+                let msgDiv = document.querySelector(".message");
+                msgDiv.textContent = "Hello, new content!";
+                msgDiv.style.color = "blue";
+                &lt;/script&gt;</code></pre>
+                    
+                    <p><strong>Why It Matters:</strong> Changing HTML on the fly enhances user experience by allowing for real-time updates without the need for page reloads.</p>
+                </article>
                 
-                <h5>Example of Modifying Form Object Values:</h5>
-                <pre><code>&lt;!DOCTYPE html&gt;
-            &lt;html&gt;
-            &lt;head&gt;
-             &lt;title&gt;Modify Form Object Values&lt;/title&gt;
-             &lt;script&gt;
-             function updateForm() {
-                 document.getElementById("nameInput").value = "John Doe"; // Update name input
-                 document.getElementById("emailInput").value = "john.doe@example.com"; // Update email input
-                 document.getElementById("checkbox").checked = true; // Check the checkbox
-                 document.getElementById("radio2").checked = true; // Select the second radio button
-                 document.getElementById("select").value = "option2"; // Change the selected option in the dropdown
-             }
-             &lt;/script&gt;
-            &lt;/head&gt;
-            &lt;body&gt;
-             &lt;form&gt;
-             &lt;label for="nameInput"&gt;Name:&lt;/label&gt;
-             &lt;input type="text" id="nameInput" name="name"&gt;&lt;br&gt;&lt;br&gt;
             
-             &lt;label for="emailInput"&gt;Email:&lt;/label&gt;
-             &lt;input type="email" id="emailInput" name="email"&gt;&lt;br&gt;&lt;br&gt;
-            
-             &lt;input type="checkbox" id="checkbox" name="checkbox"&gt; Checkbox&lt;br&gt;&lt;br&gt;
-            
-             &lt;input type="radio" id="radio1" name="radio" value="option1"&gt; Option 1
-             &lt;input type="radio" id="radio2" name="radio" value="option2"&gt; Option 2&lt;br&gt;&lt;br&gt;
-            
-             &lt;select id="select" name="select"&gt;
-                 &lt;option value="option1"&gt;Option 1&lt;/option&gt;
-                 &lt;option value="option2"&gt;Option 2&lt;/option&gt;
-                 &lt;option value="option3"&gt;Option 3&lt;/option&gt;
-             &lt;/select&gt;&lt;br&gt;&lt;br&gt;
-            
-             &lt;button type="button" onclick="updateForm()"&gt;Update Form&lt;/button&gt;
-             &lt;/form&gt;
-            &lt;/body&gt;
-            &lt;/html&gt;</code></pre>
-                
-                <div>
-                    <p>Simple, You can grab input fields (text fields, checkboxes, radio buttons, etc.) and change or read their values in real time.</p>
-                    <h5>Example:</h5>
-                    <pre><code>&lt;input type="text" id="username" value="Alice"&gt;
-                &lt;button onclick="changeUser()"&gt;Change Username&lt;/button&gt;
-            &lt;script&gt;
-            function changeUser() {
-                let userInput = document.getElementById("username");
-                userInput.value = "Bob"; // change the text field to "Bob"
-            }
-            &lt;/script&gt;</code></pre>
-        
-            <p><strong>Why It Matters:</strong> Real-time updates to text, styles, or structure allow for dynamic and interactive user experiences.</p>
-                </div>
-            </article>
-        </div>
-    </section>
+                <article class="section">
+                    <h4 id="a312">3.1.2 Modifying HTML Attributes Using DOM Elements</h4>
+                    <p>JavaScript can be used to modify HTML attributes of elements on a web page. This allows you to change the appearance or behavior of elements dynamically, enhancing interactivity and user experience.</p>
 
-    <section class="topic">
-        <h3>3.1.1 Steps and Methods for Changing HTML “On The Fly”</h3>
-        <div id="quiz"></div>
-        <div class="result" id="result1" aria-live="polite"></div>
-    </section>
-    
-    <section class="topic">
-        <h3>3.1.2 Modify Attributes in HTML Using DOM Elements</h3>
-        <div id="quiz2"></div>
-        <div class="result" id="result2" aria-live="polite"></div>
-    </section>
-    
-    <section class="topic">
-        <h3>3.2.1 Identify and Use Form Controls (Including HTML5)</h3>
-        <div id="quiz3"></div>
-        <div class="result" id="result3" aria-live="polite"></div>
-    </section>   
+                    <h5>Example of Modifying HTML Attributes:</h5>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                &lt;title&gt;Modify HTML Attributes&lt;/title&gt;
+                &lt;script&gt;
+                function changeAttribute() {
+                    var element = document.getElementById("myImage");
+                    element.src = "new-image.jpg"; // Change the image source
+                    element.alt = "New Image Alt Text"; // Change the alt text
+                }
+                &lt;/script&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                &lt;img id="myImage" src="old-image.jpg" alt="Old Image Alt Text"&gt;
+                &lt;button onclick="changeAttribute()"&gt;Change Attribute&lt;/button&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;</code></pre>
+                    
+                    <p><strong>Why It Matters:</strong> Modifying HTML attributes dynamically allows for responsive design and improved user interaction, making web applications more engaging and functional.</p>
+                    <div>
+                        <ul>
+                            <li><code>element.setAttribute("attributeName", "value")</code>: Dynamically change or add attributes.</li>
+                            <li><code>element.removeAttribute("attributeName")</code>: Remove an existing attribute.</li>
+                            <li>Direct Property Access: For some attributes, you can directly manipulate them (e.g., <code>img.src = "newImage.png";</code>).</li>
+                        </ul>
+                        <h5>Example:</h5>
+                        <pre><code>&lt;img id="myImg" src="oldImage.png" alt="Old Image"&gt;
+                &lt;script&gt;
+                let myImg = document.getElementById("myImg");
+                myImg.setAttribute("src", "newImage.png");
+                myImg.alt = "New Image"; // direct property
+                &lt;/script&gt;</code></pre>
+                        <p><strong>Pitfalls:</strong> Confusing the difference between <code>element.attribute</code> (property access) and <code>element.setAttribute()</code> (DOM attribute-level manipulation). In many cases, they behave the same, but with certain properties (like <code>value</code> vs. <code>defaultValue</code> on form inputs), behavior can differ.</p>
+                    </div>
+                </article>
+            
+                <article class="section">
+                    <h4 id="a313">3.1.3 Modifying Form Object Values</h4>
+                    <p>JavaScript can be used to modify the values of form elements, such as text inputs, checkboxes, radio buttons, and select dropdowns. This allows you to manipulate form data before submission or update form fields based on user interactions, enhancing the user experience.</p>
+                    
+                    <h5>Example of Modifying Form Object Values:</h5>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                &lt;title&gt;Modify Form Object Values&lt;/title&gt;
+                &lt;script&gt;
+                function updateForm() {
+                    document.getElementById("nameInput").value = "John Doe"; // Update name input
+                    document.getElementById("emailInput").value = "john.doe@example.com"; // Update email input
+                    document.getElementById("checkbox").checked = true; // Check the checkbox
+                    document.getElementById("radio2").checked = true; // Select the second radio button
+                    document.getElementById("select").value = "option2"; // Change the selected option in the dropdown
+                }
+                &lt;/script&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                &lt;form&gt;
+                &lt;label for="nameInput"&gt;Name:&lt;/label&gt;
+                &lt;input type="text" id="nameInput" name="name"&gt;&lt;br&gt;&lt;br&gt;
+                
+                &lt;label for="emailInput"&gt;Email:&lt;/label&gt;
+                &lt;input type="email" id="emailInput" name="email"&gt;&lt;br&gt;&lt;br&gt;
+                
+                &lt;input type="checkbox" id="checkbox" name="checkbox"&gt; Checkbox&lt;br&gt;&lt;br&gt;
+                
+                &lt;input type="radio" id="radio1" name="radio" value="option1"&gt; Option 1
+                &lt;input type="radio" id="radio2" name="radio" value="option2"&gt; Option 2&lt;br&gt;&lt;br&gt;
+                
+                &lt;select id="select" name="select"&gt;
+                    &lt;option value="option1"&gt;Option 1&lt;/option&gt;
+                    &lt;option value="option2"&gt;Option 2&lt;/option&gt;
+                    &lt;option value="option3"&gt;Option 3&lt;/option&gt;
+                &lt;/select&gt;&lt;br&gt;&lt;br&gt;
+                
+                &lt;button type="button" onclick="updateForm()"&gt;Update Form&lt;/button&gt;
+                &lt;/form&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;</code></pre>
+                    
+                    <div>
+                        <p>Simple, You can grab input fields (text fields, checkboxes, radio buttons, etc.) and change or read their values in real time.</p>
+                        <h5>Example:</h5>
+                        <pre><code>&lt;input type="text" id="username" value="Alice"&gt;
+                    &lt;button onclick="changeUser()"&gt;Change Username&lt;/button&gt;
+                &lt;script&gt;
+                function changeUser() {
+                    let userInput = document.getElementById("username");
+                    userInput.value = "Bob"; // change the text field to "Bob"
+                }
+                &lt;/script&gt;</code></pre>
+            
+                <p><strong>Why It Matters:</strong> Real-time updates to text, styles, or structure allow for dynamic and interactive user experiences.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-    <section class="container">
-        <h2>3.2 Use JavaScript to Develop Interactive Forms</h2>
-        <h3 class="toggle" onclick="toggleContent('content2')"><a href="#content2">Study Guide</a></h3>
-        <div class="content" id="content2" style="display: none;">
-            <article class="section">
-                <h4 id="a321">3.2.1 Using Form Controls and HTML5 Form Elements</h4>
-                <p>HTML provides various form controls that allow users to interact with web forms. HTML5 introduced new form elements and attributes to enhance form usability and accessibility, making it easier for users to input data accurately.</p>
-                
-                <h5>Common Form Controls:</h5>
-                <ul>
-                    <li><strong>Text Input:</strong> Allows users to enter text.<br>
-                        <code>&lt;input type="text" name="username"&gt;</code>
-                    </li>
-                    <li><strong>Checkbox:</strong> Allows users to select multiple options.<br>
-                        <code>&lt;input type="checkbox" name="interest" value="sports"&gt; Sports</code><br>
-                        <code>&lt;input type="checkbox" name="interest" value="music"&gt; Music</code>
-                    </li>
-                    <li><strong>Radio Button:</strong> Allows users to select one option from a group.<br>
-                        <code>&lt;input type="radio" name="gender" value="male"&gt; Male</code><br>
-                        <code>&lt;input type="radio" name="gender" value="female"&gt; Female</code>
-                    </li>
-                    <li><strong>Select Dropdown:</strong> Allows users to select one option from a dropdown list.<br>
-                        <code>&lt;select name="country"&gt;<br>
-                            &lt;option value="usa"&gt;USA&lt;/option&gt;<br>
-                            &lt;option value="canada"&gt;Canada&lt;/option&gt;<br>
-                        &lt;/select&gt;</code>
-                    </li>
-                    <li><strong>Textarea:</strong> Allows users to enter multiline text.<br>
-                        <code>&lt;textarea name="message"&gt;&lt;/textarea&gt;</code>
-                    </li>
-                </ul>
-            
-                <h5>HTML5 Form Elements:</h5>
-                <ul>
-                    <li><strong>Email Input:</strong> Validates input as an email address.<br>
-                        <code>&lt;input type="email" name="email"&gt;</code>
-                    </li>
-                    <li><strong>URL Input:</strong> Validates input as a URL.<br>
-                        <code>&lt;input type="url" name="website"&gt;</code>
-                    </li>
-                    <li><strong>Date Input:</strong> Allows users to select a date.<br>
-                        <code>&lt;input type="date" name="birthdate"&gt;</code>
-                    </li>
-                    <li><strong>Number Input:</strong> Allows users to enter a number.<br>
-                        <code>&lt;input type="number" name="quantity"&gt;</code>
-                    </li>
-                    <li><strong>Range Input:</strong> Allows users to select a value from a range.<br>
-                        <code>&lt;input type="range" name="rating" min="1" max="5"&gt;</code>
-                    </li>
-                </ul>
-            
-                <h5>Example of Using Form Controls and HTML5 Form Elements:</h5>
-                <pre><code>&lt;form&gt;
-             &lt;label for="name"&gt;Name:&lt;/label&gt;
-             &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;
-            
-             &lt;label for="email"&gt;Email:&lt;/label&gt;
-             &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;
-            
-             &lt;label for="birthdate"&gt;Birthdate:&lt;/label&gt;
-             &lt;input type="date" id="birthdate" name="birthdate"&gt;&lt;br&gt;
-            
-             &lt;label for="gender"&gt;Gender:&lt;/label&gt;
-             &lt;input type="radio" id="male" name="gender" value="male"&gt; Male
-             &lt;input type="radio" id="female" name="gender" value="female"&gt; Female&lt;br&gt;
-            
-             &lt;label for="interests"&gt;Interests:&lt;/label&gt;
-             &lt;input type="checkbox" id="sports" name="interests" value="sports"&gt; Sports
-             &lt;input type="checkbox" id="music" name="interests" value="music"&gt; Music&lt;br&gt;
-            
-             &lt;label for="country"&gt;Country:&lt;/label&gt;
-             &lt;select id="country" name &lt;country"&gt;
-             &lt;option value="usa"&gt;USA&lt;/option&gt;
-             &lt;option value="canada"&gt;Canada&lt;/option&gt;
-             &lt;/select&gt;&lt;br&gt;
-            
-             &lt;label for="message"&gt;Message:&lt;/label&gt;
-             &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;&lt;br&gt;
-            
-             &lt;input type="submit" value="Submit"&gt;
-            &lt;/form&gt;</code></pre>
-            
-                <p><strong>Why It Matters:</strong> Utilizing various form controls and HTML5 elements enhances the usability and accessibility of web forms, making it easier for users to provide accurate information and improving overall user experience.</p>
-            </article>
+        <section class="topic">
+            <h3>3.1.1 Steps and Methods for Changing HTML “On The Fly”</h3>
+            <div id="quiz"></div>
+            <div class="result" id="result1" aria-live="polite"></div>
+        </section>
         
-            <article class="section">
-                <h4 id="a322">3.2.2 Defining the Form Object</h4>
-                <p>In JavaScript, the form object represents an HTML form element and provides access to its properties and methods. It allows you to interact with form elements, validate form data, and handle form submission effectively.</p>
-                
-                <h5>Accessing the Form Object:</h5>
-                <p>You can access the form object using its ID or by using the <code>document.forms</code> collection.</p>
-                
-                <h5>Example of Accessing the Form Object:</h5>
-                <pre><code>&lt;form id="myForm"&gt;
-             &lt;label for="name"&gt;Name:&lt;/label&gt;
-             &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;
-             &lt;input type="submit" value="Submit"&gt;
-            &lt;/form&gt;
-            
-            &lt;script&gt;
-             var form = document.getElementById("myForm");
-             // or
-             var form = document.forms["myForm"];
-            &lt;/script&gt;</code></pre>
-            
-                <h5>Common Properties and Methods of the Form Object:</h5>
-                <h6>Properties:</h6>
-                <ul>
-                    <li><code>form.id</code>: Returns the ID of the form.</li>
-                    <li><code>form.name</code>: Returns the name of the form.</li>
-                    <li><code>form.elements</code>: Returns a collection of form elements in the form.</li>
-                </ul>
-                
-                <h6>Methods:</h6>
-                <ul>
-                    <li><code>form.submit()</code>: Submits the form.</li>
-                    <li><code>form.reset()</code>: Resets the form to its initial state.</li>
-                </ul>
-            
-                <h5>Example of Using Form Object Properties and Methods:</h5>
-                <pre><code>&lt;form id="myForm"&gt;
-             &lt;label for="name"&gt;Name:&lt;/label&gt;
-             &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;
-             &lt;input type="submit" value="Submit" onclick="submitForm()"&gt;
-            &lt;/form&gt;
-            
-            &lt;script&gt;
-             function submitForm() {
-                 var form = document.getElementById("myForm");
-                 alert("Form ID: " + form.id); // Display the form ID
-                 alert("Number of elements: " + form.elements.length); // Display the number of elements in the form
-                 form.submit(); // Submit the form
-             }
-            &lt;/script&gt;</code></pre>
-            
-                <p><strong>Why It Matters:</strong> Understanding the form object is essential for effectively managing form data, enhancing user interaction, and ensuring proper form validation and submission in web applications.</p>
-            </article>            
+        <section class="topic">
+            <h3>3.1.2 Modify Attributes in HTML Using DOM Elements</h3>
+            <div id="quiz2"></div>
+            <div class="result" id="result2" aria-live="polite"></div>
+        </section>
         
-            <article class="section">
-                <h4 id="a323">3.2.3 Referring to Form Objects</h4>
-                <p>In JavaScript, you can refer to various form objects, such as input fields, textareas, radio buttons, checkboxes, select dropdowns, buttons, passwords, hidden fields, files, and submit buttons. Each type of form object has specific properties and methods that can be accessed and manipulated to enhance user interaction and data handling.</p>
+        <section class="topic">
+            <h3>3.2.1 Identify and Use Form Controls (Including HTML5)</h3>
+            <div id="quiz3"></div>
+            <div class="result" id="result3" aria-live="polite"></div>
+        </section>   
+
+        <section class="container">
+            <h2>3.2 Use JavaScript to Develop Interactive Forms</h2>
+            <h3 class="toggle" onclick="toggleContent('content2')"><a href="#content2">Study Guide</a></h3>
+            <div class="content" id="content2" style="display: none;">
+                <article class="section">
+                    <h4 id="a321">3.2.1 Using Form Controls and HTML5 Form Elements</h4>
+                    <p>HTML provides various form controls that allow users to interact with web forms. HTML5 introduced new form elements and attributes to enhance form usability and accessibility, making it easier for users to input data accurately.</p>
+                    
+                    <h5>Common Form Controls:</h5>
+                    <ul>
+                        <li><strong>Text Input:</strong> Allows users to enter text.<br>
+                            <code>&lt;input type="text" name="username"&gt;</code>
+                        </li>
+                        <li><strong>Checkbox:</strong> Allows users to select multiple options.<br>
+                            <code>&lt;input type="checkbox" name="interest" value="sports"&gt; Sports</code><br>
+                            <code>&lt;input type="checkbox" name="interest" value="music"&gt; Music</code>
+                        </li>
+                        <li><strong>Radio Button:</strong> Allows users to select one option from a group.<br>
+                            <code>&lt;input type="radio" name="gender" value="male"&gt; Male</code><br>
+                            <code>&lt;input type="radio" name="gender" value="female"&gt; Female</code>
+                        </li>
+                        <li><strong>Select Dropdown:</strong> Allows users to select one option from a dropdown list.<br>
+                            <code>&lt;select name="country"&gt;<br>
+                                &lt;option value="usa"&gt;USA&lt;/option&gt;<br>
+                                &lt;option value="canada"&gt;Canada&lt;/option&gt;<br>
+                            &lt;/select&gt;</code>
+                        </li>
+                        <li><strong>Textarea:</strong> Allows users to enter multiline text.<br>
+                            <code>&lt;textarea name="message"&gt;&lt;/textarea&gt;</code>
+                        </li>
+                    </ul>
                 
-                <h5>Example of Referring to Form Objects:</h5>
-                <pre><code>&lt;form id="myForm"&gt;
-             &lt;input type="text" id="username" name="username"&gt;&lt;br&gt;
-             &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;&lt;br&gt;
-             &lt;input type="radio" id="male" name="gender" value="male"&gt; Male
-             &lt;input type="radio" id="female" name="gender" value="female"&gt; Female&lt;br&gt;
-             &lt;input type="checkbox" id="subscribe" name="subscribe" value="yes"&gt; Subscribe to Newsletter&lt;br&gt;
-             &lt;select id="country" name="country"&gt;
-                 &lt;option value="usa"&gt;USA&lt;/option&gt;
-                 &lt;option value="canada"&gt;Canada&lt;/option&gt;
-             &lt;/select&gt;&lt;br&gt;
-             &lt;button type="submit"&gt;Submit&lt;/button&gt;
-            &lt;/form&gt;
-            
-            &lt;script&gt;
-             var usernameInput = document.getElementById("username");
-             var messageTextarea = document.getElementById("message");
-             var maleRadio = document.getElementById("male");
-             var femaleRadio = document.getElementById("female");
-             var subscribeCheckbox = document.getElementById("subscribe");
-             var countrySelect = document.getElementById("country");
-             var submitButton = document.querySelector("button[type=submit]");
-            &lt;/script&gt;</code></pre>
-            
-                <h5>Accessing Form Object Properties:</h5>
-                <p>Once you have referred to the form objects, you can access their properties and methods. For example:</p>
-                <ul>
-                    <li><code>usernameInput.value</code>: Gets or sets the value of the username input field.</li>
-                    <li><code>messageTextarea.value</code>: Gets or sets the content of the textarea.</li>
-                    <li><code>maleRadio.checked</code>: Returns true if the male radio button is selected.</li>
-                    <li><code>subscribeCheckbox.checked</code>: Returns true if the checkbox is checked.</li>
-                    <li><code>countrySelect.value</code>: Gets the selected value from the dropdown.</li>
-                </ul>
-            
-                <p><strong>Why It Matters:</strong> Referring to form objects allows developers to manipulate user input dynamically, validate data, and enhance the overall user experience in web applications.</p>
-            </article>
-            
-        
-            <article class="section">
-                <h4 id="a324">3.2.4 Using Form Objects</h4>
-                <p>Form objects in JavaScript, such as radio buttons, select dropdowns, buttons, text inputs, textareas, checkboxes, passwords, hidden fields, files, and submit buttons, allow you to interact with and manipulate form elements on a web page. This interaction is essential for collecting user input and processing it effectively.</p>
-                <ul>
-                    <li>Read values: <code>myForm.username.value</code></li>
-                    <li>Set values: <code>myForm.username.value = "Alice"</code></li>
-                    <li>Check status: <code>myForm.termsCheckbox.checked</code></li>
-                </ul>
+                    <h5>HTML5 Form Elements:</h5>
+                    <ul>
+                        <li><strong>Email Input:</strong> Validates input as an email address.<br>
+                            <code>&lt;input type="email" name="email"&gt;</code>
+                        </li>
+                        <li><strong>URL Input:</strong> Validates input as a URL.<br>
+                            <code>&lt;input type="url" name="website"&gt;</code>
+                        </li>
+                        <li><strong>Date Input:</strong> Allows users to select a date.<br>
+                            <code>&lt;input type="date" name="birthdate"&gt;</code>
+                        </li>
+                        <li><strong>Number Input:</strong> Allows users to enter a number.<br>
+                            <code>&lt;input type="number" name="quantity"&gt;</code>
+                        </li>
+                        <li><strong>Range Input:</strong> Allows users to select a value from a range.<br>
+                            <code>&lt;input type="range" name="rating" min="1" max="5"&gt;</code>
+                        </li>
+                    </ul>
                 
-                    <h5>Example of Using Form Objects:</h5>
+                    <h5>Example of Using Form Controls and HTML5 Form Elements:</h5>
+                    <pre><code>&lt;form&gt;
+                &lt;label for="name"&gt;Name:&lt;/label&gt;
+                &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;
+                
+                &lt;label for="email"&gt;Email:&lt;/label&gt;
+                &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;
+                
+                &lt;label for="birthdate"&gt;Birthdate:&lt;/label&gt;
+                &lt;input type="date" id="birthdate" name="birthdate"&gt;&lt;br&gt;
+                
+                &lt;label for="gender"&gt;Gender:&lt;/label&gt;
+                &lt;input type="radio" id="male" name="gender" value="male"&gt; Male
+                &lt;input type="radio" id="female" name="gender" value="female"&gt; Female&lt;br&gt;
+                
+                &lt;label for="interests"&gt;Interests:&lt;/label&gt;
+                &lt;input type="checkbox" id="sports" name="interests" value="sports"&gt; Sports
+                &lt;input type="checkbox" id="music" name="interests" value="music"&gt; Music&lt;br&gt;
+                
+                &lt;label for="country"&gt;Country:&lt;/label&gt;
+                &lt;select id="country" name &lt;country"&gt;
+                &lt;option value="usa"&gt;USA&lt;/option&gt;
+                &lt;option value="canada"&gt;Canada&lt;/option&gt;
+                &lt;/select&gt;&lt;br&gt;
+                
+                &lt;label for="message"&gt;Message:&lt;/label&gt;
+                &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;&lt;br&gt;
+                
+                &lt;input type="submit" value="Submit"&gt;
+                &lt;/form&gt;</code></pre>
+                
+                    <p><strong>Why It Matters:</strong> Utilizing various form controls and HTML5 elements enhances the usability and accessibility of web forms, making it easier for users to provide accurate information and improving overall user experience.</p>
+                </article>
+            
+                <article class="section">
+                    <h4 id="a322">3.2.2 Defining the Form Object</h4>
+                    <p>In JavaScript, the form object represents an HTML form element and provides access to its properties and methods. It allows you to interact with form elements, validate form data, and handle form submission effectively.</p>
+                    
+                    <h5>Accessing the Form Object:</h5>
+                    <p>You can access the form object using its ID or by using the <code>document.forms</code> collection.</p>
+                    
+                    <h5>Example of Accessing the Form Object:</h5>
                     <pre><code>&lt;form id="myForm"&gt;
-                &lt;input type="text" id="username" name="username" placeholder="Enter your username"&gt;&lt;br&gt;
-                &lt;input type="password" id="password" name="password" placeholder="Enter your password"&gt;&lt;br&gt;
-                &lt;textarea id="message" name="message" placeholder="Enter your message"&gt;&lt;/textarea&gt;&lt;br&gt;
+                &lt;label for="name"&gt;Name:&lt;/label&gt;
+                &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;
+                &lt;input type="submit" value="Submit"&gt;
+                &lt;/form&gt;
+                
+                &lt;script&gt;
+                var form = document.getElementById("myForm");
+                // or
+                var form = document.forms["myForm"];
+                &lt;/script&gt;</code></pre>
+                
+                    <h5>Common Properties and Methods of the Form Object:</h5>
+                    <h6>Properties:</h6>
+                    <ul>
+                        <li><code>form.id</code>: Returns the ID of the form.</li>
+                        <li><code>form.name</code>: Returns the name of the form.</li>
+                        <li><code>form.elements</code>: Returns a collection of form elements in the form.</li>
+                    </ul>
+                    
+                    <h6>Methods:</h6>
+                    <ul>
+                        <li><code>form.submit()</code>: Submits the form.</li>
+                        <li><code>form.reset()</code>: Resets the form to its initial state.</li>
+                    </ul>
+                
+                    <h5>Example of Using Form Object Properties and Methods:</h5>
+                    <pre><code>&lt;form id="myForm"&gt;
+                &lt;label for="name"&gt;Name:&lt;/label&gt;
+                &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;
+                &lt;input type="submit" value="Submit" onclick="submitForm()"&gt;
+                &lt;/form&gt;
+                
+                &lt;script&gt;
+                function submitForm() {
+                    var form = document.getElementById("myForm");
+                    alert("Form ID: " + form.id); // Display the form ID
+                    alert("Number of elements: " + form.elements.length); // Display the number of elements in the form
+                    form.submit(); // Submit the form
+                }
+                &lt;/script&gt;</code></pre>
+                
+                    <p><strong>Why It Matters:</strong> Understanding the form object is essential for effectively managing form data, enhancing user interaction, and ensuring proper form validation and submission in web applications.</p>
+                </article>            
+            
+                <article class="section">
+                    <h4 id="a323">3.2.3 Referring to Form Objects</h4>
+                    <p>In JavaScript, you can refer to various form objects, such as input fields, textareas, radio buttons, checkboxes, select dropdowns, buttons, passwords, hidden fields, files, and submit buttons. Each type of form object has specific properties and methods that can be accessed and manipulated to enhance user interaction and data handling.</p>
+                    
+                    <h5>Example of Referring to Form Objects:</h5>
+                    <pre><code>&lt;form id="myForm"&gt;
+                &lt;input type="text" id="username" name="username"&gt;&lt;br&gt;
+                &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;&lt;br&gt;
+                &lt;input type="radio" id="male" name="gender" value="male"&gt; Male
+                &lt;input type="radio" id="female" name="gender" value="female"&gt; Female&lt;br&gt;
                 &lt;input type="checkbox" id="subscribe" name="subscribe" value="yes"&gt; Subscribe to Newsletter&lt;br&gt;
                 &lt;select id="country" name="country"&gt;
                     &lt;option value="usa"&gt;USA&lt;/option&gt;
                     &lt;option value="canada"&gt;Canada&lt;/option&gt;
                 &lt;/select&gt;&lt;br&gt;
-                &lt;input type="file" id="upload" name="upload"&gt;&lt;br&gt;
+                &lt;button type="submit"&gt;Submit&lt;/button&gt;
+                &lt;/form&gt;
+                
+                &lt;script&gt;
+                var usernameInput = document.getElementById("username");
+                var messageTextarea = document.getElementById("message");
+                var maleRadio = document.getElementById("male");
+                var femaleRadio = document.getElementById("female");
+                var subscribeCheckbox = document.getElementById("subscribe");
+                var countrySelect = document.getElementById("country");
+                var submitButton = document.querySelector("button[type=submit]");
+                &lt;/script&gt;</code></pre>
+                
+                    <h5>Accessing Form Object Properties:</h5>
+                    <p>Once you have referred to the form objects, you can access their properties and methods. For example:</p>
+                    <ul>
+                        <li><code>usernameInput.value</code>: Gets or sets the value of the username input field.</li>
+                        <li><code>messageTextarea.value</code>: Gets or sets the content of the textarea.</li>
+                        <li><code>maleRadio.checked</code>: Returns true if the male radio button is selected.</li>
+                        <li><code>subscribeCheckbox.checked</code>: Returns true if the checkbox is checked.</li>
+                        <li><code>countrySelect.value</code>: Gets the selected value from the dropdown.</li>
+                    </ul>
+                
+                    <p><strong>Why It Matters:</strong> Referring to form objects allows developers to manipulate user input dynamically, validate data, and enhance the overall user experience in web applications.</p>
+                </article>
+                
+            
+                <article class="section">
+                    <h4 id="a324">3.2.4 Using Form Objects</h4>
+                    <p>Form objects in JavaScript, such as radio buttons, select dropdowns, buttons, text inputs, textareas, checkboxes, passwords, hidden fields, files, and submit buttons, allow you to interact with and manipulate form elements on a web page. This interaction is essential for collecting user input and processing it effectively.</p>
+                    <ul>
+                        <li>Read values: <code>myForm.username.value</code></li>
+                        <li>Set values: <code>myForm.username.value = "Alice"</code></li>
+                        <li>Check status: <code>myForm.termsCheckbox.checked</code></li>
+                    </ul>
+                    
+                        <h5>Example of Using Form Objects:</h5>
+                        <pre><code>&lt;form id="myForm"&gt;
+                    &lt;input type="text" id="username" name="username" placeholder="Enter your username"&gt;&lt;br&gt;
+                    &lt;input type="password" id="password" name="password" placeholder="Enter your password"&gt;&lt;br&gt;
+                    &lt;textarea id="message" name="message" placeholder="Enter your message"&gt;&lt;/textarea&gt;&lt;br&gt;
+                    &lt;input type="checkbox" id="subscribe" name="subscribe" value="yes"&gt; Subscribe to Newsletter&lt;br&gt;
+                    &lt;select id="country" name="country"&gt;
+                        &lt;option value="usa"&gt;USA&lt;/option&gt;
+                        &lt;option value="canada"&gt;Canada&lt;/option&gt;
+                    &lt;/select&gt;&lt;br&gt;
+                    &lt;input type="file" id="upload" name="upload"&gt;&lt;br&gt;
+                    &lt;input type="submit" value="Submit"&gt;
+                    &lt;/form&gt;
+                    
+                    &lt;script&gt;
+                    var username = document.getElementById("username").value; // Get the value of the username input
+                    var password = document.getElementById("password").value; // Get the value of the password input
+                    var message = document.getElementById("message").value; // Get the value of the textarea
+                    var subscribe = document.getElementById("subscribe").checked; // Check if the checkbox is checked
+                    var country = document.getElementById("country").value; // Get the selected value from the dropdown
+                    var upload = document.getElementById("upload").files[0]; // Get the first file from the file input
+                    &lt;/script&gt;</code></pre>
+                    <h5>Accessing Form Object Values:</h5>
+                    <p>Once you have referred to the form objects, you can easily access their values and states. Here are some common ways to interact with form objects:</p>
+                    <ul>
+                        <li><code>document.getElementById("username").value</code>: Retrieves the value entered in the username input field.</li>
+                        <li><code>document.getElementById("password").value</code>: Retrieves the value entered in the password input field.</li>
+                        <li><code>document.getElementById("message").value</code>: Retrieves the content of the textarea.</li>
+                        <li><code>document.getElementById("subscribe").checked</code>: Returns true if the checkbox is checked.</li>
+                        <li><code>document.getElementById("country").value</code>: Retrieves the selected value from the dropdown.</li>
+                        <li><code>document.getElementById("upload").files[0]</code>: Accesses the first file selected in the file input.</li>
+                    </ul>
+                
+                    <p><strong>Why It Matters:</strong> Using form objects effectively allows developers to gather user input, validate data, and enhance the overall user experience in web applications. Proper handling of form data is crucial for creating interactive and responsive web applications.</p>
+                </article>
+            
+            <article class="section">
+                <h4 id="a325">3.2.5 Conducting Form Validation</h4>
+                <p>Form validation is the process of ensuring that user input is correct and meets the specified criteria before it is submitted to the server. JavaScript can be used to validate form data and provide feedback to users if their input is invalid, enhancing the user experience and preventing errors.</p>
+                    <ul>
+                        <li>Client-Side Validation with JavaScript:
+                            <ul>
+                                <li>Check required fields, email format, password complexity, etc.</li>
+                            </ul>
+                        </li>
+                        <li>HTML5 Validation attributes: <code>required</code>, <code>pattern</code>, <code>minlength</code>, <code>maxlength</code></li>
+                        <li>Custom Validation Example:
+                            <pre><code>function validateForm() {
+                let emailField = document.getElementById("email");
+                if (!emailField.value.includes("@")) {
+                    alert("Please enter a valid email.");
+                    return false; // stops form submission
+                }
+                return true;
+            }</code></pre>
+                        </li>
+                        <li>Why Validate on Client-Side?
+                            <ul>
+                                <li>Quick feedback for users, minimal server load.</li>
+                                <li>Always combine with server-side validation for security.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h5>Common Form Validation Techniques:</h5>
+                    <ul>
+                        <li><strong>Required Fields:</strong> Ensure that mandatory fields are filled out.</li>
+                        <li><strong>Format Validation:</strong> Validate input format (e.g., email, phone number).</li>
+                        <li><strong>Length Validation:</strong> Validate input length (e.g., minimum and maximum characters).</li>
+                        <li><strong>Numeric Validation:</strong> Validate numeric input (e.g., age, quantity).</li>
+                        <li><strong>Pattern Matching:</strong> Validate input against a specific pattern or regular expression.</li>
+                        <li><strong>Custom Validation:</strong> Implement custom validation logic specific to your application.</li>
+                    </ul>
+                
+                    <h5>Example of Form Validation:</h5>
+                    <pre><code>&lt;form id="myForm" onsubmit="return validateForm()"&gt;
+                &lt;label for="username"&gt;Username:&lt;/label&gt;
+                &lt;input type="text" id="username" name="username" required&gt;&lt;br&gt;
+                &lt;label for="email"&gt;Email:&lt;/label&gt;
+                &lt;input type="email" id="email" name="email" required&gt;&lt;br&gt;
+                &lt;label for="age"&gt;Age:&lt;/label&gt;
+                &lt;input type="number" id="age" name="age" min="18" max="100" required&gt;&lt;br&gt;
                 &lt;input type="submit" value="Submit"&gt;
                 &lt;/form&gt;
                 
                 &lt;script&gt;
-                var username = document.getElementById("username").value; // Get the value of the username input
-                var password = document.getElementById("password").value; // Get the value of the password input
-                var message = document.getElementById("message").value; // Get the value of the textarea
-                var subscribe = document.getElementById("subscribe").checked; // Check if the checkbox is checked
-                var country = document.getElementById("country").value; // Get the selected value from the dropdown
-                var upload = document.getElementById("upload").files[0]; // Get the first file from the file input
+                function validateForm() {
+                    var username = document.getElementById("username").value;
+                    var email = document.getElementById("email").value;
+                    var age = document.getElementById("age").value;
+                
+                    if (username === "") {
+                        alert("Username is required");
+                        return false;
+                    }
+                
+                    if (!email.includes("@")) {
+                        alert("Invalid email address");
+                        return false;
+                    }
+                
+                    if (age &lt; 18 || age > 100) {
+                        alert("Age must be between 18 and 100");
+                        return false;
+                    }
+                
+                    return true;
+                }
                 &lt;/script&gt;</code></pre>
-                <h5>Accessing Form Object Values:</h5>
-                <p>Once you have referred to the form objects, you can easily access their values and states. Here are some common ways to interact with form objects:</p>
-                <ul>
-                    <li><code>document.getElementById("username").value</code>: Retrieves the value entered in the username input field.</li>
-                    <li><code>document.getElementById("password").value</code>: Retrieves the value entered in the password input field.</li>
-                    <li><code>document.getElementById("message").value</code>: Retrieves the content of the textarea.</li>
-                    <li><code>document.getElementById("subscribe").checked</code>: Returns true if the checkbox is checked.</li>
-                    <li><code>document.getElementById("country").value</code>: Retrieves the selected value from the dropdown.</li>
-                    <li><code>document.getElementById("upload").files[0]</code>: Accesses the first file selected in the file input.</li>
-                </ul>
+                
+                    <p><strong>Why It Matters:</strong> Conducting form validation is crucial for ensuring data integrity and providing a smooth user experience. By validating user input, you can prevent invalid data from being submitted to the server, reducing errors and improving application reliability.</p>
+                </article>
             
-                <p><strong>Why It Matters:</strong> Using form objects effectively allows developers to gather user input, validate data, and enhance the overall user experience in web applications. Proper handling of form data is crucial for creating interactive and responsive web applications.</p>
-            </article>
-        
-        <article class="section">
-            <h4 id="a325">3.2.5 Conducting Form Validation</h4>
-            <p>Form validation is the process of ensuring that user input is correct and meets the specified criteria before it is submitted to the server. JavaScript can be used to validate form data and provide feedback to users if their input is invalid, enhancing the user experience and preventing errors.</p>
-                <ul>
-                    <li>Client-Side Validation with JavaScript:
-                        <ul>
-                            <li>Check required fields, email format, password complexity, etc.</li>
-                        </ul>
-                    </li>
-                    <li>HTML5 Validation attributes: <code>required</code>, <code>pattern</code>, <code>minlength</code>, <code>maxlength</code></li>
-                    <li>Custom Validation Example:
-                        <pre><code>function validateForm() {
-            let emailField = document.getElementById("email");
-            if (!emailField.value.includes("@")) {
-                alert("Please enter a valid email.");
-                return false; // stops form submission
-            }
-            return true;
-        }</code></pre>
-                    </li>
-                    <li>Why Validate on Client-Side?
-                        <ul>
-                            <li>Quick feedback for users, minimal server load.</li>
-                            <li>Always combine with server-side validation for security.</li>
-                        </ul>
-                    </li>
-                </ul>
-                <h5>Common Form Validation Techniques:</h5>
-                <ul>
-                    <li><strong>Required Fields:</strong> Ensure that mandatory fields are filled out.</li>
-                    <li><strong>Format Validation:</strong> Validate input format (e.g., email, phone number).</li>
-                    <li><strong>Length Validation:</strong> Validate input length (e.g., minimum and maximum characters).</li>
-                    <li><strong>Numeric Validation:</strong> Validate numeric input (e.g., age, quantity).</li>
-                    <li><strong>Pattern Matching:</strong> Validate input against a specific pattern or regular expression.</li>
-                    <li><strong>Custom Validation:</strong> Implement custom validation logic specific to your application.</li>
-                </ul>
-            
-                <h5>Example of Form Validation:</h5>
-                <pre><code>&lt;form id="myForm" onsubmit="return validateForm()"&gt;
-             &lt;label for="username"&gt;Username:&lt;/label&gt;
-             &lt;input type="text" id="username" name="username" required&gt;&lt;br&gt;
-             &lt;label for="email"&gt;Email:&lt;/label&gt;
-             &lt;input type="email" id="email" name="email" required&gt;&lt;br&gt;
-             &lt;label for="age"&gt;Age:&lt;/label&gt;
-             &lt;input type="number" id="age" name="age" min="18" max="100" required&gt;&lt;br&gt;
-             &lt;input type="submit" value="Submit"&gt;
-            &lt;/form&gt;
-            
-            &lt;script&gt;
-             function validateForm() {
-                 var username = document.getElementById("username").value;
-                 var email = document.getElementById("email").value;
-                 var age = document.getElementById("age").value;
-            
-                 if (username === "") {
-                     alert("Username is required");
-                     return false;
-                 }
-            
-                 if (!email.includes("@")) {
-                     alert("Invalid email address");
-                     return false;
-                 }
-            
-                 if (age &lt; 18 || age > 100) {
-                     alert("Age must be between 18 and 100");
-                     return false;
-                 }
-            
-                 return true;
-             }
-            &lt;/script&gt;</code></pre>
-            
-                <p><strong>Why It Matters:</strong> Conducting form validation is crucial for ensuring data integrity and providing a smooth user experience. By validating user input, you can prevent invalid data from being submitted to the server, reducing errors and improving application reliability.</p>
-            </article>
-        
-        <article class="section">
-            <h4 id="a326">3.2.6 Identifying Common Form Security Issues</h4>
-            <p>When working with forms on the web, it's important to be aware of common security issues that can compromise the integrity and security of your application. Understanding these vulnerabilities is crucial for protecting user data and maintaining the trust of your users.</p>
-                <ul>
-                    <li>Input Injection (XSS, SQL injection if not handled server-side).</li>
-                    <li>CSRF (Cross-Site Request Forgery) risks.</li>
-                    <li>Over-reliance on Client-Side Validation: Malicious users can bypass it.</li>
-                </ul>
-                <h5>Common Form Security Issues:</h5>
-                <ul>
-                    <li><strong>Cross-Site Scripting (XSS):</strong> XSS occurs when a malicious script is injected into a web page, often through form inputs, and executed in the context of a user's browser. This can be used to steal sensitive information, such as cookies or session tokens.</li>
-                    
-                    <li><strong>SQL Injection (SQLi):</strong> SQLi occurs when an attacker injects malicious SQL code into a form input field, which can manipulate the database or access sensitive information. Proper input validation and parameterized queries can help mitigate this risk.</li>
-                    
-                    <li><strong>Cross-Site Request Forgery (CSRF):</strong> CSRF occurs when a user is tricked into unknowingly submitting a request to a web application on which they are authenticated. This can lead to actions being performed on behalf of the user without their consent. Implementing anti-CSRF tokens can help prevent this issue.</li>
-                    
-                    <li><strong>Sensitive Data Exposure:</strong> This occurs when sensitive information, such as passwords or personal information, is transmitted over insecure channels (e.g., HTTP instead of HTTPS) or stored in an insecure manner. Always use HTTPS and secure storage practices to protect sensitive data.</li>
-                    
-                    <li><strong>Insecure File Uploads:</strong> If a form allows users to upload files, it's important to validate the file type and scan for malicious content to prevent the upload of executable files or scripts. Implementing file type restrictions and virus scanning can help mitigate this risk.</li>
-                    
-                    <li><strong>Insecure Direct Object References (IDOR):</strong> This occurs when an attacker can access and manipulate objects, such as files or database records, directly through user input without proper authorization. Implementing proper access controls and validation can help prevent IDOR vulnerabilities.</li>
-                </ul>
-            
-                <p><strong>Why It Matters:</strong> Being aware of these common form security issues is essential for developers to protect their applications and users from potential attacks. Implementing best practices for security can significantly reduce the risk of vulnerabilities and enhance the overall security posture of web applications.</p>
-            </article>
-        </div>
-    </section>     
-        
-        <section class="topic">
-            <h3>3.2.2 Define the Form Object</h3>
-            <div id="quiz4"></div>
-            <div class="result" id="result4" aria-live="polite"></div>
-        </section>
-
-        <section class="topic">
-            <h3>3.2.3 Refer to Form Objects</h3>
-            <div id="quiz5"></div>
-            <div class="result" id="result5" aria-live="polite"></div>
-        </section>
-        
-        <section class="topic">
-            <h3>3.2.4 Use Form Objects</h3>
-            <div id="quiz6"></div>
-            <div class="result" id="result6" aria-live="polite"></div>
-        </section>
-
-        <section class="topic">
-            <h3>3.2.5 Conduct Form Validation</h3>
-            <div id="quiz7"></div>
-            <div class="result" id="result7" aria-live="polite"></div>
-        </section>
-
-        <section class="topic">
-            <h3>3.2.6 Identify Common Form Security Issues</h3>
-            <div id="quiz8"></div>
-            <div class="result" id="result8" aria-live="polite"></div>
-        </section>
-
-        <section class="topic">
-            <h3>3.2.6 Identify Common Form Security Issues</h3>
-            <div id="quiz9"></div>
-            <div class="result" id="result9" aria-live="polite"></div>
-        </section>
-
-        <section class="container">
-            <h2>3.3 Address JavaScript Security Issues Involving Browsers and Cookies</h2>
-            
-            <h3 class="toggle" onclick="toggleContent('content3')"><a href="#content3">Study Guide</a></h3>
-            <div class="content" id="content3" style="display: none;">
-                <article class="section">
-                    <h4 id="a331">3.3.1 Distinguishing Between Browser and Operating System Security Elements</h4>
-                    <p>When it comes to security, both the browser and the operating system play important roles, but they are responsible for different aspects of security. Understanding these differences is crucial for developing secure applications and protecting user data.</p>
+            <article class="section">
+                <h4 id="a326">3.2.6 Identifying Common Form Security Issues</h4>
+                <p>When working with forms on the web, it's important to be aware of common security issues that can compromise the integrity and security of your application. Understanding these vulnerabilities is crucial for protecting user data and maintaining the trust of your users.</p>
                     <ul>
-                        <li><strong>Browser Security:</strong> Sandboxes JavaScript from accessing OS resources directly.</li>
-                        <li><strong>Operating System Security:</strong> Manages deeper system-level operations, but JavaScript has no direct access in web scenarios.</li>
+                        <li>Input Injection (XSS, SQL injection if not handled server-side).</li>
+                        <li>CSRF (Cross-Site Request Forgery) risks.</li>
+                        <li>Over-reliance on Client-Side Validation: Malicious users can bypass it.</li>
                     </ul>
-                    <h5>Browser Security Elements:</h5>
+                    <h5>Common Form Security Issues:</h5>
                     <ul>
-                        <li><strong>Sandboxing:</strong> Browsers use sandboxing to isolate web pages from each other and from the rest of the system. This helps prevent malicious code on one page from affecting other pages or the system.</li>
+                        <li><strong>Cross-Site Scripting (XSS):</strong> XSS occurs when a malicious script is injected into a web page, often through form inputs, and executed in the context of a user's browser. This can be used to steal sensitive information, such as cookies or session tokens.</li>
                         
-                        <li><strong>Content Security Policy (CSP):</strong> CSP allows website owners to control which resources can be loaded on their pages, reducing the risk of cross-site scripting (XSS) attacks by specifying trusted sources for content.</li>
+                        <li><strong>SQL Injection (SQLi):</strong> SQLi occurs when an attacker injects malicious SQL code into a form input field, which can manipulate the database or access sensitive information. Proper input validation and parameterized queries can help mitigate this risk.</li>
                         
-                        <li><strong>Secure Communication:</strong> Browsers support secure communication over HTTPS, encrypting data transmitted between the user and the server to prevent eavesdropping and tampering.</li>
+                        <li><strong>Cross-Site Request Forgery (CSRF):</strong> CSRF occurs when a user is tricked into unknowingly submitting a request to a web application on which they are authenticated. This can lead to actions being performed on behalf of the user without their consent. Implementing anti-CSRF tokens can help prevent this issue.</li>
                         
-                        <li><strong>Cookie Security:</strong> Browsers enforce security measures for cookies, such as the same-origin policy, to prevent cookies from being accessed by unauthorized parties and to protect user sessions.</li>
+                        <li><strong>Sensitive Data Exposure:</strong> This occurs when sensitive information, such as passwords or personal information, is transmitted over insecure channels (e.g., HTTP instead of HTTPS) or stored in an insecure manner. Always use HTTPS and secure storage practices to protect sensitive data.</li>
+                        
+                        <li><strong>Insecure File Uploads:</strong> If a form allows users to upload files, it's important to validate the file type and scan for malicious content to prevent the upload of executable files or scripts. Implementing file type restrictions and virus scanning can help mitigate this risk.</li>
+                        
+                        <li><strong>Insecure Direct Object References (IDOR):</strong> This occurs when an attacker can access and manipulate objects, such as files or database records, directly through user input without proper authorization. Implementing proper access controls and validation can help prevent IDOR vulnerabilities.</li>
                     </ul>
                 
-                    <h5>Operating System Security Elements:</h5>
-                    <ul>
-                        <li><strong>User Account Control (UAC):</strong> UAC prompts users for permission before allowing applications to make changes to the system, reducing the risk of unauthorized access and ensuring that users are aware of potential changes.</li>
-                        
-                        <li><strong>Firewall:</strong> Operating systems often include a firewall that monitors and controls incoming and outgoing network traffic, helping to protect against unauthorized access and malware by filtering traffic based on security rules.</li>
-                        
-                        <li><strong>Anti-virus/Anti-malware:</strong> Operating systems can include built-in or third-party anti-virus and anti-malware software to detect and remove malicious software, providing an additional layer of protection against threats.</li>
-                        
-                        <li><strong>File Permissions:</strong> Operating systems enforce file permissions to control which users and applications can access, modify, or execute files, enhancing security by restricting access to sensitive data.</li>
-                    </ul>
-                
-                    <p><strong>Why It Matters:</strong> Understanding the distinct security elements of browsers and operating systems is essential for developers and users alike. By leveraging these security features, individuals can better protect their systems and data from potential threats and vulnerabilities.</p>
-                </article>
-                
-        
-                <article class="section">
-                    <h4 id="a332">3.3.2 Discussing Browser Security Issues Relevant to JavaScript</h4>
-                    
-                    <p>JavaScript, as a powerful scripting language, can introduce security vulnerabilities if not used properly. Below are some browser-specific security issues related to JavaScript:</p>
-                    <ul>
-                        <li>Script Blocking: Users or extensions can block scripts.</li>
-                        <li>Frame-to-Frame URL Changing: Malicious behavior if scripts manipulate iframes outside their domain.</li>
-                        <li>document.write(): Can overwrite the entire page if used after the initial load; rarely recommended.</li>
-                    </ul>
-                    <p><strong>Pitfall:</strong> Overusing document.write() can lead to unexpected results.</p>
-                    <h5>1. Script Blocking</h5>
-                    <ul>
-                        <li><strong>Cross-Origin Resource Sharing (CORS):</strong> Browsers block scripts from accessing resources (like images or scripts) from a different domain by default to prevent Cross-Site Scripting (XSS) attacks.</li>
-                        <li><strong>Content Security Policy (CSP):</strong> CSP allows website owners to define which resources can be loaded on their pages, mitigating the risk of XSS attacks by blocking unauthorized scripts.</li>
-                    </ul>
-                    
-                    <h5>2. Frame-to-Frame URL Changing</h5>
-                    <ul>
-                        <li><strong>Same-Origin Policy:</strong> Browsers restrict scripts from changing the URL of a frame or window to a different domain to prevent unauthorized access to content.</li>
-                        <li><strong>Window Restrictions:</strong> Browsers restrict scripts from accessing windows or frames that have a different origin to prevent XSS attacks and data theft.</li>
-                    </ul>
-                    
-                    <h5>3. document.write Behavior Differences Among Browsers</h5>
-                    <ul>
-                        <li><strong>Asynchronous Loading:</strong> Some browsers may block the rendering of a page until the <code>document.write</code> script is executed, affecting performance.</li>
-                        <li><strong>Script Execution Order:</strong> The order in which scripts are executed can vary among browsers, leading to potential issues with script dependencies and functionality.</li>
-                    </ul>
-                    
-                    <p><strong>Conclusion:</strong> Understanding these security issues is crucial for developers to write secure JavaScript code and protect users from potential vulnerabilities.</p>
-                </article>
-
-                <article class="section">
-                    <h4 id="a333">3.3.3 Defining Signed Scripts</h4>
-                    <p>JavaScript can be digitally signed to indicate authenticity, relevant in secure environments.</p>
-                    
-                    <p>Signed scripts are JavaScript scripts that have been digitally signed by their author using a cryptographic signature. This signature verifies the authenticity and integrity of the script, ensuring that it has not been tampered with since it was signed.</p>
-                    <h5>Purpose of Signed Scripts:</h5>
-                    <ul>
-                        <li><strong>Authentication:</strong> Signed scripts provide a way to authenticate the author of the script, ensuring that it comes from a trusted source.</li>
-                        <li><strong>Integrity:</strong> The signature ensures that the script has not been altered or tampered with since it was signed, maintaining its integrity.</li>
-                        <li><strong>Non-repudiation:</strong> Once a script is signed, the author cannot deny having signed it, providing non-repudiation.</li>
-                    </ul>
-                    
-                    <h5>How Signed Scripts Work:</h5>
-                    <ul>
-                        <li><strong>Signing Process:</strong> The author of the script generates a cryptographic hash of the script using a private key. This hash is then encrypted with the author's private key to create a digital signature.</li>
-                        <li><strong>Verification Process:</strong> When the script is loaded, the browser uses the author's public key to decrypt the signature and verify the hash of the script. If the hash matches, the script is considered authentic and has not been tampered with.</li>
-                    </ul>
-                    
-                    <p><strong>Conclusion:</strong> Signed scripts play a crucial role in enhancing security in web applications by ensuring that scripts are authentic, unaltered, and verifiable.</p>
-                </article>
-        
-                <article class="section">
-                    <h4 id="a334">3.3.4 Performing Client-Side Browser Detection</h4>
-                    <p>Use feature detection instead of navigator.userAgent due to potential spoofing.</p>
-                    
-                    <p>Client-side browser detection involves using JavaScript to determine the web browser being used by the client accessing the web page. This information can be used to provide browser-specific functionality or to alert users about compatibility issues.</p>
-                    <h5>Browser Detection Techniques:</h5>
-                    <ul>
-                        <li><strong>User Agent String:</strong> The <code>navigator.userAgent</code> property can be used to retrieve the user agent string, which contains information about the browser and operating system.</li>
-                        <li><strong>Feature Detection:</strong> Instead of detecting specific browsers, it's often more reliable to detect specific features or capabilities supported by the browser using feature detection techniques.</li>
-                    </ul>
-                    
-                    <h5>Determining Browser Compatibility:</h5>
-                    <ul>
-                        <li><strong>Feature Support:</strong> Check for support of specific JavaScript features, HTML elements, or CSS properties that are essential for your application.</li>
-                        <li><strong>Vendor Prefixes:</strong> Some browsers may require vendor prefixes for certain CSS properties. Use feature detection or a library like Modernizr to handle these differences.</li>
-                        <li><strong>Polyfills:</strong> Use polyfills to add support for features that are not natively supported by older browsers.</li>
-                    </ul>
-                    
-                    <h5>Example of Browser Detection:</h5>
-                    <pre><code>var ua = navigator.userAgent;
-                if (ua.indexOf("Chrome") !== -1) {
-                    console.log("You are using Chrome.");
-                } else if (ua.indexOf("Firefox") !== -1) {
-                    console.log("You are using Firefox.");
-                } else {
-                    console.log("You are using a different browser.");
-                }</code></pre>
-                    
-                    <p><strong>Conclusion:</strong> Client-side browser detection is essential for ensuring that web applications function correctly across different browsers and provide a seamless user experience.</p>
-                </article>
-
-                <article class="section">
-                    <h4 id="a335">3.3.5 Identifying Common Issues and Procedures for Creating Secure JavaScript Code</h4>
-                    <ul>
-                        <li>Never store sensitive information in plain text.</li>
-                        <li>Sanitize user input to prevent injection attacks.</li>
-                        <li>Use HTTPS to protect data in transit.</li>
-                        <li>Be cautious of third-party scripts.</li>
-                    </ul>
-                    <h5>Common Issues in JavaScript Security:</h5>
-                    <ul>
-                        <li><strong>Cross-Site Scripting (XSS):</strong> XSS occurs when untrusted data is inserted into a web page, allowing attackers to execute malicious scripts in the context of a user's browser.</li>
-                        <li><strong>Cross-Site Request Forgery (CSRF):</strong> CSRF occurs when a user is tricked into unknowingly executing actions on a web application on which they are authenticated, leading to unauthorized actions being performed.</li>
-                        <li><strong>Injection Attacks:</strong> Injection attacks, such as SQL injection or JavaScript injection, occur when untrusted data is used to manipulate the behavior of an application, leading to data breaches or unauthorized access.</li>
-                        <li><strong>Insecure Direct Object References (IDOR):</strong> IDOR occurs when an attacker can access and manipulate objects directly through user input without proper authorization.</li>
-                    </ul>
-                    
-                    <h5>Procedures for Creating Secure JavaScript Code:</h5>
-                    <ul>
-                        <li><strong>Input Validation:</strong> Validate all input to ensure that it meets the expected format and does not contain malicious code.</li>
-                        <li><strong>Escape Output:</strong> Use proper escaping techniques to prevent XSS attacks when outputting data to a web page.</li>
-                        <li><strong>Use HTTPS:</strong> Ensure that your web application uses HTTPS to encrypt data transmitted between the user and the server, preventing eavesdropping and tampering.</li>
-                        <li><strong>Limit Access:</strong> Implement proper access controls to restrict access to sensitive resources and prevent unauthorized access.</li>
-                        <li><strong>Use Libraries and Frameworks:</strong> Use well-maintained libraries and frameworks that have built-in security features and are regularly updated to protect against known vulnerabilities.</li>
-                    </ul>
-                    
-                    <p><strong>Conclusion:</strong> By understanding common security issues and implementing best practices, developers can create secure JavaScript code that protects users and their data from potential threats.</p>
-                </article>
-
-                <article class="section">
-                    <h4 id="a336">3.3.6 Defining Cross-Site Scripting (XSS) and Associated Security Risks</h4>
-                    <p>A vulnerability where attackers inject malicious scripts into trusted content, often from unsanitized user input.</p>
-                    <h5>Cross-Site Scripting (XSS):</h5>
-                    <p>Cross-Site Scripting (XSS) is a security vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. These scripts can then execute in the context of the user's browser, potentially stealing sensitive information or hijacking user sessions.</p>
-                    
-                    <h5>Types of XSS Attacks:</h5>
-                    <ul>
-                        <li><strong>Stored XSS:</strong> Also known as persistent XSS, occurs when the malicious script is stored on the server and is displayed every time a user visits the affected page.</li>
-                        <li><strong>Reflected XSS:</strong> Also known as non-persistent XSS, occurs when the malicious script is reflected off a web server and executed in the user's browser.</li>
-                        <li><strong>DOM-based XSS:</strong> Occurs when the vulnerability is in the client-side code rather than the server-side code, allowing attackers to manipulate the Document Object Model (DOM) of the web page.</li>
-                    </ul>
-                    
-                    <h5>Security Risks Associated with XSS:</h5>
-                    <ul>
-                        <li><strong>Data Theft:</strong> Attackers can steal sensitive information, such as cookies, session tokens, or personal data, from users' browsers.</li>
-                        <li><strong>Session Hijacking:</strong> Attackers can hijack user sessions, impersonate users, and perform unauthorized actions on their behalf.</li>
-                        <li><strong>Phishing:</strong> Attackers can create fake login forms or messages that appear legitimate, tricking users into providing their credentials or other sensitive information.</li>
-                        <li><strong>Malware Distribution:</strong> Attackers can use XSS to distribute malware to users' browsers, compromising their systems.</li>
-                    </ul>
-                    
-                    <p><strong>Conclusion:</strong> Understanding XSS and its associated risks is crucial for developers to implement effective security measures and protect users from potential threats.</p>
-                </article>
-
-                <article class="section">
-                    <h4 id="a337">3.3.7 Defining Cookies and Their Common Uses</h4>
-                    <ul>
-                        <li>Cookies store small data pieces (up to ~4KB) in the browser.</li>
-                        <li>Uses include session tracking, remembering preferences, and analytics.</li>
-                    </ul>
-                    <h5>Cookies:</h5>
-                    <p>Cookies are small pieces of data stored on a user's device by a web browser. They are commonly used to store information about the user or their interaction with the website. Cookies can be set, retrieved, and deleted using JavaScript.</p>
-                    
-                    <h5>Functions of Cookies:</h5>
-                    <ul>
-                        <li><strong>Session Management:</strong> Cookies are often used to manage user sessions, keeping track of users as they navigate a website and storing session identifiers.</li>
-                        <li><strong>Personalization:</strong> Cookies can store user preferences and settings, allowing websites to personalize the user experience.</li>
-                        <li><strong>Tracking:</strong> Cookies are used for tracking user behavior on websites, such as which pages they visit or items they add to a shopping cart.</li>
-                        <li><strong>Authentication:</strong> Cookies are used for user authentication, allowing websites to remember logged-in users and provide access to restricted areas.</li>
-                        <li><strong>Advertising:</strong> Cookies are used for targeted advertising, tracking user interests and showing relevant ads.</li>
-                    </ul>
-                    
-                    <h5>Common Uses of Cookies:</h5>
-                    <ul>
-                        <li><strong>Authentication Cookies:</strong> Used to remember whether a user is logged in or not.</li>
-                        <li><strong>Session Cookies:</strong> Used to store temporary information about a user's session, such as shopping cart contents.</li>
-                        <li><strong>Persistent Cookies:</strong> Used to store information that persists across sessions, such as user preferences.</li>
-                        <li><strong>Tracking Cookies:</strong> Used to track user behavior across websites for analytics and advertising purposes.</li>
-                    </ul>
-                    
-                    <p><strong>Conclusion:</strong> Cookies play a vital role in enhancing user experience on the web by enabling session management, personalization, and tracking, while also raising important privacy considerations.</p>
-                </article>
-
-                <article class="section">
-                    <h4 id="a338">3.3.8 Manipulating Cookies Effectively</h4>
-                    <ul>
-                        <li><strong>Creating/Updating a Cookie:</strong> <code>document.cookie = "username=Alice; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";</code></li>
-                        <li><strong>Retrieving Cookies:</strong> <code>document.cookie</code> returns all cookies in key=value pairs.</li>
-                        <li><strong>Clearing Cookies:</strong> Set the cookie&apos;s expires date to a past date.</li>
-                        <li><strong>Enable/Disable Cookies:</strong> This is a browser-level setting.</li>
-                    </ul>
-                    <h5>Testing for Presence of Cookies:</h5>
-                    <p>To test if a cookie exists, you can use the <code>document.cookie</code> property to get a string containing all cookies. You can then check if a specific cookie name exists in this string.</p>
-                    
-                    <pre><code>function cookieExists(name) {
-                    return document.cookie.split(';').some(cookie => {
-                        return cookie.trim().startsWith(name + '=');
-                    });
-                }
-                
-                // Example usage
-                if (cookieExists('username')) {
-                    console.log('Cookie "username" exists.');
-                } else {
-                    console.log('Cookie "username" does not exist.');
-                }</code></pre>
-                    
-                    <h5>Clearing Cookies:</h5>
-                    <p>To clear a cookie, you can set its expiration date to a past date. This will cause the browser to remove the cookie.</p>
-                    
-                    <pre><code>function clearCookie(name) {
-                    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-                }
-                
-                // Example usage
-                clearCookie('username');</code></pre>
-                    
-                    <h5>Enabling/Disabling Cookies in the Browser:</h5>
-                    <p>Cookie settings are controlled by the browser and cannot be directly manipulated using JavaScript. However, you can inform users about how to enable or disable cookies in their browser through your website's interface or documentation.</p>
-                    
-                    <h5>Deleting Cookies from Your Hard Drive:</h5>
-                    <p>Cookies are stored locally on the user's device and can be deleted through the browser's settings. Users can typically manage their cookies by accessing the browser's settings or preferences.</p>
-                    
-                    <p><strong>Conclusion:</strong> Understanding how to effectively manipulate cookies is essential for managing user sessions, preferences, and enhancing the overall user experience on your website.</p>
-                </article>
-
-                <article class="section">
-                    <h4 id="a339">3.3.9 Ethics in User Data Management</h4>
-                    <ul>
-                        <li><strong>Consent:</strong> Inform users about data collection.</li>
-                        <li><strong>Minimize Data:</strong> Store only what&apos;s necessary.</li>
-                        <li><strong>Security:</strong> Use encryption and secure transport (HTTPS).</li>
-                        <li><strong>Legal Considerations:</strong> Comply with GDPR, CCPA, etc.</li>
-                    </ul>
-                    <h5>Collecting User Data:</h5>
-                    <ul>
-                        <li><strong>Transparency:</strong> Inform users about what data is being collected, why it is being collected, and how it will be used.</li>
-                        <li><strong>Consent:</strong> Obtain explicit consent from users before collecting their data, especially for sensitive information.</li>
-                        <li><strong>Purpose Limitation:</strong> Collect data only for specified, explicit, and legitimate purposes.</li>
-                        <li><strong>Data Minimization:</strong> Collect only the data that is necessary for the intended purpose.</li>
-                        <li><strong>User Control:</strong> Allow users to control their data, including the ability to access, correct, or delete it.</li>
-                    </ul>
-                    
-                    <h5>Storing User Data:</h5>
-                    <ul>
-                        <li><strong>Security:</strong> Implement robust security measures to protect user data from unauthorized access, disclosure, alteration, or destruction.</li>
-                        <li><strong>Anonymization:</strong> Where possible, anonymize or pseudonymize user data to protect privacy.</li>
-                        <li><strong>Data Retention:</strong> Retain user data only for as long as necessary for the specified purpose, and delete it afterwards.</li>
-                    </ul>
-                    
-                    <h5>Using User Data:</h5>
-                    <ul>
-                        <li><strong>Fairness:</strong> Use user data in a fair and lawful manner, avoiding discrimination or harm to individuals.</li>
-                        <li><strong>Accuracy:</strong> Ensure that user data is accurate and up-to-date, and provide mechanisms for users to update their data.</li>
-                        <li><strong>Accountability:</strong> Take responsibility for the management of user data, including compliance with relevant laws and regulations.</li>
-                    </ul>
-                    
-                    <h5>Protecting User Data:</h5>
-                    <ul>
-                        <li><strong>Encryption:</strong> Use encryption to protect user data during transmission and storage.</li>
-                        <li><strong>Access Controls:</strong> Implement strict access controls to ensure that only authorized personnel can access user data.</li>
-                        <li><strong>Data Breach Response:</strong> Have a plan in place to respond to data breaches, including notifying affected users and authorities as required by law.</li>
-                    </ul>
-                    
-                    <p><strong>Conclusion:</strong> Ethical management of user data is essential for building trust with users, ensuring compliance with legal requirements, and protecting individual privacy.</p>
+                    <p><strong>Why It Matters:</strong> Being aware of these common form security issues is essential for developers to protect their applications and users from potential attacks. Implementing best practices for security can significantly reduce the risk of vulnerabilities and enhance the overall security posture of web applications.</p>
                 </article>
             </div>
+        </section>     
+            
+            <section class="topic">
+                <h3>3.2.2 Define the Form Object</h3>
+                <div id="quiz4"></div>
+                <div class="result" id="result4" aria-live="polite"></div>
+            </section>
+
+            <section class="topic">
+                <h3>3.2.3 Refer to Form Objects</h3>
+                <div id="quiz5"></div>
+                <div class="result" id="result5" aria-live="polite"></div>
+            </section>
+            
+            <section class="topic">
+                <h3>3.2.4 Use Form Objects</h3>
+                <div id="quiz6"></div>
+                <div class="result" id="result6" aria-live="polite"></div>
+            </section>
+
+            <section class="topic">
+                <h3>3.2.5 Conduct Form Validation</h3>
+                <div id="quiz7"></div>
+                <div class="result" id="result7" aria-live="polite"></div>
+            </section>
+
+            <section class="topic">
+                <h3>3.2.6 Identify Common Form Security Issues</h3>
+                <div id="quiz8"></div>
+                <div class="result" id="result8" aria-live="polite"></div>
+            </section>
+
+            <section class="topic">
+                <h3>3.2.6 Identify Common Form Security Issues</h3>
+                <div id="quiz9"></div>
+                <div class="result" id="result9" aria-live="polite"></div>
+            </section>
+
+            <section class="container">
+                <h2>3.3 Address JavaScript Security Issues Involving Browsers and Cookies</h2>
+                
+                <h3 class="toggle" onclick="toggleContent('content3')"><a href="#content3">Study Guide</a></h3>
+                <div class="content" id="content3" style="display: none;">
+                    <article class="section">
+                        <h4 id="a331">3.3.1 Distinguishing Between Browser and Operating System Security Elements</h4>
+                        <p>When it comes to security, both the browser and the operating system play important roles, but they are responsible for different aspects of security. Understanding these differences is crucial for developing secure applications and protecting user data.</p>
+                        <ul>
+                            <li><strong>Browser Security:</strong> Sandboxes JavaScript from accessing OS resources directly.</li>
+                            <li><strong>Operating System Security:</strong> Manages deeper system-level operations, but JavaScript has no direct access in web scenarios.</li>
+                        </ul>
+                        <h5>Browser Security Elements:</h5>
+                        <ul>
+                            <li><strong>Sandboxing:</strong> Browsers use sandboxing to isolate web pages from each other and from the rest of the system. This helps prevent malicious code on one page from affecting other pages or the system.</li>
+                            
+                            <li><strong>Content Security Policy (CSP):</strong> CSP allows website owners to control which resources can be loaded on their pages, reducing the risk of cross-site scripting (XSS) attacks by specifying trusted sources for content.</li>
+                            
+                            <li><strong>Secure Communication:</strong> Browsers support secure communication over HTTPS, encrypting data transmitted between the user and the server to prevent eavesdropping and tampering.</li>
+                            
+                            <li><strong>Cookie Security:</strong> Browsers enforce security measures for cookies, such as the same-origin policy, to prevent cookies from being accessed by unauthorized parties and to protect user sessions.</li>
+                        </ul>
+                    
+                        <h5>Operating System Security Elements:</h5>
+                        <ul>
+                            <li><strong>User Account Control (UAC):</strong> UAC prompts users for permission before allowing applications to make changes to the system, reducing the risk of unauthorized access and ensuring that users are aware of potential changes.</li>
+                            
+                            <li><strong>Firewall:</strong> Operating systems often include a firewall that monitors and controls incoming and outgoing network traffic, helping to protect against unauthorized access and malware by filtering traffic based on security rules.</li>
+                            
+                            <li><strong>Anti-virus/Anti-malware:</strong> Operating systems can include built-in or third-party anti-virus and anti-malware software to detect and remove malicious software, providing an additional layer of protection against threats.</li>
+                            
+                            <li><strong>File Permissions:</strong> Operating systems enforce file permissions to control which users and applications can access, modify, or execute files, enhancing security by restricting access to sensitive data.</li>
+                        </ul>
+                    
+                        <p><strong>Why It Matters:</strong> Understanding the distinct security elements of browsers and operating systems is essential for developers and users alike. By leveraging these security features, individuals can better protect their systems and data from potential threats and vulnerabilities.</p>
+                    </article>
+                    
+            
+                    <article class="section">
+                        <h4 id="a332">3.3.2 Discussing Browser Security Issues Relevant to JavaScript</h4>
+                        
+                        <p>JavaScript, as a powerful scripting language, can introduce security vulnerabilities if not used properly. Below are some browser-specific security issues related to JavaScript:</p>
+                        <ul>
+                            <li>Script Blocking: Users or extensions can block scripts.</li>
+                            <li>Frame-to-Frame URL Changing: Malicious behavior if scripts manipulate iframes outside their domain.</li>
+                            <li>document.write(): Can overwrite the entire page if used after the initial load; rarely recommended.</li>
+                        </ul>
+                        <p><strong>Pitfall:</strong> Overusing document.write() can lead to unexpected results.</p>
+                        <h5>1. Script Blocking</h5>
+                        <ul>
+                            <li><strong>Cross-Origin Resource Sharing (CORS):</strong> Browsers block scripts from accessing resources (like images or scripts) from a different domain by default to prevent Cross-Site Scripting (XSS) attacks.</li>
+                            <li><strong>Content Security Policy (CSP):</strong> CSP allows website owners to define which resources can be loaded on their pages, mitigating the risk of XSS attacks by blocking unauthorized scripts.</li>
+                        </ul>
+                        
+                        <h5>2. Frame-to-Frame URL Changing</h5>
+                        <ul>
+                            <li><strong>Same-Origin Policy:</strong> Browsers restrict scripts from changing the URL of a frame or window to a different domain to prevent unauthorized access to content.</li>
+                            <li><strong>Window Restrictions:</strong> Browsers restrict scripts from accessing windows or frames that have a different origin to prevent XSS attacks and data theft.</li>
+                        </ul>
+                        
+                        <h5>3. document.write Behavior Differences Among Browsers</h5>
+                        <ul>
+                            <li><strong>Asynchronous Loading:</strong> Some browsers may block the rendering of a page until the <code>document.write</code> script is executed, affecting performance.</li>
+                            <li><strong>Script Execution Order:</strong> The order in which scripts are executed can vary among browsers, leading to potential issues with script dependencies and functionality.</li>
+                        </ul>
+                        
+                        <p><strong>Conclusion:</strong> Understanding these security issues is crucial for developers to write secure JavaScript code and protect users from potential vulnerabilities.</p>
+                    </article>
+
+                    <article class="section">
+                        <h4 id="a333">3.3.3 Defining Signed Scripts</h4>
+                        <p>JavaScript can be digitally signed to indicate authenticity, relevant in secure environments.</p>
+                        
+                        <p>Signed scripts are JavaScript scripts that have been digitally signed by their author using a cryptographic signature. This signature verifies the authenticity and integrity of the script, ensuring that it has not been tampered with since it was signed.</p>
+                        <h5>Purpose of Signed Scripts:</h5>
+                        <ul>
+                            <li><strong>Authentication:</strong> Signed scripts provide a way to authenticate the author of the script, ensuring that it comes from a trusted source.</li>
+                            <li><strong>Integrity:</strong> The signature ensures that the script has not been altered or tampered with since it was signed, maintaining its integrity.</li>
+                            <li><strong>Non-repudiation:</strong> Once a script is signed, the author cannot deny having signed it, providing non-repudiation.</li>
+                        </ul>
+                        
+                        <h5>How Signed Scripts Work:</h5>
+                        <ul>
+                            <li><strong>Signing Process:</strong> The author of the script generates a cryptographic hash of the script using a private key. This hash is then encrypted with the author's private key to create a digital signature.</li>
+                            <li><strong>Verification Process:</strong> When the script is loaded, the browser uses the author's public key to decrypt the signature and verify the hash of the script. If the hash matches, the script is considered authentic and has not been tampered with.</li>
+                        </ul>
+                        
+                        <p><strong>Conclusion:</strong> Signed scripts play a crucial role in enhancing security in web applications by ensuring that scripts are authentic, unaltered, and verifiable.</p>
+                    </article>
+            
+                    <article class="section">
+                        <h4 id="a334">3.3.4 Performing Client-Side Browser Detection</h4>
+                        <p>Use feature detection instead of navigator.userAgent due to potential spoofing.</p>
+                        
+                        <p>Client-side browser detection involves using JavaScript to determine the web browser being used by the client accessing the web page. This information can be used to provide browser-specific functionality or to alert users about compatibility issues.</p>
+                        <h5>Browser Detection Techniques:</h5>
+                        <ul>
+                            <li><strong>User Agent String:</strong> The <code>navigator.userAgent</code> property can be used to retrieve the user agent string, which contains information about the browser and operating system.</li>
+                            <li><strong>Feature Detection:</strong> Instead of detecting specific browsers, it's often more reliable to detect specific features or capabilities supported by the browser using feature detection techniques.</li>
+                        </ul>
+                        
+                        <h5>Determining Browser Compatibility:</h5>
+                        <ul>
+                            <li><strong>Feature Support:</strong> Check for support of specific JavaScript features, HTML elements, or CSS properties that are essential for your application.</li>
+                            <li><strong>Vendor Prefixes:</strong> Some browsers may require vendor prefixes for certain CSS properties. Use feature detection or a library like Modernizr to handle these differences.</li>
+                            <li><strong>Polyfills:</strong> Use polyfills to add support for features that are not natively supported by older browsers.</li>
+                        </ul>
+                        
+                        <h5>Example of Browser Detection:</h5>
+                        <pre><code>var ua = navigator.userAgent;
+                    if (ua.indexOf("Chrome") !== -1) {
+                        console.log("You are using Chrome.");
+                    } else if (ua.indexOf("Firefox") !== -1) {
+                        console.log("You are using Firefox.");
+                    } else {
+                        console.log("You are using a different browser.");
+                    }</code></pre>
+                        
+                        <p><strong>Conclusion:</strong> Client-side browser detection is essential for ensuring that web applications function correctly across different browsers and provide a seamless user experience.</p>
+                    </article>
+
+                    <article class="section">
+                        <h4 id="a335">3.3.5 Identifying Common Issues and Procedures for Creating Secure JavaScript Code</h4>
+                        <ul>
+                            <li>Never store sensitive information in plain text.</li>
+                            <li>Sanitize user input to prevent injection attacks.</li>
+                            <li>Use HTTPS to protect data in transit.</li>
+                            <li>Be cautious of third-party scripts.</li>
+                        </ul>
+                        <h5>Common Issues in JavaScript Security:</h5>
+                        <ul>
+                            <li><strong>Cross-Site Scripting (XSS):</strong> XSS occurs when untrusted data is inserted into a web page, allowing attackers to execute malicious scripts in the context of a user's browser.</li>
+                            <li><strong>Cross-Site Request Forgery (CSRF):</strong> CSRF occurs when a user is tricked into unknowingly executing actions on a web application on which they are authenticated, leading to unauthorized actions being performed.</li>
+                            <li><strong>Injection Attacks:</strong> Injection attacks, such as SQL injection or JavaScript injection, occur when untrusted data is used to manipulate the behavior of an application, leading to data breaches or unauthorized access.</li>
+                            <li><strong>Insecure Direct Object References (IDOR):</strong> IDOR occurs when an attacker can access and manipulate objects directly through user input without proper authorization.</li>
+                        </ul>
+                        
+                        <h5>Procedures for Creating Secure JavaScript Code:</h5>
+                        <ul>
+                            <li><strong>Input Validation:</strong> Validate all input to ensure that it meets the expected format and does not contain malicious code.</li>
+                            <li><strong>Escape Output:</strong> Use proper escaping techniques to prevent XSS attacks when outputting data to a web page.</li>
+                            <li><strong>Use HTTPS:</strong> Ensure that your web application uses HTTPS to encrypt data transmitted between the user and the server, preventing eavesdropping and tampering.</li>
+                            <li><strong>Limit Access:</strong> Implement proper access controls to restrict access to sensitive resources and prevent unauthorized access.</li>
+                            <li><strong>Use Libraries and Frameworks:</strong> Use well-maintained libraries and frameworks that have built-in security features and are regularly updated to protect against known vulnerabilities.</li>
+                        </ul>
+                        
+                        <p><strong>Conclusion:</strong> By understanding common security issues and implementing best practices, developers can create secure JavaScript code that protects users and their data from potential threats.</p>
+                    </article>
+
+                    <article class="section">
+                        <h4 id="a336">3.3.6 Defining Cross-Site Scripting (XSS) and Associated Security Risks</h4>
+                        <p>A vulnerability where attackers inject malicious scripts into trusted content, often from unsanitized user input.</p>
+                        <h5>Cross-Site Scripting (XSS):</h5>
+                        <p>Cross-Site Scripting (XSS) is a security vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users. These scripts can then execute in the context of the user's browser, potentially stealing sensitive information or hijacking user sessions.</p>
+                        
+                        <h5>Types of XSS Attacks:</h5>
+                        <ul>
+                            <li><strong>Stored XSS:</strong> Also known as persistent XSS, occurs when the malicious script is stored on the server and is displayed every time a user visits the affected page.</li>
+                            <li><strong>Reflected XSS:</strong> Also known as non-persistent XSS, occurs when the malicious script is reflected off a web server and executed in the user's browser.</li>
+                            <li><strong>DOM-based XSS:</strong> Occurs when the vulnerability is in the client-side code rather than the server-side code, allowing attackers to manipulate the Document Object Model (DOM) of the web page.</li>
+                        </ul>
+                        
+                        <h5>Security Risks Associated with XSS:</h5>
+                        <ul>
+                            <li><strong>Data Theft:</strong> Attackers can steal sensitive information, such as cookies, session tokens, or personal data, from users' browsers.</li>
+                            <li><strong>Session Hijacking:</strong> Attackers can hijack user sessions, impersonate users, and perform unauthorized actions on their behalf.</li>
+                            <li><strong>Phishing:</strong> Attackers can create fake login forms or messages that appear legitimate, tricking users into providing their credentials or other sensitive information.</li>
+                            <li><strong>Malware Distribution:</strong> Attackers can use XSS to distribute malware to users' browsers, compromising their systems.</li>
+                        </ul>
+                        
+                        <p><strong>Conclusion:</strong> Understanding XSS and its associated risks is crucial for developers to implement effective security measures and protect users from potential threats.</p>
+                    </article>
+
+                    <article class="section">
+                        <h4 id="a337">3.3.7 Defining Cookies and Their Common Uses</h4>
+                        <ul>
+                            <li>Cookies store small data pieces (up to ~4KB) in the browser.</li>
+                            <li>Uses include session tracking, remembering preferences, and analytics.</li>
+                        </ul>
+                        <h5>Cookies:</h5>
+                        <p>Cookies are small pieces of data stored on a user's device by a web browser. They are commonly used to store information about the user or their interaction with the website. Cookies can be set, retrieved, and deleted using JavaScript.</p>
+                        
+                        <h5>Functions of Cookies:</h5>
+                        <ul>
+                            <li><strong>Session Management:</strong> Cookies are often used to manage user sessions, keeping track of users as they navigate a website and storing session identifiers.</li>
+                            <li><strong>Personalization:</strong> Cookies can store user preferences and settings, allowing websites to personalize the user experience.</li>
+                            <li><strong>Tracking:</strong> Cookies are used for tracking user behavior on websites, such as which pages they visit or items they add to a shopping cart.</li>
+                            <li><strong>Authentication:</strong> Cookies are used for user authentication, allowing websites to remember logged-in users and provide access to restricted areas.</li>
+                            <li><strong>Advertising:</strong> Cookies are used for targeted advertising, tracking user interests and showing relevant ads.</li>
+                        </ul>
+                        
+                        <h5>Common Uses of Cookies:</h5>
+                        <ul>
+                            <li><strong>Authentication Cookies:</strong> Used to remember whether a user is logged in or not.</li>
+                            <li><strong>Session Cookies:</strong> Used to store temporary information about a user's session, such as shopping cart contents.</li>
+                            <li><strong>Persistent Cookies:</strong> Used to store information that persists across sessions, such as user preferences.</li>
+                            <li><strong>Tracking Cookies:</strong> Used to track user behavior across websites for analytics and advertising purposes.</li>
+                        </ul>
+                        
+                        <p><strong>Conclusion:</strong> Cookies play a vital role in enhancing user experience on the web by enabling session management, personalization, and tracking, while also raising important privacy considerations.</p>
+                    </article>
+
+                    <article class="section">
+                        <h4 id="a338">3.3.8 Manipulating Cookies Effectively</h4>
+                        <ul>
+                            <li><strong>Creating/Updating a Cookie:</strong> <code>document.cookie = "username=Alice; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";</code></li>
+                            <li><strong>Retrieving Cookies:</strong> <code>document.cookie</code> returns all cookies in key=value pairs.</li>
+                            <li><strong>Clearing Cookies:</strong> Set the cookie&apos;s expires date to a past date.</li>
+                            <li><strong>Enable/Disable Cookies:</strong> This is a browser-level setting.</li>
+                        </ul>
+                        <h5>Testing for Presence of Cookies:</h5>
+                        <p>To test if a cookie exists, you can use the <code>document.cookie</code> property to get a string containing all cookies. You can then check if a specific cookie name exists in this string.</p>
+                        
+                        <pre><code>function cookieExists(name) {
+                        return document.cookie.split(';').some(cookie => {
+                            return cookie.trim().startsWith(name + '=');
+                        });
+                    }
+                    
+                    // Example usage
+                    if (cookieExists('username')) {
+                        console.log('Cookie "username" exists.');
+                    } else {
+                        console.log('Cookie "username" does not exist.');
+                    }</code></pre>
+                        
+                        <h5>Clearing Cookies:</h5>
+                        <p>To clear a cookie, you can set its expiration date to a past date. This will cause the browser to remove the cookie.</p>
+                        
+                        <pre><code>function clearCookie(name) {
+                        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                    }
+                    
+                    // Example usage
+                    clearCookie('username');</code></pre>
+                        
+                        <h5>Enabling/Disabling Cookies in the Browser:</h5>
+                        <p>Cookie settings are controlled by the browser and cannot be directly manipulated using JavaScript. However, you can inform users about how to enable or disable cookies in their browser through your website's interface or documentation.</p>
+                        
+                        <h5>Deleting Cookies from Your Hard Drive:</h5>
+                        <p>Cookies are stored locally on the user's device and can be deleted through the browser's settings. Users can typically manage their cookies by accessing the browser's settings or preferences.</p>
+                        
+                        <p><strong>Conclusion:</strong> Understanding how to effectively manipulate cookies is essential for managing user sessions, preferences, and enhancing the overall user experience on your website.</p>
+                    </article>
+
+                    <article class="section">
+                        <h4 id="a339">3.3.9 Ethics in User Data Management</h4>
+                        <ul>
+                            <li><strong>Consent:</strong> Inform users about data collection.</li>
+                            <li><strong>Minimize Data:</strong> Store only what&apos;s necessary.</li>
+                            <li><strong>Security:</strong> Use encryption and secure transport (HTTPS).</li>
+                            <li><strong>Legal Considerations:</strong> Comply with GDPR, CCPA, etc.</li>
+                        </ul>
+                        <h5>Collecting User Data:</h5>
+                        <ul>
+                            <li><strong>Transparency:</strong> Inform users about what data is being collected, why it is being collected, and how it will be used.</li>
+                            <li><strong>Consent:</strong> Obtain explicit consent from users before collecting their data, especially for sensitive information.</li>
+                            <li><strong>Purpose Limitation:</strong> Collect data only for specified, explicit, and legitimate purposes.</li>
+                            <li><strong>Data Minimization:</strong> Collect only the data that is necessary for the intended purpose.</li>
+                            <li><strong>User Control:</strong> Allow users to control their data, including the ability to access, correct, or delete it.</li>
+                        </ul>
+                        
+                        <h5>Storing User Data:</h5>
+                        <ul>
+                            <li><strong>Security:</strong> Implement robust security measures to protect user data from unauthorized access, disclosure, alteration, or destruction.</li>
+                            <li><strong>Anonymization:</strong> Where possible, anonymize or pseudonymize user data to protect privacy.</li>
+                            <li><strong>Data Retention:</strong> Retain user data only for as long as necessary for the specified purpose, and delete it afterwards.</li>
+                        </ul>
+                        
+                        <h5>Using User Data:</h5>
+                        <ul>
+                            <li><strong>Fairness:</strong> Use user data in a fair and lawful manner, avoiding discrimination or harm to individuals.</li>
+                            <li><strong>Accuracy:</strong> Ensure that user data is accurate and up-to-date, and provide mechanisms for users to update their data.</li>
+                            <li><strong>Accountability:</strong> Take responsibility for the management of user data, including compliance with relevant laws and regulations.</li>
+                        </ul>
+                        
+                        <h5>Protecting User Data:</h5>
+                        <ul>
+                            <li><strong>Encryption:</strong> Use encryption to protect user data during transmission and storage.</li>
+                            <li><strong>Access Controls:</strong> Implement strict access controls to ensure that only authorized personnel can access user data.</li>
+                            <li><strong>Data Breach Response:</strong> Have a plan in place to respond to data breaches, including notifying affected users and authorities as required by law.</li>
+                        </ul>
+                        
+                        <p><strong>Conclusion:</strong> Ethical management of user data is essential for building trust with users, ensuring compliance with legal requirements, and protecting individual privacy.</p>
+                    </article>
+                </div>
+            </section>
+        
+        <section class="topic">
+            <h3>3.3.1 Distinguish Between Browser and OS Security</h3>
+            <div id="quiz10"></div>
+            <div class="result" id="result10" aria-live="polite"></div>
         </section>
-    
-    <section class="topic">
-        <h3>3.3.1 Distinguish Between Browser and OS Security</h3>
-        <div id="quiz10"></div>
-        <div class="result" id="result10" aria-live="polite"></div>
-    </section>
 
-    <section class="topic">
-        <h3>3.3.2 Browser Security Issues Relevant to JavaScript</h3>
-        <div id="quiz11"></div>
-        <div class="result" id="result11" aria-live="polite"></div>
-    </section>
+        <section class="topic">
+            <h3>3.3.2 Browser Security Issues Relevant to JavaScript</h3>
+            <div id="quiz11"></div>
+            <div class="result" id="result11" aria-live="polite"></div>
+        </section>
 
-    <section class="topic">
-        <h3>3.3.3 Signed Scripts</h3>
-        <div id="quiz12"></div>
-        <div class="result" id="result12" aria-live="polite"></div>
-    </section>
+        <section class="topic">
+            <h3>3.3.3 Signed Scripts</h3>
+            <div id="quiz12"></div>
+            <div class="result" id="result12" aria-live="polite"></div>
+        </section>
 
-    <section class="topic">
-        <h3>3.3.4 Client-Side Browser Detection & Compatibility</h3>
-        <div id="quiz13"></div>
-        <div class="result" id="result13" aria-live="polite"></div>
-    </section>
+        <section class="topic">
+            <h3>3.3.4 Client-Side Browser Detection & Compatibility</h3>
+            <div id="quiz13"></div>
+            <div class="result" id="result13" aria-live="polite"></div>
+        </section>
 
-    <section class="topic">
-        <h3>3.3.5 Common Issues for Creating Secure JavaScript Code</h3>
-        <div id="quiz14"></div>
-        <div class="result" id="result14" aria-live="polite"></div>
-    </section>
+        <section class="topic">
+            <h3>3.3.5 Common Issues for Creating Secure JavaScript Code</h3>
+            <div id="quiz14"></div>
+            <div class="result" id="result14" aria-live="polite"></div>
+        </section>
 
-    <section class="topic">
-        <h3>3.3.6 Define Cross-Site Scripting (XSS)</h3>
-        <div id="quiz15"></div>
-        <div class="result" id="result15" aria-live="polite"></div>
-    </section>
+        <section class="topic">
+            <h3>3.3.6 Define Cross-Site Scripting (XSS)</h3>
+            <div id="quiz15"></div>
+            <div class="result" id="result15" aria-live="polite"></div>
+        </section>
 
-    <section class="topic">
-        <h3>3.3.7 Functions and Common Uses of Cookies</h3>
-        <div id="quiz16"></div>
-        <div class="result" id="result16" aria-live="polite"></div>
-    </section>
+        <section class="topic">
+            <h3>3.3.7 Functions and Common Uses of Cookies</h3>
+            <div id="quiz16"></div>
+            <div class="result" id="result16" aria-live="polite"></div>
+        </section>
 
-    <section class="topic">
-        <h3>3.3.8 Manipulate Cookies Effectively</h3>
-        <div id="quiz17"></div>
-        <div class="result" id="result17" aria-live="polite"></div>
-    </section>
+        <section class="topic">
+            <h3>3.3.8 Manipulate Cookies Effectively</h3>
+            <div id="quiz17"></div>
+            <div class="result" id="result17" aria-live="polite"></div>
+        </section>
 
-    <section class="topic">
-        <h3>3.3.9 Ethics in Collecting, Storing, Using, and Protecting User Data</h3>
-        <div id="quiz18"></div>
-        <div class="result" id="result18" aria-live="polite"></div>
-    </section>
+        <section class="topic">
+            <h3>3.3.9 Ethics in Collecting, Storing, Using, and Protecting User Data</h3>
+            <div id="quiz18"></div>
+            <div class="result" id="result18" aria-live="polite"></div>
+        </section>
 
-</main>
+    </main>
 
     <div class="containerOT" id="OtherTreats">
         <h3>Recommended Readings</h3>

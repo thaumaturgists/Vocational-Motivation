@@ -1,6 +1,22 @@
 // ui.js
 export function displayQuiz(quiz, quizContainerId, resultContainerId) {
     const quizContainer = document.getElementById(quizContainerId);
+    const resultContainer = document.getElementById(resultContainerId);
+
+    // Log the containers to check if they are found
+    console.log('Quiz Container:', quizContainer);
+    console.log('Result Container:', resultContainer);
+
+    // Check if the containers exist
+    if (!quizContainer) {
+        console.error(`Quiz container with ID "${quizContainerId}" not found.`);
+        return; // Exit the function if the quiz container is not found
+    }
+    if (!resultContainer) {
+        console.error(`Result container with ID "${resultContainerId}" not found.`);
+        return; // Exit the function if the result container is not found
+    }
+
     const selectedQuestions = quiz.getRandomQuestions(5);
     const buttons = [];
 
@@ -19,10 +35,30 @@ export function displayQuiz(quiz, quizContainerId, resultContainerId) {
 
             buttons.push(button);
 
+            // button.onclick = () => {
+            //     const result = quiz.checkAnswer(answer, q.correct, { totalCount, totalCorrectCount });
+            //     updateResult(result.message, resultContainerId);
             button.onclick = () => {
                 const result = quiz.checkAnswer(answer, q.correct);
                 updateResult(result.message, resultContainerId);
-                quiz.incrementCount();
+                
+                // // Update the counts by topic
+                // document.getElementById('clickCount').innerText = quiz.count; // Update total answers
+                // document.getElementById('correctCountDisplay').innerText = quiz.correctCount; // Update correct answers
+
+                // // Update the shared counts
+                // document.getElementById('clickCount').innerText = totalCount; // Update total answers
+                // document.getElementById('correctCountDisplay').innerText = totalCorrectCount; // Update correct answers
+
+                // // Update the shared counts in the UI
+                // document.getElementById('clickCount').innerText = sharedCounts.totalCount; // Update total answers
+                // document.getElementById('correctCountDisplay').innerText = sharedCounts.totalCorrectCount; // Update correct answers
+
+                // Update the shared counts in the UI
+                document.getElementById('clickCount').innerText = window.sharedCounts.totalCount; // Update total answers
+                document.getElementById('correctCountDisplay').innerText = window.sharedCounts.totalCorrectCount; // Update correct answers
+
+                // Disable all buttons for this question after answering
                 questionDiv.querySelectorAll('button').forEach(button => button.disabled = true);
             };
 
@@ -48,7 +84,11 @@ export function displayQuiz(quiz, quizContainerId, resultContainerId) {
 
 function updateResult(message, resultContainerId) {
     const resultDiv = document.getElementById(resultContainerId);
-    resultDiv.innerText = message;
+    if (resultDiv) {
+        resultDiv.innerText = message;
+    } else {
+        console.error(`Result container with ID "${resultContainerId}" not found when updating result.`);
+    }
 }
 
 function addKeyboardNavigation(quizContainer, buttons) {
