@@ -31,8 +31,20 @@ body {
     border-radius: 50% 50% 0 0;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.2), /* Soft shadow */
+        0 0 10px rgba(255, 215, 0, 0.5), /* Soft gold glow */
+        0 0 20px rgba(255, 215, 0, 0.3); /* Softer gold glow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
+
+.Doorman-featherCap:hover {
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.2), /* Keep the soft shadow */
+        0 0 15px rgba(255, 215, 0, 1), /* Brighter gold glow */
+        0 0 30px rgba(255, 215, 0, 0.5); /* Brighter soft gold glow */
+}
+
 
 /* Feather */
 @keyframes featherAnimation {
@@ -202,31 +214,79 @@ h1 {
     color: #fff; /* White for main heading */
     font-size: 2.5em;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), /* White glow */
+                 0 0 10px rgba(255, 255, 255, 0.6), /* Soft white glow */
+                 0 0 15px rgba(75, 0, 130, 0.8); /* Indigo glow */
+    transition: text-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+h1:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), /* Brighter white glow */
+                 0 0 20px rgba(255, 255, 255, 0.8), /* Brighter soft white glow */
+                 0 0 30px rgba(75, 0, 130, 1); /* Brighter indigo glow */
 }
 
 h2 {
-    color: #fff; /* White for subheadings */
+    color: #FFD700; /* Gold color for subheadings */
     font-size: 1.9em;
     margin-top: 30px;
     margin-bottom: 15px;
+    text-shadow: 
+        0 0 5px rgba(255, 215, 0, 0.5), /* Soft gold glow */
+        0 0 10px rgba(255, 215, 0, 0.3), /* Softer gold glow */
+        0 0 15px rgba(255, 215, 0, 0.2); /* Faint gold glow */
+    transition: text-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
+
+h2:hover {
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 1), /* Brighter gold glow */
+        0 0 20px rgba(255, 215, 0, 0.7), /* Stronger gold glow */
+        0 0 30px rgba(255, 215, 0, 0.5); /* More pronounced gold glow */
+}
+
 
 h3 {
     color: #fff; /* White for h3 */
     font-size: 1.65em;
     margin-bottom: 14px;
     cursor: pointer;
+    text-shadow: 
+        0 0 5px rgba(255, 215, 0, 0.5), /* Soft gold glow */
+        0 0 10px rgba(255, 215, 0, 0.3), /* Softer gold glow */
+        0 0 15px rgba(255, 255, 255, 0.5); /* Soft white glow */
+    transition: text-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+h3:hover {
+    text-shadow: 
+        0 0 10px rgba(255, 215, 0, 1), /* Brighter gold glow */
+        0 0 20px rgba(255, 215, 0, 0.7), /* Stronger gold glow */
+        0 0 30px rgba(255, 255, 255, 1); /* Brighter white glow */
 }
 
 h4 {
-    color: #fff; /* White for h4 */
+    color: #333; /* Dark gray for h4 */
     font-size: 1.5em;
-    border-bottom: 2px solid #4b0082; /* Indigo border */
+    border-bottom: 2px solid rgba(255, 215, 0, 0.5); /* Soft gold border */
     padding-bottom: 10px;
     margin: 20px 0;
     margin-top: 20px;
+    text-shadow: 
+        0 0 5px rgba(75, 0, 130, 0.5), /* Soft indigo glow */
+        0 0 10px rgba(75, 0, 130, 0.3); /* Softer indigo glow */
+    transition: text-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
+
+h4:hover {
+    text-shadow: 
+        0 0 10px rgba(75, 0, 130, 1), /* Brighter indigo glow */
+        0 0 20px rgba(75, 0, 130, 0.7); /* Stronger indigo glow */
+}
+
+
+
+
 
 /* List styles */
 ul {

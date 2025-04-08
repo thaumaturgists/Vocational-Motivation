@@ -1,3 +1,47 @@
+# Original Project structure
+```
+Vocational-Motivation/
+    ├── index.html    (The main HTML file for the quiz choices.)
+    ├── INCAP/    (A Source Folder)
+    │   ├── feather.png
+    │   ├── featherINstyle.template.txt  (Reference CSS for websites)
+    │   ├── main.js    (The JavaScript files that handles quiz logic and question generation.)
+    │   ├── pinfeather.js      -│  
+    │   ├── quiz.js           --│  
+    │   └── ui.js            ---|
+    └── Main-Subject-Exam/
+        ├── Mound/  (Folder Used for testing and pitching ideas)
+        └── Mid-folders/  (Folders that hold your website and unique builds)
+            ├── index.html    (The Secondary HTML file for the quiz interface.)
+            ├── style.css    (The CSS file for styling the website.)
+            └── data/    (A folder containing documentation and question data.)
+                └── questions.json (The file that is used for editing questions)
+```
+Even though I like this one I have to go with one easier for others.
+Project structure:
+```
+Vocational-Motivation/
+    ├── README.md               (Project overview and instructions)
+    ├── index.html              (The main HTML file for the quiz choices.)
+    ├── INCAP/                    (Source Folder)
+    │   ├── assets/             (Folder for images and other assets)
+    │   │   └── feather.png
+    │   ├── css/                (Folder for CSS files)
+    │   │   └── style.css
+    │   ├── js/                 (Folder for JavaScript files)
+    │   │   ├── main.js
+    │   │   ├── pinfeather.js
+    │   │   ├── quiz.js
+    │   │   └── ui.js
+    │   └── templates/          (Folder for templates)
+    │       └── featherINstyle.txt
+    └── Main-Subject-Exam/
+        ├── Mound/              (Folder Used for testing and pitching ideas)
+        └── builds/             (Folders that hold your website and unique builds)
+            ├── index.html      (The Secondary HTML file for the quiz interface.)
+            └── data/           (A folder containing documentation and question data.)
+                └── questions.json
+```
 
 
 
