@@ -1,0 +1,459 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0c1c3e, #1a2a6c, #b21f1f, #fdbb2d); /* Cosmic gradient */
+    color: #fff;
+    line-height: 1.6;
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite; /* Animated gradient */
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Content styles */
+.content {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    display: none; /* Initially hidden */
+    padding: 15px;
+    padding-left: 20px; /* Indent for nested content */
+    border-left: 2px solid rgba(255, 255, 255, 0.5); /* Light border */
+    border-radius: 10px;
+    margin-top: 10px; /* Space above content */
+}
+
+/* Feather Cap */
+.Doorman-featherCap {
+    width: 100px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2); /* Light color for the hat */
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); /* Soft color shadow */
+}
+
+/* Feather */
+@keyframes featherAnimation {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.feather {
+    width: 30px; /* Adjust size as needed */
+    bottom: 100%; /* Start above the hat */
+    left: 50%; /* Center the feather */
+    transform: translateX(-15%); /* Center the feather */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s ease, transform 1s ease; /* Add transform for animation */
+    animation: featherAnimation 1s ease-in-out; /* Feather goes to Title on page load */
+}
+
+/* Button styles */
+.feather-button,
+.answer-button,
+#refreshButton {
+    background: linear-gradient(45deg, #ff6a00, #ee0979); /* Cosmic gradient */
+    margin: 5px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.15em;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25.7px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s color;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+}
+
+.answer-button:hover,
+#refreshButton:hover {
+    background: linear-gradient(45deg, #ee0979, #ff6a00); /* Lighter gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.feather-button:hover {
+    background: linear-gradient(45deg, #4b0082, #8a2be2); /* Lighter gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+    color: #fff;
+}
+
+.feather-button:active,
+.answer-button:active,
+#refreshButton:active {
+    transform: translateY(0); /* Reset lift effect on click */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.5); /* Slightly stronger shadow on click */
+}
+
+.feather-button:disabled,
+.answer-button:disabled,
+#refreshButton:disabled {
+    background-color: rgba(255, 255, 255, 0.3); /* Light gray background for disabled state */
+    color: rgba(255, 255, 255, 0.5); /* Gray text
+    /* Gray text for disabled state */
+    cursor: not-allowed; /* Not-allowed cursor */
+}
+
+/* Floating Counters */
+#floatingCounters {
+    position: fixed; /* Fixed position to follow the screen */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    padding: 15px; /* Padding around the text */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5); /* Soft shadow for depth */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    font-family: 'Arial', sans-serif; /* Consistent font */
+    color: #fff; /* White text color for readability */
+}
+
+/* Correct Count Display */
+.correct-display {
+    font-size: 1.2em;
+    color: #ffcc00; /* Gold color for emphasis */
+    text-align: center; /* Center the text */
+    margin-top: 10px; /* Space above the correct display */
+}
+
+.counter-header {
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#correctCountDisplay {
+    font-weight: bold; /* Make the count bold for emphasis */
+    color: #ffcc00; /* Gold color for visibility */
+    font-size: 1.5em; /* Slightly larger font size for visibility */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    padding: 5px 10px; /* Padding for a better look */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.5); /* Soft shadow for depth */
+    display: block; /* Make it a block element for full width */
+}
+
+/* Style for the correct label */
+.correct-label {
+    display: block; /* Make it a block element to position below */
+    font-size: 1em; /* Normal font size */
+    color: rgba(255, 255, 255, 0.8); /* Soft color for the label */
+    margin-top: 5px; /* Space above the label */
+}
+
+/* Style for the entire h2 containing the correct count */
+#floatingCounters h2 {
+    margin: 5px 0; /* Space between headings */
+    font-size: 1.2em; /* Slightly larger font size */
+    color: #ffcc00; /* Gold color for headings */
+}
+
+aside {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Topic and Section Styles */
+.topic {
+    margin-top: 20px;
+    margin: 15px 0;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Soft shadow */
+}
+
+/* Section styles */
+.section {
+    margin-bottom: 20px;
+}
+
+.toggle {
+    cursor: pointer;
+    color: #ffcc00; /* Gold color for toggle */
+    text-decoration: underline; /* Underline for clickable text */
+}
+
+.toggle:hover {
+    color: #fff; /* Brighter color on hover */
+}
+
+/* Heading styles */
+h1, h2, h3, h4 {
+    font-family: 'Georgia', serif;
+    color: #ffcc00; /* Gold color for headings */
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.9em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.65em;
+    margin-bottom: 14px;
+    cursor: pointer;
+}
+
+h4 {
+    font-size: 1.5em;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 10px;
+    margin: 20px 0;
+    margin-top: 20px;
+}
+
+/* List styles */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin: 10px 0; /* Space between list items */
+    color: rgba(255, 255, 255, 0.9); /* Light color for list items */
+}
+
+/* Strong text styles */
+strong {
+    color: #ff4500; /* Orange red */
+}
+
+/* Preformatted text styles */
+pre {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+    border-radius: 5px;
+    padding: 12.5px;
+    overflow: auto;
+    margin: 20px 0;
+}
+
+/* Code styles */
+code {
+    font-family: 'Courier New', monospace;
+    background-color: rgba(255, 255, 255, 0.2); /* Light color */
+    padding: 2px 4px;
+    border-radius: 3px; /* Rounded corners */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    h4 {
+        font-size: 1.1em;
+    }
+
+    ul {
+        margin-left: 15px; /* Adjust margin for smaller screens */
+    }
+
+    pre {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+
+    .Doorman-featherCap {
+        width: 80px;
+        height: 40px;
+    }
+
+    .feather-button {
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Question and result styles */
+.question {
+    margin: 10px 0;
+    margin-bottom: 15px;
+    font-weight: bold;
+    white-space: pre-line;
+    color: #ffcc00; /* Gold color for questions */
+}
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ffcc00; /* Gold color for results */
+}
+
+/* Footer styles */
+footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    margin-top: 20px;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Container styles */
+.container {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Soft shadow */
+}
+
+/* Additional styles for the recommended readings section */
+.containerOT {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* Soft shadow */
+}
+
+.containerOT h3 {
+    color: #ffcc00; /* Gold color for headings */
+    margin-bottom: 15px;
+}
+
+.containerOT ul {
+    list-style-type: none; /* Remove default list styling */
+}
+
+.containerOT li {
+    margin: 10px 0; /* Space between list items */
+    color: rgba(255, 255, 255, 0.9); /* Light color for list items */
+}
+
+.containerOT a {
+    color: #ffcc00; /* Gold color for links */
+    text-decoration: underline; /* Underline for links */
+}
+
+.containerOT a:hover {
+    /* Hover effect for links */
+    color: #fff; /* Brighter color on hover */
+}
+
+/* Additional cosmic effects */
+.star {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite alternate; /* Twinkling effect */
+}
+
+@keyframes twinkle {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Create a star field effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/hoarstones.jpg') no-repeat center center fixed; /* Background starfield image */
+    background-size: cover;
+    z-index: -1; /* Place behind all content */
+}
+
+/* Add some random stars */
+@keyframes starAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.star {
+    width: 2px;
+    height: 2px;
+    animation: starAnimation 1s ease-in-out infinite;
+}
+
+.star:nth-child(odd) {
+    animation-duration: 1.5s;
+}
+
+.star:nth-child(even) {
+    animation-duration: 2s;
+}
+
+/* Generate stars dynamically with JavaScript 
+document.addEventListener('DOMContentLoaded', function() {
+    const starField = document.createElement('div');
+    starField.className = 'star-field';
+    document.body.appendChild(starField);
+
+    for (let i = 0; i < 100; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.top = Math.random() * 100 + 'vh';
+        star.style.left = Math.random() * 100 + 'vw';
+        starField.appendChild(star);
+    }
+});

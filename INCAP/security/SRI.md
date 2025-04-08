@@ -36,7 +36,7 @@ If SHA-384 does not work, you can use SHA-256 instead.
 
 ```html
 <link rel="stylesheet" href="style.css"
-    integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb"
+    integrity="sha256-pTKzEtT/LqrmOPCwcJ7HQtmY+TUnovzsuSJAlBYZXiY="
     crossorigin="anonymous">
 ```
 
