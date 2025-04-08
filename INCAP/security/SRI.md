@@ -134,6 +134,71 @@ Using Subresource Integrity (SRI) is an effective way to enhance the security of
 
 By adhering to these practices, you can ensure that your web applications remain secure and function as intended.
 
----
+
 
 Feel free to modify any sections or add additional information as needed! This structured format should help in understanding and implementing Subresource Integrity effectively.
+
+
+# Browser's Developer Tools
+To get the hash of a JavaScript or CSS file using the browser's Developer Tools, you can follow these steps:
+
+### Using the Network Tab
+
+1. **Open Developer Tools**: Right-click on the page and select "Inspect" or press `F12` to open the Developer Tools.
+
+2. **Go to the Network Tab**: Click on the "Network" tab in the Developer Tools.
+
+3. **Reload the Page**: Refresh the page (press `F5` or `Ctrl + R`). This will populate the Network tab with all the resources being loaded.
+
+4. **Find the File**: Look for the JavaScript or CSS file you want to hash in the list of resources. You can filter by "JS" or "CSS" to make it easier to find.
+
+5. **Right-Click and Open in New Tab**: Right-click on the file in the Network tab and select "Open in new tab" or "Copy link address" and paste it into a new tab. This will open the raw content of the file.
+
+6. **Copy the Content**: Once the file is open in a new tab, select all the text (you can use `Ctrl + A` to select all) and copy it (`Ctrl + C`).
+
+### Generating the Hash
+
+Now that you have the content of the file, you can generate the hash using various methods:
+
+#### Using Online Tools
+
+1. **Search for an Online SRI Hash Generator**: There are several online tools available that can generate SRI hashes. Just search for "SRI hash generator" in your preferred search engine.
+
+2. **Paste the Content**: In the online tool, paste the copied content of the file into the provided text area.
+
+3. **Generate the Hash**: Follow the instructions on the tool to generate the hash. It will typically provide you with a hash value that you can use in your `integrity` attribute.
+
+#### Using JavaScript in the Console
+
+If you prefer to do it directly in the browser, you can use the following JavaScript code in the Console tab of Developer Tools:
+
+1. **Open the Console Tab**: Click on the "Console" tab in Developer Tools.
+
+2. **Paste the Following Code**:
+
+   ```javascript
+   async function generateHash(url) {
+       const response = await fetch(url);
+       const text = await response.text();
+       const hashBuffer = await crypto.subtle.digest('SHA-384', new TextEncoder().encode(text));
+       const hashArray = Array.from(new Uint8Array(hashBuffer));
+       const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+       console.log(`sha384-${hashHex}`);
+   }
+
+   generateHash('https://thaumaturgists.github.io/Vocational-Motivation/INCAP/js/err2catch.js');
+   ```
+
+3. **Replace the URL**: Replace `'URL_OF_YOUR_FILE'` with the actual URL of the JavaScript or CSS file you want to hash.
+
+4. **Run the Code**: Press `Enter` to run the code. It will fetch the file, compute the SHA-384 hash, and log it to the console in the format you need for the `integrity` attribute.
+
+### Example Output
+
+The output will look something like this:
+
+```
+sha384-<hash-value>
+```
+
+You can then copy this value and use it in your `integrity` attribute.
