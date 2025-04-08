@@ -9,7 +9,6 @@
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
     <meta http-equiv="Content-Security-Policy" content="
     style-src 'self';
-    connect-src 'self';
     img-src 'self' 'sha256-TV/TmOnV6kDWn8Xwys1IXn8CUWopVuMK2Wh0AKEkByw=';
     font-src 'self';
     connect-src 'self';
@@ -18,21 +17,43 @@
     object-src 'none';
     base-uri 'self';
     form-action 'self';">
-    <title>Vocational Education Overview</title>
     <!--
     script-src 'self';
     default-src 'self';
      -->
     <title>CIW JavaScript&apos;s Specialist Doorman</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="module" defer src="../../INCAP/main.js"></script>
-    <script defer src="../../INCAP/toggleContent.js"></script>
-    <script defer src="../../INCAP/pinfeather.js"></script>
+
+<script defer src="../../INCAP/js/err2catch.js"
+    integrity="sha256-tbz9+GoUH8J30KV8jdVmhVx78LTXbs5UbRqmqDycdrY="
+    crossorigin="anonymous"></script>
+
+<!-- stylesheet with integrity -->
+<link rel="stylesheet" href="style.css"
+    integrity="sha256-pTKzEtT/LqrmOPCwcJ7HQtmY+TUnovzsuSJAlBYZXiY="
+    crossorigin="anonymous">
+
+
+<!-- Main script with integrity -->
+<script type="module" defer src="../../INCAP/js/main.js"
+    integrity="sha384-tDs80SQi6UNBlNc5IApHAZgXeghOcWh7U16VftO9Z9TdtZZWaNy41dwj5nuy/C6B"
+    crossorigin="anonymous"></script>
+
+<!-- Additional scripts with integrity -->
+<script defer src="../../INCAP/js/toggleContent.js"
+    integrity="sha256-sx4mVjjTq3U0qFQoda7e5vLWaM4jV5Rsdvxl+UwTr68="
+    crossorigin="anonymous"></script>
+
+<script defer src="../../INCAP/js/pinfeather.js"
+    integrity="sha384-MDEhNQBhgRal1rRKO0aVQdkT0Kx0MBMNIOZk9+y7vHp3i/4AjpjMfvCsI1cnSVF6"
+    crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
         <div class="Doorman-featherCap"></div>
-        <img src="../../INCAP/feather.png" alt="Feather" class="feather" id="feather">
+        <img src="../../INCAP/assets/feather.png"
+        integrity="sha256-TV/TmOnV6kDWn8Xwys1IXn8CUWopVuMK2Wh0AKEkByw="
+        crossorigin="anonymous"
+        alt="Feather" class="feather" id="feather">
         <button id="featherButton" class="feather-button">
             <h1>JavaScript Technology Extensions</h1>
         </button>

@@ -4,22 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="referrer" content="no-referrer">
     <meta http-equiv="Permissions-Policy" content=" geolocation=(), microphone=(), camera=(), fullscreen=(), payment=(), notifications=(), push=(), midi=(), sync-xhr=(), screen-wake-lock=(), ambient-light-sensor=(), accelerometer=(), gyroscope=(), magnetometer=(), clipboard=(), document-domain=(), web-share=(), screen-orientation=(), xr-spatial-tracking=()">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
     <title>Document Mound</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./old/style.css">
     <!-- <script defer src="scripts.js"></script> -->
     <!-- <script defer src="script_old.js"></script> -->
-    <script type="module" defer src="main.js"></script>
-    <script defer src="toggleContent.js"></script>
-    <script defer src="/CIW-JavaScript-Exam/INCAP/pinfeather.js"></script>
+    <script type="module" defer src="../../INCAP/js/main.js"></script>
+    <script defer src="../../INCAP/js/toggleContent.js"></script>
+    <script defer src="../../INCAP/js/pinfeather.js"></script>
+
+    <style>
+        #errorLog {
+            border: 1px solid #f00;
+            padding: 10px;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: #fdd;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="errorLog">Error Log:</div>
+
+    <script>
+    // Function to log errors to the div
+    function logErrorToDiv(message) {
+        const errorLogDiv = document.getElementById('errorLog');
+        errorLogDiv.textContent += message + '\n'; // Append the error message
+    }
+
+    // Capture unhandled errors
+    window.onerror = function(message, source, lineno, colno, error) {
+        const errorMessage = `Error: ${message} at ${source}:${lineno}:${colno}`;
+        logErrorToDiv(errorMessage);
+        return true; // Prevent the default browser error handling
+    };
+
+    // Example of triggering an error
+    // Uncomment the line below to see the error being caught
+    // nonExistentFunction(); // This will cause a ReferenceError
+
+    // Example of a handled error
+    try {
+        throw new Error("This is a manually thrown error.");
+    } catch (e) {
+        logErrorToDiv(`Caught error: ${e.message}`);
+    }
+    </script>
 </head>
 <body>
     <div class="container">
         <div class="featherCap"></div>
-        <img src="/CIW-JavaScript-Exam/INCAP/feather.png" alt="Feather" class="feather" id="feather">
+        <img src="../../INCAP/assets/feather.png" alt="Feather" class="feather" id="feather">
         <button id="featherButton" class="feather-button">
             <h1>the_title_here</h1>
         </button>
