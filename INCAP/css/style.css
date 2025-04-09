@@ -387,25 +387,6 @@ footer a:hover {
     color: #fff; /* Brighter color on hover */
 }
 
-/* Additional cosmic effects */
-.star {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    animation: twinkle 1.5s infinite alternate; /* Twinkling effect */
-}
-
-@keyframes twinkle {
-    0% {
-        transform: scale(1);
-        opacity: 0.8;
-    }
-    100% {
-        transform: scale(1.2);
-        opacity: 1;
-    }
-}
-
 /* Create a star field effect */
 body::before {
     content: '';
@@ -442,6 +423,34 @@ body::before {
 .star:nth-child(even) {
     animation-duration: 2s;
 }
+/* Additional cosmic effects */
+.star {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite alternate; /* Twinkling effect */
+}
+
+@keyframes twinkle {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+@keyframes starAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
 
 /* Generate stars dynamically with JavaScript 
 document.addEventListener('DOMContentLoaded', function() {
