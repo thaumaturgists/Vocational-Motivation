@@ -115,9 +115,6 @@ Here’s an example of how to load a script with integrity from a local server:
     <h1>Hello, World!</h1>
     <p>This is a sample page.</p>
 </body>
-Certainly! Here’s the continuation and conclusion of the document, maintaining the same formatting and clarity:
-
-```html
 </html>
 ```
 
@@ -186,7 +183,7 @@ If you prefer to do it directly in the browser, you can use the following JavaSc
        console.log(`sha384-${hashHex}`);
    }
 
-   generateHash('https://thaumaturgists.github.io/Vocational-Motivation/INCAP/js/err2catch.js');
+   generateHash('URL_OF_YOUR_FILE');
    ```
 
 3. **Replace the URL**: Replace `'URL_OF_YOUR_FILE'` with the actual URL of the JavaScript or CSS file you want to hash.

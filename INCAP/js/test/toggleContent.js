@@ -1,5 +1,4 @@
 // toggleContent.js
-
 class ContentToggler {
     constructor(contentId) {
         this.contentId = contentId; // Store the content ID
@@ -27,7 +26,7 @@ class ContentToggler {
 }
 
 // // Usage example
-const toggler = new ContentToggler('myContentId'); // Replace 'myContentId' with your actual content ID
+const toggler = new ContentToggler(contentId); // Replace 'myContentId' with your actual content ID
 document.getElementById('toggleButton').addEventListener('click', () => {
     toggler.toggle(); // Call the toggle method when the button is clicked
 });
