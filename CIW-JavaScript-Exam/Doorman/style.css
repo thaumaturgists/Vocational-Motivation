@@ -443,4 +443,16 @@ footer a:hover {
     color: #6a5acd; /* Slate blue on hover */
 }
 
+#you-are-here {
+    color: #fff; /* White for main heading */
 
+    text-shadow: 0 0 5px rgba(10, 9, 9, 0.8), /* White glow */
+                 0 0 10px rgba(255, 255, 255, 0.6), /* Soft white glow */
+                 0 0 15px rgba(75, 0, 130, 0.8); /* Indigo glow */
+    transition: text-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+#you-are-here:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), /* Brighter white glow */
+                 0 0 20px rgba(255, 255, 255, 0.8), /* Brighter soft white glow */
+                 0 0 30px rgba(75, 0, 130, 1); /* Brighter indigo glow */
+}

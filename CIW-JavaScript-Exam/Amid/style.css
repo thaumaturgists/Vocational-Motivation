@@ -346,3 +346,7 @@ footer a:hover {
 .containerOT a:hover {
     color: #ff6347; /* Darker coral on hover */
 }
+
+#you-are-here {
+    color: #ff69b4;
+}
