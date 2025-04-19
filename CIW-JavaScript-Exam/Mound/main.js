@@ -92,67 +92,126 @@ console.log('Shared Counts:', sharedCounts);
 
     // Some Script to Place qustionsSets in the console
 
-    function isValidQuestionSet(questionsArray) {
-        return Array.isArray(questionsArray) && questionsArray.every(question => {
-            return question.question && Array.isArray(question.answers) && question.correct;
-        });
-    }
+    // // This function checks if the question set we got is valid
+    // function isValidQuestionSet(questionsArray) {
+    //     // We check if questionsArray is an array and if every question has a question text, answers, and a correct answer
+    //     return Array.isArray(questionsArray) && questionsArray.every(question => {
+    //         return question.question && Array.isArray(question.answers) && question.correct;
+    //     });
+    // }
     
-    function addQuestionSet(setName, questionsArray) {
-        if (isValidQuestionSet(questionsArray)) {
-            questionSets[setName] = questionsArray;
-            console.log(`Added question set: ${setName} with ${questionsArray.length} questions.`);
-            quizzes = initializeQuizzes(); // Reinitialize quizzes to reflect the new question set
-        } else {
-            console.error('Invalid question set structure.');
-        }
-    }
+    // // This function adds a new set of questions to our questionSets
+    // function addQuestionSet(setName, questionsArray) {
+    //     // First, we check if the questionsArray is valid
+    //     if (isValidQuestionSet(questionsArray)) {
+    //         questionSets[setName] = questionsArray; // Add the new question set
+    //         console.log(`Added question set: ${setName} with ${questionsArray.length} questions.`); // Log that we added it
+    //         quizzes = initializeQuizzes(); // Re-initialize quizzes to include the new set
+    //     } else {
+    //         console.error('Invalid question set structure.'); // Log an error if the structure is not valid
+    //     }
+    // }
 
-    // Example usage of adding a new question set
-    const newQuestions = [
-        {
-            question: "your_question_7here", 
-            answers: [
-                "pick_your_answer_here_17",
-                "pick_your_answer_here_18",
-                "pick_your_answer_here_19",
-                "pick_your_answer_here_20",
-                "and_so_on_...5"],
-            correct: "pick_your_answer_here_17"
-        },
-        {
-            question: "your_question_8here", 
-            answers: [
-                "pick_your_answer_here_21",
-                "pick_your_answer_here_22",
-                "pick_your_answer_here_23",
-                "pick_your_answer_here_24",
-                "and_so_on_...6"],
-            correct: "pick_your_answer_here_24"
-        },
-        {
-            question: "your_question_9here", 
-            answers: [
-                "pick_your_answer_here_25",
-                "pick_your_answer_here_26",
-                "pick_your_answer_here_27",
-                "pick_your_answer_here_28",
-                "and_so_on_...7"],
-            correct: "pick_your_answer_here_27"
-        },
-        {
-            question: "your_question_10here", 
-            answers: [
-                "pick_your_answer_here_29",
-                "pick_your_answer_here_30",
-                "pick_your_answer_here_31",
-                "pick_your_answer_here_32",
-                "and_so_on_...8"],
-            correct: "pick_your_answer_here_29"
-        },
-    ];
+    // // Here we define some new questions to add to our quiz
+    // const newQuestions = [
+    //     {
+    //         question: "your_question_7here", // This is the question text
+    //         answers: [ // These are the possible answers
+    //             "pick_your_answer_here_17",
+    //             "pick_your_answer_here_18",
+    //             "pick_your_answer_here_19",
+    //             "pick_your_answer_here_20",
+    //             "and_so_on_...5"
+    //         ],
+    //         correct: "pick_your_answer_here_17" // This is the correct answer
+    //     },
+    //     {
+    //         question: "your_question_8here", 
+    //         answers: [
+    //             "pick_your_answer_here_21",
+    //             "pick_your_answer_here_22",
+    //             "pick_your_answer_here_23",
+    //             "pick_your_answer_here_24",
+    //             "and_so_on_...6"
+    //         ],
+    //         correct: "pick_your_answer_here_24"
+    //     },
+    //     {
+    //         question: "your_question_9here", 
+    //         answers: [
+    //             "pick_your_answer_here_25",
+    //             "pick_your_answer_here_26",
+    //             "pick_your_answer_here_27",
+    //             "pick_your_answer_here_28",
+    //             "and_so_on_...7"
+    //         ],
+    //         correct: "pick_your_answer_here_27"
+    //     },
+    //     {
+    //         question: "your_question_10here", 
+    //         answers: [
+    //             "pick_your_answer_here_29",
+    //             "pick_your_answer_here_30",
+    //             "pick_your_answer_here_31",
+    //             "pick_your_answer_here_32",
+    //             "and_so_on_...8"
+    //         ],
+    //         correct: "pick_your_answer_here_29"
+    //     },
+    // ];
 
-    addQuestionSet('question7', newQuestions); // Call this function to add a new question set
+            // // // We call the function to add the new questions to our question sets
+            // // addQuestionSet('question7', newQuestions);
+
+            //     function sanitizeInput(input) {
+            //         const sanitized = input.replace(/[^a-zA-Z0-9\s-_]/g, '');
+            //         if (sanitized.length > 50) {
+            //             throw new Error('Input exceeds maximum length.');
+            //         }
+            //         if (sanitized.trim() === '') {
+            //             throw new Error('Input cannot be empty.');
+            //         }
+            //         return sanitized;
+            //     }
+                
+            // // Assuming sanitizeInput and addQuestionSet are already defined
+
+            // function addNewQuestion(setName, questionText, answers, correctAnswer) {
+            //     try {
+            //         // Sanitize the inputs
+            //         const sanitizedQuestion = sanitizeInput(questionText);
+            //         const sanitizedAnswers = answers.map(answer => sanitizeInput(answer));
+            //         const sanitizedCorrectAnswer = sanitizeInput(correctAnswer);
+
+            //         // Create a new question object
+            //         const newQuestion = {
+            //             question: sanitizedQuestion,
+            //             answers: sanitizedAnswers,
+            //             correct: sanitizedCorrectAnswer
+            //         };
+
+            //         // Add the new question to the specified question set
+            //         addQuestionSet(setName, [newQuestion]); // Wrap in an array to match expected structure
+
+            //         console.log(`Successfully added question to set "${setName}":`, newQuestion);
+            //     } catch (error) {
+            //         console.error('Error adding question:', error.message);
+            //     }
+            // }
+
+            // // Example usage
+            // const setName = 'generalKnowledge';
+            // const questionText = 'What is the capital of France?';
+            // const answers = [
+            //     'Paris',
+            //     'London',
+            //     'Berlin',
+            //     'Madrid'
+            // ];
+            // const correctAnswer = 'Paris';
+
+            // // Call the function to add the new question
+            // addNewQuestion(setName, questionText, answers, correctAnswer);
 })();
 
 // This function helps to make sure that any input we get is safe to use

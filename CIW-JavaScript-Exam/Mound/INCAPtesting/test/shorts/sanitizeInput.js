@@ -1,4 +1,4 @@
-sanitizeInput(input) {
+function sanitizeInput(input) {
     const sanitized = input.replace(/[^a-zA-Z0-9\s-_]/g, '');
     if (sanitized.length > 50) { // Example: limit input length
         throw new Error('Input exceeds maximum length.');

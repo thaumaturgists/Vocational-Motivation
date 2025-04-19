@@ -1,0 +1,155 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Toggler Example</title>
+    <script>
+        function FloatingToggler(tag) {
+            // Create styles for the floating button and toggle content
+            const style = document.createElement('style');
+            style.textContent = `
+                .ft-floating-button {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background-color: #007BFF;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 10px;
+                    cursor: pointer;
+                }
+
+                .ft-toggle-content {
+                    display: none; /* Initially hidden */
+                    margin-top: 20px;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+
+                .ft-container {
+                    position: relative; /* To position the button correctly */
+                    display: inline-block; /* To fit the content */
+                    padding: 20px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Add classes and create toggle content if it doesn't exist
+            if (!tag.classList.contains('ft-container')) {
+                tag.classList.add('ft-container');
+
+                // Create the toggle content div
+                const content = document.createElement('div');
+                content.className = 'ft-toggle-content';
+                
+                // Load content from the tag's inner HTML
+                content.innerHTML = tag.innerHTML.replace('Click me to toggle content', ''); // Remove the toggle prompt
+                tag.appendChild(content);
+
+                // Create the floating button
+                const button = document.createElement('button');
+                button.className = 'ft-floating-button';
+                button.innerText = 'Toggle';
+                button.onclick = function(event) {
+                    event.stopPropagation(); // Prevent triggering the tag's onclick
+                    content.style.display = content.style.display === 'none' ? 'block' : 'none';
+                };
+                tag.appendChild(button);
+            }
+        }
+    </script>
+</head>
+<body>
+    <aside class="container" onclick="FloatingToggler(this)">
+        Click me to toggle content
+        <div>This is the dynamically loaded content!</div>
+        <div>More content here!</div>
+        <h3>Additional Information</h3>
+    </aside>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Toggler Example</title>
+    <script>
+        function FloatingToggler(tag) {
+            // Create styles for the floating button and toggle content
+            const style = document.createElement('style');
+            style.textContent = `
+                .ft-floating-button {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background-color: #007BFF;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 10px;
+                    cursor: pointer;
+                }
+
+                .ft-toggle-content {
+                    display: none; /* Initially hidden */
+                    margin-top: 20px;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+
+                .ft-container {
+                    position: relative; /* To position the button correctly */
+                    display: inline-block; /* To fit the content */
+                    padding: 20px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+            `;
+            document.head.appendChild(style);
+
+            // Add classes and create toggle content if it doesn't exist
+            if (!tag.classList.contains('ft-container')) {
+                tag.classList.add('ft-container');
+
+                // Create the toggle content div
+                const content = document.createElement('div');
+                content.className = 'ft-toggle-content';
+                
+                // Load content from the tag's inner HTML, excluding the toggle prompt
+                content.innerHTML = tag.querySelector('.ft-toggle-content').innerHTML;
+                tag.appendChild(content);
+
+                // Create the floating button
+                const button = document.createElement('button');
+                button.className = 'ft-floating-button';
+                button.innerText = 'Toggle';
+                button.onclick = function(event) {
+                    event.stopPropagation(); // Prevent triggering the tag's onclick
+                    content.style.display = content.style.display === 'none' ? 'block' : 'none';
+                };
+                tag.appendChild(button);
+            }
+        }
+    </script>
+</head>
+<body>
+    <aside onclick="FloatingToggler(this)">
+        Click me to toggle content
+        <div class="ft-toggle-content" style="display: none;">
+            <div>This is the dynamically loaded content!</div>
+            <div>More content here!</div>
+            <h3>Additional Information</h3>
+        </div>
+    </aside>
+</body>
+</html>
+
