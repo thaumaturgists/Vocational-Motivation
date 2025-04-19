@@ -95,6 +95,15 @@ body {
     color: #333; /* Dark text color for readability */
 }
 
+/* Optional: Add a media query for responsiveness */
+@media (max-width: 600px) {
+    #floatingCounters {
+        top: 5px; /* Adjust top position for smaller screens */
+        right: 5px; /* Adjust right position for smaller screens */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+}
+
 /* Counter Header */
 .counter-header {
     display: flex; /* Use flexbox for alignment */

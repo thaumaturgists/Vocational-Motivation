@@ -123,6 +123,15 @@ body {
     color: #fff; /* White text color for readability */
 }
 
+/* Optional: Add a media query for responsiveness */
+@media (max-width: 600px) {
+    #floatingCounters {
+        top: 2px; /* Adjust top position for smaller screens */
+        right: 2px; /* Adjust right position for smaller screens */
+        padding: 5px; /* Reduce padding for smaller screens */
+    }
+}
+
 /* Correct Count Display */
 .correct-display {
     font-size: 1.2em;
