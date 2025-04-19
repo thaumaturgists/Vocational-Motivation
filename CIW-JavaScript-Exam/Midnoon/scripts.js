@@ -5,6 +5,14 @@ function toggleContent(contentId) {
     // Check if the content is currently hidden or not displayed
     content.style.display = (content.style.display === 'block') ? 'none' : 'block';
 }
+
+    // Initialize all content sections to be hidden
+    document.addEventListener("DOMContentLoaded", function() {
+        const contents = document.querySelectorAll('.content');
+        contents.forEach(content => {
+            content.style.display = "none";
+        });
+    });
 // This is an immediately invoked function expression (IIFE)
 // It runs the code inside it right away
 (function() {
