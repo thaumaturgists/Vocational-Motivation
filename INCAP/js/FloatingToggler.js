@@ -47,3 +47,5 @@ function FloatingToggler(tag) {
         tag.appendChild(button);
     }
 }
+
+//         <div class="FT-container" onclick="FloatingToggler(this)"></div>

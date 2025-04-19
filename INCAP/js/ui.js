@@ -21,7 +21,7 @@ export function displayQuiz(quiz, quizContainerId, resultContainerId) {
     selectedQuestions.forEach((q, index) => {
         const questionDiv = document.createElement('div');
         questionDiv.className = 'question';
-        questionDiv.textContent = `${index + 1}. ${q.question}`;
+        questionDiv.textContent = `${index + 1}. ${q.question}\n`;
 
         const shuffledAnswers = quiz.shuffle([...q.answers]);
 

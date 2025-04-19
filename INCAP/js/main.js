@@ -57,11 +57,18 @@ console.log('Shared Counts:', sharedCounts);
 
     let quizzes = initializeQuizzes(); // Call the function to create quizzes
 
-    // This function sets up the quiz when we start it
+    // This function sets up the quiz
     function initializeQuiz() {
-        console.log('Initializing quiz...'); // Log that we are starting the quiz
-        resetQuiz(); // Reset any previous quiz data
+        resetQuiz(); // Start the quiz fresh
         window.scrollTo(0, 0); // Scroll to the top of the page
+
+        // After a little wait, focus on the first answer button
+        setTimeout(() => {
+            const firstButton = document.querySelector('#quiz1 .answer-button');
+            if (firstButton) {
+                firstButton.focus(); // Make the first button ready to be clicked
+            }
+        }, 100); // Wait 100 milliseconds
     }
 
     // This event listener waits for the webpage to load before starting the quiz
