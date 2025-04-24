@@ -1,8 +1,8 @@
 flask
+flask-debugtoolbar
 flask-cors
 flask-sqlalchemy
 flask-migrate
 flask-restful
 requests
 gunicorn
-
