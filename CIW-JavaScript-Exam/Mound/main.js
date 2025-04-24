@@ -1,6 +1,6 @@
 // main.js
-import { Quiz } from '/CIW-JavaScript-Exam/INCAP/quiz.js';
-import { displayQuiz } from '/CIW-JavaScript-Exam/INCAP/ui.js';
+import { Quiz } from './quiz';
+import { displayQuiz } from './ui';
 // export const sharedCounts = {
 //     totalCount: 0,
 //     totalCorrectCount: 0
