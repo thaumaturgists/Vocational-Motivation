@@ -1,22 +1,3 @@
-# # Base image for Python
-# FROM python:alpine@sha256:18159b2be11db91f84b8f8f655cd860f805dbd9e49a583ddaac8ab39bf4fe1a7
-
-# # Set working directory
-# WORKDIR /app
-
-# # Copy requirements and install
-# COPY requirements.txt .
-# RUN pip install --no-cache-dir -r requirements.txt || { echo "Failed to install Python dependencies"; exit 1; }
-
-# # Copy the rest of the application
-# COPY . .
-
-# # Expose the necessary port
-# EXPOSE 5000
-
-# # Command to run the application
-# CMD ["python", "app.py"]
-
 # Base image for Python
 FROM python:alpine@sha256:18159b2be11db91f84b8f8f655cd860f805dbd9e49a583ddaac8ab39bf4fe1a7
 
@@ -28,7 +9,7 @@ LABEL maintainer="Connor (https://github.com/thaumaturgists/)"
 
 # Copy requirements.txt and install dependencies
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt || { echo "Failed to install Python dependencies"; exit 1;
+RUN pip install --no-cache-dir -r requirements.txt || { echo "Failed to install Python dependencies"; exit 1; }
 
 # Copy the rest of the application code
 COPY . .
