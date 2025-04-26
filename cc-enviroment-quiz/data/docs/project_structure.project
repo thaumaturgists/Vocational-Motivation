@@ -1,0 +1,61 @@
+ <!-- project_structure.project
+```
+cc-enviroment-quiz/
+└── creation-profile-cards/
+│    ├── app.py
+│    ├── dockerfile
+│    ├── package.json
+│    └── requirements.txt (package.json uses this)
+├── data/
+│   └──docs/
+├──quiz-app/
+    ├── node_modules (For testing before docker build)
+│   ├── public/
+│   │   └── index.html (If not here, then in this root)
+│   ├── src/
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── index.html      (Used here for stability)
+│   ├── dockerfile
+│   ├── package-lock.json (builds after npm install, Used for testing)
+│   ├── package.json
+│   ├── requirements.txt       (Here if needed)
+│  	│	└──vite, jsx, tsx
+│   ├── tsconfig.json
+│   └── vite.config.ts (or vite.config.js)
+├── venv/
+│       └── (Python dev environment)
+├── .env
+├── .gitignore
+├── docker-compose.yml
+├── dockerfile (If not here, then not yet)
+├── package.json (If not here yet, then not needed)
+├── requirements.txt (Here if needed)
+└── desktop (Placeholder, reminder to make desktop)
+
+
+Collaboration File simple Creation
+• Effective collaboration without commits.
+• Aim: Create Python environment for Node.js operation.
+• Prioritize debugging.
+``` -->
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+    <name>cc-enviroment-quiz</name>
+    <comment></comment>
+    <projects>
+        <project>creation-profile-cards</project>
+        <project>quiz-app</project>
+    </projects>
+    <buildSpec>
+        <buildCommand>
+            <name>org.eclipse.jdt.core.javabuilder</name>
+            <arguments>
+            </arguments>
+        </buildCommand>
+    </buildSpec>
+    <natures>
+        <nature>org.eclipse.jdt.core.javanature</nature>
+        <nature>org.eclipse.core.resources.nature</nature>
+    </natures>
+</projectDescription>

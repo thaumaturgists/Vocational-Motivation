@@ -1,0 +1,60 @@
+# # Base image for Python
+# FROM python:3.13-slim
+
+# # Set working directory
+# WORKDIR /app
+
+# # Copy requirements and install
+# COPY requirements.txt .
+# RUN pip install --no-cache-dir -r requirements.txt
+
+# # Copy the rest of the application
+# COPY . .
+
+# # Expose the necessary port
+# EXPOSE 5000
+
+# # Command to run the application
+# CMD ["python", "creation-profile-cards/app.py"]
+
+
+###########
+# # Base image for Node.js (LTS version)
+# FROM node:lts-slim AS build
+
+# # Set working directory for Node.js app
+# WORKDIR /quiz-app
+
+# # Copy package.json and package-lock.json, then install dependencies
+# COPY quiz-app/package*.json ./
+# RUN npm ci --omit=dev
+
+# # Copy the rest of the Node.js application and build it
+# COPY quiz-app/ .
+# RUN npm run build
+
+# # Base image for Python
+# FROM python:3.13-alpine
+
+# # Set working directory for Python app
+# WORKDIR /creation-profile-cards
+
+# # Copy requirements and install dependencies
+# COPY creation-profile-cards/requirements.txt ./
+# RUN pip install --no-cache-dir --upgrade -r requirements.txt
+
+# # Copy the rest of the Python application
+# COPY creation-profile-cards/ .
+
+# # Install Node.js in the final image
+# RUN apk add --no-cache nodejs npm
+
+# # Copy built Node.js application from the build stage
+# COPY --from=build /quiz-app/dist /app/dist
+# COPY --from=build /quiz-app /app/quiz-app
+
+# # Expose ports for both applications
+# EXPOSE 5000 3000
+
+# # Command to run both applications
+# CMD ["sh", "-c", "npm run dev & python creation-profile-cards/app.py"]

@@ -1,37 +1,32 @@
-version: '3.8'
 services:
-  quiz-app:
+  backend:
+    build:
+      context: ./creation-profile-cards
+      dockerfile: dockerfile
+    ports:
+      - "5000:5000"  # Map the backend port
+    volumes:
+      - ./creation-profile-cards:/usr/src/app  # Optional: for live reloading
+    environment:
+      - FLASK_ENV=development  # Adjust if using Flask or similar
     logging:
       driver: "json-file"
       options:
         max-size: "10m"
-        max-file: "3"
-    image: cc-e-q:v1.0  # Use the tagged image
-    environment:
-      - MODE=${MODE:-dev}
+        max-file: "5"
+
+  frontend:
     build:
       context: ./quiz-app
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
     ports:
-      - "${QUIZ_PORT:-5173}:5173"
+      - "80:80"  # Map the Vite development server port
     volumes:
-      - ./quiz-app:/app
-    networks:
-      - app_network
-    restart: unless-stopped
-
-  creation-profile-cards:
-    build:
-      context: ./creation-profile-cards
-      dockerfile: Dockerfile
-    ports:
-      - "${CREATION_PROFILE_PORT:-5000}:5000"
-    volumes:
-      - ./creation-profile-cards:/app
-    networks:
-      - app_network
-    restart: unless-stopped
-
-networks:
-  app_network:
-    driver: bridge
+      - ./quiz-app:/usr/src/app
+    environment:
+      - NODE_ENV=development
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"

@@ -1,18 +1,40 @@
-FROM python:3.13-alpine@sha256:18159b2be11db91f84b8f8f655cd860f805dbd9e49a583ddaac8ab39bf4fe1a7
-WORKDIR /app
+# # Base image for Python
+# FROM python:alpine@sha256:18159b2be11db91f84b8f8f655cd860f805dbd9e49a583ddaac8ab39bf4fe1a7
+
+# # Set working directory
+# WORKDIR /app
+
+# # Copy requirements and install
+# COPY requirements.txt .
+# RUN pip install --no-cache-dir -r requirements.txt || { echo "Failed to install Python dependencies"; exit 1; }
+
+# # Copy the rest of the application
+# COPY . .
+
+# # Expose the necessary port
+# EXPOSE 5000
+
+# # Command to run the application
+# CMD ["python", "app.py"]
+
+# Base image for Python
+FROM python:alpine@sha256:18159b2be11db91f84b8f8f655cd860f805dbd9e49a583ddaac8ab39bf4fe1a7
+
+# Set the working directory
+WORKDIR /usr/src/app
+
 # Add author information
 LABEL maintainer="Connor (https://github.com/thaumaturgists/)"
 
-# Upgrade pip and install dependencies securely
-RUN pip install --no-cache-dir --upgrade pip
+# Copy requirements.txt and install dependencies
 COPY requirements.txt ./
-RUN pip install --no-cache-dir --upgrade -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt || { echo "Failed to install Python dependencies"; exit 1;
 
-# Copy the rest of the application
+# Copy the rest of the application code
 COPY . .
 
-# Expose Flask's default port
+# Expose the application port (change if your app uses a different port)
 EXPOSE 5000
 
-# Default command to run the app, Use a Production Server for Flask
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "--log-level", "debug", "app:app"]
+# Command to run the application (adjust as necessary)
+CMD ["python", "app.py"]

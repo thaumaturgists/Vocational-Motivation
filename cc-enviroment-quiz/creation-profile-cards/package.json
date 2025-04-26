@@ -1,10 +1,9 @@
 {
   "name": "creation-profile-cards",
-  "private": true,
   "version": "1.0.0",
-  "description": "A Flask application for creating profile cards.",
+  "main": "app.py",
   "scripts": {
-    "start": "gunicorn app:app -b 0.0.0.0:5000"
+    "start": "python app.py"
   },
   "dependencies": {}
 }

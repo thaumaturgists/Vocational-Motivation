@@ -1,0 +1,17 @@
+  {
+    "compilerOptions": {
+      "target": "esnext",
+      "useDefineForClassFields": true,
+      "lib": ["dom", "esnext"],
+      "allowJs": false,     // Set to false: No JavaScript
+      "skipLibCheck": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "noEmit": true,
+      "esModuleInterop": true,
+      "module": "esnext",
+      "moduleResolution": "node",
+      "jsx": "react-jsx"
+    },
+    "include": ["src", "src/main.tsx",]
+  }
