@@ -285,16 +285,16 @@ yarn dev
    - **Logging**: Configures logging with a maximum size of `10m` and a maximum of `5` log files, which is a good practice for managing log files.
 
 2. **Creation Profile Cards Service**:
-   - **Build Context**: It correctly points to the `./creation-profile-cards` directory for building the Docker image.
+   - **Build Context**: It correctly points to the `./creation-commons` directory for building the Docker image.
    - **Ports**: Maps port `5000` on the host to port `5000` in the container, which is standard for Flask applications.
    - **Logging**: Similar logging configuration as the quiz app, which is also good.
 
 ### Suggested Minor Addition
-- **Volumes for Creation Profile Cards**: If you want to enable live reloading for your Flask application as well, consider adding a volume for the `creation-profile-cards` service:
+- **Volumes for Creation Profile Cards**: If you want to enable live reloading for your Flask application as well, consider adding a volume for the `creation-commons` service:
 
 ```yaml
 volumes:
-  - ./creation-profile-cards:/app
+  - ./creation-commons:/app
 ```
 
 ### Final Example
@@ -319,13 +319,13 @@ services:
         max-size: "10m"
         max-file: "5"
 
-  creation-profile-cards:
+  creation-commons:
     build:
-      context: ./creation-profile-cards
+      context: ./creation-commons
     ports:
       - "5000:5000"
     volumes:
-      - ./creation-profile-cards:/app  # Optional: for live reloading
+      - ./creation-commons:/app  # Optional: for live reloading
     logging:
       driver: "json-file"
       options:

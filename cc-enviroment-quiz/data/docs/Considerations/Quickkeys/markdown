@@ -1,0 +1,9 @@
+To change text color in Markdown
+err ISSUE:
+  <div style="color: red; font-weight: bold;"> This needs attention</div>
+
+The
+```markdown
+>
+```
+Can be used for small notes.

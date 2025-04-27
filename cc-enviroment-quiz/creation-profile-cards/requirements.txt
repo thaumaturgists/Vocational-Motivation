@@ -1,8 +1,9 @@
 pytest
-flask
-flask-debugtoolbar
-flask-cors
-flask-sqlalchemy
-flask-migrate
-flask-restful
+Flask
+Flask-Cors
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-RESTful
+Flask-DebugToolbar
 requests
+dotenv

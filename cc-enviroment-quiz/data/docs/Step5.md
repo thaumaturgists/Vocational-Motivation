@@ -108,12 +108,12 @@ export default defineConfig({
 services:
   backend:
     build:
-      context: ./creation-profile-cards
+      context: ./creation-commons
       dockerfile: dockerfile
     ports:
       - "5000:5000"  # Map the backend port
     volumes:
-      - ./creation-profile-cards:/usr/src/app  # Optional: for live reloading
+      - ./creation-commons:/usr/src/app  # Optional: for live reloading
     environment:
       - FLASK_ENV=development  # Adjust if using Flask or similar
     logging:

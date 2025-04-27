@@ -1,7 +1,7 @@
  <!-- project_structure.project
 ```
 cc-enviroment-quiz/
-└── creation-profile-cards/
+└── creation-commons/
 │    ├── app.py
 │    ├── dockerfile
 │    ├── package.json
@@ -9,12 +9,18 @@ cc-enviroment-quiz/
 ├── data/
 │   └──docs/
 ├──quiz-app/
-    ├── node_modules (For testing before docker build)
+│   ├── node_modules (For testing before docker build)
 │   ├── public/
 │   │   └── index.html (If not here, then in this root)
 │   ├── src/
+│   │   │└── components/
+│   │   │    └── Timer.tsx, StarScreen.tsx, Results.tsx, QuizContainer.tsx, Question.tsx, ProgressBar.tsx, AnswerOption.tsx
 │   │   ├── App.tsx
-│   │   └── main.tsx
+│   │   ├── main.tsx
+│   │   ├── data/
+│   │   │    └── quizQuestions.js
+│   │   └── styles/
+│   │ 
 │   ├── index.html      (Used here for stability)
 │   ├── dockerfile
 │   ├── package-lock.json (builds after npm install, Used for testing)
@@ -44,7 +50,7 @@ Collaboration File simple Creation
     <name>cc-enviroment-quiz</name>
     <comment></comment>
     <projects>
-        <project>creation-profile-cards</project>
+        <project>creation-commons</project>
         <project>quiz-app</project>
     </projects>
     <buildSpec>

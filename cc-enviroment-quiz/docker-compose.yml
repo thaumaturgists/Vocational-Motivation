@@ -2,13 +2,19 @@ services:
   backend:
     build:
       context: ./creation-profile-cards
-      dockerfile: dockerfile
+      dockerfile: Dockerfile  # Ensure the filename is capitalized if that's how it's named
     ports:
       - "5000:5000"  # Map the backend port
     volumes:
       - ./creation-profile-cards:/usr/src/app  # Optional: for live reloading
+      - db_data:/usr/src/app/profiles.db  # Persist the SQLite database
+    depends_on:
+      - db 
     environment:
-      - FLASK_ENV=development  # Adjust if using Flask or similar
+      - FLASK_ENV=development  # Set the Flask environment
+      - SQLALCHEMY_DATABASE_URI=sqlite:////usr/src/app/profiles.db  # Use the correct path for SQLite
+      - SECRET_KEY=afab12c326a35f9344181655aaa51feb04f97a77c8619f75  # Set the secret key here
+      - SECOND_SECRET_KEY=fee7ec42c62e706c8488c98f00c72d3dd771ae6ff569331c
     logging:
       driver: "json-file"
       options:
@@ -18,7 +24,7 @@ services:
   frontend:
     build:
       context: ./quiz-app
-      dockerfile: dockerfile
+      dockerfile: Dockerfile  # Ensure the filename is capitalized if that's how it's named
     ports:
       - "80:80"  # Map the Vite development server port
     volumes:
@@ -30,3 +36,15 @@ services:
       options:
         max-size: "10m"
         max-file: "5"
+
+  db:
+    image: nouchka/sqlite3:latest  # Use a proper SQLite image or remove this service
+    volumes:
+      - db_data:/profiles.db  # Persist the SQLite database file
+
+volumes:
+  db_data:  # Define a named volume for the SQLite database
+
+secrets:
+  secret_key:
+    external: true  # This assumes you have a Docker secret set up externally

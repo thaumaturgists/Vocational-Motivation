@@ -1,5 +1,5 @@
 cc-enviroment-quiz/
-└── creation-profile-cards/
+└── creation-commons/
 │    ├── app.py
 │    ├── dockerfile
 │    ├── package.json
@@ -37,7 +37,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 EXPOSE 5000
-CMD ["python", "creation-profile-cards/app.py"]
+CMD ["python", "creation-commons/app.py"]
 ```
 
 ### 2. **docker-compose.yml**
@@ -54,9 +54,9 @@ services:
         max-size: "10m"
         max-file: "5"
 
-  creation-profile-cards:
-    build: ./creation-profile-cards
-      context: ./creation-profile-cards
+  creation-commons:
+    build: ./creation-commons
+      context: ./creation-commons
     ports:
       - "5000:5000"
     logging:
@@ -72,7 +72,7 @@ flask
 flask-cors
 requests
 ```
-### 3.2 **requirements.txt (Creation-profile-cards)**
+### 3.2 **requirements.txt (creation-commons)**
 ```plaintext
 pytest
 ```
@@ -110,7 +110,7 @@ CMD ["npm", "start"]
 }
 ```
 
-### 6. **creation-profile-cards/Dockerfile**
+### 6. **creation-commons/Dockerfile**
 ```dockerfile
 FROM python:3.12-slim
 WORKDIR /app
@@ -121,10 +121,10 @@ EXPOSE 5000
 CMD ["python", "app.py"]
 ```
 
-### 7. **creation-profile-cards/package.json**
+### 7. **creation-commons/package.json**
 ```json
 {
-  "name": "creation-profile-cards",
+  "name": "creation-commons",
   "version": "1.0.0",
   "main": "app.py",
   "scripts": {
@@ -149,7 +149,7 @@ __pycache__/
 node_modules/
 ```
 
-### 11. **app.py (creation-profile-cards)**
+### 11. **app.py (creation-commons)**
 ```python
 import logging
 from flask import Flask, jsonify, request
