@@ -1,8 +1,8 @@
 {
-  "name": "creation-caccades",
+  "name": "creation-çaccades",
   "private": true,
   "version": "1.0.1",
-  "description": "A Flask application for creating profile cards.",
+  "description": "A Flask application for creating precordials.",
   "main": "app.py",
   "scripts": {
     "start": "python app.py"

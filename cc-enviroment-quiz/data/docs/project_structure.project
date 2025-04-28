@@ -2,10 +2,15 @@
 ```
 cc-enviroment-quiz/
 └── creation-çaccades/
+│    ├── instance/
+│    ├── migrations/
+│    ├── profile.db/
 │    ├── app.py
 │    ├── dockerfile
+│    ├── models.py
 │    ├── package.json
-│    └── requirements.txt (package.json uses this)
+│    ├── questions.json
+│    └── requirements.txt (dockerfile uses this)
 ├── data/
 │   └──docs/
 ├──quiz-app/
@@ -13,20 +18,16 @@ cc-enviroment-quiz/
 │   ├── public/
 │   │   └── index.html (If not here, then in this root)
 │   ├── src/
-│   │   │└── components/
-│   │   │    └── Timer.tsx, StarScreen.tsx, Results.tsx, QuizContainer.tsx, Question.tsx, ProgressBar.tsx, AnswerOption.tsx
 │   │   ├── App.tsx
-│   │   ├── main.tsx
-│   │   ├── data/
-│   │   │    └── quizQuestions.js
-│   │   └── styles/
+│   │   ├── ErrorBoundary.tsx
+│   │   └── main.tsx
 │   │ 
-│   ├── index.html      (Used here for stability)
 │   ├── dockerfile
+│   ├── index.html      (Used here for stability)
 │   ├── package-lock.json (builds after npm install, Used for testing)
 │   ├── package.json
 │   ├── requirements.txt       (Here if needed)
-│  	│	└──vite, jsx, tsx
+│  	│	└── vite, jsx, tsx
 │   ├── tsconfig.json
 │   └── vite.config.ts (or vite.config.js)
 ├── venv/
@@ -45,6 +46,7 @@ Collaboration File simple Creation
 • Aim: Create Python environment for Node.js operation.
 • Prioritize debugging.
 ``` -->
+```project
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
     <name>cc-enviroment-quiz</name>
@@ -65,3 +67,4 @@ Collaboration File simple Creation
         <nature>org.eclipse.core.resources.nature</nature>
     </natures>
 </projectDescription>
+```
