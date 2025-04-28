@@ -16,9 +16,9 @@ services:
         max-size: "10m"
         max-file: "5"
 
-  creation-cascades:
+  creation-çaccades:
     build:
-      context: ./creation-cascades
+      context: ./creation-çaccades
     ports:
       - "5000:5000"
     logging:
@@ -28,7 +28,7 @@ services:
         max-file: "5"
 ```
 
-### 2. **Updated `Dockerfile` for `creation-cascades`**
+### 2. **Updated `Dockerfile` for `creation-çaccades`**
 This modification ensures that any failure during the installation of dependencies is logged and the build process is halted.
 
 ```dockerfile
@@ -76,7 +76,7 @@ EXPOSE 3000
 CMD ["npm", "start"]
 ```
 
-### 4. **Updated `app.py` for `creation-cascades`**
+### 4. **Updated `app.py` for `creation-çaccades`**
 This version includes logging for incoming requests and error handling.
 
 ```python

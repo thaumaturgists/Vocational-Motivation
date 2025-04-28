@@ -1,12 +1,12 @@
 services:
   backend:
     build:
-      context: ./creation-profile-cards
+      context: ./creation-çaccades
       dockerfile: Dockerfile  # Ensure the filename is capitalized if that's how it's named
     ports:
       - "5000:5000"  # Map the backend port
     volumes:
-      - ./creation-profile-cards:/usr/src/app  # Optional: for live reloading
+      - ./creation-çaccades:/usr/src/app  # Optional: for live reloading
       - db_data:/usr/src/app/profiles.db  # Persist the SQLite database
     depends_on:
       - db 

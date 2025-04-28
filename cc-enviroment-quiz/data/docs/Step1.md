@@ -1,5 +1,5 @@
 cc-enviroment-quiz/
-└── creation-cascades/
+└── creation-çaccades/
 │    ├── app.py
 │    ├── dockerfile
 │    ├── package.json
@@ -45,7 +45,7 @@ COPY . .
 EXPOSE 5000
 
 # Command to run the application
-CMD ["python", "creation-cascades/app.py"]
+CMD ["python", "creation-çaccades/app.py"]
 ```
 
 ### 2. **docker-compose.yml**
@@ -59,9 +59,9 @@ services:
     ports:
       - "3000:3000"
   
-  creation-cascades:
+  creation-çaccades:
     build:
-      context: ./creation-cascades
+      context: ./creation-çaccades
     ports:
       - "5000:5000"
 ```
@@ -111,7 +111,7 @@ CMD ["npm", "start"]
 }
 ```
 
-### 6. **creation-cascades/Dockerfile**
+### 6. **creation-çaccades/Dockerfile**
 ```dockerfile
 # Base image for Python
 FROM python:3.9-slim
@@ -133,10 +133,10 @@ EXPOSE 5000
 CMD ["python", "app.py"]
 ```
 
-### 7. **creation-cascades/package.json**
+### 7. **creation-çaccades/package.json**
 ```json
 {
-  "name": "creation-cascades",
+  "name": "creation-çaccades",
   "version": "1.0.0",
   "main": "app.py",
   "scripts": {
@@ -168,7 +168,7 @@ These files provide a basic setup for your project, allowing for effective colla
 # For example, if you are using Express.js or other libraries
 ```
 
-### 11. **app.py (creation-cascades)**
+### 11. **app.py (creation-çaccades)**
 Here’s a simple example of what your `app.py` might look like for the creation of profile cards using Flask:
 
 ```python

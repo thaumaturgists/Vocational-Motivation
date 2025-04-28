@@ -187,12 +187,12 @@ Your `docker-compose.yml` file looks mostly fine, but there are a few considerat
 services:
   backend:
     build:
-      context: ./creation-profile-cards
+      context: ./creation-çaccades
       dockerfile: Dockerfile  # Ensure the filename is correct (case-sensitive)
     ports:
       - "5000:5000"  # Map the backend port
     volumes:
-      - ./creation-profile-cards:/usr/src/app  # Optional: for live reloading
+      - ./creation-çaccades:/usr/src/app  # Optional: for live reloading
     environment:
       - FLASK_ENV=development  # Set the Flask environment to development
       - SQLALCHEMY_DATABASE_URI=sqlite:///profiles.db  # Ensure the database URI is set correctly
@@ -266,12 +266,12 @@ In your `docker-compose.yml`, you can specify the database URI as an environment
 services:
   backend:
     build:
-      context: ./creation-profile-cards
+      context: ./creation-çaccades
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
     volumes:
-      - ./creation-profile-cards:/usr/src/app  # For live reloading
+      - ./creation-çaccades:/usr/src/app  # For live reloading
       - db_data:/usr/src/app/profiles.db  # Persist the SQLite database
     environment:
       - FLASK_ENV=development
@@ -315,7 +315,7 @@ volumes:
 When you run the application for the first time, the entrypoint script will execute the `flask db init`, `flask db migrate`, and `flask db upgrade` commands. This will create the `profiles.db` file in the specified directory.
 
 ### Step 6: Check the Database
-You can check if the database file was created successfully by looking in the `creation-profile-cards` directory. You can also use a SQLite browser tool or command-line tool to inspect the contents of the `profiles.db` file.
+You can check if the database file was created successfully by looking in the `creation-çaccades` directory. You can also use a SQLite browser tool or command-line tool to inspect the contents of the `profiles.db` file.
 
 ### Summary
 Using SQLite is a great way to get started with a database in your Flask application without needing to set up a separate database server. The above steps will help you set up your application to use SQLite effectively within a Docker environment. If you later decide to switch to a more robust database system (like PostgreSQL or MySQL), you can update the database URI and install the necessary database drivers in your `requirements.txt`.
@@ -352,12 +352,12 @@ If you want to set the `SECRET_KEY` as an environment variable in your `docker-c
 services:
   backend:
     build:
-      context: ./creation-profile-cards
+      context: ./creation-çaccades
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
     volumes:
-      - ./creation-profile-cards:/usr/src/app  # For live reloading
+      - ./creation-çaccades:/usr/src/app  # For live reloading
       - db_data:/usr/src/app/profiles.db  # Persist the SQLite database
     environment:
       - FLASK_ENV=development
@@ -410,12 +410,12 @@ To set the `SECRET_KEY` as an environment variable in your `docker-compose.yml`,
    services:
      backend:
        build:
-         context: ./creation-profile-cards
+         context: ./creation-çaccades
          dockerfile: Dockerfile
        ports:
          - "5000:5000"
        volumes:
-         - ./creation-profile-cards:/usr/src/app  # For live reloading
+         - ./creation-çaccades:/usr/src/app  # For live reloading
          - db_data:/usr/src/app/profiles.db  # Persist the SQLite database
        environment:
          - FLASK_ENV=development
@@ -505,12 +505,12 @@ You cannot directly execute Python code like `print(os.urandom(24).hex())` withi
    services:
      backend:
        build:
-         context: ./creation-profile-cards
+         context: ./creation-çaccades
          dockerfile: Dockerfile
        ports:
          - "5000:5000"
        volumes:
-         - ./creation-profile-cards:/usr/src/app  # For live reloading
+         - ./creation-çaccades:/usr/src/app  # For live reloading
          - db_data:/usr/src/app/profiles.db  # Persist the SQLite database
        environment:
          - FLASK_ENV=development
@@ -695,12 +695,12 @@ Make sure your `docker-compose.yml` is set up to provide the `SECRET_KEY` enviro
 services:
   backend:
     build:
-      context: ./creation-profile-cards
+      context: ./creation-çaccades
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
     volumes:
-      - ./creation-profile-cards:/usr/src/app  # For live reloading
+      - ./creation-çaccades:/usr/src/app  # For live reloading
       - db_data:/usr/src/app/profiles.db  # Persist the SQLite database
     environment:
       - FLASK_ENV=development

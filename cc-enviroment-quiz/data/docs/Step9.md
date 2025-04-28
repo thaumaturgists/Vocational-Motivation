@@ -156,9 +156,9 @@ if __name__ == '__main__':
 Using two keys in your application is straightforward. You define them in your `.env` file, load them into your application, and access them as needed. This approach helps keep sensitive information out of your source code and allows for easier configuration management.
 
 # err Issues App.py
-It looks like you're trying to configure your Flask application to use two secret keys, but there are a few issues in your code snippet. Specifically, you have two definitions of the `/keys` route, and you're trying to access the second key in two different ways. Below, I'll provide a corrected version of your code and explain the changes.
+It looks like you're trying to configure your Flask application to use two secret keys, but there are a few issues in your code snipcreation. Specifically, you have two definitions of the `/keys` route, and you're trying to access the second key in two different ways. Below, I'll provide a corrected version of your code and explain the changes.
 
-### Corrected Code Snippet
+### Corrected Code Snipcreation
 
 ```python
 import os
@@ -213,7 +213,7 @@ if __name__ == '__main__':
 
 ### Summary
 
-This corrected code snippet sets up a Flask application that uses two secret keys, with the first key being used as the `SECRET_KEY` for the application and the second key stored separately. The `/keys` route returns both keys in a JSON format. This approach keeps your configuration organized and allows for easy access to multiple secret keys.
+This corrected code snipcreation sets up a Flask application that uses two secret keys, with the first key being used as the `SECRET_KEY` for the application and the second key stored separately. The `/keys` route returns both keys in a JSON format. This approach keeps your configuration organized and allows for easy access to multiple secret keys.
 
 # What will the .env and yml look like after that?
 Based on the corrected Flask application code that uses two secret keys, here’s how your `.env` file and a corresponding `docker-compose.yml` file might look.
@@ -294,12 +294,12 @@ Your `docker-compose.yml` file looks mostly correct, but there are a few points 
 services:
   backend:
     build:
-      context: ./creation-profile-cards
+      context: ./creation-çaccades
       dockerfile: Dockerfile  # Ensure the filename is capitalized if that's how it's named
     ports:
       - "5000:5000"  # Map the backend port
     volumes:
-      - ./creation-profile-cards:/usr/src/app  # Optional: for live reloading
+      - ./creation-çaccades:/usr/src/app  # Optional: for live reloading
       - db_data:/usr/src/app/profiles.db  # Persist the SQLite database
     depends_on:
       - db 

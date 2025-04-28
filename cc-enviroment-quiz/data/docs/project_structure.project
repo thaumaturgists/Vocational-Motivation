@@ -1,7 +1,7 @@
  <!-- project_structure.project
 ```
 cc-enviroment-quiz/
-└── creation-cascades/
+└── creation-çaccades/
 │    ├── app.py
 │    ├── dockerfile
 │    ├── package.json
@@ -50,7 +50,7 @@ Collaboration File simple Creation
     <name>cc-enviroment-quiz</name>
     <comment></comment>
     <projects>
-        <project>creation-cascades</project>
+        <project>creation-çaccades</project>
         <project>quiz-app</project>
     </projects>
     <buildSpec>

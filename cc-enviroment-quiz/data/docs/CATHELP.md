@@ -1,5 +1,5 @@
 cc-enviroment-quiz/
-└── creation-cascades/
+└── creation-çaccades/
 │    ├── app.py
 │    ├── dockerfile
 │    ├── package.json
@@ -37,7 +37,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 EXPOSE 5000
-CMD ["python", "creation-cascades/app.py"]
+CMD ["python", "creation-çaccades/app.py"]
 ```
 
 ### 2. **docker-compose.yml**
@@ -54,9 +54,9 @@ services:
         max-size: "10m"
         max-file: "5"
 
-  creation-cascades:
-    build: ./creation-cascades
-      context: ./creation-cascades
+  creation-çaccades:
+    build: ./creation-çaccades
+      context: ./creation-çaccades
     ports:
       - "5000:5000"
     logging:
@@ -72,7 +72,7 @@ flask
 flask-cors
 requests
 ```
-### 3.2 **requirements.txt (creation-cascades)**
+### 3.2 **requirements.txt (creation-çaccades)**
 ```plaintext
 pytest
 ```
@@ -110,7 +110,7 @@ CMD ["npm", "start"]
 }
 ```
 
-### 6. **creation-cascades/Dockerfile**
+### 6. **creation-çaccades/Dockerfile**
 ```dockerfile
 FROM python:3.12-slim
 WORKDIR /app
@@ -121,10 +121,10 @@ EXPOSE 5000
 CMD ["python", "app.py"]
 ```
 
-### 7. **creation-cascades/package.json**
+### 7. **creation-çaccades/package.json**
 ```json
 {
-  "name": "creation-cascades",
+  "name": "creation-çaccades",
   "version": "1.0.0",
   "main": "app.py",
   "scripts": {
@@ -149,7 +149,7 @@ __pycache__/
 node_modules/
 ```
 
-### 11. **app.py (creation-cascades)**
+### 11. **app.py (creation-çaccades)**
 ```python
 import logging
 from flask import Flask, jsonify, request

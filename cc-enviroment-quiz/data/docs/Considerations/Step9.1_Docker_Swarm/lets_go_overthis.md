@@ -114,7 +114,7 @@ If you are deploying your application using Docker Swarm, Docker Secrets is a gr
    services:
      backend:
        build:
-         context: ./creation-profile-cards
+         context: ./creation-çaccades
          dockerfile: Dockerfile
        ports:
          - "5000:5000"
@@ -152,7 +152,7 @@ Below is a complete example that demonstrates how to set up a Flask application 
 ```
 my_flask_app/
 │
-├── creation-profile-cards/
+├── creation-çaccades/
 │   ├── app.py
 │   ├── requirements.txt
 │   └── .env
@@ -166,7 +166,7 @@ my_flask_app/
 Here’s a simple Flask application that uses environment variables for configuration:
 
 ```python
-# creation-profile-cards/app.py
+# creation-çaccades/app.py
 
 from flask import Flask, jsonify
 from dotenv import load_dotenv
@@ -211,7 +211,7 @@ python-dotenv
 This file contains your environment variables for local development:
 
 ```plaintext
-# creation-profile-cards/.env
+# creation-çaccades/.env
 SECRET_KEY=f0ea3269c96c83e88bde11862907f321c608857e3f2f103c
 SECOND_SECRET_KEY=6860f98b167c8300e7f3899c8e432b4d6c6752b0d2c4e13c
 SQLALCHEMY_DATABASE_URI=sqlite:///profiles.db
@@ -254,7 +254,7 @@ version: '3.8'
 services:
   backend:
     build:
-      context: ./creation-profile-cards
+      context: ./creation-çaccades
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
@@ -295,8 +295,8 @@ echo "f0ea3269c96c83e88bde11862907f321c608857e3f2f103c" | docker secret create s
 2. Run the Flask application locally:
 
 ```bash
-# Navigate to the creation-profile-cards directory
-cd creation-profile-cards
+# Navigate to the creation-çaccades directory
+cd creation-çaccades
 
 # Install dependencies
 pip install -r requirements.txt

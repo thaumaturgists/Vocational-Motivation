@@ -25,7 +25,7 @@ To represent the project structure this project provided under the `.project` an
     <name>cc-enviroment-quiz</name>
     <comment></comment>
     <projects>
-        <project>creation-profile-cards</project>
+        <project>creation-çaccades</project>
         <project>quiz-app</project>
     </projects>
     <buildSpec>
@@ -49,7 +49,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30224.195
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{GUID}") = "creation-profile-cards", "creation-profile-cards\app.py", "{GUID}"
+Project("{GUID}") = "creation-çaccades", "creation-çaccades\app.py", "{GUID}"
 EndProject
 Project("{GUID}") = "quiz-app", "quiz-app\package.json", "{GUID}"
 EndProject
