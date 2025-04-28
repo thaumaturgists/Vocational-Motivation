@@ -4,6 +4,7 @@ cc-enviroment-quiz/
 └── creation-çaccades/
 │    ├── instance/
 │    ├── migrations/
+|    |    └──versions/
 │    ├── profile.db/
 │    ├── app.py
 │    ├── dockerfile
@@ -12,16 +13,15 @@ cc-enviroment-quiz/
 │    ├── questions.json
 │    └── requirements.txt (dockerfile uses this)
 ├── data/
-│   └──docs/
-├──quiz-app/
+│   └── docs/
+├── quiz-app/
 │   ├── node_modules (For testing before docker build)
 │   ├── public/
-│   │   └── index.html (If not here, then in this root)
+│   │   └── index.html (If not here, then in ../)
 │   ├── src/
 │   │   ├── App.tsx
 │   │   ├── ErrorBoundary.tsx
 │   │   └── main.tsx
-│   │ 
 │   ├── dockerfile
 │   ├── index.html      (Used here for stability)
 │   ├── package-lock.json (builds after npm install, Used for testing)
@@ -40,13 +40,11 @@ cc-enviroment-quiz/
 ├── requirements.txt (Here if needed)
 └── desktop (Placeholder, reminder to make desktop)
 
-
 Collaboration File simple Creation
 • Effective collaboration without commits.
 • Aim: Create Python environment for Node.js operation.
 • Prioritize debugging.
 ``` -->
-```project
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
     <name>cc-enviroment-quiz</name>
@@ -67,4 +65,3 @@ Collaboration File simple Creation
         <nature>org.eclipse.core.resources.nature</nature>
     </natures>
 </projectDescription>
-```

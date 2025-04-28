@@ -1,4 +1,7 @@
-# When creating a `.gitignore` file for your project, you want to exclude files and directories that are not necessary to be tracked by Git. This typically includes build artifacts, dependency directories, environment files, and other files that are generated during development. Based on the structure you've provided, here’s a suggested `.gitignore` file:
+# creation-çaccades/.gitignore/
+
+# Testing to shee if this is needed on local
+migrations
 
 # Python
 __pycache__/
@@ -35,6 +38,8 @@ build/
 desktop/
 desktop.ini
 
+
+# When creating a `.gitignore` file for your project, you want to exclude files and directories that are not necessary to be tracked by Git. This typically includes build artifacts, dependency directories, environment files, and other files that are generated during development. Based on the structure you've provided, here’s a suggested `.gitignore` file:
 
 ### Explanation of Entries:
 

@@ -1,3 +1,4 @@
+# creation-çaccades/app.py
 import logging
 from flask import Flask, jsonify, request
 from flask_cors import CORS
@@ -15,15 +16,22 @@ load_dotenv()  # Load environment variables from .env file
 app = Flask(__name__)
 CORS(app)
 
-secret_keys = os.environ.get('SECRET_KEY', 'afab12c326a35f9344181655aaa51feb04f97a77c8619f75,fee7ec42c62e706c8488c98f00c72d3dd771ae6ff569331c').split(',')
+secret_keys = os.environ.get('SECRET_KEY', 'default-secret-key1,default-secret-key2').split(',')
 app.config['SECRET_KEY'] = secret_keys[0]  # Use the first key for the Flask app's SECRET_KEY
 
 # Example of using the second key for some other purpose
 app.config['SECOND_SECRET_KEY'] = secret_keys[1] if len(secret_keys) > 1 else None  # Safely access the second key
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///profiles.db'
+
+
+# Choose database based on environment variable
+if os.environ.get('USE_POSTGRES', 'false').lower() == 'true':
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'postgresql://username:password@localhost:5432/mydatabase')
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///profiles.db'
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False  # Disable redirect interception
+app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 app.debug = True
 
 # Example of using the second key for some other purpose

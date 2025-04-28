@@ -1,3 +1,4 @@
+# creation-çaccades/requirements.txt
 pytest
 Flask
 Flask-Cors
@@ -6,4 +7,5 @@ Flask-Migrate
 Flask-RESTful
 Flask-DebugToolbar
 requests
-dotenv
+python-dotenv
+psycopg2-binary

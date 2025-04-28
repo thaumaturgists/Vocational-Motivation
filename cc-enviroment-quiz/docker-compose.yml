@@ -1,20 +1,22 @@
+# creation-çaccades/docker-compose-quiz.yml
 services:
   backend:
     build:
       context: ./creation-çaccades
-      dockerfile: Dockerfile  # Ensure the filename is capitalized if that's how it's named
+      dockerfile: dockerfile
     ports:
       - "5000:5000"  # Map the backend port
     volumes:
       - ./creation-çaccades:/usr/src/app  # Optional: for live reloading
-      - db_data:/usr/src/app/profiles.db  # Persist the SQLite database
+      - db_data:/usr/src/app/profiles.db  # Persist the SQLite database (if used)
     depends_on:
       - db 
     environment:
       - FLASK_ENV=development  # Set the Flask environment
-      - SQLALCHEMY_DATABASE_URI=sqlite:////usr/src/app/profiles.db  # Use the correct path for SQLite
-      - SECRET_KEY=afab12c326a35f9344181655aaa51feb04f97a77c8619f75  # Set the secret key here
-      - SECOND_SECRET_KEY=fee7ec42c62e706c8488c98f00c72d3dd771ae6ff569331c
+      - DATABASE_URL=postgresql://username:password@db:5432/mydatabase
+      - USE_POSTGRES=true  # Set to 'true' to use PostgreSQL
+      - SECRET_KEY=default-secret-key1  # Set the secret key here
+      - SECOND_SECRET_KEY=default-secret-key2
     logging:
       driver: "json-file"
       options:
@@ -24,7 +26,7 @@ services:
   frontend:
     build:
       context: ./quiz-app
-      dockerfile: Dockerfile  # Ensure the filename is capitalized if that's how it's named
+      dockerfile: dockerfile
     ports:
       - "80:80"  # Map the Vite development server port
     volumes:
@@ -38,9 +40,13 @@ services:
         max-file: "5"
 
   db:
-    image: nouchka/sqlite3:latest  # Use a proper SQLite image or remove this service
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: username  # Set your PostgreSQL username
+      POSTGRES_PASSWORD: password  # Set your PostgreSQL password
+      POSTGRES_DB: mydatabase  # Set your PostgreSQL database name
     volumes:
-      - db_data:/profiles.db  # Persist the SQLite database file
+      - db_data:/var/lib/postgresql/data  # Persist data
 
 volumes:
   db_data:  # Define a named volume for the SQLite database
