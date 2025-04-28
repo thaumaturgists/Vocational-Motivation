@@ -16,9 +16,9 @@ services:
         max-size: "10m"
         max-file: "5"
 
-  creation-commons:
+  creation-cascades:
     build:
-      context: ./creation-commons
+      context: ./creation-cascades
     ports:
       - "5000:5000"
     logging:
@@ -28,7 +28,7 @@ services:
         max-file: "5"
 ```
 
-### 2. **Updated `Dockerfile` for `creation-commons`**
+### 2. **Updated `Dockerfile` for `creation-cascades`**
 This modification ensures that any failure during the installation of dependencies is logged and the build process is halted.
 
 ```dockerfile
@@ -76,7 +76,7 @@ EXPOSE 3000
 CMD ["npm", "start"]
 ```
 
-### 4. **Updated `app.py` for `creation-commons`**
+### 4. **Updated `app.py` for `creation-cascades`**
 This version includes logging for incoming requests and error handling.
 
 ```python

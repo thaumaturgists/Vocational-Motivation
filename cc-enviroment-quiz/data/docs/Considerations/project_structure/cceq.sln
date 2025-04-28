@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30224.195
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{GUID}") = "creation-commons", "creation-commons\app.py", "{GUID}"
+Project("{GUID}") = "creation-cascades", "creation-cascades\app.py", "{GUID}"
 EndProject
 Project("{GUID}") = "quiz-app", "quiz-app\package.json", "{GUID}"
 EndProject

@@ -1,5 +1,5 @@
 cc-enviroment-quiz/
-└── creation-commons/
+└── creation-cascades/
 │    ├── app.py
 │    ├── dockerfile
 │    ├── package.json
@@ -45,7 +45,7 @@ COPY . .
 EXPOSE 5000
 
 # Command to run the application
-CMD ["python", "creation-commons/app.py"]
+CMD ["python", "creation-cascades/app.py"]
 ```
 
 ### 2. **docker-compose.yml**
@@ -59,9 +59,9 @@ services:
     ports:
       - "3000:3000"
   
-  creation-commons:
+  creation-cascades:
     build:
-      context: ./creation-commons
+      context: ./creation-cascades
     ports:
       - "5000:5000"
 ```
@@ -111,7 +111,7 @@ CMD ["npm", "start"]
 }
 ```
 
-### 6. **creation-commons/Dockerfile**
+### 6. **creation-cascades/Dockerfile**
 ```dockerfile
 # Base image for Python
 FROM python:3.9-slim
@@ -133,10 +133,10 @@ EXPOSE 5000
 CMD ["python", "app.py"]
 ```
 
-### 7. **creation-commons/package.json**
+### 7. **creation-cascades/package.json**
 ```json
 {
-  "name": "creation-commons",
+  "name": "creation-cascades",
   "version": "1.0.0",
   "main": "app.py",
   "scripts": {
@@ -168,7 +168,7 @@ These files provide a basic setup for your project, allowing for effective colla
 # For example, if you are using Express.js or other libraries
 ```
 
-### 11. **app.py (creation-commons)**
+### 11. **app.py (creation-cascades)**
 Here’s a simple example of what your `app.py` might look like for the creation of profile cards using Flask:
 
 ```python
