@@ -1,0 +1,40 @@
+/* ErrorBoundary.css */
+
+.error-boundary {
+    background-color: rgba(255, 0, 0, 0.1); /* Light red background */
+    color: #d8000c; /* Dark red text color */
+    border: 1px solid #d8000c; /* Dark red border */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.error-boundary h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.error-boundary p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.error-boundary button {
+    background-color: #d8000c; /* Dark red button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.error-boundary button:hover {
+    background-color: #a0000a; /* Darker red on hover */
+    transform: scale(1.05);
+}

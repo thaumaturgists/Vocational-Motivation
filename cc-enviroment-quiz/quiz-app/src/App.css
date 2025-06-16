@@ -1,0 +1,35 @@
+.App {
+    text-align: center;
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    padding: 20px;
+    color: white;
+  }
+  
+  .music-player {
+    margin: 20px;
+  }
+  
+  .music-player ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .music-player li {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+  }
+  
+  .music-player li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .music-player h2 {
+    margin-top: 20px;
+  }
+  

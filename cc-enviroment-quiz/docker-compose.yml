@@ -13,10 +13,11 @@ services:
       - db 
     environment:
       - FLASK_ENV=development  # Set the Flask environment
+      - FLASK_APP=app.py
       - DATABASE_URL=postgresql://username:password@db:5432/mydatabase
       - USE_POSTGRES=true  # Set to 'true' to use PostgreSQL
-      - SECRET_KEY=default-secret-key1  # Set the secret key here
-      - SECOND_SECRET_KEY=default-secret-key2
+      - SECRET_KEY=0aa1eae0f95a9ac1df80ddb23b5f8d419c577efa328500d9  # Set the secret key here
+      - SECOND_SECRET_KEY=35f5a5b5b79102103b9d2f51b0c063b40df6a11efc9c5840
     logging:
       driver: "json-file"
       options:

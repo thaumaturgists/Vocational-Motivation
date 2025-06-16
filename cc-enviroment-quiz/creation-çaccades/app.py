@@ -16,7 +16,7 @@ load_dotenv()  # Load environment variables from .env file
 app = Flask(__name__)
 CORS(app)
 
-secret_keys = os.environ.get('SECRET_KEY', 'default-secret-key1,default-secret-key2').split(',')
+secret_keys = os.environ.get('SECRET_KEY', '0aa1eae0f95a9ac1df80ddb23b5f8d419c577efa328500d9,35f5a5b5b79102103b9d2f51b0c063b40df6a11efc9c5840').split(',')
 app.config['SECRET_KEY'] = secret_keys[0]  # Use the first key for the Flask app's SECRET_KEY
 
 # Example of using the second key for some other purpose

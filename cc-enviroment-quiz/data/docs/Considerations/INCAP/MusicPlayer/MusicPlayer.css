@@ -1,0 +1,59 @@
+/* MusicPlayer.css */
+
+.music-player {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.music-player h2 {
+    font-size: 1.8rem;
+    color: #6a5acd;
+    margin-bottom: 15px;
+}
+
+.music-player ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.music-player li {
+    background-color: #f9f9f9;
+    border: 1px solid #6a5acd;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.music-player li:hover {
+    background-color: #e6e6fa;
+    transform: scale(1.02);
+}
+
+.music-player button {
+    background-color: #6a5acd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.music-player button:hover {
+    background-color: #483d8b;
+    transform: scale(1.05);
+}
+
+.music-player audio {
+    width: 100%;
+    margin-top: 15px;
+}

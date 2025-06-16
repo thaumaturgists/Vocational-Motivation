@@ -1,4 +1,6 @@
+// src/ErrorBoundary.tsx
 import React, { ErrorInfo, ReactNode } from "react";
+import './ErrorBoundary.css'; // Import the CSS file
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -25,7 +27,13 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
 
   render() {
     if (this.state.hasError) {
-      return <h1>Something went wrong.</h1>;
+      return (
+        <div className="error-boundary">
+          <h1>Something went wrong.</h1>
+          <p>Please try refreshing the page or come back later.</p>
+          <button onClick={() => window.location.reload()}>Reload</button>
+        </div>
+      );
     }
     return this.props.children;
   }

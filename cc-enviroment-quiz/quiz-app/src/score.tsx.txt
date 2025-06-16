@@ -1,0 +1,18 @@
+// src/Score.tsx
+import React from 'react';
+
+interface ScoreProps {
+  score: number;
+  total: number;
+}
+
+const Score: React.FC<ScoreProps> = ({ score, total }) => {
+  return (
+    <div>
+      <h2>Your Score</h2>
+      <p>
+        You scored {score} out of {total}.
+      </p>
+    </div>
+  );
+};
