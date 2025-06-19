@@ -103,7 +103,9 @@
         const menuDiv = document.createElement('div');
         menuDiv.id = 'menu';
         menuDiv.innerHTML = `
-            <label><input type="checkbox" data-script="../../INCAP/js/toggleCounters.js" data-integrity="sha384-674c9e56c898e306a599bd784f27a6c5fbdd7c6d3c02e7cbdb79d7c54d23f0407d816800cdd5730dc33c6dcb8ec846b8"> Load test Script 1</label>
+            <label>
+                <input type="checkbox" id="hideCountersCheckbox"> Hide Counters
+            </label>
             <label><input type="checkbox" data-script="MusicMixer.js" data-integrity="sha384-b4b664256ca7c2efc61ed1843f8d1695991d1b192a195a5323b13bece387ec5bcb3296c7e9e600eae2f84c1bae6d2aa0"> Load Music Mixer</label>
             <label><input type="checkbox" data-script="GlowTag.js" data-integrity="sha384-9d9ac6d5cdb92cb00f0685f1621b9123c3912ebdf6a9b341c8336dccdfc6d840d616df2fac229b1c60dfe4fcbe291d02"> Load Glow</label>
         `;
@@ -238,3 +240,8 @@
     // Call the function to create the toggle button
     createToggleButton();
 })();
+
+document.getElementById('hideCountersCheckbox').addEventListener('change', function() {
+    const counters = document.getElementById('floatingCounters');
+    counters.style.display = this.checked ? 'none' : 'block';
+});
