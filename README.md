@@ -8,6 +8,8 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 > **PROJECT IS STILL UNDER DEVELOPMENT**
+<img src="https://raw.githubusercontent.com/thaumaturgists/SDCM/refs/heads/main/images/VocationalMotivation/Icon/textbook%20icon.png" alt="VM Logo" width="200"/>
+
 
 ### Description
 Welcome to the Vocational Motivation project! This interactive educational quiz website is designed to enhance your learning experience through engaging quizzes. Born out of my journey to learn JavaScript, this project serves as a platform for skill development and creating a structured study framework. It’s a space to test ideas and share knowledge, making studying both fun and effective.
