@@ -1,4 +1,10 @@
+<h2 align="center">
+  🚀 <strong>Interactive Educational Quiz</strong> 📚<br>
+  <em>Engage. Learn. Master.</em>
+</h2>
+
 # [Vocational Motivation](https://thaumaturgists.github.io/Vocational-Motivation/)
+![Interactive](https://img.shields.io/badge/Interactive-Quiz-blueviolet?style=for-the-badge&logo=github)
 
 ![Version](https://img.shields.io/badge/version-0.1.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
