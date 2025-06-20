@@ -106,8 +106,8 @@
             <label>
                 <input type="checkbox" id="hideCountersCheckbox"> Hide Counters
             </label>
-            <label><input type="checkbox" data-script="MusicMixer.js" data-integrity="sha384-b4b664256ca7c2efc61ed1843f8d1695991d1b192a195a5323b13bece387ec5bcb3296c7e9e600eae2f84c1bae6d2aa0"> Load Music Mixer</label>
-            <label><input type="checkbox" data-script="GlowTag.js" data-integrity="sha384-9d9ac6d5cdb92cb00f0685f1621b9123c3912ebdf6a9b341c8336dccdfc6d840d616df2fac229b1c60dfe4fcbe291d02"> Load Glow</label>
+            <label><input type="checkbox" data-script="MusicMixer.js" data-integrity="sha384-c50c0d771544418e4067ce75a8eb3977ff4a0290a03f5b9eb5484724a5b546aecdf1ef214232f97239f8f7c45f66318c"> Load Music Mixer</label>
+            <label><input type="checkbox" data-script="../../INCAP/sc/GlowTag.js" data-integrity="sha384-aab857c5c7bafaca76d3e770996d0f7a7c8333d60acdbc85aa1027ab91bab2db736740b5fae03508de9f8546f2d50a55"> Load Glow</label>
         `;
         return menuDiv;
     }
