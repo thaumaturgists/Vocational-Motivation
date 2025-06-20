@@ -45,7 +45,7 @@ To run the Vocational Motivation website locally, follow these simple steps:
 3. Open the `index.html` file in your web browser.
 
 ### Usage
-1. Upon loading the website, you will be greeted with a random question.
+1. Upon loading the Exam, you will be greeted with a random question.
 2. Answer the question and receive immediate feedback to enhance your learning.
 3. Continue answering questions at your own pace until you decide to stop.
 
