@@ -61,6 +61,12 @@ const MusicMixer = /** @class */ (function () {
             musicMixer.style.backdropFilter = this.isMinimized ? 'blur(5px)' : 'blur(10px)';
             document.getElementById('musicContainer').style.display = this.isMinimized ? 'none' : 'block';
         }
+        toggleVisibility(isVisible) {
+            const musicMixer = document.getElementById('musicMixer');
+            if (musicMixer) {
+                musicMixer.style.display = isVisible ? 'flex' : 'none';
+            }
+        }
         init() {
             var _this = this;
             var container = document.createElement('div');
@@ -79,6 +85,15 @@ const MusicMixer = /** @class */ (function () {
             container.style.overflow = 'hidden';
             container.style.display = 'flex';
             container.style.flexDirection = 'column';
+            // Append the music mixer container to the body
+            document.body.appendChild(container);
+            // Add event listener to the existing checkbox
+            const checkbox = document.getElementById('hideMusicMixerCheckbox');
+            if (checkbox) {
+                checkbox.addEventListener('change', function () {
+                    _this.toggleVisibility(checkbox.checked);
+                });
+            }
             var buttonContainer = document.createElement('div');
             buttonContainer.style.display = 'flex';
             buttonContainer.style.justifyContent = 'space-between';

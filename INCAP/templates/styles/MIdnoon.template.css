@@ -1,0 +1,461 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* General body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 20px;
+    padding: 20px;
+    scrollbar-color: #f9f9f9; /* Updated for better compatibility */
+}
+
+/* Container styles */
+.containerOT {
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding inside the container */
+    margin: 20px 0; /* Margin above and below the container */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Heading styles */
+.containerOT h3 {
+    color: #4a90e2; /* Soft blue color for the heading */
+    font-size: 1.8em; /* Font size for the heading */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+/* List styles */
+.containerOT ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+.containerOT ul li {
+    margin: 10px 0; /* Space between list items */
+}
+
+.containerOT ul li a {
+    color: #007BFF; /* Blue color for links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 8px; /* Padding for clickable area */
+    border-radius: 4px; /* Rounded corners for links */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.containerOT ul li a:hover {
+    background-color: #e0e0e0; /* Light gray background on hover */
+    color: #0056b3; /* Darker blue text on hover */
+}
+
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    color: #4a90e2; /* Soft blue */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #6a5acd; /* Slate blue */
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #8a2be2; /* Blue violet */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: #4682b4; /* Steel blue */
+    font-size: 1.5em; /* Consistent font size */
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 10px;
+    margin: 20px 0; /* Combined margin for consistency */
+}
+
+/* Unordered list styles */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.list-container {
+    max-width: 400px; /* Set a maximum width for the container */
+    margin: 20px auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the container */
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.list-container-ul {
+    padding-left: 20px; /* Indent the list items */
+}
+
+.list-container-ul-li {
+    margin-bottom: 8px; /* Space between list items */
+}
+
+/* Strong text styles */
+strong {
+    color: #e94e77; /* Soft pink color */
+}
+
+/* Preformatted text styles */
+pre {
+    background-color: #f4f4f4; /* Light gray background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px;
+    overflow: auto; /* Allow scrolling for long code */
+    margin: 20px 0;
+}
+
+/* Code styles */
+code {
+    font-family: 'Courier New', monospace;
+    background-color: #eaeaea; /* Slightly darker gray */
+    padding: 2px 4px;
+    border-radius: 3px; /* Rounded corners */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    h4 {
+        font-size: 1.1em;
+    }
+
+    ul {
+        margin-left: 15px; /* Adjust margin for smaller screens */
+    }
+
+    pre {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+}
+
+/* Container styles */
+.container {
+    background-color: #ffffff; /* White */
+    border: 1px solid #e0e0e0; /* Light gray */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Topic styles */
+.topic {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-left: 5px solid #4a90e2; /* Soft blue accent */
+    background-color: #f9f9f9; /* Light gray background */
+}
+
+/* Question and result styles */
+.question {
+    margin-bottom: 15px;
+    font-weight: bold;
+    white-space: pre-line; /* This will render newline characters as line breaks */
+}
+/* ? */
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2e8b57; /* Sea green */
+}
+
+/* Feather cap styles */
+.Midnoon-featherCap {
+    width: 100px;
+    height: 50px;
+    background-color: #8B4513; /* Brown color for the hat */
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.feather {
+    width: 30px; /* Adjust size as needed */
+    bottom: 100%; /* Start above the hat */
+    left: 0%; /* Center the feather */
+    transform: translateX(-50%); /* Center the feather */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s ease, transform 1s ease; /* Add transform for animation */
+}
+
+/* Button styles */
+.feather-button {
+    background-color: #f0e5ff; /* Soft lavender background */
+    color: #4a2c91; /* Deep lavender text color */
+    border: none; /* No border */
+    border-radius: 25px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for size */
+    font-size: 1em; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.feather-button:hover {
+    background-color: #e0d1ff; /* Lighter lavender on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.feather-button:active {
+    transform: translateY(0); /* Reset lift effect on click */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on click */
+}
+
+.feather-button:disabled {
+    background-color: #d0c4e0; /* Gray background for disabled state */
+    color: #a0a0a0; /* Gray text for disabled state */
+    cursor: not-allowed; /* Not-allowed cursor */
+}
+
+/* Answer button styles */
+.answer-button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s;
+}
+
+.answer-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.answer-button:disabled {
+    background-color: #ccc; /* Gray background for disabled buttons */
+    cursor: not-allowed; /* Not-allowed cursor */
+}
+
+/*  */
+/*  */
+
+
+
+        /* Focus styles for buttons */
+        .answer-button:focus,
+        #refreshButton:focus {
+            outline: none; /* Remove default outline */
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add a blue glow effect */
+            border: 2px solid #0056b3; /* Optional: Add a border for better visibility */
+        }
+
+        /* Hover styles */
+        .answer-button:hover {
+            background-color: #0056b3;
+        }
+/*  */
+/*  */
+
+/* Floating counters styles */
+#floatingCounters {
+    position: fixed; /* Fixed position to follow the screen */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque background */
+    padding: 15px; /* Increased padding for better spacing */
+    border-radius: 8px; /* More rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow for better visibility */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    font-family: Arial, sans-serif; /* Font family for better readability */
+    font-size: 14px; /* Font size */
+    color: #333; /* Darker text color for contrast */
+}
+
+/* Refresh button styles */
+#refreshButton {
+    margin-left: 10px; /* Space between count and button */
+    padding: 10px 15px; /* Match padding with other buttons */
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    font-size: 14px; /* Font size */
+}
+
+#refreshButton:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Optional: Add a media query for responsiveness */
+@media (max-width: 600px) {
+    #floatingCounters {
+        top: 2px; /* Adjust top position for smaller screens */
+        right: 2px; /* Adjust right position for smaller screens */
+        padding: 5px; /* Reduce padding for smaller screens */
+    }
+}
+
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Section styles */
+.section {
+    margin-bottom: 20px;
+}
+
+/* Content styles */
+.content {
+    display: none; /* Initially hidden */
+    padding-left: 20px; /* Indent for nested content */
+    border-left: 2px solid #007BFF; /* Blue accent for the border */
+    margin-top: 10px; /* Space above content */
+}
+
+/* Show content when toggled */
+#content0 {
+    display: block; /* Show content when the sidebar is toggled */
+}
+
+#content1:target, #content2:target, #content3:target {
+    display: block; /* Show content when targeted */
+}
+
+/* Future integration plans for sidebar */
+#a111:target, #a112:target, #a113:target, #a114:target, #a115:target,
+#a116:target, #quiz:target, #a121:target, #a122:target, #a123:target,
+#a124:target, #a125:target, #a126:target, #a127:target, #a128:target,
+#quiz7:target, #a131:target, #a132:target, #a133:target, #a134:target,
+#a135:target, #a136:target, #a137:target, #quiz15:target {
+    display: block; /* Show sidebar items when targeted */
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px; /* Set a fixed width for the sidebar */
+    background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent dark background */
+    color: #fff; /* White text */
+    padding: 15px; /* Padding for spacing */
+    border-radius: 5px; 
+    position: fixed; /* Fixed position */
+    top: 20px; /* Distance from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to center */
+    max-height: 80%; /* Limit height for overflow */
+    overflow-y: auto; /* Scroll if content exceeds max height */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it stays on top */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Change background color on hover */
+.sidebar:hover {
+    background-color: rgba(51, 51, 51, 0.9); /* Darker background on hover */
+}
+
+.sidebar h2 {
+    font-size: 1.5em; /* Larger font size for the title */
+    margin-bottom: 15px;
+    cursor: pointer; /* Pointer cursor for toggle */
+}
+
+.sidebar ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+.sidebar ul li {
+    margin: 10px 0; /* Space between list items */
+}
+
+.sidebar ul li a {
+    color: #fff; /* White text for links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 8px; /* Add padding for clickable area */
+    border-radius: 4px; /* Rounded corners for links */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.sidebar ul li a:hover {
+    background-color: #4a90e2; /* Change background on hover */
+    color: #fff; /* Ensure text remains white on hover */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 100%; /* Full width on small screens */
+        position: relative; /* Change position to relative */
+        max-height: none; /* Remove max height */
+        left: 0; /* Align to the left */
+        transform: none; /* Remove centering transform */
+    }
+
+    .sidebar h2 {
+        font-size: 1.2em; /* Smaller font size for the title */
+    }
+
+    .sidebar ul li {
+        margin: 5px 0; /* Reduce margin for smaller screens */
+    }
+}
+
+/* Toggle styles */
+.toggle {
+    cursor: pointer;
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+.toggle:hover {
+    color: #0056b3; /* Darker blue on hover */
+}

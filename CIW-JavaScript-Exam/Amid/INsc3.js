@@ -103,10 +103,9 @@
         const menuDiv = document.createElement('div');
         menuDiv.id = 'menu';
         menuDiv.innerHTML = `
-            <label>
-                <input type="checkbox" id="hideCountersCheckbox"> Hide Counters
-            </label>
-            <label><input type="checkbox" data-script="MusicMixer.js" data-integrity="sha384-f5f2d49df8d3201f53660a572c628f6c09d05ae617ac624fd47359c64967dd7dc9818c4e396893d76f0a984eda56361a"> Load Music Mixer</label>
+            <label><input type="checkbox" id="hideMusicMixerCheckbox" checked> Show Music Mixer</label>
+            <label><input type="checkbox" id="hideCountersCheckbox"> Hide Counters</label>
+            <label><input type="checkbox" data-script="MusicMixer.js" data-integrity="sha384-b3169d4cdb005e54a782653009fba7d3b57bfded89c6821522b56319c3310dd5938544b1798811ce7bac7673615e8f77"> Load Music Mixer</label>
             <label><input type="checkbox" data-script="GlowTag.js" data-integrity="sha384-c91ac94cf4a78cc550819ca655d676161e9d8e0272e4581555bbf62d9c6bda00ecd4a505ca2f63581bc59e59d7a3e202"> Load Glow</label>
         `;
         return menuDiv;
