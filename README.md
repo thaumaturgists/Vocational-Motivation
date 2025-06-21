@@ -8,7 +8,7 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 > **PROJECT IS STILL UNDER DEVELOPMENT**
-<img src="https://raw.githubusercontent.com/thaumaturgists/SDCM/refs/heads/main/images/VocationalMotivation/Icon/textbook%20icon.png" alt="VM Logo" width="200"/>
+<img src="https://raw.githubusercontent.com/thaumaturgists/SDCM/refs/heads/main/images/VocationalMotivation/Icon/textbookLargeicon.png" alt="VM Logo" width="200"/>
 
 
 ### Description
