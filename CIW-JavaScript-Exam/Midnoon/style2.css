@@ -412,13 +412,13 @@ pre {
     border: 1px solid #ddd; /* Light border */
     border-radius: 5px; /* Rounded corners */
     margin: 20px 0; /* Margin above and below */
-    white-space: pre-wrap; /* Allow wrapping of long lines */
-    word-wrap: break-word; /* Break long words if necessary */
+   /* white-space: pre-wrap; /* Allow wrapping of long lines */
+   /* word-wrap: break-word; /* Break long words if necessary */
     max-width: 100%; /* Prevent overflow */
 }
 
 /* Responsive font size for smaller screens */
-@media (max-width: 600px) {
+@media (max-width: 100px) {
     pre {
         font-size: 0.9rem; /* Smaller font size for mobile */
     }
