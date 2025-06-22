@@ -1,0 +1,361 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f8ff; /* Light sky blue background */
+    color: #333;
+    margin: 1rem; /* Use rem for better scalability */
+    padding: 1rem;
+}
+
+/* Content styles */
+.content {
+    display: none; /* Initially hidden */
+    padding-left: 1rem; /* Use rem for consistency */
+    border-left: 2px solid #ff69b4; /* Hot pink accent for the border */
+    margin-top: 0.5rem; /* Space above content */
+}
+
+/* Feather Cap */
+.Amid-featherCap {
+    width: 6.25rem; /* 100px */
+    height: 3.125rem; /* 50px */
+    background-color: #f5deb3; /* Wheat color for the hat */
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0.25rem 0.5rem rgba(255, 255, 255, 0.5); /* Soft white shadow */
+}
+
+/* Feather */
+.feather {
+    width: 1.875rem; /* 30px */
+    bottom: 100%; /* Start above the hat */
+    left: 50%; /* Center the feather */
+    transform: translateX(-50%); /* Center the feather */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s ease, transform 1s ease; /* Add transform for animation */
+}
+
+/* Button styles */
+.feather-button,
+.answer-button,
+#refreshButton {
+    background: linear-gradient(135deg, #fffacd, #ffe4e1); /* Light gradient */
+    color: #8b4513; /* Saddle brown text color */
+    border: none; /* No border */
+    border-radius: 1.5625rem; /* 25px */
+    padding: 0.625rem 1.25rem; /* Use rem for padding */
+    font-size: 1em; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    box-shadow: 0 0.25rem 0.625rem rgba(255, 255, 255, 0.3); /* Soft shadow */
+}
+
+.feather-button:hover,
+.answer-button:hover,
+#refreshButton:hover {
+    background: linear-gradient(135deg, #ffe4b5, #ffcccb); /* Lighter gradient on hover */
+    transform: translateY(-0.125rem); /* Slight lift effect on hover */
+}
+
+.feather-button:active,
+.answer-button:active,
+#refreshButton:active {
+    transform: translateY(0); /* Reset lift effect on click */
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on click */
+}
+
+.feather-button:disabled,
+.answer-button:disabled,
+#refreshButton:disabled {
+    background-color: #d3d3d3; /* Light gray background for disabled state */
+    color: #a0a0a0; /* Gray text for disabled state */
+    cursor: not-allowed; /* Not-allowed cursor */
+}
+
+/* Floating Counters */
+#floatingCounters {
+    position: fixed; /* Fixed position to follow the screen */
+    top: 1.25rem; /* Distance from the top */
+    right: 1.25rem; /* Distance from the right */
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    padding: 1rem; /* Padding around the text */
+    border-radius: 0.625rem; /* Rounded corners */
+    box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    font-family: 'Arial', sans-serif; /* Consistent font */
+    color: #333; /* Dark text color for readability */
+}
+
+/* Optional: Add a media query for responsiveness */
+@media (max-width: 600px) {
+    #floatingCounters {
+        top: 0.3125rem; /* Adjust top position for smaller screens */
+        right: 0.3125rem; /* Adjust right position for smaller screens */
+        padding: 0.625rem; /* Reduce padding for smaller screens */
+    }
+}
+
+/* Counter Header */
+.counter-header {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Center items vertically */
+    margin: 0.3125rem 0; /* Space between headings */
+    font-size: 1.2em; /* Slightly larger font size */
+    color: #4a90e2; /* Soft blue color for headings */
+}
+
+/* Correct Count Display */
+.correct-display {
+    text-align: center; /* Center the text */
+    margin-top: 0.625rem; /* Space above the correct display */
+}
+
+#correctCountDisplay {
+    font-weight: bold; /* Make the count bold for emphasis */
+    color: #ff69b4; /* Hot pink color for the count */
+    font-size: 1.5em; /* Slightly larger font size for visibility */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 0.3125rem 0.625rem; /* Padding for a better look */
+    border-radius: 0.3125rem; /* Rounded corners */
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    display: block; /* Make it a block element for full width */
+}
+
+/* Style for the correct label */
+.correct-label {
+    display: block; /* Make it a block element to position below */
+    font-size: 1em; /* Normal font size */
+    color: #4a90e2; /* Soft blue color for the label */
+    margin-top: 0.3125rem; /* Space above the label */
+}
+
+/* Style for the entire h2 containing the correct count */
+#floatingCounters h2 {
+    margin: 0.3125rem 0; /* Space between headings */
+    font-size: 1.2em; /* Slightly larger font size */
+    color: #4a90e2; /* Soft blue color for headings */
+}
+
+/* Section styles */
+.section {
+    margin-bottom: 1.25rem; /* Space between sections */
+}
+
+/* Topic and Section Styles */
+.topic {
+    margin-top: 1.25rem;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    padding: 1rem;
+    border-radius: 0.625rem; /* Rounded corners */
+    box-shadow: 0 0.25rem 0.625rem rgba(255, 255, 255, 0.5); /* Soft shadow */
+}
+
+.toggle {
+    cursor: pointer;
+    color: #8b4513; /* Saddle brown text color */
+    text-decoration: underline; /* Underline for clickable text */
+}
+
+.toggle:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    color: #ff69b4; /* Hot pink */
+    font-size: 2.5em;
+    margin-bottom: 1.25rem; /* Space below */
+}
+
+h2 {
+    color: #ff1493; /* Deep pink */
+    font-size: 1.8em;
+    margin-bottom: 0.9375rem; /* Space below */
+}
+
+h3 {
+    color: #db7093; /* Pale violet red */
+    font-size: 1.5em;
+    margin-bottom: 0.625rem; /* Space below */
+}
+
+h4 {
+    color: #ff7f50; /* Coral */
+    font-size: 1.5em; /* Consistent font size */
+    border-bottom: 2px solid #ffe4e1; /* Light pink border */
+    padding-bottom: 0.625rem;
+    margin: 1.25rem 0; /* Combined margin for consistency */
+}
+
+/* List styles */
+ul {
+    list-style-type: disc;
+    margin-left: 1.25rem; /* Use rem for consistency */
+    margin-bottom: 1.25rem; /* Space below */
+}
+
+ul li {
+    margin: 0.625rem 0; /* Space between list items */
+}
+
+/* Strong text styles */
+strong {
+    color: #ff4500; /* Orange red */
+}
+
+/* Preformatted text styles */
+pre {
+    background-color: #f0f8ff; /* Light sky blue background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 0.3125rem; /* Rounded corners */
+    padding: 1rem; /* Padding for better look */
+    overflow: auto; /* Allow scrolling for long code */
+    margin: 1.25rem 0; /* Space above and below */
+}
+
+/* Code styles */
+code {
+    font-family: 'Courier New', monospace;
+    background-color: #ffe4e1; /* Light pink */
+    padding: 0.125rem 0.25rem; /* Padding for better visibility */
+    border-radius: 0.1875rem; /* Rounded corners */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    body {
+        padding: 0.625rem; /* Less padding on smaller screens */
+    }
+
+    h1 {
+        font-size: 2em; /* Adjust font size for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+
+    h3 {
+        font-size: 1.3em; /* Adjust font size for smaller screens */
+    }
+
+    h4 {
+        font-size: 1.1em; /* Adjust font size for smaller screens */
+    }
+
+    ul {
+        margin-left: 1rem; /* Adjust margin for smaller screens */
+    }
+
+    pre {
+        padding: 0.625rem; /* Less padding on smaller screens */
+    }
+
+    .Amid-featherCap {
+        width: 5rem; /* Adjust size for smaller screens */
+        height: 2.5rem; /* Adjust size for smaller screens */
+    }
+
+    .feather-button {
+        padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1.25rem 0; /* Use rem for consistency */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.625rem; /* Use rem for consistency */
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Question and result styles */
+.question {
+    margin-bottom: 0.9375rem; /* Space below */
+    font-weight: bold;
+    white-space: pre-line; /* This will render newline characters as line breaks */
+}
+
+.result {
+    margin-top: 0.625rem; /* Space above */
+    font-weight: bold;
+    color: #2e8b57; /* Sea green */
+}
+
+/* Container styles */
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border: 1px solid #e0e0e0; /* Light gray */
+    border-radius: 0.625rem; /* Rounded corners */
+    padding: 1rem; /* Padding for better look */
+    margin-bottom: 1.25rem; /* Space below */
+    box-shadow: 0 0.25rem 0.625rem rgba(255, 255, 255, 0.5); /* Soft shadow */
+}
+
+/* Additional styles for the recommended readings section */
+.containerOT {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border-radius: 0.625rem; /* Rounded corners */
+    padding: 1rem; /* Padding for better look */
+    margin-top: 1.25rem; /* Space above */
+    box-shadow: 0 0.25rem 0.625rem rgba(255, 255, 255, 0.5); /* Soft shadow */
+}
+
+.containerOT h3 {
+    color: #ff69b4; /* Hot pink for headings */
+    margin-bottom: 0.9375rem; /* Space below */
+}
+
+.containerOT ul {
+    list-style-type: none; /* Remove default list styling */
+}
+
+.containerOT li {
+    margin: 0.625rem 0; /* Space between list items */
+}
+
+.containerOT a {
+    color: #ff4500; /* Orange red for links */
+    text-decoration: underline; /* Underline for links */
+}
+
+.containerOT a:hover {
+    color: #ff6347; /* Darker coral on hover */
+}
+
+#you-are-here {
+    color: #ff69b4; /* Hot pink for emphasis */
+}
+
+/* 
+### Summary of Changes
+1. **Responsive Units**: I replaced fixed pixel values with relative units (like `rem`) for better scalability across different screen sizes.
+2. **Consistent Margins and Padding**: I ensured that margins and padding are consistent throughout the CSS, using `rem` for better responsiveness.
+3. **Media Queries**: I maintained the media queries to adjust styles for smaller screens, ensuring that the design remains user-friendly on mobile devices.
+4. **Flexibility**: The use of flexbox for layout and spacing will help in creating a more adaptable design.
+
+### Final Thoughts
+With these modifications, your CSS should work well on both desktop and mobile devices, providing a consistent and visually appealing experience. You can further test the design on various screen sizes to ensure everything looks as intended. If you have any specific elements or features you'd like to adjust further, feel free to ask! */
