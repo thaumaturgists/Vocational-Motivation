@@ -1,0 +1,447 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* General body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Container styles */
+.containerOT {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+.containerOT h3 {
+    color: #4a90e2;
+    font-size: 1.8rem; /* Use rem for responsiveness */
+    margin-bottom: 15px;
+}
+
+/* List styles */
+.containerOT ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.containerOT ul li {
+    margin: 10px 0;
+}
+
+.containerOT ul li a {
+    color: #007BFF;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.containerOT ul li a:hover {
+    background-color: #e0e0e0;
+    color: #0056b3;
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    color: #4a90e2;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #6a5acd;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #8a2be2;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+h4 {
+    color: #4682b4;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 10px;
+    margin: 20px 0;
+}
+
+/* Unordered list styles */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.list-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.list-container-ul {
+    padding-left: 20px;
+}
+
+.list-container-ul-li {
+    margin-bottom: 8px;
+}
+
+/* Strong text styles */
+strong {
+    color: #e94e77;
+}
+
+/* Preformatted text styles */
+pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    overflow: auto;
+    margin: 20px 0;
+}
+
+/* Code styles */
+code {
+    font-family: 'Courier New', monospace;
+    background-color: #eaeaea;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Topic styles */
+.topic {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-left: 5px solid #4a90e2; /* Soft blue accent */
+    background-color: #f9f9f9; /* Light gray background */
+}
+
+/* Question and result styles */
+.question {
+    margin-bottom: 15px;
+    font-weight: bold;
+    white-space: pre-line; /* This will render newline characters as line breaks */
+}
+/* ? */
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2e8b57; /* Sea green */
+}
+
+/* Feather cap styles */
+.Midnoon-featherCap {
+    width: 100px;
+    height: 50px;
+    background-color: #8B4513; /* Brown color for the hat */
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.feather {
+    width: 30px; /* Adjust size as needed */
+    bottom: 100%; /* Start above the hat */
+    left: 0%; /* Center the feather */
+    transform: translateX(-50%); /* Center the feather */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.5s ease, transform 1s ease; /* Add transform for animation */
+}
+
+/* Button styles */
+.feather-button, .answer-button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feather-button {
+    background-color: #f0e5ff; /* Soft lavender background */
+    color: #4a2c91; /* Deep lavender text color */
+}
+
+.feather-button:hover {
+    background-color: #e0d1ff; /* Lighter lavender on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.feather-button:active {
+    transform: translateY(0); /* Reset lift effect on click */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on click */
+}
+
+.feather-button:disabled {
+    background-color: #d0c4e0; /* Gray background for disabled state */
+    color: #a0a0a0; /* Gray text for disabled state */
+}
+
+.answer-button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #007BFF; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s;
+}
+
+.answer-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.answer-button:disabled {
+    background-color: #ccc; /* Gray background for disabled buttons */
+    cursor: not-allowed; /* Not-allowed cursor */
+}
+
+/* Focus styles for buttons */
+.answer-button:focus,
+.feather-button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add a blue glow effect */
+}
+
+/* Floating counters styles */
+#floatingCounters {
+    position: fixed; /* Fixed position to follow the screen */
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque background */
+    padding: 15px; /* Increased padding for better spacing */
+    border-radius: 8px; /* More rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow for better visibility */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    font-family: Arial, sans-serif; /* Font family for better readability */
+    font-size: 14px; /* Font size */
+    color: #333; /* Darker text color for contrast */
+}
+
+/* Refresh button styles */
+#refreshButton {
+    margin-left: 10px; /* Space between count and button */
+    padding: 10px 15px; /* Match padding with other buttons */
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    font-size: 14px; /* Font size */
+}
+
+#refreshButton:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Section styles */
+.section {
+    margin-bottom: 20px;
+}
+
+/* Content styles */
+.content {
+    display: none; /* Initially hidden */
+    padding-left: 20px; /* Indent for nested content */
+    border-left: 2px solid #007BFF; /* Blue accent for the border */
+    margin-top: 10px; /* Space above content */
+}
+
+/* Show content when toggled */
+#content0 {
+    display: block; /* Show content when the sidebar is toggled */
+}
+
+#content1:target, #content2:target, #content3:target {
+    display: block; /* Show content when targeted */
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px; /* Set a fixed width for the sidebar */
+    background-color: rgba(51, 51, 51, 0.7); /* Semi-transparent dark background */
+    color: #fff; /* White text */
+    padding: 15px; /* Padding for spacing */
+    border-radius: 5px; 
+    position: fixed; /* Fixed position */
+    top: 20px; /* Distance from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to center */
+    max-height: 80%; /* Limit height for overflow */
+    overflow-y: auto; /* Scroll if content exceeds max height */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it stays on top */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Change background color on hover */
+.sidebar:hover {
+    background-color: rgba(51, 51, 51, 0.9); /* Darker background on hover */
+}
+
+.sidebar h2 {
+    font-size: 1.5rem; /* Larger font size for the title */
+    margin-bottom: 15px;
+    cursor: pointer; /* Pointer cursor for toggle */
+}
+
+.sidebar ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+.sidebar ul li {
+    margin: 10px 0; /* Space between list items */
+}
+
+.sidebar ul li a {
+    color: #fff; /* White text for links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 8px; /* Add padding for clickable area */
+    border-radius: 4px; /* Rounded corners for links */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.sidebar ul li a:hover {
+    background-color: #4a90e2; /* Change background on hover */
+    color: #fff; /* Ensure text remains white on hover */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .sidebar {
+        width: 100%; /* Full width on small screens */
+        position: relative; /* Change position to relative */
+        max-height: none; /* Remove max height */
+        left: 0; /* Align to the left */
+        transform: none; /* Remove centering transform */
+    }
+
+    .sidebar h2 {
+        font-size: 1.2rem; /* Smaller font size for the title */
+    }
+
+    .sidebar ul li {
+        margin: 5px 0; /* Reduce margin for smaller screens */
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjust heading size for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Adjust heading size for smaller screens */
+    }
+
+    h3 {
+        font-size: 1.3rem; /* Adjust heading size for smaller screens */
+    }
+
+    h4 {
+        font-size: 1.1rem; /* Adjust heading size for smaller screens */
+    }
+
+    pre {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+
+    #floatingCounters {
+        top: 2px; /* Adjust top position for smaller screens */
+        right: 2px; /* Adjust right position for smaller screens */
+        padding: 5px; /* Reduce padding for smaller screens */
+    }
+}
+
+/* pre code examples should be responsive smaller font on mobile -testing */
+pre {
+    font-size: 1rem; /* Default size */
+    overflow: auto; /* Allow scrolling for long code */
+    padding: 15px;
+    background-color: #f4f4f4; /* Light gray background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px 0; /* Margin above and below */
+    white-space: pre-wrap; /* Allow wrapping of long lines */
+    word-wrap: break-word; /* Break long words if necessary */
+    max-width: 100%; /* Prevent overflow */
+}
+
+/* Responsive font size for smaller screens */
+@media (max-width: 600px) {
+    pre {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+}
+
+
+/* Toggle styles */
+.toggle {
+    cursor: pointer;
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+.toggle:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* ### Key Adjustments Made:
+1. **Responsive Font Sizes**: Font sizes for headings and other text elements are adjusted using `rem` units to ensure they scale appropriately on different devices.
+2. **Sidebar Adjustments**: The sidebar is set to take full width on smaller screens, making it more user-friendly on mobile devices.
+3. **Button Sizes**: Buttons are designed to be large enough for easy tapping on mobile devices.
+4. **Media Queries**: Additional media queries ensure that styles adapt well across various screen sizes, including tablets and smaller devices.
+5. **Hover Effects**: Hover effects are maintained for desktop while ensuring they do not interfere with touch interactions on mobile.
+
+### Testing
+After implementing these styles, it's essential to test the layout */
