@@ -252,7 +252,7 @@ aside {
 }
 
 /* Heading styles */
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Georgia', serif;
     color: #ffcc00; /* Gold color for headings */
     margin-bottom: 10px;
@@ -283,6 +283,18 @@ h4 {
     margin: 20px 0;
     margin-top: 20px;
 }
+
+h5 {
+    font-size: 1.25em; /* Adjusted size for h5 */
+    margin-bottom: 12px; /* Space below h5 */
+}
+
+h6 {
+    font-size: 1.1em; /* Adjusted size for h6 */
+    margin-bottom: 10px; /* Space below h6 */
+    font-style: italic; /* Optional: italic style for h6 */
+}
+
 
 /* List styles */
 ul {

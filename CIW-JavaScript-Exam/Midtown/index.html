@@ -60,53 +60,251 @@
 
     <main class="container">
 
-        <section class="container">
-            <h2>Your Topic Here</h2> 
-            <h3 class="toggle" onclick="toggleContent('content1')"><a href="#1">Summary & Quick Review</a></h3>
-            <div class="content" id="content1">
-                <article class="section">
-                    <h4 id="a123">1.2.3 Sub Topic</h4>
-                    <ul>
-                        <li>Point 1</li>
-                        <li>Point 2</li>
-                        <li>Point 3</li>
-                        <ul>
-                            <li><strong></strong></li>
-                        </ul>
-                        <li>Example of the topic here:</li>
-                    </ul>
-                    <pre>
-                    <code>
-                        // topic's example code here
-                    </code>
-                    </pre>
-                </article>
 
-                <article class="section">
-                    <h4 id="456">4.5.6 Sub Topic</h4>
+<section class="container">
+    <h2>Debugging JavaScript Code</h2>
+    
+    <h3 class="toggle" onclick="toggleContent('content1')"><a href="#1">Summary & Quick Review</a></h3>
+    <div class="content" id="content1">
+        <article class="section">
+            <h4>2.1 Introduction to Debugging JavaScript Code</h4>
+            <p>Debugging is a critical skill for any JavaScript developer. It involves identifying and resolving issues, or "bugs," in the code to ensure it functions as expected across various environments. Effective debugging can save time and improve the quality of your code.</p>
+        </article>
+
+        <article class="section">
+            <h4 id="a211">2.1.1 Common Steps for Debugging JavaScript Code</h4>
+            <ul>
+                <li><strong>Review Your Code:</strong>
                     <ul>
-                        <li>Point 1</li>
-                        <li>Point 2</li>
-                        <li>Point 3</li>
+                        <li>Look for syntax errors, typos, and logical mistakes.</li>
+                        <li>Ensure all braces, brackets, and parentheses are correctly matched.</li>
+                        <li>Check variable and function names for consistency.</li>
                     </ul>
-                </article>
-            </div>
-        </section>
+                </li>
+                <li><strong>Use Console Outputs:</strong>
+                    <ul>
+                        <li>Insert <code>console.log()</code>, <code>console.error()</code>, or <code>console.warn()</code> statements to output variable values and execution flow.</li>
+                    </ul>
+                </li>
+                <li><strong>Utilize Developer Tools:</strong>
+                    <ul>
+                        <li>Use built-in developer tools in modern browsers to set breakpoints and inspect variables.</li>
+                    </ul>
+                </li>
+                <li><strong>Test in Different Browsers:</strong>
+                    <ul>
+                        <li>Test your code in multiple browsers to ensure consistent functionality.</li>
+                    </ul>
+                </li>
+                <li><strong>Responsive Testing on Various Devices:</strong>
+                    <ul>
+                        <li>Check performance on different devices, using emulators and responsive design modes.</li>
+                    </ul>
+                </li>
+                <li><strong>Use Linting Tools:</strong>
+                    <ul>
+                        <li>Tools like ESLint can analyze your code for common issues and enforce coding standards.</li>
+                    </ul>
+                </li>
+                <li><strong>Seek Help from the Community:</strong>
+                    <ul>
+                        <li>Engage with forums like Stack Overflow for solutions and new perspectives.</li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4>How/Why This Works</h4>
+            <p>The JavaScript engine interprets your code and logs errors to the console when it encounters issues. By reviewing these messages and setting breakpoints, you can pinpoint exactly where and why your script is failing. Understanding the flow of execution and variable states is key to effective debugging.</p>
+        </article>
+
+        <article class="section">
+            <h4>Pitfalls / Common Mistakes</h4>
+            <ul>
+                <li>Over-reliance on <code>alert()</code> or <code>console.log()</code>: Use them judiciously and consider more advanced debugging techniques.</li>
+                <li>Neglecting Cross-Browser Testing: Failing to test across multiple browsers can lead to unexpected issues.</li>
+                <li>Ignoring Error Messages: Always read and understand error messages for valuable debugging information.</li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4>Example of Debugging Steps</h4>
+            <pre>
+<code>
+// A simple function to calculate the average of two numbers
+function calculateAverage(num1, num2) {
+    console.log("Input numbers: ", num1, num2); // Output the inputs to debug
+    var total = num1 + num2;
+    var average = total / 2;
+    return average;
+}
+
+// Test the function with a number and a string
+var result = calculateAverage(10, '20'); // This will cause an implicit type conversion
+console.log("Result: ", result); // Debugging output
+</code>
+            </pre>
+            <p>In this example, the function <code>calculateAverage</code> takes two inputs. Passing a number and a string causes JavaScript to perform type coercion, which may lead to unexpected results. Debugging outputs help identify this issue.</p>
+        </article>
+
+        <article class="section">
+            <h4 id="a212">2.1.2 Using Native and Supplemental Debugging Tools in JavaScript</h4>
+            <ul>
+                <li><strong>Introduction to Debugging Tools</strong>
+                    <ul>
+                        <li>Effective debugging involves understanding code and using the right tools.</li>
+                        <li>JavaScript developers have access to various native and supplemental debugging tools.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h5>Native Debugging Tools</h5>
+            <ul>
+                <li><strong>Browser Developer Tools</strong>
+                    <ul>
+                        <li><strong>Console Panel</strong>: Logs diagnostic information and allows execution of JavaScript commands.</li>
+                        <li><strong>Sources Panel</strong>: Set breakpoints, step through code, and inspect variables.</li>
+                        <li><strong>Network Panel</strong>: Monitor network activity, including API calls and resource loading.</li>
+                        <li><strong>Elements Panel</strong>: Inspect and modify HTML/CSS in real-time.</li>
+                    </ul>
+                </li>
+                <li><strong>Enabling/Disabling Display for Debugging</strong>
+                    <ul>
+                        <li>Use the `display` CSS property to reveal or hide elements for debugging.</li>
+                        <li><strong>Example:</strong>
+                            <pre>
+                            <code>
+                                // Hide an element for debugging
+                                document.getElementById('debug-section').style.display = 'none'; // Hides the element
+
+                                // Later in the code or in response to an event
+                                document.getElementById('debug-section').style.display = 'block'; // Shows the element
+                            </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h5>Supplemental Debugging Tools</h5>
+            <ul>
+                <li><strong>Linting Tools</strong> (e.g., ESLint, JSLint): Analyze code for potential errors and enforce coding standards.</li>
+                <li><strong>Code Formatters</strong> (e.g., Prettier): Automatically format code for consistency.</li>
+                <li><strong>Type Checking Tools</strong> (e.g., TypeScript): Provide static type-checking to catch type-based errors.</li>
+                <li><strong>Integrated Development Environments (IDEs)</strong>: Offer advanced debugging features and extensions.</li>
+                <li><strong>Performance and Testing Tools</strong>
+                    <ul>
+                        <li><strong>Performance Tools</strong>: Analyze runtime performance (e.g., Google Lighthouse).</li>
+                        <li><strong>Unit Testing Tools</strong>: Frameworks like Jest or Mocha for writing tests.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h5>Importance of Debugging</h5>
+            <ul>
+                <li>Debugging is essential for developers to identify logic mistakes and compatibility issues.</li>
+                <li>Using the right tools streamlines the debugging process and improves code quality.</li>
+            </ul>
+
+            <h5>Example of Using Debugging Tools</h5>
+            <pre>
+            <code>
+                // Using console to debug
+                console.log("Debugging: Starting the calculation process.");
+
+                // Dynamically adjusting CSS for debugging
+                document.getElementById('debug-section').style.display = 'none'; // Hides the element
+
+                // Perform some operations...
+
+                // Re-display element for further testing
+                document.getElementById('debug-section').style.display = 'block'; // Shows the element
+                console.log("Debugging: Calculation process completed.");
+            </code>
+            </pre>
+        </article>
+
+    </div>
+</section>
+
 
         <section class="topic">
-            <h3>Sub Topic</h3>
+            <h3>2.1.1 Common Steps for Debugging JavaScript Code</h3>
             <div id="quiz1"></div>
             <div class="result" id="result1" aria-live="polite"></div>
         </section>
         
         <section class="topic">
-            <h3>Sub Topic</h3>
+            <h3>2.1.2 Using Native and Supplemental Debugging Tools in JavaScript</h3>
             <div id="quiz2"></div>
             <div class="result" id="result2" aria-live="polite"></div>
         </section>
 
+
+<section class="container">
+    <h2>JavaScript Control Flow: if Statement</h2>
+    
+    <h3 class="toggle" onclick="toggleContent('content2')"><a href="#2">Summary & Quick Review</a></h3>
+    <div class="content" id="content2">
+        <article class="section">
+            <h4>2.2 Use JavaScript Statements to Control Program Flow</h4>
+            <h5>2.2.1 if… Statement</h5>
+            <p><strong>Overview:</strong> The <code>if</code> statement is a fundamental control structure in JavaScript that allows developers to execute code conditionally based on the evaluation of an expression. Mastery of the <code>if</code> statement is essential for implementing decision-making logic in your programs.</p>
+            
+            <h5>How the if Statement Works:</h5>
+            <p>The <code>if</code> statement evaluates a condition (an expression that returns a boolean value: true or false). If the condition evaluates to true, the code block within the <code>if</code> statement is executed. If false, the code block is skipped.</p>
+            
+            <h5>Syntax of the if Statement:</h5>
+            <pre><code>if (condition) {
+    // code to run if condition is true
+}</code></pre>
+            
+            <h5>Examples:</h5>
+            <h6>Simple Example:</h6>
+            <pre><code>let temperature = 30;
+
+if (temperature > 25) {
+    console.log("It's a hot day!");
+}</code></pre>
+            <p>In this example, if the temperature is greater than 25, the message "It's a hot day!" will be logged to the console.</p>
+            
+            <h6>More Complex Example:</h6>
+            <pre><code>let score = 85;
+
+if (score >= 90) {
+    console.log("Grade: A");
+} else if (score >= 80) {
+    console.log("Grade: B");
+} else if (score >= 70) {
+    console.log("Grade: C");
+} else {
+    console.log("Grade: D or F");
+}</code></pre>
+            <p>This program checks the score and logs the corresponding grade based on defined ranges. If the score is 85, it will log "Grade: B".</p>
+            
+            <h5>Key Points to Remember:</h5>
+            <ul>
+                <li>The condition inside the <code>if</code> statement can be any expression that evaluates to a boolean value.</li>
+                <li>Use comparison operators (e.g., <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>, <code>===</code>, <code>!==</code>) to form conditions.</li>
+                <li>The <code>if</code> statement can be followed by <code>else</code> and <code>else if</code> clauses to handle multiple conditions.</li>
+                <li>Always use curly braces <code>{}</code> to define the code block for better readability and to avoid errors.</li>
+            </ul>
+            
+            <h5>Common Mistakes:</h5>
+            <ul>
+                <li>Forgetting to use parentheses <code>()</code> around the condition.</li>
+                <li>Using a single equals sign <code>=</code> instead of a double equals <code>==</code> or triple equals <code>===</code> for comparison.</li>
+                <li>Not using curly braces for code blocks, which can lead to unexpected behavior.</li>
+            </ul>
+        </article>
+    </div>
+</section>
+
+
+
         <section class="topic">
-            <h3>Sub Topic</h3>
+            <h3>2.2.1 if… Statement</h3>
             <div id="quiz3"></div>
             <div class="result" id="result3" aria-live="polite"></div>
         </section>
