@@ -21,7 +21,7 @@ To get started with the Vocational Motivation project, check out the following r
 
 ### Features
 - **Random Question Generation**: Enjoy a diverse learning experience with questions randomly selected from a wide range of topics, ensuring that every quiz is unique.
-- **User-Friendly Interface**: Crafted with simplicity in mind, the website is accessible and easy to navigate for users of all ages.
+- **User-Friendly Interface**: Crafted with simplicity in mind, each website has different style, is accessible and easy to navigate for users of all ages.
 - **Comprehensive Topic Coverage**: Dive into various subjects and focus on specific areas of interest, reinforcing your understanding of key concepts.
 
 ### Technologies Used
