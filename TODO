@@ -1,0 +1,16 @@
+[] cc-enviroment-quiz	-- Docker environment, python backend, and tsx frontend
+	[] creation-caccades	-- backend
+	[] quiz-app	-- frontend
+
+[] CIW-JavaScript-Exam
+	[x] AMID	-- Applied JavaScript
+		[] check quiz
+	
+	[] DOORMAN	-- JavaScript Technology Extensions
+		[] check quiz
+
+	[x] MIDNOON	-- Essential JavaScript Principles and Practices
+		[] check quiz
+	
+	[] MIDTOWN	-- Intermediate JavaScript Programming Techniques
+		[] check quiz
