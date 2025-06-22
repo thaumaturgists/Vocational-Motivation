@@ -17,6 +17,7 @@ Welcome to the Vocational Motivation project! This interactive educational quiz 
 To get started with the Vocational Motivation project, check out the following resources:
 - [Project Wiki](https://github.com/thaumaturgists/Vocational-Motivation/wiki) - Comprehensive documentation and guides.
 - [Create Study Guide](https://github.com/thaumaturgists/Vocational-Motivation/wiki/Create-Study-Guide) - Step-by-step instructions to set up from a user's Info source.
+- [Study Guide Creation Instructions](https://github.com/thaumaturgists/Vocational-Motivation/wiki/Study-Guide-Creation-Instructions) - Organize your content effectively and facilitate the generation of HTML documents.
 - [Usage Instructions](https://your-wiki-link.com/usage) - Learn how to navigate and use the quiz features effectively. ```placeholder- wiki for this not yet made```
 
 ### Features
