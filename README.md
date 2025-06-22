@@ -10,9 +10,14 @@
 > **PROJECT IS STILL UNDER DEVELOPMENT**
 <img src="https://raw.githubusercontent.com/thaumaturgists/SDCM/refs/heads/main/images/VocationalMotivation/Icon/textbookLargeicon.png" alt="VM Logo" width="200"/>
 
-
 ### Description
 Welcome to the Vocational Motivation project! This interactive educational quiz website is designed to enhance your learning experience through engaging quizzes. Born out of my journey to learn JavaScript, this project serves as a platform for skill development and creating a structured study framework. It’s a space to test ideas and share knowledge, making studying both fun and effective.
+
+### Getting Started
+To get started with the Vocational Motivation project, check out the following resources:
+- [Project Wiki](https://github.com/thaumaturgists/Vocational-Motivation/wiki) - Comprehensive documentation and guides.
+- [Create Study Guide](https://github.com/thaumaturgists/Vocational-Motivation/wiki/Create-Study-Guide) - Step-by-step instructions to set up from a user's Info source.
+- [Usage Instructions](https://your-wiki-link.com/usage) - Learn how to navigate and use the quiz features effectively. ```placeholder- wiki for this not yet made```
 
 ### Features
 - **Random Question Generation**: Enjoy a diverse learning experience with questions randomly selected from a wide range of topics, ensuring that every quiz is unique.
