@@ -298,10 +298,420 @@ if (score >= 90) {
                 <li>Not using curly braces for code blocks, which can lead to unexpected behavior.</li>
             </ul>
         </article>
+
+        <article class="section">
+            <h4 id="a222">2.2.2 while Statement</h4>
+            <h5>Overview</h5>
+            <p>The <code>while</code> statement is a fundamental control structure in JavaScript that allows you to execute a block of code repeatedly as long as a specified condition evaluates to true. Mastery of the <code>while</code> loop is essential for scenarios where you need to perform repetitive tasks until a certain condition changes.</p>
+
+            <h5>How the while Statement Works</h5>
+            <p>A <code>while</code> loop checks the condition before each iteration. If the condition is true, the code block inside the loop is executed. This process continues until the condition evaluates to false. If the condition is false at the first check, the code inside the loop will not execute at all.</p>
+
+            <h5>Syntax of the while Statement</h5>
+            <pre><code>while (condition) {
+            // code runs repeatedly as long as condition is true
+        }</code></pre>
+
+            <h5>Examples</h5>
+            <h6>Simple Example</h6>
+            <pre><code>let i = 0;
+        while (i < 3) {
+            console.log("i is " + i);
+            i++;
+        }</code></pre>
+            <p>This example prints the value of <code>i</code> three times (0, 1, and 2) before terminating when <code>i</code> reaches 3.</p>
+
+            <h6>More Complex Example</h6>
+            <pre><code>let total = 0;
+        let count = 1;
+
+        while (count <= 5) {
+            total += count; // Add count to total
+            count++; // Increment count
+        }
+
+        console.log("The total is " + total); // Outputs: The total is 15</code></pre>
+            <p>This example calculates the sum of the numbers from 1 to 5 and outputs the total.</p>
+
+            <h5>Key Points to Remember</h5>
+            <ul>
+                <li>The condition inside the <code>while</code> statement can be any expression that evaluates to a boolean value.</li>
+                <li>Ensure that the loop condition will eventually become false to avoid infinite loops.</li>
+                <li>Variables used in the condition should be properly initialized before the loop and modified during each iteration to ensure the loop can terminate.</li>
+            </ul>
+
+            <h5>Common Pitfalls</h5>
+            <ul>
+                <li><strong>Infinite Loops:</strong> Forgetting to update the loop control variable can create an infinite loop. Always ensure that the condition will eventually evaluate to false.</li>
+                <li><strong>Condition Logic:</strong> Be careful with the logic of your condition. Using the wrong comparison operator can lead to unexpected behavior.</li>
+            </ul>
+
+            <h5>Points to Consider</h5>
+            <ul>
+                <li>Always initialize your loop control variables before entering the loop and ensure they are updated within the loop.</li>
+                <li>You can use the <code>break</code> statement to exit a loop prematurely if a certain condition is met, providing more control over loop execution.</li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="a223">2.2.3 do...while Statement</h4>
+            <ul>
+                <li><strong>Overview:</strong> The <code>do...while</code> statement is a post-condition loop in JavaScript that ensures the code block executes at least once before checking the condition.</li>
+                <li><strong>How it Works:</strong> Executes the block of code once, then checks the condition. If true, it continues; if false, it terminates.</li>
+                <li><strong>Syntax:</strong>
+                    <pre><code>do {
+            // code block
+        } while (condition);</code></pre>
+                </li>
+                <li><strong>Simple Example:</strong>
+                    <pre><code>let i = 0;
+
+        do {
+            console.log("i is " + i);
+            i++;
+        } while (i < 3);</code></pre>
+                    <p>This example prints the values of <code>i</code> (0, 1, and 2) to the console, executing at least once.</p>
+                </li>
+                <li><strong>More Complex Example:</strong>
+                    <pre><code>let userInput;
+        let validInput = false;
+
+        do {
+            userInput = prompt("Please enter a number between 1 and 10:");
+            if (userInput >= 1 && userInput <= 10) {
+                validInput = true;
+            } else {
+                console.log("Invalid input. Try again.");
+            }
+        } while (!validInput);
+
+        console.log("You entered a valid number: " + userInput);</code></pre>
+                    <p>This prompts the user until valid input is received, ensuring the prompt is displayed at least once.</p>
+                </li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4>Key Points to Remember</h4>
+            <ul>
+                <li>The <code>do...while</code> loop guarantees at least one execution of the code block.</li>
+                <li>Condition is evaluated after execution, unlike the <code>while</code> loop.</li>
+                <li>Modify the condition within the loop to avoid infinite loops.</li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4>Common Pitfalls</h4>
+            <ul>
+                <li><strong>Infinite Loops:</strong> Ensure the condition will eventually evaluate to false.</li>
+                <li><strong>Execution Order:</strong> Remember that the code block executes before the condition is checked.</li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4>Points to Consider</h4>
+            <ul>
+                <li><strong>Use Cases:</strong> Useful for user input scenarios or when a block of code must run at least once.</li>
+                <li><strong>Control of Loop:</strong> Always update the loop control variable to prevent infinite execution.</li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="a224">2.2.4 for Statement</h4>
+            <ul>
+                <li><strong>Overview:</strong> The <code>for</code> statement is a commonly used loop in JavaScript, ideal for iterating over a range of values, especially arrays.</li>
+                <li><strong>How it Works:</strong>
+                    <ul>
+                        <li><strong>Initialization:</strong> Define and initialize the loop variable.</li>
+                        <li><strong>Condition:</strong> Evaluated before each iteration; the loop continues while true.</li>
+                        <li><strong>Increment/Decrement:</strong> Updates the loop variable after each iteration.</li>
+                    </ul>
+                </li>
+                <li><strong>Syntax:</strong>
+                    <pre><code>for (initialization; condition; increment) {
+        // code block to be executed
+    }</code></pre>
+                </li>
+                <li><strong>Examples:</strong>
+                    <ul>
+                        <li><strong>Simple Example:</strong>
+                            <pre><code>for (let i = 0; i < 5; i++) {
+        console.log("Iteration: " + i);
+    }</code></pre>
+                            <p>This prints "Iteration: 0" through "Iteration: 4".</p>
+                        </li>
+                        <li><strong>More Complex Example:</strong>
+                            <pre><code>let sum = 0;
+    for (let j = 1; j <= 10; j++) {
+        sum += j; // Add j to sum
+    }
+    console.log("The sum of numbers from 1 to 10 is: " + sum);</code></pre>
+                            <p>This calculates the sum of numbers from 1 to 10.</p>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Key Points:</strong>
+                    <ul>
+                        <li>Ideal for known iteration counts.</li>
+                        <li>All components are part of the loop declaration.</li>
+                        <li>Flexible expressions can be used in all sections.</li>
+                    </ul>
+                </li>
+                <li><strong>Common Pitfalls:</strong>
+                    <ul>
+                        <li><strong>Off-by-One Errors:</strong> Ensure correct loop conditions.</li>
+                        <li><strong>Infinite Loops:</strong> Update loop variables correctly to avoid infinite loops.</li>
+                    </ul>
+                </li>
+                <li><strong>Points to Consider:</strong>
+                    <ul>
+                        <li><strong>Nested Loops:</strong> Can handle multi-dimensional data structures.</li>
+                        <li><strong>Loop Control Statements:</strong> Use <code>break</code> to exit or <code>continue</code> to skip iterations.</li>
+                        <li><strong>Iterating Over Arrays:</strong> Commonly used to access array elements by index.</li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="a225">2.2.5 forEach Method</h4>
+            <ul>
+                <li><strong>Overview:</strong> The <code>forEach</code> method executes a specified function on each item in an array, making it useful for iterating without a loop counter.</li>
+                <li><strong>How it Works:</strong> Executes the callback function for each array element in order. It does not return a new array.</li>
+                <li><strong>Syntax:</strong>
+                    <pre><code>array.forEach((element, index, array) => {
+        // code block
+    });</code></pre>
+                </li>
+                <li><strong>Parameters:</strong>
+                    <ul>
+                        <li><code>element</code>: Current element being processed.</li>
+                        <li><code>index</code> (optional): Index of the current element.</li>
+                        <li><code>array</code> (optional): The array <code>forEach</code> was called upon.</li>
+                    </ul>
+                </li>
+                <li><strong>Simple Example:</strong>
+                    <pre><code>let fruits = ["apple", "banana", "cherry"];
+    fruits.forEach((fruit) => {
+        console.log(fruit);
+    });</code></pre>
+                </li>
+                <li><strong>More Complex Example:</strong>
+                    <pre><code>let numbers = [1, 2, 3, 4, 5];
+    let sum = 0;
+
+    numbers.forEach((number, index) => {
+        sum += number;
+        console.log("Index " + index + ": " + number);
+    });
+
+    console.log("Total sum: " + sum); // Outputs: Total sum: 15</code></pre>
+                </li>
+                <li><strong>Key Points:</strong>
+                    <ul>
+                        <li>Ideal for executing functions on each element without manual index management.</li>
+                        <li>Useful for operations that do not require a return value.</li>
+                        <li>Callback functions can be defined using arrow functions for concise syntax.</li>
+                    </ul>
+                </li>
+                <li><strong>Common Pitfalls:</strong>
+                    <ul>
+                        <li>No <code>break</code> or <code>continue</code> statements can be used.</li>
+                        <li>Performance may be less optimal for large arrays compared to traditional loops.</li>
+                    </ul>
+                </li>
+                <li><strong>Points to Consider:</strong>
+                    <ul>
+                        <li>Be mindful of the scope of <code>this</code> when using <code>forEach</code>.</li>
+                        <li>Can be used with other array methods for complex operations.</li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="a226">2.2.6 Break and Continue Statements</h4>
+            <ul>
+                <li><strong>Overview:</strong> The <code>break</code> and <code>continue</code> statements are control flow statements used to alter the execution of loops in JavaScript.</li>
+                <li><strong>How They Work:</strong>
+                    <ul>
+                        <li><code>break:</code> Exits the nearest enclosing loop or <code>switch</code> statement.</li>
+                        <li><code>continue:</code> Skips the current iteration and proceeds to the next one.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Syntax and Usage</h4>
+            
+            <h5>Using break:</h5>
+            <pre>
+        <code>
+        for (let i = 0; i < 10; i++) {
+        if (i === 5) {
+            break; // Exit the loop when i is 5
+        }
+        console.log(i); // Outputs: 0, 1, 2, 3, 4
+        }
+        </code>
+            </pre>
+            <p>In this example, the loop terminates when <code>i</code> equals 5, logging numbers 0 through 4.</p>
+
+            <h5>Using continue:</h5>
+            <pre>
+        <code>
+        for (let j = 0; j < 10; j++) {
+        if (j % 2 === 0) {
+            continue; // Skip the rest of the loop for even numbers
+        }
+        console.log(j); // Outputs: 1, 3, 5, 7, 9
+        }
+        </code>
+            </pre>
+            <p>This example skips even numbers, logging only the odd numbers from 0 to 9.</p>
+
+            <h5>More Complex Example with break:</h5>
+            <pre>
+        <code>
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        for (let k = 0; k < numbers.length; k++) {
+        if (numbers[k] > 5) {
+            break; // Exit the loop when a number greater than 5 is found
+        }
+        console.log(numbers[k]); // Outputs: 1, 2, 3, 4, 5
+        }
+        </code>
+            </pre>
+            <p>The loop terminates upon encountering a number greater than 5.</p>
+
+            <h5>More Complex Example with continue:</h5>
+            <pre>
+        <code>
+        let total = 0;
+        for (let m = 1; m <= 10; m++) {
+        if (m % 2 === 0) {
+            continue; // Skip even numbers
+        }
+        total += m; // Add odd numbers to total
+        }
+        console.log("Total of odd numbers from 1 to 10: " + total); // Outputs: Total of odd numbers from 1 to 10: 25
+        </code>
+            </pre>
+            <p>This example calculates the sum of odd numbers from 1 to 10 while skipping even numbers.</p>
+
+            <h4>Points to Consider:</h4>
+            <ul>
+                <li><strong>Where to Use:</strong> Both <code>break</code> and <code>continue</code> can be used in any type of loop, including <code>for</code>, <code>while</code>, and <code>do...while</code> loops.</li>
+                <li><strong>Labeled Statements:</strong> You can use labeled statements with <code>break</code> and <code>continue</code> to control the flow of outer loops in nested loops.</li>
+            </ul>
+
+            <h5>Example of Labeled Statements:</h5>
+            <pre>
+        <code>
+        outerLoop: for (let a = 0; a < 3; a++) {
+        for (let b = 0; b < 3; b++) {
+            if (a === 1 && b === 1) {
+            break outerLoop; // Exit both loops when a is 1 and b is 1
+            }
+            console.log(`a: ${a}, b: ${b}`);
+        }
+        }
+        </code>
+            </pre>
+            <p>In this example, the labeled <code>break</code> statement exits both the inner and outer loops when <code>a</code> is 1 and <code>b</code> is 1.</p>
+        </article>
+
+        <article class="section">
+            <h4 id="a227">2.2.7 switch Statement</h4>
+            <ul>
+                <li><strong>Overview:</strong> The <code>switch</code> statement is a control structure in JavaScript that allows you to perform different actions based on different conditions, serving as an alternative to multiple <code>if</code> statements.</li>
+                
+                <li><strong>How it Works:</strong> The <code>switch</code> statement evaluates an expression and compares it against multiple case values. When a match is found, the associated code is executed. A <code>break</code> statement prevents fall-through to the next case.</li>
+                
+                <li><strong>Syntax:</strong>
+                    <pre><code>
+        switch (expression) {
+            case value1:
+                // code for value1
+                break;
+            case value2:
+                // code for value2
+                break;
+            default:
+                // code if no match
+        }
+                    </code></pre>
+                </li>
+                
+                <li><strong>Examples:</strong>
+                    <ul>
+                        <li><strong>Simple Example:</strong>
+                            <pre><code>
+        let day = 3;
+        switch (day) {
+            case 1: console.log("Monday"); break;
+            case 2: console.log("Tuesday"); break;
+            case 3: console.log("Wednesday"); break;
+            case 4: console.log("Thursday"); break;
+            case 5: console.log("Friday"); break;
+            case 6: console.log("Saturday"); break;
+            case 7: console.log("Sunday"); break;
+            default: console.log("Invalid day");
+        }
+                            </code></pre>
+                            *Outputs "Wednesday".*
+                        </li>
+                        <li><strong>More Complex Example:</strong>
+                            <pre><code>
+        let fruit = "banana";
+        switch (fruit) {
+            case "apple": console.log("You chose an apple."); break;
+            case "banana": console.log("You chose a banana."); break;
+            case "cherry": console.log("You chose a cherry."); break;
+            default: console.log("Unknown fruit.");
+        }
+                            </code></pre>
+                            *Outputs "You chose a banana."*
+                        </li>
+                    </ul>
+                </li>
+                
+                <li><strong>Key Points:</strong>
+                    <ul>
+                        <li>More readable than multiple <code>if/else</code> blocks.</li>
+                        <li>Each <code>case</code> should end with a <code>break</code> to prevent fall-through.</li>
+                        <li><code>default</code> case is optional for handling unexpected values.</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Common Pitfalls:</strong>
+                    <ul>
+                        <li>Fall-through behavior if <code>break</code> is omitted.</li>
+                        <li>Strict comparison (<code>===</code>) requires matching types.</li>
+                    </ul>
+                </li>
+                
+                <li><strong>Additional Considerations:</strong>
+                    <ul>
+                        <li>Expressions can include variables, function calls, or arithmetic operations.</li>
+                        <li>Group multiple cases together for shared code execution:
+                            <pre><code>
+        switch (value) {
+            case 1:
+            case 2:
+            case 3:
+                console.log("Value is between 1 and 3");
+                break;
+            default:
+                console.log("Value is outside the range");
+        }
+                            </code></pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </article>        
     </div>
 </section>
-
-
 
         <section class="topic">
             <h3>2.2.1 if… Statement</h3>
@@ -310,27 +720,782 @@ if (score >= 90) {
         </section>
 
         <section class="topic">
-            <h3>Sub Topic</h3>
+            <h3>2.2.2 while Statement</h3>
             <div id="quiz4"></div>
             <div class="result" id="result4" aria-live="polite"></div>
         </section>
 
         <section class="topic">
-            <h3>Sub Topic</h3>
+            <h3>2.2.3 do...while Statement</h3>
             <div id="quiz5"></div>
             <div class="result" id="result5" aria-live="polite"></div>
         </section>
 
         <section class="topic">
-            <h3>Sub Topic</h3>
+            <h3>2.2.4 for Statement</h3>
             <div id="quiz6"></div>
             <div class="result" id="result6" aria-live="polite"></div>
         </section>
 
         <section class="topic">
-            <h3>Sub Topic</h3>
+            <h3>2.2.5 forEach Method</h3>
             <div id="quiz7"></div>
             <div class="result" id="result7" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>2.2.6 Break and Continue Statements</h3>
+            <div id="quiz8"></div>
+            <div class="result" id="result8" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>2.2.7 switch Statement</h3>
+            <div id="quiz9"></div>
+            <div class="result" id="result9" aria-live="polite"></div>
+        </section>
+
+<section class="container">
+    <h2>Study Guide: JavaScript Document Object Model (DOM)</h2>
+    
+    <h3 class="toggle" onclick="toggleContent('content3')"><a href="#3">Summary & Quick Review</a></h3>
+    <div class="content" id="content3">
+        <article class="section">
+            <h4 id="a231">2.3.1 Manipulating the DOM with JavaScript</h4>
+            <ul>
+                <li><strong>Understanding the DOM:</strong>
+                    <ul>
+                        <li>The DOM is a tree-like structure representing the webpage.</li>
+                        <li>JavaScript can access and modify nodes dynamically.</li>
+                    </ul>
+                </li>
+                <li><strong>Common DOM Manipulation Techniques:</strong>
+                    <ul>
+                        <li><strong>Selecting Elements:</strong>
+                            <ul>
+                                <li><code>document.getElementById('elementId')</code></li>
+                                <li><code>document.getElementsByClassName('className')</code></li>
+                                <li><code>document.getElementsByTagName('tagName')</code></li>
+                                <li><code>document.querySelector('selector')</code></li>
+                                <li><code>document.querySelectorAll('selector')</code></li>
+                            </ul>
+                        </li>
+                        <li><strong>Manipulating Elements:</strong>
+                            <ul>
+                                <li><code>element.innerHTML = 'new content';</code></li>
+                                <li><code>element.textContent = 'new text';</code></li>
+                                <li><code>element.setAttribute('attributeName', 'value');</code></li>
+                                <li><code>element.style.property = 'value';</code></li>
+                            </ul>
+                        </li>
+                        <li><strong>Creating and Appending Elements:</strong>
+                            <ul>
+                                <li><code>var newElement = document.createElement('tagName');</code></li>
+                                <li><code>parentElement.appendChild(newElement);</code></li>
+                            </ul>
+                        </li>
+                        <li><strong>Event Handling:</strong>
+                            <ul>
+                                <li><code>element.addEventListener('event', function() { /* code */ });</code></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="example">Example of DOM Manipulation</h4>
+            <pre>
+                <code>
+                    // Example code for DOM manipulation
+                    let div = document.getElementById("myDiv");
+                    let button = document.getElementById("changeTextButton");
+
+                    button.addEventListener('click', function() {
+                        div.innerHTML = "Text changed on button click!";
+                    });
+                </code>
+            </pre>
+        </article>
+
+        <article class="section">
+            <h4 id="best-practices">Best Practices for DOM Manipulation</h4>
+            <ul>
+                <li>Minimize DOM Access</li>
+                <li>Batch DOM Updates</li>
+                <li>Use Event Delegation</li>
+                <li>Avoid Inline Styles</li>
+                <li>Validate User Input</li>
+                <li>Use <code>const</code> and <code>let</code> for variable declarations</li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="resources">Additional Resources for Study</h4>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+                <li><a href="https://javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript.info</a></li>
+                <li><a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank" rel="noopener noreferrer">W3Schools</a></li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="conclusion">Conclusion</h4>
+            <p>Mastering DOM manipulation is essential for creating dynamic web applications. Practice these techniques to enhance your skills.</p>
+        </article>
+
+        
+        <article class="section">
+            <h2 id="a232">2.3.2 The Window Object</h2>
+            <h3>Introduction</h3>
+            <p>The <code>window</code> object represents the browser window and provides methods and properties for interacting with the browser environment.</p>
+
+            <h3>Key Properties:</h3>
+            <ul>
+                <li><code>window.innerHeight</code>: Height of the content area.</li>
+                <li><code>window.innerWidth</code>: Width of the content area.</li>
+                <li><code>window.location</code>: Current URL information.</li>
+                <li><code>window.localStorage</code>: Stores key-value pairs.</li>
+            </ul>
+
+            <h3>Key Methods:</h3>
+            <ul>
+                <li><code>window.alert()</code>: Displays an alert dialog.</li>
+                <li><code>window.confirm()</code>: Displays a confirmation dialog.</li>
+                <li><code>window.prompt()</code>: Prompts for user input.</li>
+            </ul>
+
+            <h3>Examples</h3>
+            <h4>Alert Example:</h4>
+            <pre><code>window.onload = function() { window.alert("Welcome!"); };</code></pre>
+
+            <h4>Using <code>localStorage</code>:</h4>
+            <pre><code>
+        document.getElementById("storeNameButton").addEventListener("click", function() {
+            let name = window.prompt("Enter your name:");
+            if (name) window.localStorage.setItem("userName", name);
+        });
+            </code></pre>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li>Use <code>const</code> and <code>let</code> for variables.</li>
+                <li>Avoid excessive alerts; use custom dialogs instead.</li>
+                <li>Check for storage availability before use.</li>
+            </ul>
+
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+                <li><a href="https://javascript.info/window" target="_blank" rel="noopener noreferrer">JavaScript.info</a></li>
+            </ul>
+
+            <h3>Conclusion</h3>
+            <p>Mastering the <code>window</code> object is crucial for creating interactive web applications. Practice using its properties and methods to enhance your JavaScript skills.</p>
+        </article>
+
+
+        <article class="section">
+            <h1>Study Guide: The Document Object</h1>
+            <h4 id="a233">2.3.3: The Document Object</h4>
+            <p>The <code>document</code> object represents the entire HTML document in the DOM (Document Object Model). It provides properties and methods for accessing and manipulating elements and other content within the document, allowing developers to create dynamic and interactive web pages.</p>
+
+            <h4>Common Properties and Methods of the Document Object</h4>
+            <h5>Properties:</h5>
+            <ul>
+                <li><code>document.body</code>: Accesses the <code>&lt;body&gt;</code> element.</li>
+                <li><code>document.title</code>: Gets or sets the document's title.</li>
+                <li><code>document.URL</code>: Returns the current document's URL.</li>
+                <li><code>document.head</code>: Accesses the <code>&lt;head&gt;</code> element.</li>
+            </ul>
+
+            <h5>Methods:</h5>
+            <ul>
+                <li><code>document.getElementById('id')</code>: Returns the element with the specified ID.</li>
+                <li><code>document.getElementsByClassName('className')</code>: Returns elements with the specified class name.</li>
+                <li><code>document.getElementsByTagName('tagName')</code>: Returns elements with the specified tag name.</li>
+                <li><code>document.querySelector('selector')</code>: Returns the first matching element for a CSS selector.</li>
+                <li><code>document.querySelectorAll('selector')</code>: Returns all matching elements for a CSS selector.</li>
+                <li><code>document.createElement('tagName')</code>: Creates a new element with the specified tag name.</li>
+            </ul>
+
+            <h4>Example Using the Document Object</h4>
+            <h5>Simple Example: Changing the Document Title</h5>
+            <pre>
+                <code>
+                    // Change the title of the document when the page loads
+                    window.onload = function() {
+                        document.title = "Welcome to the CIW JavaScript Specialist Exam!";
+                    };
+                </code>
+            </pre>
+
+            <h5>More Complex Example: Creating and Manipulating Elements</h5>
+            <pre>
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        &lt;title&gt;Document Object Example&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Document Object Example&lt;/h1&gt;
+                        &lt;button id="addElementButton"&gt;Add New Element&lt;/button&gt;
+                        &lt;div id="container"&gt;&lt;/div&gt;
+
+                        &lt;script&gt;
+                            // Function to add a new paragraph to the container
+                            document.getElementById("addElementButton").addEventListener("click", function() {
+                                // Create a new paragraph element
+                                var newParagraph = document.createElement("p");
+                                newParagraph.textContent = "This is a new paragraph added to the document.";
+                                
+                                // Append the new paragraph to the container
+                                document.getElementById("container").appendChild(newParagraph);
+                            });
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+
+            <h4>Best Practices for Using the Document Object</h4>
+            <ul>
+                <li>Use <code>const</code> and <code>let</code>: Prefer <code>const</code> for constants and <code>let</code> for variables that may change to maintain clean and predictable code.</li>
+                <li>Minimize DOM Access: Accessing the DOM can be slow, so minimize the number of times you access it. Store references to elements in variables if you need to manipulate them multiple times.</li>
+                <li>Batch DOM Updates: When making multiple changes to the DOM, consider batching them together. Create elements in memory and append them to the DOM in one operation to improve performance.</li>
+                <li>Use <code>DOMContentLoaded</code>: To ensure your scripts run after the DOM is fully loaded, use the <code>DOMContentLoaded</code> event instead of <code>window.onload</code>, as it fires earlier.</li>
+                <li>Validate User Input: Always validate user input before manipulating the DOM to prevent errors and ensure a good user experience.</li>
+            </ul>
+
+            <h4>Additional Resources for Study</h4>
+            <ul>
+                <li><strong>MDN Web Docs:</strong> Comprehensive documentation on the <code>document</code> object and its properties/methods.
+                    <ul>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document" target="_blank" rel="noopener noreferrer">MDN Web Docs - Document</a></li>
+                    </ul>
+                </li>
+                <li><strong>JavaScript.info:</strong> A great resource for learning JavaScript, including sections on the <code>document</code> object and its functionalities.
+                    <ul>
+                        <li><a href="https://javascript.info/document" target="_blank" rel="noopener noreferrer">JavaScript.info - The Document Object</a></li>
+                    </ul>
+                </li>
+                <li><strong>W3Schools:</strong> Offers tutorials and references on web development topics, including JavaScript and the <code>document</code> object.
+                    <ul>
+                        <li><a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank" rel="noopener noreferrer">W3Schools - JavaScript Document Object</a></li>
+                    </ul>
+                </li>
+                <li><strong>YouTube Tutorials:</strong> Look for video tutorials on the Document Object and its usage in JavaScript.</li>
+            </ul>
+        </article>
+
+
+
+        <article class="section">
+            <h1 id="a234">2.3.4: The Image Object (Image Rollover Example)</h1>
+            
+            <h2>Introduction to the Image Object in the DOM</h2>
+            <p>The Image object in the DOM represents an HTML <code>&lt;img&gt;</code> element. It allows developers to create new image elements dynamically, manipulate their properties, and handle events associated with images, enhancing interactivity on web pages.</p>
+
+            <h2>Creating and Manipulating Image Elements</h2>
+            
+            <h3>Creating an Image Element</h3>
+            <p>You can create an image element dynamically using JavaScript. Here’s a simple example:</p>
+            <pre>
+                <code>
+                    // Create a new image element
+                    let newImage = document.createElement("img");
+                    newImage.src = "default_image.jpg"; // Set the source
+                    newImage.alt = "A description of the image"; // Set alt text
+                    newImage.width = 300; // Set width
+                    newImage.height = 200; // Set height
+
+                    // Append the image to the body
+                    document.body.appendChild(newImage);
+                </code>
+            </pre>
+
+            <h3>Setting Image Properties</h3>
+            <ul>
+                <li><code>img.src</code>: Sets or returns the source URL of the image.</li>
+                <li><code>img.alt</code>: Sets or returns the alternative text for the image.</li>
+                <li><code>img.width</code> and <code>img.height</code>: Sets or returns the dimensions of the image in pixels.</li>
+            </ul>
+
+            <h2>Image Rollover Creation</h2>
+            <p>The image rollover effect changes the <code>src</code> attribute of an image on mouseover and mouseout events, creating an interactive experience.</p>
+
+            <h3>Example: Basic Image Rollover</h3>
+            <pre>
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        &lt;title&gt;Image Rollover Example&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Image Rollover Example&lt;/h1&gt;
+                        &lt;img id="myImg" src="default_image.jpg" alt="Default Image" width="300" height="200"&gt;
+
+                        &lt;script&gt;
+                            let img = document.getElementById("myImg");
+                            img.onmouseover = function() {
+                                img.src = "hover_image.jpg"; // Change to hover image
+                            };
+                            img.onmouseout = function() {
+                                img.src = "default_image.jpg"; // Change back to default image
+                            };
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+
+            <h3>Example: Multiple Image Rollover</h3>
+            <pre>
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        &lt;title&gt;Multiple Image Rollover Example&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Multiple Image Rollover Example&lt;/h1&gt;
+                        &lt;div id="imageContainer"&gt;
+                            &lt;img id="img1"
+                            src="default_image1.jpg" alt="Image 1" width="300" height="200"&gt;
+                            &lt;img id="img2" src="default_image2.jpg" alt="Image 2" width="300" height="200"&gt;
+                        &lt;/div&gt;
+
+                        &lt;script&gt;
+                            function setupImageRollover(imgId, hoverSrc, defaultSrc) {
+                                let img = document.getElementById(imgId);
+                                img.onmouseover = function() {
+                                    img.src = hoverSrc; // Change to hover image
+                                };
+                                img.onmouseout = function() {
+                                    img.src = defaultSrc; // Change back to default image
+                                };
+                            }
+
+                            // Set up rollover for both images
+                            setupImageRollover("img1", "hover_image1.jpg", "default_image1.jpg");
+                            setupImageRollover("img2", "hover_image2.jpg", "default_image2.jpg");
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+
+            <h2>Best Practices for Using the Image Object</h2>
+            <ul>
+                <li><strong>Use Descriptive Alt Text:</strong> Always provide meaningful alternative text for images using the <code>alt</code> attribute to improve accessibility.</li>
+                <li><strong>Optimize Image Sizes:</strong> Use appropriately sized images to enhance loading times and performance.</li>
+                <li><strong>Preload Images:</strong> Preload images that will be displayed soon to improve user experience.</pre>
+                <pre>
+                    <code>
+                        let preloadImage = new Image();
+                        preloadImage.src = "hover_image.jpg"; // Preload the hover image
+                    </code>
+                </pre>
+                </li>
+                <li><strong>Use CSS for Hover Effects:</strong> For simple hover effects, consider using CSS instead of JavaScript for better performance.</li>
+                <li><strong>Handle Image Load Errors:</strong> Implement error handling for images that fail to load using the <code>onerror</code> event.</li>
+                <li><strong>Consider Lazy Loading:</strong> For pages with many images, implement lazy loading to improve performance.</li>
+            </ul>
+
+            <h2>Additional Resources for Study</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement" target="_blank" rel="noopener noreferrer">MDN Web Docs - HTMLImageElement</a></li>
+                <li><a href="https://javascript.info/attributes-and-forms#images" target="_blank" rel="noopener noreferrer">JavaScript.info - Images</a></li>
+                <li><a href="https://www.w3schools.com/html/html_images.asp" target="_blank" rel="noopener noreferrer">W3Schools - HTML Images</a></li>
+                <li><a href="https://css-tricks.com/image-hover-effects/" target="_blank" rel="noopener noreferrer">CSS Tricks - Image Hover Effects</a></li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>Understanding how to manipulate the Image object in JavaScript is essential for creating interactive and visually appealing web applications. By mastering image rollovers and other image manipulations, you can enhance user experience and engagement on your web pages. Practice these concepts through hands-on coding and experimentation to solidify your understanding.</p>
+        </article>
+
+        <article class="section">
+            <h4 id="a235">2.3.5 The History Object</h4>
+            <ul>
+                <li><strong>Introduction:</strong> The <code>history</code> object represents the user's browsing history for the current window, allowing navigation and manipulation of the history stack.</li>
+            </ul>
+
+            <h4>Common Methods and Properties</h4>
+            <ul>
+                <li><strong>Properties:</strong>
+                    <ul>
+                        <li><code>history.length</code>: Number of URLs in the history list.</li>
+                        <li><code>history.state</code>: State object at the top of the history stack.</li>
+                    </ul>
+                </li>
+                <li><strong>Methods:</strong>
+                    <ul>
+                        <li><code>history.back()</code>: Moves back one page.</li>
+                        <li><code>history.forward()</code>: Moves forward one page.</li>
+                        <li><code>history.go(n)</code>: Moves to a specific page in history.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Example Using the History Object</h4>
+            <p><strong>Simple Example: Navigating Back and Forward</strong></p>
+            <pre>
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        &lt;title&gt;History Object Example&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;History Object Example&lt;/h1&gt;
+                        &lt;button id="backButton"&gt;Go Back&lt;/button&gt;
+                        &lt;button id="forwardButton"&gt;Go Forward&lt;/button&gt;
+                        &lt;p id="historyLength"&gt;&lt;/p&gt;
+
+                        &lt;script&gt;
+                            document.getElementById("historyLength").textContent = "History Length: " + history.length;
+                            document.getElementById("backButton").onclick = function() { history.back(); };
+                            document.getElementById("forwardButton").onclick = function() { history.forward(); };
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+
+            <p><strong>More Complex Example: Custom Navigation</strong></p>
+            <pre>
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        &lt;title&gt;Custom History Navigation&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Custom History Navigation&lt;/h1&gt;
+                        &lt;button id="goBackButton"&gt;Go Back&lt;/button&gt;
+                        &lt;button id="goForwardButton"&gt;Go Forward&lt;/button&gt;
+                        &lt;button id="goToPage2Button"&gt;Go to Page 2&lt;/button&gt;
+                        &lt;p id="currentState"&gt;&lt;/p&gt;
+
+                        &lt;script&gt;
+                            function updateState() {
+                                document.getElementById("currentState").textContent = "Current State: " + JSON.stringify(history.state);
+                            }
+                            document.getElementById("goBackButton").onclick = function() { history.back(); updateState(); };
+                            document.getElementById("goForwardButton").onclick = function() { history.forward(); updateState(); };
+                            document.getElementById("goToPage2Button").onclick = function() {
+                                history.pushState({ page: 2 }, "Page 2", "page2.html");
+                                updateState();
+                                document.body.innerHTML += "&lt;p&gt;You are now on Page 2!&lt;/p&gt;";
+                            };
+                            updateState();
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+
+            <h4>Best Practices for Using the History Object</h4>
+            <ul>
+                <li>Use <code>pushState</code> and <code>replaceState</code> to manage history effectively without page reloads.</li>
+                <li>Handle state changes with the <code>popstate</code> event to update the UI based on the current state.</code>
+                    <pre>
+                        <code>
+                            window.onpopstate = function(event) {
+                                if (event.state) {
+                                    document.getElementById("currentState").textContent = "Current State: " + JSON.stringify(event.state);
+                                }
+                            };
+                        </code>
+                    </pre>
+                </li>
+                <li>Avoid overusing history navigation to prevent user confusion.</li>
+                <li>Test your implementation across different browsers for consistent behavior.</li>
+                <li>Use meaningful state objects with <code>pushState</code> and <code>replaceState</code> for better state management.</li>
+            </ul>
+
+            <h4>Additional Resources for Study</h4>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/History" target="_blank" rel="noopener noreferrer">MDN Web Docs - History</a></li>
+                <li><a href="https://javascript.info/history" target="_blank" rel="noopener noreferrer">JavaScript.info - History API</a></li>
+                <li><a href="https://www.w3schools.com/jsref/api_history.asp" target="_blank" rel="noopener noreferrer">W3Schools - JavaScript History Object</a></li>
+                <li><a href="https://css-tricks.com/the-history-api/" target="_blank" rel="noopener noreferrer">CSS Tricks - The History API</a></li>
+            </ul>
+
+            <h4>Conclusion</h4>
+            <p>Understanding the History object is essential for creating dynamic web applications that provide a seamless user experience. By mastering the methods and properties of the History object, you can implement effective navigation controls and manage the user's browsing history within your application. Practice these concepts through hands-on coding and experimentation to solidify your understanding, and familiarize yourself with best practices to ensure user-friendly and efficient history management.</p>
+        </article>
+
+
+        <article class="section">
+            <h4 id="a236">2.3.6 The Location Object</h4>
+            <p><strong>Introduction to the Location Object:</strong> The <code>location</code> object in the DOM represents the current URL of the document. It provides information about the URL and allows you to change parts of the URL, effectively navigating to a new page or reloading the current page with different parameters.</p>
+
+            <h5>Common Properties and Methods of the Location Object</h5>
+            <ul>
+                <li><strong>Properties:</strong>
+                    <ul>
+                        <li><code>location.href</code>: Returns the entire URL of the current page.</li>
+                        <li><code>location.host</code>: Returns the hostname and port number of the current URL.</li>
+                        <li><code>location.pathname</code>: Returns the path and filename of the current URL.</li>
+                        <li><code>location.search</code>: Returns the query string of the current URL.</li>
+                        <li><code>location.hash</code>: Returns the anchor part of the URL.</li>
+                    </ul>
+                </li>
+                <li><strong>Methods:</strong>
+                    <ul>
+                        <li><code>location.assign('url')</code>: Loads a new document at the specified URL.</li>
+                        <li><code>location.replace('url')</code>: Replaces the current document with a new one.</li>
+                        <li><code>location.reload()</code>: Reloads the current document.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h5>Example Using the Location Object</h5>
+            <p><strong>Simple Example: Displaying Current URL Information</strong></p>
+            <pre>
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        &lt;title&gt;Location Object Example&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Location Object Example&lt;/h1&gt;
+                        &lt;p id="urlInfo"&gt;&lt;/p&gt;
+                        &lt;button id="reloadButton"&gt;Reload Page&lt;/button&gt;
+
+                        &lt;script&gt;
+                            document.getElementById("urlInfo").textContent = "Current URL: " + location.href;
+                            document.getElementById("reloadButton").onclick = function() {
+                                location.reload();
+                            };
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+
+            <p><strong>More Complex Example: Changing URL Parameters</strong></p>
+            <pre>
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        &lt;title&gt;Change URL Parameters Example&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Change URL Parameters Example&lt;/h1&gt;
+                        &lt;p id="currentParams"&gt;&lt;/p&gt;
+                        &lt;button id="changeParamsButton"&gt;Change URL Parameters&lt;/button&gt;
+
+                        &lt;script&gt;
+                            function displayCurrentParams() {
+                                document.getElementById("currentParams").textContent = "Current Query Parameters: " + location.search;
+                            }
+                            document.getElementById("changeParamsButton").onclick = function() {
+                                let params = new URLSearchParams(location.search);
+                                params.set('newParam', 'value'); // Add or update a parameter
+                                location.search = params.toString(); // Update the URL with new parameters
+                            };
+
+                            // Initial display of current parameters
+                            displayCurrentParams();
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+
+            <h5>Best Practices for Using the Location Object</h5>
+            <ul>
+                <li>Use <code>location.replace()</code> for navigation to avoid creating history entries.</li>
+                <li>Validate URL changes to prevent broken links or errors.</li>
+                <li>Utilize <code>URLSearchParams</code> for easier manipulation of query strings.</li>
+                <li>Be cautious with <code>location.reload()</code> to avoid disrupting user experience.</li>
+                <li>Handle URL changes gracefully in the user interface.</li>
+                <li>Test across different browsers for consistent behavior.</li>
+            </ul>
+
+            <h5>Additional Resources for Study</h5>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Location" target="_blank" rel="noopener noreferrer">MDN Web Docs - Location</a></li>
+                <li><a href="https://javascript.info/location" target="_blank" rel="noopener noreferrer">JavaScript.info - Location</a></li>
+                <li><a href="https://www.w3schools.com/jsref/api_location.asp" target="_blank" rel="noopener noreferrer">W3Schools - JavaScript Location Object</a></li>
+                <li><a href="https://css-tricks.com/the-location-object/" target="_blank" rel="noopener noreferrer">CSS Tricks - The Location Object</a></li>
+            </ul>
+
+            <h5>Conclusion</h5>
+            <p>Understanding the Location object is essential for managing navigation and URL manipulation in web applications. By mastering its properties and methods, you can create dynamic and user-friendly experiences that allow users to navigate seamlessly through your application. Practice these concepts through hands-on coding and experimentation to solidify your understanding.</p>
+        </article>
+
+        <article class="section">
+            <h4 id="a237">2.3.7 The Navigator Object</h4>
+            <ul>
+                <li>The <strong>navigator</strong> object provides information about the web browser and its capabilities.</li>
+                <li>Essential for developing cross-browser compatible web applications.</li>
+                <li>Key features include:</li>
+                <ul>
+                    <li>Detecting browser type and version.</li>
+                    <li>Providing user preferences and settings.</li>
+                    <li>Helping in feature detection for better user experience.</li>
+                </ul>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="common-properties">Common Properties of the Navigator Object</h4>
+            <ul>
+                <li><strong>navigator.userAgent</strong>: Returns a string with browser information.</li>
+                <li><strong>navigator.language</strong>: Returns the user's preferred language.</li>
+                <li><strong>navigator.appName</strong>: Returns the name of the browser.</li>
+                <li><strong>navigator.appVersion</strong>: Returns the version of the browser.</li>
+                <li><strong>navigator.platform</strong>: Indicates the platform (operating system) of the browser.</li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="examples">Examples Using the Navigator Object</h4>
+            <ul>
+                <li><strong>Simple Example: Detecting the Browser Type</strong></li>
+                <pre>
+                <code>
+                    // Log the user agent
+                    console.log("User Agent: " + navigator.userAgent);
+                </code>
+                </pre>
+                
+                <li><strong>More Complex Example: Customizing Content Based on Language</strong></li>
+                <pre>
+                <code>
+                    // Customize content based on user's language
+                    const userLang = navigator.language || navigator.userLanguage; // For older IE
+                    console.log("User's Preferred Language: " + userLang);
+
+                    if (userLang.startsWith('es')) {
+                        document.body.innerHTML = "<h1>Bienvenido a nuestro sitio web!</h1>"; // Spanish
+                    } else {
+                        document.body.innerHTML = "<h1>Welcome to our website!</h1>"; // Default to English
+                    }
+                </code>
+                </pre>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="considerations">Additional Considerations</h4>
+            <ul>
+                <li><strong>Browser Compatibility:</strong> Test your code in multiple environments.</li>
+                <li><strong>Privacy Concerns:</strong> Some users may limit navigator information.</li>
+                <li><strong>Feature Detection:</strong> Use libraries like Modernizr for better compatibility.</li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="conclusion">Conclusion</h4>
+            <ul>
+                <li>Understanding the navigator object is crucial for JavaScript developers.</li>
+                <li>This knowledge is essential for creating applications that function seamlessly across various browsers.</li>
+            </ul>
+        </article>
+    </div>
+</section>
+
+
+
+        <section class="topic">
+            <h3>2.3.1 Manipulating the DOM with JavaScript</h3>
+            <div id="quiz10"></div>
+            <div class="result" id="result10" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>2.3.2 The Window Object</h3>
+            <div id="quiz11"></div>
+            <div class="result" id="result11" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>2.3.3 The Document Object</h3>
+            <div id="quiz12"></div>
+            <div class="result" id="result12" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>2.3.4: The Image Object</h3>
+            <div id="quiz13"></div>
+            <div class="result" id="result13" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>2.3.5 The History Object</h3>
+            <div id="quiz14"></div>
+            <div class="result" id="result14" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>2.3.6 The Location Object</h3>
+            <div id="quiz15"></div>
+            <div class="result" id="result15" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>2.3.7 The Navigator Object</h3>
+            <div id="quiz16"></div>
+            <div class="result" id="result16" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>Sub Topic</h3>
+            <div id="quiz17"></div>
+            <div class="result" id="result17" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>Sub Topic</h3>
+            <div id="quiz18"></div>
+            <div class="result" id="result18" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>Sub Topic</h3>
+            <div id="quiz19"></div>
+            <div class="result" id="result19" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>Sub Topic</h3>
+            <div id="quiz20"></div>
+            <div class="result" id="result20" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>Sub Topic</h3>
+            <div id="quiz21"></div>
+            <div class="result" id="result21" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>Sub Topic</h3>
+            <div id="quiz22"></div>
+            <div class="result" id="result22" aria-live="polite"></div>
         </section>
 
     </main>
