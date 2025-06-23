@@ -8,7 +8,7 @@
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #0c1c3e, #1a2a6c, #b21f1f, #fdbb2d); /* Cosmic gradient */
-    color: #fff;
+    color: #313;
     line-height: 1.6;
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite; /* Animated gradient */
@@ -194,7 +194,7 @@ a:hover::after {
 
 #correctCountDisplay {
     font-weight: bold; /* Make the count bold for emphasis */
-    color: #ffcc00; /* Gold color for visibility */
+    color: #fff313; /* Gold color for visibility */
     font-size: 1.5em; /* Slightly larger font size for visibility */
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
     padding: 5px 10px; /* Padding for a better look */
@@ -305,7 +305,7 @@ ul {
 
 ul li {
     margin: 10px 0; /* Space between list items */
-    color: rgba(255, 255, 255, 0.9); /* Light color for list items */
+    color: rgb(0, 0, 0); /* Light color for list items */
 }
 
 /* Strong text styles */
@@ -393,7 +393,7 @@ code {
 .result {
     margin-top: 10px;
     font-weight: bold;
-    color: #ffcc00; /* Gold color for results */
+    color: #12ff25; /* Gold color for results */
 }
 
 /* Footer styles */
