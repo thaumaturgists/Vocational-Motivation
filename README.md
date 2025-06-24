@@ -25,7 +25,7 @@ To get started with the Vocational Motivation project, check out the following r
 - **User-Friendly Interface**: Crafted with simplicity in mind, each website has different style, is accessible and easy to navigate for users of all ages.
 - **Comprehensive Topic Coverage**: Dive into various subjects and focus on specific areas of interest, reinforcing your understanding of key concepts.
 
-### Technologies Used
+### Technologies Utilized
 - **Core Technologies**:
   - HTML
   - CSS
@@ -36,6 +36,7 @@ To get started with the Vocational Motivation project, check out the following r
   - Python
   - Docker
   - React
+  - **Project Context**: The `cc-environment-quiz` serves as a sub-project. Further details will be provided upon my certification in backend development. 
 
 ### Installation
 To run the Vocational Motivation website locally, follow these simple steps:
