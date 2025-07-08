@@ -1462,42 +1462,1169 @@ if (score >= 90) {
             <div class="result" id="result16" aria-live="polite"></div>
         </section>
 
+<section class="container">
+    <h2>Study Guide: Section 2.4 - Using JavaScript Language Objects</h2> 
+
+    <h3 class="toggle" onclick="toggleContent('content4')"><a href="#4">Summary & Quick Review</a></h3>
+    <div class="content" id="content4">
+        <article class="section">
+            <h4 id="a241">2.4.1 The String Object</h4>
+            <ul>
+                <li><strong>Creating Strings:</strong>
+                    <ul>
+                        <li>Primitive string: <code>let str = "Hello";</code></li>
+                        <li>String object: <code>let strObj = new String("Hello");</code></li>
+                    </ul>
+                    <p><em>Note: Use string literals for simplicity and performance.</em></p>
+                </li>
+                <li><strong>Introduction to the String Object:</strong> Represents a sequence of characters with methods for manipulation and formatting, useful for validating user input.</li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4>Common Methods of the String Object</h4>
+            <ul>
+                <li><strong>charAt(index)</strong> - Returns the character at the specified index.
+                    <pre><code>let str = "Hello"; console.log(str.charAt(1)); // Output: "e"</code></pre>
+                </li>
+                <li><strong>indexOf(searchValue [, fromIndex])</strong> - Returns the index of the first occurrence of a specified value.
+                    <pre><code>let str = "Hello, world!"; console.log(str.indexOf("o")); // Output: 4</code></pre>
+                </li>
+                <li><strong>lastIndexOf(searchValue [, fromIndex])</strong> - Returns the index of the last occurrence of a specified value.
+                    <pre><code>let str = "Hello, world!"; console.log(str.lastIndexOf("o")); // Output: 8</code></pre>
+                </li>
+                <li><strong>startsWith(searchString [, position])</strong> - Checks if the string starts with the specified substring.
+                    <pre><code>let str = "Hello, world!"; console.log(str.startsWith("Hello")); // Output: true</code></pre>
+                </li>
+                <li><strong>endsWith(searchString [, length])</strong> - Checks if the string ends with the specified substring.
+                    <pre><code>let str = "Hello, world!"; console.log(str.endsWith("world!")); // Output: true</code></pre>
+                </li>
+                <li><strong>includes(searchString [, position])</strong> - Checks if the string contains the specified substring.
+                    <pre><code>let str = "Hello, world!"; console.log(str.includes("world")); // Output: true</code></pre>
+                </li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4>Examples Using the String Object</h4>
+            <ul>
+                <li><strong>Simple Example:</strong>
+                    <pre><code>let userInput = "JavaScript is fun!"; if (userInput.includes("fun")) { console.log("The input contains the word 'fun'."); }</code></pre>
+                </li>
+                <li><strong>More Complex Example:</strong>
+                    <pre><code>let userInput = "Please enter your email: example@example.com"; let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; if (userInput.includes("@") && emailPattern.test(userInput)) { console.log("Valid email format."); } else { console.log("Invalid email format."); }</code></pre>
+                </li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4>Summary</h4>
+            <p>Understanding the String object and its methods is crucial for validating and processing user input in JavaScript. Familiarize yourself with these methods and practice using them in various scenarios to enhance your skills for the exam.</p>
+        </article>
+
+        <article class="section">
+            <h4 id="a242">2.4.2 Evaluating Strings</h4>
+            <p>Strings in JavaScript can be evaluated and manipulated using various methods and properties. Understanding these methods is essential for effectively working with string data.</p>
+            
+            <h5>Common String Methods and Properties</h5>
+            <ul>
+                <li><strong>.length</strong> - Returns the number of characters in a string.
+                    <pre><code>let str = "Hello, world!";
+        console.log(str.length); // Output: 13</code></pre>
+                </li>
+                <li><strong>.indexOf(searchValue [, startIndex])</strong> - Returns the index of the first occurrence of a specified value, or -1 if not found.
+                    <pre><code>let str = "Hello, world!";
+        console.log(str.indexOf("o")); // Output: 4</code></pre>
+                </li>
+                <li><strong>.lastIndexOf(searchValue [, startIndex])</strong> - Returns the index of the last occurrence of a specified value, or -1 if not found.
+                    <pre><code>let str = "Hello, world! Hello again!";
+        console.log(str.lastIndexOf("Hello")); // Output: 20</code></pre>
+                </li>
+                <li><strong>.substring(startIndex [, endIndex])</strong> - Returns a new string containing characters from startIndex to endIndex (excluding endIndex).
+                    <pre><code>let str = "Hello, world!";
+        console.log(str.substring(0, 5)); // Output: "Hello"</code></pre>
+                </li>
+                <li><strong>.charAt(index)</strong> - Returns the character at the specified index.
+                    <pre><code>let str = "Hello, world!";
+        console.log(str.charAt(0)); // Output: "H"</code></pre>
+                </li>
+            </ul>
+
+            <h5>Example Usage of String Evaluation Methods</h5>
+            <h6>Simple Example</h6>
+            <pre><code>let str = "JavaScript is fun!";
+        console.log("Length of string:", str.length); // Output: Length of string: 20
+        console.log("Index of 'fun':", str.indexOf("fun")); // Output: Index of 'fun': 15</code></pre>
+
+            <h6>More Complex Example</h6>
+            <pre><code>let str = "The quick brown fox jumps over the lazy dog.";
+        let searchWord = "fox";
+
+        console.log("Length of string:", str.length); // Output: 43
+        let index = str.indexOf(searchWord);
+        if (index !== -1) {
+            console.log(`The word '${searchWord}' is found at index:`, index); // Output: The word 'fox' is found at index: 16
+        } else {
+            console.log(`The word '${searchWord}' is not found.`);
+        }
+        let extracted = str.substring(index, index + searchWord.length);
+        console.log("Extracted substring:", extracted); // Output: Extracted substring: fox
+        console.log("Last character of the string:", str.charAt(str.length - 1)); // Output: Last character of the string: .</code></pre>
+        </article>
+
+        <article class="section">
+            <h4 id="a243">2.4.3 Regular Expressions and the RegExp Object</h4>
+            <ul>
+                <li><strong>Introduction to Regular Expressions (RegExp)</strong>
+                    <ul>
+                        <li>Regular expressions (regex) are patterns used to match character combinations in strings.</li>
+                        <li>In JavaScript, regex are objects of the RegExp class and can be defined using forward slashes (e.g., /pattern/).</li>
+                    </ul>
+                </li>
+                <li><strong>Common Methods of the RegExp Object</strong>
+                    <ul>
+                        <li><strong>test(string)</strong>: Tests for a match in a string. Returns <code>true</code> if a match is found; otherwise, <code>false</code>.
+                            <pre><code>
+        let pattern = /hello/i; // "i" for case-insensitive
+        let result = pattern.test("Hello world");
+        console.log(result); // Output: true
+                            </code></pre>
+                        </li>
+                        <li><strong>exec(string)</strong>: Executes a search for a match in a string. Returns an array of information about the match or <code>null</code> if no match is found.
+                            <pre><code>
+        let pattern = /hello/i;
+        let result = pattern.exec("Hello world");
+        console.log(result); // Output: [ 'Hello', index: 0, input: 'Hello world', groups: undefined ]
+                            </code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Common Regular Expression Patterns</strong>
+                    <ul>
+                        <li><strong>Literal Characters</strong>: Characters that match themselves. Example: <code>/hello/</code> matches "hello".</li>
+                        <li><strong>Character Classes</strong>: Match any one of a set of characters. Example: <code>/[aeiou]/</code> matches any vowel.</li>
+                        <li><strong>Quantifiers</strong>: Specify the number of occurrences. Example: <code>/a+/</code> matches one or more 'a' characters.</li>
+                        <li><strong>Anchors</strong>: Specify the position in the string. Example: <code>/^hello/</code> matches "hello" at the start of the string.</li>
+                    </ul>
+                </li>
+                <li><strong>Example Usage of Regular Expressions</strong>
+                    <ul>
+                        <li><strong>Simple Example</strong>
+                            <pre><code>
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple regex for email validation
+        let email = "example@example.com";
+
+        if (emailPattern.test(email)) {
+            console.log("Valid email format."); // Output: Valid email format.
+        } else {
+            console.log("Invalid email format.");
+                            </code></pre>
+                        </li>
+                        <li><strong>More Complex Example</strong>
+                            <pre><code>
+        let phonePattern = /^\(\d{3}\) \d{3}-\d{4}$/; // Matches phone numbers in the format (123) 456-7890
+        let phoneNumber = "(123) 456-7890";
+
+        if (phonePattern.test(phoneNumber)) {
+            console.log("Valid phone number format."); // Output: Valid phone number format.
+        } else {
+            console.log("Invalid phone number format.");
+        }
+
+        // Using exec to extract information
+        let text = "My email is example@example.com and my phone number is (123) 456-7890.";
+        let emailMatch = emailPattern.exec(text);
+        let phoneMatch = phonePattern.exec(text);
+
+        if (emailMatch) {
+            console.log("Extracted email:", emailMatch[0]); // Output: Extracted email: example@example.com
+        }
+
+        if (phoneMatch) {
+            console.log("Extracted phone number:", phoneMatch[0]); // Output: Extracted phone number: (123) 456-7890
+                            </code></pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="a244">2.4.4 The Array Object</h4>
+            <ul>
+                <li><strong>Introduction to the Array Object</strong>
+                    <ul>
+                        <li>The Array object in JavaScript is used to store multiple values in a single variable.</li>
+                        <li>It provides various methods for manipulating arrays, leading to more efficient and readable code.</li>
+                    </ul>
+                </li>
+                <li><strong>Creating Arrays</strong>
+                    <ul>
+                        <li>Using array literal syntax:
+                            <pre><code>let fruits = ["apple", "banana", "cherry"];</code></pre>
+                        </li>
+                        <li>Using the Array constructor:
+                            <pre><code>let vegetables = new Array("carrot", "broccoli", "spinach");</code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Common Methods of the Array Object</strong>
+                    <ul>
+                        <li><strong>.push(element1, element2, ...)</strong>: Adds elements to the end of an array.
+                            <pre><code>
+        let numbers = [1, 2, 3];
+        numbers.push(4, 5);
+        console.log(numbers); // Output: [1, 2, 3, 4, 5]
+                            </code></pre>
+                        </li>
+                        <li><strong>.pop()</strong>: Removes the last element from an array.
+                            <pre><code>
+        let numbers = [1, 2, 3, 4];
+        let lastElement = numbers.pop();
+        console.log(lastElement); // Output: 4
+        console.log(numbers); // Output: [1, 2, 3]
+                            </code></pre>
+                        </li>
+                        <li><strong>.splice(startIndex, deleteCount, element1, ...)</strong>: Adds or removes elements at a specified index.
+                            <pre><code>
+        let colors = ["red", "green", "blue"];
+        colors.splice(1, 1, "yellow");
+        console.log(colors); // Output: ["red", "yellow", "blue"]
+                            </code></pre>
+                        </li>
+                        <li><strong>.forEach(callback)</strong>: Executes a function for each array element.
+                            <pre><code>
+        let numbers = [1, 2, 3, 4];
+        numbers.forEach(function(num) {
+            console.log(num * 2); // Output: 2, 4, 6, 8
+        });
+                            </code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Example Using the Array Object</strong>
+                    <ul>
+                        <li><strong>Simple Example</strong>
+                            <pre><code>
+        let fruits = ["apple", "banana", "cherry"];
+        fruits.push("date");
+        console.log(fruits); // Output: ["apple", "banana", "cherry", "date"]
+                            </code></pre>
+                        </li>
+                        <li><strong>More Complex Example</strong>
+                            <pre><code>
+        let students = [
+            { name: "Alice", score: 85 },
+            { name: "Bob", score: 92 },
+            { name: "Charlie", score: 78 }
+        ];
+
+        students.forEach(function(student) {
+            console.log(`${student.name}: ${student.score}`);
+        });
+
+        students.push({ name: "David", score: 88 });
+        console.log(students);
+
+        let removedStudent = students.pop();
+        console.log(`Removed student: ${removedStudent.name}`);
+
+        students.splice(1, 1, { name: "Eve", score: 95 });
+        console.log(students);
+                            </code></pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="a245">2.4.5 The map() Method</h4>
+            <ul>
+                <li><strong>Introduction to the map() Method</strong>
+                    <ul>
+                        <li>The <code>map()</code> method is used to iterate over an array and transform each element based on a callback function.</li>
+                        <li>It returns a new array containing the transformed elements, without mutating the original array.</li>
+                    </ul>
+                </li>
+                <li><strong>Syntax of the map() Method</strong>
+                    <pre><code>
+        let newArray = array.map((currentValue, index, array) => {
+            // Return the new value for the new array
+        });
+                    </code></pre>
+                    <ul>
+                        <li><strong>currentValue</strong>: The current element being processed in the array.</li>
+                        <li><strong>index</strong> (Optional): The index of the current element being processed.</li>
+                        <li><strong>array</strong> (Optional): The array <code>map()</code> was called upon.</li>
+                    </ul>
+                </li>
+                <li><strong>Common Usage of the map() Method</strong>
+                    <ul>
+                        <li><strong>Transforming Array Elements</strong>
+                            <pre><code>
+        let numbers = [1, 2, 3, 4];
+        let doubled = numbers.map(function(num) {
+            return num * 2;
+        });
+        console.log(doubled); // Output: [2, 4, 6, 8]
+                            </code></pre>
+                        </li>
+                        <li><strong>Converting Data Format</strong>
+                            <pre><code>
+        let students = [
+            { name: "Alice", score: 85 },
+            { name: "Bob", score: 92 },
+            { name: "Charlie", score: 78 }
+        ];
+        let names = students.map(function(student) {
+            return student.name;
+        });
+        console.log(names); // Output: ["Alice", "Bob", "Charlie"]
+                            </code></pre>
+                        </li>
+                        <li><strong>Using Arrow Functions (ES6+)</strong>
+                            <pre><code>
+        let numbers = [1, 2, 3, 4];
+        let squared = numbers.map(num => num ** 2);
+        console.log(squared); // Output: [1, 4, 9, 16]
+                            </code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Example Usage of the map() Method</strong>
+                    <ul>
+                        <li><strong>Simple Example</strong>
+                            <pre><code>
+        let fruits = ["apple", "banana", "cherry"];
+        let uppercasedFruits = fruits.map(fruit => fruit.toUpperCase());
+        console.log(uppercasedFruits); // Output: ["APPLE", "BANANA", "CHERRY"]
+                            </code></pre>
+                        </li>
+                        <li><strong>More Complex Example</strong>
+                            <pre><code>
+        let products = [
+            { name: "Laptop", price: 999 },
+            { name: "Phone", price: 499 },
+            { name: "Tablet", price: 299 }
+        ];
+
+        let discountedPrices = products.map(product => {
+            return {
+                name: product.name,
+                discountedPrice: product.price * 0.9 // 10% discount
+            };
+        });
+
+        console.log(discountedPrices);
+        /*
+        Output:
+        [
+            { name: "Laptop", discountedPrice: 899.1 },
+            { name: "Phone", discountedPrice: 449.1 },
+            { name: "Tablet", discountedPrice: 269.1 }
+        ]
+                            </code></pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="a246">2.4.6 The Date and Math Objects</h4>
+            <ul>
+                <li><strong>Introduction to the Date Object</strong>
+                    <ul>
+                        <li>The Date object is used for working with dates and times, providing methods for creating, formatting, and manipulating dates.</li>
+                    </ul>
+                </li>
+                <li><strong>Common Methods of the Date Object</strong>
+                    <ul>
+                        <li><strong>new Date() Constructor</strong>
+                            <pre><code>let now = new Date();</code></pre>
+                            <p>Output: Current date and time</p>
+                        </li>
+                        <li><strong>getDate()</strong>: Returns the day of the month (1-31).
+                            <pre><code>let date = new Date("2025-07-06");
+        console.log(date.getDate()); // Output: 6</code></pre>
+                        </li>
+                        <li><strong>getMonth()</strong>: Returns the month (0-11).
+                            <pre><code>let date = new Date("2025-07-06");
+        console.log(date.getMonth()); // Output: 6 (July)</code></pre>
+                        </li>
+                        <li><strong>getFullYear()</strong>: Returns the four-digit year.
+                            <pre><code>let date = new Date("2025-07-06");
+        console.log(date.getFullYear()); // Output: 2025</code></pre>
+                        </li>
+                        <li><strong>getDay()</strong>: Returns the day of the week (0-6).
+                            <pre><code>let date = new Date("2025-07-06");
+        console.log(date.getDay()); // Output: 0 (Sunday)</code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Introduction to the Math Object</strong>
+                    <ul>
+                        <li>The Math object provides mathematical constants and functions for performing mathematical operations.</li>
+                    </ul>
+                </li>
+                <li><strong>Common Methods of the Math Object</strong>
+                    <ul>
+                        <li><strong>Math.PI</strong>: Represents the ratio of the circumference of a circle to its diameter.
+                            <pre><code>console.log(Math.PI); // Output: 3.141592653589793</code></pre>
+                        </li>
+                        <li><strong>Math.round()</strong>: Rounds a number to the nearest integer.
+                            <pre><code>console.log(Math.round(4.6)); // Output: 5</code></pre>
+                        </li>
+                        <li><strong>Math.floor()</strong>: Rounds a number down to the nearest integer.
+                            <pre><code>console.log(Math.floor(4.9)); // Output: 4</code></pre>
+                        </li>
+                        <li><strong>Math.random()</strong>: Returns a random number between 0 (inclusive) and 1 (exclusive).
+                            <pre><code>console.log(Math.random()); // Output: Random decimal between 0 and 1</code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Example Using the Date and Math Objects</strong>
+                    <ul>
+                        <li><strong>Simple Example</strong>
+                            <pre><code>
+        let now = new Date();
+        console.log("Current Date and Time:", now);
+        console.log("Current Year:", now.getFullYear());
+        console.log("Current Month (0-11):", now.getMonth());
+        console.log("Current Day of the Month:", now.getDate());
+                            </code></pre>
+                        </li>
+                        <li><strong>More Complex Example</strong>
+                            <pre><code>
+        // Generate a random date within a specific range
+        function getRandomDate(start, end) {
+            return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+        }
+
+        let startDate = new Date("2025-01-01");
+        let endDate = new Date("2025-12-31");
+        let randomDate = getRandomDate(startDate, endDate);
+
+        console.log("Random Date:", randomDate);
+        console.log("Year of Random Date:", randomDate.getFullYear());
+        console.log("Month of Random Date (0-11):", randomDate.getMonth());
+        console.log("Day of Random Date:", randomDate.getDate());
+                            </code></pre>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+
+    </div>
+</section>
+
         <section class="topic">
-            <h3>Sub Topic</h3>
+            <h3>2.4.1 The String Object</h3>
             <div id="quiz17"></div>
             <div class="result" id="result17" aria-live="polite"></div>
         </section>
 
         <section class="topic">
-            <h3>Sub Topic</h3>
+            <h3>2.4.2 Evaluating Strings</h3>
             <div id="quiz18"></div>
             <div class="result" id="result18" aria-live="polite"></div>
         </section>
 
         <section class="topic">
-            <h3>Sub Topic</h3>
+            <h3>2.4.3 Regular Expressions and the RegExp Object</h3>
             <div id="quiz19"></div>
             <div class="result" id="result19" aria-live="polite"></div>
         </section>
 
         <section class="topic">
-            <h3>Sub Topic</h3>
+            <h3>2.4.4 The Array Object</h3>
             <div id="quiz20"></div>
             <div class="result" id="result20" aria-live="polite"></div>
         </section>
 
         <section class="topic">
-            <h3>Sub Topic</h3>
+            <h3>2.4.5 The map() Method</h3>
             <div id="quiz21"></div>
             <div class="result" id="result21" aria-live="polite"></div>
         </section>
 
         <section class="topic">
-            <h3>Sub Topic</h3>
+            <h3>2.4.6 The Date and Math Objects</h3>
             <div id="quiz22"></div>
             <div class="result" id="result22" aria-live="polite"></div>
         </section>
 
+<section class="container">
+    <h2>Creating and Using Custom JavaScript Objects</h2> 
+
+    <h3 class="toggle" onclick="toggleContent('content1')"><a href="#1">Summary & Quick Review</a></h3>
+    <div class="content" id="content1">
+        <article class="section">
+            <h4 id="creating-custom-objects">2.5.1 Creating Custom Objects</h4>
+            <ul>
+                <li><strong>Introduction:</strong> Custom objects in JavaScript represent complex data structures with properties and methods.</li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="object-literals">Using Object Literals</h4>
+            <ul>
+                <li>Object literals allow for straightforward object creation.</li>
+                <li><strong>Simple Example:</strong></li>
+                <pre>
+                <code>
+let car = {
+    make: "Toyota",
+    model: "Camry",
+    year: 2020,
+    start: function() {
+        console.log("Car started");
+    }
+};
+                </code>
+                </pre>
+                <li><strong>More Complex Example:</strong></li>
+                <pre>
+                <code>
+let book = {
+    title: "1984",
+    author: "George Orwell",
+    pages: 328,
+    read: function() {
+        console.log(`Reading ${this.title} by ${this.author}`);
+    }
+};
+                </code>
+                </pre>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="constructor-functions">Using Constructor Functions</h4>
+            <ul>
+                <li>Constructor functions create multiple instances of an object type.</li>
+                <li><strong>Simple Example:</strong></li>
+                <pre>
+                <code>
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    this.greet = function() {
+        console.log(`Hello, my name is ${this.name}`);
+    };
+}
+                </code>
+                </pre>
+                <li><strong>More Complex Example:</strong></li>
+                <pre>
+                <code>
+function Rectangle(width, height) {
+    this.width = width;
+    this.height = height;
+    this.area = function() {
+        return this.width * this.height;
+    };
+}
+                </code>
+                </pre>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="es6-classes">Using ES6 Classes</h4>
+            <ul>
+                <li>ES6 classes provide a structured way to create objects and handle inheritance.</li>
+                <li><strong>Simple Example:</strong></li>
+                <pre>
+                <code>
+class Animal {
+    constructor(name, species) {
+        this.name = name;
+        this.species = species;
+    }
+
+    speak() {
+        console.log(`${this.name} makes a noise.`);
+    }
+}
+                </code>
+                </pre>
+                <li><strong>More Complex Example:</strong></li>
+                <pre>
+                <code>
+class Vehicle {
+    constructor(make, model, year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+    }
+
+    getDetails() {
+        return `${this.year} ${this.make} ${this.model}`;
+    }
+}
+                </code>
+                </pre>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="summary251">Summary</h4>
+            <ul>
+                <li>Custom objects allow modeling of complex data structures.</li>
+                <li>Use object literals for simple objects, constructor functions for multiple instances, and ES6 classes for structured approaches.</li>
+                <li>Practice creating custom objects to enhance JavaScript skills.</li>
+            </ul>
+        </article>
+
+        <article class="section">
+            <h4 id="a252">2.5.2 Defining Properties and Methods</h4>
+            
+            <h5>Defining Properties of Custom Objects</h5>
+            <p>Properties in custom objects are variables that hold values, defining the characteristics or attributes of the object.</p>
+            
+            <h6>Example of Defining Properties:</h6>
+            
+            <h6>Simple Example:</h6>
+            <pre>
+            <code>
+                let person = {
+                    name: "Alice",
+                    age: 30
+                };
+
+                console.log(person.name); // Output: Alice
+                console.log(person.age);  // Output: 30
+            </code>
+            </pre>
+            
+            <h6>Complex Example:</h6>
+            <pre>
+            <code>
+                let car = {
+                    make: "Toyota",
+                    model: "Camry",
+                    year: 2020,
+                    color: "blue"
+                };
+
+                console.log(`Car: ${car.year} ${car.make} ${car.model}, Color: ${car.color}`); 
+                // Output: Car: 2020 Toyota Camry, Color: blue
+            </code>
+            </pre>
+            
+            <h5>Defining Methods of Custom Objects</h5>
+            <p>Methods in custom objects are functions that perform actions or calculations related to the object.</p>
+            
+            <h6>Example of Defining Methods:</h6>
+            
+            <h6>Simple Example:</h6>
+            <pre>
+            <code>
+                let person = {
+                    name: "Alice",
+                    age: 30,
+                    sayHello: function() {
+                        console.log(`Hello, my name is ${this.name}`);
+                    }
+                };
+
+                person.sayHello(); // Output: Hello, my name is Alice
+            </code>
+            </pre>
+            
+            <h6>Complex Example:</h6>
+            <pre>
+            <code>
+                let bankAccount = {
+                    accountHolder: "Bob",
+                    balance: 1000,
+                    deposit: function(amount) {
+                        this.balance += amount;
+                        console.log(`Deposited: $${amount}. New balance: $${this.balance}`);
+                    },
+                    withdraw: function(amount) {
+                        if (amount > this.balance) {
+                            console.log("Insufficient funds.");
+                        } else {
+                            this.balance -= amount;
+                            console.log(`Withdrew: $${amount}. New balance: $${this.balance}`);
+                        }
+                    }
+                };
+
+                bankAccount.deposit(500); // Output: Deposited: $500. New balance: $1500
+                bankAccount.withdraw(200); // Output: Withdrew: $200. New balance: $1300
+                bankAccount.withdraw(1500); // Output: Insufficient funds.
+            </code>
+            </pre>
+            
+            <h5>Summary</h5>
+            <p>Defining properties and methods in custom objects is essential for creating structured and functional JavaScript applications. Properties represent the attributes of the object, while methods define the actions that can be performed on or by the object. Familiarize yourself with these concepts and practice creating custom objects with properties and methods to enhance your skills for the exam. Understanding how to effectively define and use properties and methods will significantly improve your ability to model real-world entities in JavaScript.</p>
+        </article>
+
+        <article class="section">
+            <h4 id="a253">2.5.3 Creating New Instances</h4>
+            
+            <h5>Creating New Object Instances</h5>
+            <p>In JavaScript, you can create new instances of custom objects using constructor functions or ES6 classes. Each instance is independent and has its own set of properties and methods.</p>
+            
+            <h5>Creating Instances Using Constructor Functions</h5>
+            
+            <h6>Simple Example:</h6>
+            <pre>
+            <code>
+        // Constructor function for creating Person objects
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayFullName = function() {
+                console.log(`Full Name: ${this.firstName} ${this.lastName}`);
+            };
+        }
+
+        // Creating new instances of Person
+        let person1 = new Person("Bob", "Smith");
+        let person2 = new Person("Alice", "Johnson");
+
+        person1.sayFullName(); // Output: Full Name: Bob Smith
+        person2.sayFullName(); // Output: Full Name: Alice Johnson
+            </code>
+            </pre>
+            
+            <h6>Complex Example:</h6>
+            <pre>
+            <code>
+        // Constructor function for creating Car objects
+        function Car(make, model, year) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.getDetails = function() {
+                return `${this.year} ${this.make} ${this.model}`;
+            };
+        }
+
+        // Creating new instances of Car
+        let car1 = new Car("Toyota", "Camry", 2020);
+        let car2 = new Car("Honda", "Civic", 2021);
+
+        console.log(car1.getDetails()); // Output: 2020 Toyota Camry
+        console.log(car2.getDetails()); // Output: 2021 Honda Civic
+            </code>
+            </pre>
+            
+            <h5>Creating Instances Using ES6 Classes</h5>
+            
+            <h6>Simple Example:</h6>
+            <pre>
+            <code>
+        // Defining a class for Person
+        class Person {
+            constructor(firstName, lastName) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+
+            sayFullName() {
+                console.log(`Full Name: ${this.firstName} ${this.lastName}`);
+            }
+        }
+
+        // Creating new instances of Person
+        let person1 = new Person("Bob", "Smith");
+        let person2 = new Person("Alice", "Johnson");
+
+        person1.sayFullName(); // Output: Full Name: Bob Smith
+        person2.sayFullName(); // Output: Full Name: Alice Johnson
+            </code>
+            </pre>
+            
+            <h6>Complex Example:</h6>
+            <pre>
+            <code>
+        // Defining a class for Car
+        class Car {
+            constructor(make, model, year) {
+                this.make = make;
+                this.model = model;
+                this.year = year;
+            }
+
+            getDetails() {
+                return `${this.year} ${this.make} ${this.model}`;
+            }
+        }
+
+        // Creating new instances of Car
+        let car1 = new Car("Toyota", "Camry", 2020);
+        let car2 = new Car("Honda", "Civic", 2021);
+
+        console.log(car1.getDetails()); // Output: 2020 Toyota Camry
+        console.log(car2.getDetails()); // Output: 2021 Honda Civic
+            </code>
+            </pre>
+            
+            <h5>Summary</h5>
+            <p>Creating new instances of custom objects in JavaScript allows you to model real-world entities with their own properties and methods. You can use constructor functions for traditional object creation or ES6 classes for a more modern approach. Familiarize yourself with these methods and practice creating instances to enhance your skills for the exam. Understanding how to create and manage object instances is fundamental to effective JavaScript programming.</p>
+        </article>
+
+        <article class="section">
+            <h4 id="a254">2.5.4 Creating Client-Side Arrays Using Custom Objects</h4>
+            
+            <h5>Creating Client-Side Arrays</h5>
+            <p>In JavaScript, you can create arrays of custom objects to store and manipulate multiple instances of the same object type. This is useful for managing collections of data in a structured way.</p>
+            
+            <h5>Example of Creating Client-Side Arrays with Custom Objects</h5>
+            
+            <h6>Simple Example:</h6>
+            <pre>
+            <code>
+        // Constructor function for creating Person objects
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayFullName = function() {
+                console.log(`Full Name: ${this.firstName} ${this.lastName}`);
+            };
+        }
+
+        // Creating an array to store multiple Person objects
+        let people = [];
+
+        // Adding Person objects to the array
+        people.push(new Person("Bob", "Smith"));
+        people.push(new Person("Alice", "Johnson"));
+        people.push(new Person("Charlie", "Brown"));
+
+        // Iterating over the array and calling the method for each Person
+        people.forEach(function(person) {
+            person.sayFullName();
+            });
+            </code>
+            </pre>
+            
+            <h6>Complex Example:</h6>
+            <pre>
+            <code>
+        // Constructor function for creating Car objects
+        function Car(make, model, year) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.getDetails = function() {
+                return `${this.year} ${this.make} ${this.model}`;
+            };
+        }
+
+        // Creating an array to store multiple Car objects
+        let cars = [];
+
+        // Adding Car objects to the array
+        cars.push(new Car("Toyota", "Camry", 2020));
+        cars.push(new Car("Honda", "Civic", 2021));
+        cars.push(new Car("Ford", "Mustang", 2019));
+
+        // Iterating over the array and logging the details of each Car
+        cars.forEach(function(car) {
+            console.log(car.getDetails());
+        });
+            </code>
+            </pre>
+            
+            <h5>Summary</h5>
+            <p>Creating client-side arrays using custom objects allows you to manage collections of related data effectively. By storing multiple instances of the same object type in an array, you can easily iterate over them, manipulate their properties, and call their methods. Familiarize yourself with this concept and practice creating and using arrays of custom objects to enhance your skills for the exam. Understanding how to work with arrays of objects is essential for building robust JavaScript applications.</p>
+        </article>
+
+        <article class="section">
+            <h4 id="a255">2.5.5 Functions & Methods for Manipulating Arrays</h4>
+            
+            <h5>Creating Functions for Manipulating Arrays</h5>
+            <p>Functions can be created to perform various operations on client-side arrays, such as adding, removing, or updating elements.</p>
+            
+            <h5>Example of Creating Functions for Manipulating Arrays</h5>
+            
+            <h6>Simple Example:</h6>
+            <pre>
+            <code>
+        // Function to add a Person object to an array
+        function addPerson(peopleArray, firstName, lastName) {
+            let newPerson = new Person(firstName, lastName);
+            peopleArray.push(newPerson);
+        }
+
+        // Constructor function for creating Person objects
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayHello = function() {
+                console.log(`Hello, my name is ${this.firstName} ${this.lastName}`);
+            };
+        }
+
+        // Creating an array to store Person objects
+        let people = [];
+
+        // Adding Person objects to the array
+        addPerson(people, "Bob", "Smith");
+        addPerson(people, "Alice", "Johnson");
+
+        // Calling sayHello on each Person in the array
+        people.forEach(function(person) {
+            person.sayHello();
+        });
+            </code>
+            </pre>
+            
+            <h6>Complex Example:</h6>
+            <pre>
+            <code>
+        // Function to remove a Person object from an array by first name
+        function removePerson(peopleArray, firstName) {
+            const index = peopleArray.findIndex(person => person.firstName === firstName);
+            if (index !== -1) {
+                peopleArray.splice(index, 1);
+                console.log(`${firstName} has been removed from the array.`);
+            } else {
+                console.log(`${firstName} not found in the array.`);
+            }
+        }
+
+        // Using the previous Person constructor and people array
+        removePerson(people, "Alice"); // Output: Alice has been removed from the array.
+        people.forEach(function(person) {
+            person.sayHello(); // Output: Hello, my name is Bob Smith
+        });
+            </code>
+            </pre>
+            
+            <h5>Creating Methods for Manipulating Arrays</h5>
+            <p>Methods can also be added to custom objects to perform operations specific to those objects.</p>
+            
+            <h6>Example of Adding Methods to Custom Objects</h6>
+            
+            <h6>Simple Example:</h6>
+            <pre>
+            <code>
+        // Adding a method to the Person constructor to list all people
+        function Person(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayHello = function() {
+                console.log(`Hello, my name is ${this.firstName} ${this.lastName}`);
+            };
+        }
+
+        // Adding a method to the array of Person objects
+        Array.prototype.listPeople = function() {
+            this.forEach(function(person) {
+                person.sayHello();
+            });
+        };
+
+        // Creating an array to store Person objects
+        let people = [];
+        people.push(new Person("Bob", "Smith"));
+        people.push(new Person("Alice", "Johnson"));
+
+        // Calling the custom method to list all people
+        people.listPeople(); // Output: Hello, my name is Bob Smith
+                            //         Hello, my name is Alice Johnson
+            </code>
+            </pre>
+            
+            <h6>Complex Example:</h6>
+            <pre>
+            <code>
+        // Adding a method to calculate the total number of people in the array
+        Array.prototype.totalPeople = function() {
+            return this.length;
+        };
+
+        // Using the previous people array
+        console.log(`Total number of people: ${people.totalPeople()}`); // Output: Total number of people: 2
+            </code>
+            </pre>
+            
+            <h5>Summary</h5>
+            <p>Creating functions and methods for manipulating client-side arrays is essential for managing collections of data effectively. Functions can be used to perform operations such as adding, removing, or updating elements in an array, while methods can be added to custom objects to encapsulate behavior specific to those objects. Familiarize yourself with these concepts and practice creating functions and methods to enhance your skills for the exam. Understanding how to manipulate arrays and custom objects will significantly improve your ability to build dynamic JavaScript applications.</p>
+        </article>
+
+        <article class="section">
+            <h4 id="a256">2.5.6 Using Prototype Property, Classes, Constructors, Iterators, and Generators</h4>
+            
+            <h5>1. Using the Prototype Property</h5>
+            <p>The prototype property allows you to add new properties and methods to existing constructors. This means that all instances of a constructor can share these properties and methods, promoting code reuse.</p>
+            
+            <h6>Simple Example: Adding a Method to the Prototype</h6>
+            <pre>
+            <code>
+        function Person(name) {
+            this.name = name;
+        }
+
+        Person.prototype.greet = function() {
+            console.log(`Hello, my name is ${this.name}`);
+        };
+
+        const alice = new Person('Alice');
+        alice.greet(); // Output: Hello, my name is Alice
+            </code>
+            </pre>
+            
+            <h6>Complex Example: Extending Built-in Objects</h6>
+            <pre>
+            <code>
+        Array.prototype.last = function() {
+            return this[this.length - 1];
+        };
+
+        const numbers = [1, 2, 3, 4];
+        console.log(numbers.last()); // Output: 4
+            </code>
+            </pre>
+            
+            <h5>2. Using Classes and Constructors</h5>
+            <p>ES6 introduced the <code>class</code> keyword, which provides a clearer and more concise syntax for creating constructor functions and managing inheritance.</p>
+            
+            <h6>Simple Example: Defining a Class</h6>
+            <pre>
+            <code>
+        class Animal {
+            constructor(name) {
+                this.name = name;
+            }
+
+            speak() {
+                console.log(`${this.name} makes a noise.`);
+            }
+        }
+
+        const dog = new Animal('Dog');
+        dog.speak(); // Output: Dog makes a noise.
+            </code>
+            </pre>
+            
+            <h6>Complex Example: Inheritance with Classes</h6>
+            <pre>
+            <code>
+        class Dog extends Animal {
+            speak() {
+                console.log(`${this.name} barks.`);
+            }
+        }
+
+        const bulldog = new Dog('Bulldog');
+        bulldog.speak(); // Output: Bulldog barks.
+            </code>
+            </pre>
+            
+            <h5>3. Using Iterators and Generators</h5>
+            <p><strong>Iterators</strong> are objects that implement the iterator protocol, which consists of a <code>next()</code> method that returns an object with <code>value</code> and <code>done</code> properties.</p>
+            
+            <h6>Simple Example: Creating an Iterator</h6>
+            <pre>
+            <code>
+        function createIterator(array) {
+            let index = 0;
+            return {
+                next: function() {
+                    if (index < array.length) {
+                        return { value: array[index++], done: false };
+                    } else {
+                        return { done: true };
+                    }
+                }
+            };
+        }
+
+        const iterator = createIterator([1, 2, 3]);
+        console.log(iterator.next()); // Output: { value: 1, done: false }
+        console.log(iterator.next()); // Output: { value: 2, done: false }
+        console.log(iterator.next()); // Output: { value: 3, done: false }
+        console.log(iterator.next()); // Output: { done: true }
+            </code>
+            </pre>
+            
+            <h6>Complex Example: Using Generators</h6>
+            <pre>
+            <code>
+        function* numberGenerator() {
+            let index = 0;
+            while (index < 3) {
+                yield index++;
+            }
+        }
+
+        const gen = numberGenerator();
+        console.log(gen.next()); // Output: { value: 0, done: false }
+        console.log(gen.next()); // Output: { value: 1, done: false }
+        console.log(gen.next()); // Output: { value: 2, done: false }
+        console.log(gen.next()); // Output: { done: true }
+            </code>
+            </pre>
+            
+            <h5>Summary</h5>
+            <ul>
+                <li><strong>Prototype Property</strong>: Allows adding methods and properties to constructors, enabling shared functionality.</li>
+                <li><strong>Classes and Constructors</strong>: ES6 syntax simplifies object-oriented programming and inheritance.</li>
+                <li><strong>Iterators and Generators</strong>: Iterators provide a way to traverse a collection, while generators allow for lazy evaluation and stateful function execution.</li>
+            </ul>
+            
+            <p>This guide should help you revise and understand the key concepts related to prototypes, classes, constructors, iterators, and generators in JavaScript. Familiarizing yourself with these concepts will enhance your ability to write efficient and organized code.</p>
+        </article>
+    </div>
+</section>
+
+        <section class="topic">
+            <h3>2.5.1 Creating Custom Objects</h3>
+            <div id="quiz23"></div>
+            <div class="result" id="result23" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>2.5.2 Defining Properties and Methods</h3>
+            <div id="quiz24"></div>
+            <div class="result" id="result24" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>2.5.3 Creating New Instances</h3>
+            <div id="quiz25"></div>
+            <div class="result" id="result25" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>2.5.4 Creating Client-Side Arrays Using Custom Objects</h3>
+            <div id="quiz26"></div>
+            <div class="result" id="result26" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>2.5.5 Functions & Methods for Manipulating Arrays</h3>
+            <div id="quiz27"></div>
+            <div class="result" id="result27" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>2.5.6 Using Prototype Property, Classes, Constructors, Iterators, and Generators</h3>
+            <div id="quiz28"></div>
+            <div class="result" id="result28" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>Sub Topic</h3>
+            <div id="quiz29"></div>
+            <div class="result" id="result29" aria-live="polite"></div>
+        </section>
+
+        <section class="topic">
+            <h3>Sub Topic</h3>
+            <div id="quiz30"></div>
+            <div class="result" id="result30" aria-live="polite"></div>
+        </section>
     </main>
 
     <div class="containerOT" id="OtherTreats">
