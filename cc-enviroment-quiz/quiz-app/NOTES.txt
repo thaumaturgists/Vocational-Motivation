@@ -1,0 +1,11 @@
+⚠️ Important Note
+Removing node_modules will not affect your project as long as you have a package.json file. You can always reinstall the dependencies later using:
+
+bash
+
+Copy Code
+npm install
+This will recreate the node_modules folder based on the dependencies listed in your package.json.
+
+
+issue was with cloud recreating it...
